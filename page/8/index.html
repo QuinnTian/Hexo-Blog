@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-count">94</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -202,6 +202,98 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/07/24/Linux/CenOS%E9%85%8D%E7%BD%AEJDK-2019102314155747091/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/24/Linux/CenOS%E9%85%8D%E7%BD%AEJDK-2019102314155747091/" class="post-title-link" itemprop="url">CenOS配置JDK</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-07-24 10:52:09" itemprop="dateCreated datePublished" datetime="2018-07-24T10:52:09+08:00">2018-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-01-25 15:57:27" itemprop="dateModified" datetime="2020-01-25T15:57:27+08:00">2020-01-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>title: CenOS配置JDK<br>date: ‘2018-07-24 10:52:09’<br>updated: ‘2018-07-24 10:56:58’<br>tags: [Linux, Java]<br>permalink: /articles/2018/07/24/1532400728584.html</p>
+<hr>
+<p>原博客文章备份： <a target="_blank" rel="noopener" href="https://blog.csdn.net/leofitz/article/details/79883844">https://blog.csdn.net/leofitz/article/details/79883844</a></p>
+<h1 id="CenOS配置JDK7"><a href="#CenOS配置JDK7" class="headerlink" title="CenOS配置JDK7"></a>CenOS配置JDK7</h1><p>2018年04月10日 17:06:20</p>
+<p>阅读数：18 <a target="_blank" rel="noopener" href="https://mp.csdn.net/postedit/79883844">编辑</a></p>
+<h3 id="1-删除系统自带的JDK"><a href="#1-删除系统自带的JDK" class="headerlink" title="1.删除系统自带的JDK"></a>1.删除系统自带的JDK</h3><p><code>rpm -qa | grep jdk</code><br><img src="https://img-blog.csdn.net/20180410163432871?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>rpm -e --nodeps</code>删除<br><img src="https://img-blog.csdn.net/20180410163748904?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<h3 id="2-下载JDK"><a href="#2-下载JDK" class="headerlink" title="2.下载JDK"></a>2.下载JDK</h3><p>jdk7u79-linux-x64.tar.gz</p>
+<h3 id="3-安装JDK"><a href="#3-安装JDK" class="headerlink" title="3.安装JDK"></a>3.安装JDK</h3><h4 id="3-1-检测当前系统中jdk的安装版本"><a href="#3-1-检测当前系统中jdk的安装版本" class="headerlink" title="3.1 检测当前系统中jdk的安装版本"></a>3.1 检测当前系统中jdk的安装版本</h4><p><code>java -version</code>显示未找到此命令<br><img src="https://img-blog.csdn.net/20180410164541407?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<h4 id="3-2-解压下载好的jdk7u79-linux-x64-tar-gz"><a href="#3-2-解压下载好的jdk7u79-linux-x64-tar-gz" class="headerlink" title="3.2 解压下载好的jdk7u79-linux-x64.tar.gz"></a>3.2 解压下载好的jdk7u79-linux-x64.tar.gz</h4><p>当前安装包在我的myftp文件夹中，解压到目标文件夹<br><code>tar -zxvf jdk7u79-linux-x64.tar.gz -C /usr/lib/jvm</code></p>
+<p><img src="https://img-blog.csdn.net/20180410165319714?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<h5 id="3-3-配置环境变量"><a href="#3-3-配置环境变量" class="headerlink" title="3.3 配置环境变量"></a>3.3 配置环境变量</h5><p><code>vim /etc/profile</code><br>在前面添加环境变量</p>
+<p><code>export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_131  export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</code><br><img src="https://img-blog.csdn.net/20180410170250726?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>source /etc/profile</code>执行后立即生效无需重启</p>
+<h4 id="3-4-查看Java版本安装完毕"><a href="#3-4-查看Java版本安装完毕" class="headerlink" title="3.4 查看Java版本安装完毕"></a>3.4 查看Java版本安装完毕</h4><p><code>java -version</code><br><img src="https://img-blog.csdn.net/20180410170527733?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1078,84 +1170,6 @@
 <p>mv /data/new /data/old/<br>注：移动/data/new 到/data/old/文件夹下<br>注意点：移动文件夹的话就不要再加 / 了</p>
 <p>如果是移动文件夹下的所有文件的话就可以文件夹后面跟上 /* </p>
 <p>mv /data/new/* /data/old/</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2018/07/20/Mybatis/Mybatis%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%97%B6%E9%81%87%E5%88%B0%E5%A4%A7%E5%9D%91.md-2019102314153507439/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quinn Tian">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北纬36度">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/20/Mybatis/Mybatis%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%97%B6%E9%81%87%E5%88%B0%E5%A4%A7%E5%9D%91.md-2019102314153507439/" class="post-title-link" itemprop="url">Mybatis批量更新时遇到大坑.md</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-07-20 18:40:30" itemprop="dateCreated datePublished" datetime="2018-07-20T18:40:30+08:00">2018-07-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>title: Mybatis批量更新时遇到大坑<br>date: ‘2018-07-20 18:40:30’<br>updated: ‘2018-07-20 18:41:35’<br>tags: [Mybatis, 后端]<br>permalink: /articles/2018/07/20/1532083230130.html</p>
-<hr>
-<p>批量更新代码如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">id=&quot;insertMessageReply&quot; parameterType=&quot;list&quot;&gt;</span><br><span class="line">  collection=&quot;list&quot; close=&quot;&quot; index=&quot;index&quot; item=&quot;item&quot; separator=&quot;;&quot;&gt;</span><br><span class="line">  insert into message_reply(create_time,from_username)</span><br><span class="line">    values</span><br><span class="line">        (</span><br><span class="line">    #&#123;item.CreateTime,jdbcType=BIGINT&#125;,</span><br><span class="line">    #&#123;item.FromUserName,jdbcType=VARCHAR&#125;,</span><br><span class="line">    </span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
-<p>执行时总是报语法错误<br>1.<strong>Mybatis批量插入时必须在连接地址后面加?allowMultiQueries=true</strong></p>
-<p>2.另外还需注意分隔符必须是<strong>分号; separator=”;”</strong></p>
 
       
     </div>

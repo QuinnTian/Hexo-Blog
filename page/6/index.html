@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-count">94</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -202,6 +202,104 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/17/%E5%85%B6%E4%BB%96/BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE-bbr%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/02/17/%E5%85%B6%E4%BB%96/BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE-bbr%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">BBR加速配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-17 00:00:44" itemprop="dateCreated datePublished" datetime="2020-02-17T00:00:44+08:00">2020-02-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>bbr这个东西真乃神器，所以如果你的代理服务器在国外，强烈建议开启bbr的功能。我的小鸡使用的是debian 9，默认内核是支持bbr加速的，但是没有开启。如果你的系统过于陈旧，需要更新linux内核至4.9以上并编译安装bbr。<br>开启方法</p>
+<pre><code>1. 修改系统变量
+
+echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
+
+2. 保存生效
+
+sysctl -p
+
+3. 查看内核是否已开启BBR
+
+sysctl net.ipv4.tcp_available_congestion_control
+
+显示以下即已开启：
+
+net.ipv4.tcp_available_congestion_control = bbr cubic reno
+
+4. 查看BBR是否启动
+
+lsmod | grep bbr
+
+显示以下即启动成功：
+
+# lsmod | grep bbr tcp_bbr 20480 14
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1406,98 +1504,6 @@ chmod 777 /var/log/caddy/caddy.log
 </ol>
 <p>本地仓库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;E:\WorkSpace\MVNRES&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/26/MySQL/%E7%BB%BF%E8%89%B2%E7%89%88MySQL%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95-%E7%BB%BF%E8%89%B2%E7%89%88mysql%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Quinn Tian">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北纬36度">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/10/26/MySQL/%E7%BB%BF%E8%89%B2%E7%89%88MySQL%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95-%E7%BB%BF%E8%89%B2%E7%89%88mysql%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">绿色版MySQL安装记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-26 21:39:09" itemprop="dateCreated datePublished" datetime="2019-10-26T21:39:09+08:00">2019-10-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2020-01-25 15:17:21" itemprop="dateModified" datetime="2020-01-25T15:17:21+08:00">2020-01-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="1-下载MYSQL绿色版"><a href="#1-下载MYSQL绿色版" class="headerlink" title="1.下载MYSQL绿色版"></a>1.下载MYSQL绿色版</h1><p>官网下载地址：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
-<h1 id="2-解压到本地"><a href="#2-解压到本地" class="headerlink" title="2.解压到本地"></a>2.解压到本地</h1><p>解压到本地并创建data文件，创建my.ini文件，配置信息如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span><br><span class="line"># *** DO NOT EDIT THIS FILE. It&#x27;s a template which will be copied to the</span><br><span class="line"># *** default location during install, and will be replaced if you</span><br><span class="line"># *** upgrade to a newer version of MySQL.</span><br><span class="line"> </span><br><span class="line">[mysqld]</span><br><span class="line">#skip-grant-tables </span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size = 128M</span><br><span class="line"> </span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line"> </span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"># basedir = .....</span><br><span class="line"># datadir = .....</span><br><span class="line"># port = .....</span><br><span class="line"># server_id = .....</span><br><span class="line">basedir =&quot;D:\Mysql\mysql-8.0.12-winx64&quot;   # 设置mysql的安装目录 </span><br><span class="line">datadir =&quot;D:\Mysql\mysql-8.0.12-winx64\data&quot;   # 设置mysql数据库的数据的存放目录，必须是data，或者是//xxx/data  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size = 128M</span><br><span class="line"># sort_buffer_size = 2M</span><br><span class="line"># read_rnd_buffer_size = 2M </span><br><span class="line"> </span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </span><br><span class="line"> </span><br><span class="line">#服务端的编码方式</span><br><span class="line">character-set-server=utf8mb4</span><br><span class="line">[client]</span><br><span class="line">#客户端编码方式，最好和服务端保存一致</span><br><span class="line">loose-default-character-set=utf8mb4</span><br><span class="line"> </span><br><span class="line">[WinMySQLadmin]  </span><br><span class="line">Server = &quot;D:\Mysql\mysql-8.0.12-winx64\bin\mysqld.exe&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h1><p>在系统环境变量配置界面，添加PATH变量为bin文件夹目录。</p>
-<h1 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h1><p>以管理员运行CMD命令，输入<code>mysqld --initialize-insecure</code></p>
-<h1 id="5-安装服务"><a href="#5-安装服务" class="headerlink" title="5.安装服务"></a>5.安装服务</h1><p><code>mysqld -install</code></p>
-<h1 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6.启动服务"></a>6.启动服务</h1><p><code>net start mysql</code></p>
-<h1 id="7-登录并更改密码"><a href="#7-登录并更改密码" class="headerlink" title="7.登录并更改密码"></a>7.登录并更改密码</h1><p><code>mysql -uroot -p</code><br><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;; </code><br><code>flush privileges;</code></p>
-<h1 id="8-卸载"><a href="#8-卸载" class="headerlink" title="8.卸载"></a>8.卸载</h1><ol>
-<li>net stop mysql</li>
-<li>regedit 删除下面目录中EventMessageFile 和 TypesSupported <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/ControlSet001/Services/Eventlog/Application/MySQL</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/ControlSet002/Services/Eventlog/Application/MySQL</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Services/Eventlog/Application/MySQL</span><br></pre></td></tr></table></figure></li>
-<li>移除服务<br>在bin目录下运行CMD,<code>mysqld -remove</code></li>
-</ol>
 
       
     </div>
