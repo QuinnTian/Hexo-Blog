@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#1E90FF">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#1E90FF">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="1. 一对一查询 1.1-1.3 我们假设场景为用户和角色一对一，根据数据库基本原理，我们把外键设置在用户一边，即在实体类中添加角色这个属性。1.1-1.3是一种映射查询而1.4是一种嵌套查询。  1.1 一对一自动映射处理查询1.1.1嵌套结果查询的核心思想 核心思想：直接用select标签通过数据库字段和实体类字段的自动映射。 首先在select语句中指明映射关系。 然后我们看resultTy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis高级查询之一对一查询">
+<meta property="og:url" content="http://example.com/2019/07/23/Mybatis/Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2-Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/index.html">
+<meta property="og:site_name" content="北纬36度">
+<meta property="og:description" content="1. 一对一查询 1.1-1.3 我们假设场景为用户和角色一对一，根据数据库基本原理，我们把外键设置在用户一边，即在实体类中添加角色这个属性。1.1-1.3是一种映射查询而1.4是一种嵌套查询。  1.1 一对一自动映射处理查询1.1.1嵌套结果查询的核心思想 核心思想：直接用select标签通过数据库字段和实体类字段的自动映射。 首先在select语句中指明映射关系。 然后我们看resultTy">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556028482729.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556029543657.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034087529.png">
+<meta property="og:image" content="http://example.com/2019/07/23/Mybatis/Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2-Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/images/1556032048245.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556032298389.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556032428397.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556032883601.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034409791.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034559072.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034734781.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556036487697.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556036569145.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556037434889.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556037950485.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556038114144.png">
+<meta property="og:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556038197090.png">
+<meta property="article:published_time" content="2019-07-23T14:37:55.000Z">
+<meta property="article:modified_time" content="2019-10-26T14:39:38.000Z">
+<meta property="article:author" content="Quinn Tian">
+<meta property="article:tag" content="北纬36度,我在北纬36度,北纬36度有我">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556028482729.png">
+
+
+<link rel="canonical" href="http://example.com/2019/07/23/Mybatis/Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2-Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2019/07/23/Mybatis/Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2-Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/","path":"2019/07/23/Mybatis/Mybatis高级查询之一对一查询-Mybatis高级查询之一对一查询/","title":"Mybatis高级查询之一对一查询"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mybatis高级查询之一对一查询 | 北纬36度</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">北纬36度</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.</span> <span class="nav-text">1. 一对一查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%B8%80%E5%AF%B9%E4%B8%80%E8%87%AA%E5%8A%A8%E6%98%A0%E5%B0%84%E5%A4%84%E7%90%86%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 一对一自动映射处理查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%9C%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1嵌套结果查询的核心思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%9C%E6%9F%A5%E8%AF%A2%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 嵌套结果查询优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BD%BF%E7%94%A8resultMap%E9%85%8D%E7%BD%AE%E4%B8%80%E5%AF%B9%E4%B8%80%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 使用resultMap配置一对一映射查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 具体应用过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-%E7%AE%80%E5%8C%96%E5%86%99%E6%B3%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3 简化写法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BD%BF%E7%94%A8resultMap%E7%9A%84association%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE%E4%B8%80%E5%AF%B9%E4%B8%80%E6%98%A0%E5%B0%84"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 使用resultMap的association标签配置一对一映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-association%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2%EF%BC%88%E6%87%92%E5%8A%A0%E8%BD%BD%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 association标签嵌套查询（懒加载）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-%E4%B8%8E%E5%89%8D1-1-1-3%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.4.1 与前1.1-1.3三种方式的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-%E5%85%B7%E4%BD%93%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.4.2 具体实例</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Quinn Tian</p>
+  <div class="site-description" itemprop="description">个人博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/QuinnTian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;QuinnTian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sdtkin1996@outlook.com" title="E-Mail → mailto:sdtkin1996@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/quinntian" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/07/23/Mybatis/Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2-Mybatis%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2%E4%B9%8B%E4%B8%80%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mybatis高级查询之一对一查询
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-23 22:37:55" itemprop="dateCreated datePublished" datetime="2019-07-23T22:37:55+08:00">2019-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-10-26 22:39:38" itemprop="dateModified" datetime="2019-10-26T22:39:38+08:00">2019-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="1-一对一查询"><a href="#1-一对一查询" class="headerlink" title="1. 一对一查询"></a>1. 一对一查询</h2><blockquote>
+<p>1.1-1.3 我们假设场景为用户和角色一对一，根据数据库基本原理，我们把外键设置在用户一边，即在实体类中添加角色这个属性。1.1-1.3是一种映射查询而1.4是一种嵌套查询。</p>
+</blockquote>
+<h3 id="1-1-一对一自动映射处理查询"><a href="#1-1-一对一自动映射处理查询" class="headerlink" title="1.1 一对一自动映射处理查询"></a>1.1 一对一自动映射处理查询</h3><h4 id="1-1-1嵌套结果查询的核心思想"><a href="#1-1-1嵌套结果查询的核心思想" class="headerlink" title="1.1.1嵌套结果查询的核心思想"></a>1.1.1嵌套结果查询的核心思想</h4><ul>
+<li>核心思想：直接用<strong>select</strong>标签通过数据库字段和实体类字段的自动映射。<ul>
+<li>首先在select语句中指明映射关系。</li>
+<li>然后我们看<strong>resultType</strong>的值是一个实体类。</li>
+<li>自动映射到实体类。</li>
+</ul>
+</li>
+<li>应用在场景中：我们假设用户和角色之间是一对一，在用户类中一个属性是角色 sysrole类型的，查询用户的时候把所归属的角色查询出来，那么其就可以写成如图所示。<ul>
+<li>user_name userName代表数据库字段和实体类中字段</li>
+<li>r.id “role.id”此处是通过别名映射的，role是什么？是声明在user类中属性。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556028482729.png" alt="enter description here"><h4 id="1-1-2-嵌套结果查询优缺点"><a href="#1-1-2-嵌套结果查询优缺点" class="headerlink" title="1.1.2 嵌套结果查询优缺点"></a>1.1.2 嵌套结果查询优缺点</h4></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>什么是？通过了一次查询把结果映射到了不同对象里。</li>
+<li>好处是什么？减少了数据库查询次数，减少了数据库的压力。</li>
+<li>坏处是什么？要写复杂的SQL，不容易写对，由于要映射到不同的对象中，一定程度上增加了服务器的压力。</li>
+</ol>
+<h3 id="1-2-使用resultMap配置一对一映射查询"><a href="#1-2-使用resultMap配置一对一映射查询" class="headerlink" title="1.2 使用resultMap配置一对一映射查询"></a>1.2 使用resultMap配置一对一映射查询</h3><h4 id="1-2-1-具体应用过程"><a href="#1-2-1-具体应用过程" class="headerlink" title="1.2.1 具体应用过程"></a>1.2.1 具体应用过程</h4><p> 我们在1.1中使用的方法是直接在<strong>select标签中</strong>直接写后<strong>自动映射</strong>到实体类，<strong>resultType</strong>返回类型是一个实体类。还有一种方法是在xml文件中的<code>resultMap</code>标签配置关系，然后再在select的<strong>resultType</strong>指定返回resultMap。详细如图所示：<br> <img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556029543657.png" alt="enter description here"><br> <strong>property</strong>是实体类字段名，<strong>colum</strong>是数据库字段名。此处<strong>resultMap</strong>这个标签是定义了一种<strong>映射关系集合</strong>,这个集合的类型对应实体类User,所以<code>resultMap</code><strong>type</strong>指定了一个实体类。同样我们在property中仍可以使用<strong>别名</strong>.字段的方法，同1.1。<br> 那么我们来看，<strong>select语句</strong>是怎么写的。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034087529.png" alt="enter description here"></p>
+<h4 id="1-2-2-注意事项"><a href="#1-2-2-注意事项" class="headerlink" title="1.2.2 注意事项"></a>1.2.2 注意事项</h4><p> <strong>注意</strong>的是：去掉了数据库字段，直接用实体类属性查询。至于那个<strong>别名问题</strong>，暂时还没有想到会出现的场景，只需记住若是<strong>使用别名****别名和resultMap的column一致</strong>。</p>
+<h4 id="1-2-3-简化写法"><a href="#1-2-3-简化写法" class="headerlink" title="1.2.3 简化写法"></a>1.2.3 简化写法</h4><p> 首先我们看这张图<br> <img src="./images/1556032048245.png" alt="enter description here"><br> 在实际的场景中我们一般会单独为user写一个映射文件（这个映射文件通常是自动生成工具生成的）里面，resultMap会写成如图所示。这时候，我们要加一个嵌套查询的方法，那么resultMap需要添加一个？这时候我们要在写一个，如1.2.1图，我们会发现有好多重复的内容。如下图所示。<br> <img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556032298389.png" alt="enter description here"><br> 这个时候，我们引入一种<strong>继承（增加extend属性）</strong>机制。改成如下图所示。<br> <img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556032428397.png" alt="enter description here"></p>
+<h3 id="1-3-使用resultMap的association标签配置一对一映射"><a href="#1-3-使用resultMap的association标签配置一对一映射" class="headerlink" title="1.3 使用resultMap的association标签配置一对一映射"></a>1.3 使用resultMap的association标签配置一对一映射</h3><p> <img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556032883601.png" alt="enter description here"></p>
+<ul>
+<li>在这里我们使用了association那么<strong>property</strong>中就直接写<strong>属性名</strong>就可以。</li>
+<li>这里我们配置了<strong>列的前缀</strong>，则在<strong>Column</strong>就可以省略，但是<strong>select</strong>就要更改如下。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034409791.png" alt="enter description here"></li>
+<li>关于<strong>association标签</strong>的<strong>resultMap</strong>属性应用场景<br>我们可以把角色的关联单独拿出来。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034559072.png" alt="enter description here"><br>把这部分单独放到一个resultMap标签中，然后直接代用即可。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556034734781.png" alt="enter description here"><ul>
+<li>注意事项</li>
+<li>同xml可以使用ID，不在同一xml用全类名+ID如上图。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-association标签嵌套查询（懒加载）"><a href="#1-4-association标签嵌套查询（懒加载）" class="headerlink" title="1.4 association标签嵌套查询（懒加载）"></a>1.4 association标签嵌套查询（懒加载）</h3><blockquote>
+<p>此处我们假设场景是新的，用户和博客存在一对一关系，按照数据库设计的基本原理，我们再user中设置外键指向blog表，对应实体类就是user类中增加Blog类型的blog属性。</p>
+</blockquote>
+<h4 id="1-4-1-与前1-1-1-3三种方式的区别"><a href="#1-4-1-与前1-1-1-3三种方式的区别" class="headerlink" title="1.4.1 与前1.1-1.3三种方式的区别"></a>1.4.1 与前1.1-1.3三种方式的区别</h4><ul>
+<li>前三种方式都是复杂查询</li>
+<li>前三种方式都是一次性复杂查询，映射到不同的对象中。</li>
+<li>此种方法可以理解为简单查询，后再根据业务逻辑手动查询关联对象，所以出现了急速加载和懒加载的概念。</li>
+</ul>
+<h4 id="1-4-2-具体实例"><a href="#1-4-2-具体实例" class="headerlink" title="1.4.2 具体实例"></a>1.4.2 具体实例</h4><p><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556036487697.png" alt="enter description here"><br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556036569145.png" alt="enter description here"><br>association中的属性介绍</p>
+<ul>
+<li>select：从查询ID</li>
+<li>column:从查询入参=主查询字段名，见图。可以包含多个用{查询入参=主查询字段名，….}</li>
+<li>fetchType:数据加载方式</li>
+</ul>
+<p>查询语句执行顺序</p>
+<ul>
+<li>执行主查询-&gt;执行从查询</li>
+<li>先查出用户，然后根据用户中的blogId去执行从查询，依次轮流有多少用户查多少次主查询-&gt;从查询，主查询-&gt;从查询，主查询-&gt;从查询，主查询-&gt;从查询……</li>
+</ul>
+<p>存在问题</p>
+<ul>
+<li>如果我们查出来从查询的数据，即博客，这个数据并没有用呢？</li>
+<li>如果我们用户查询主查询用户有N个，则需要执行N次查询，每次主查询会再查询依次从查询，则会出现N+1的问题。（其实就是eager加载问题对比JPA）</li>
+</ul>
+<p>解决方法</p>
+<ul>
+<li>增加fetchtype属性设定为eager,这样只有我们在getBlog()方法才会执行从查询。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556037434889.png" alt="enter description here"><br>我们观察运行结果，会出现从查询依旧会被执行，而不是再调用getBlog方法才执行。</li>
+</ul>
+<p><strong>原因及解决方法</strong> ：在mybatis<strong>全局配置</strong>中有一个属性aggressive-lazy-loading: false，这个参数默认为true,即如果为true,不管你是否设置lazy都会全部加载。<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556037950485.png" alt="enter description here"></p>
+<ul>
+<li>懒加载注意事项<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556038114144.png" alt="enter description here"></li>
+<li>当我们设置好aggressive-lazy-loading: false，我们如果想进行从查询呢？<br><img src="https://github.com/QuinnTian/ProNote/raw/master/Mybatis/images/1556038197090.png" alt="enter description here"></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/07/13/%E5%85%B6%E4%BB%96/IDEA%E9%85%8D%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF-idea%E9%85%8D%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF/" rel="prev" title="IDEA配置注释模板">
+                  <i class="fa fa-chevron-left"></i> IDEA配置注释模板
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/10/26/MySQL/%E7%BB%BF%E8%89%B2%E7%89%88MySQL%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95-%E7%BB%BF%E8%89%B2%E7%89%88mysql%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" rel="next" title="绿色版MySQL安装记录">
+                  绿色版MySQL安装记录 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quinn Tian</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: false
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>
