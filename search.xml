@@ -64,6 +64,17 @@
       </categories>
   </entry>
   <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/2018/07/12/Git/Github%E9%80%9F%E5%BA%A6%E8%A2%AB%E9%99%90%E5%88%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md-2019102314160241163/</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git_bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）.md</title>
     <url>/2018/07/30/Git/Git_bash%E8%B5%B0%E4%BB%A3%E7%90%86%E6%80%BB%E7%BB%93%EF%BC%88Http%E4%BB%A3%E7%90%86%E4%BB%A5%E5%8F%8ASSH%E8%AE%BE%E7%BD%AEHttp%E4%BB%A3%E7%90%86%E5%92%8CSocks%E4%BB%A3%E7%90%86%EF%BC%89.md-2019102314160004733/</url>
     <content><![CDATA[<p>title: Git bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）<br>date: ‘2018-07-30 10:20:53’<br>updated: ‘2018-07-30 10:34:14’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/30/1532916041334.html</p>
@@ -81,17 +92,6 @@
 <p>此方法走socket代理设置有效，http代理验证会报错</p>
 <p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
 ]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/2018/07/12/Git/Github%E9%80%9F%E5%BA%A6%E8%A2%AB%E9%99%90%E5%88%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md-2019102314160241163/</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -1655,21 +1655,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Maven配置记录</title>
-    <url>/2019/10/26/Maven/Maven%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95-maven%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1.下载安装"></a>1.下载安装</h1><h1 id="2-创建环境变量"><a href="#2-创建环境变量" class="headerlink" title="2.创建环境变量"></a>2.创建环境变量</h1><ol>
-<li>M2_HOME<br>E:\GreenSoftware\apache-maven-3.6.2</li>
-<li>PATH添加%M2_HOME%\bin</li>
-<li>mvn -v<h1 id="3-配置文件修改"><a href="#3-配置文件修改" class="headerlink" title="3.配置文件修改"></a>3.配置文件修改</h1>替换阿里仓库及本地仓库地址<br>阿里仓库<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 阿里云仓库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 中央仓库1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>repo1<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo1.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 中央仓库2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>repo2<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo2.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>本地仓库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;localRepository&gt;E:\WorkSpace\MVNRES&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Maven</category>
-      </categories>
-  </entry>
-  <entry>
     <title>MySql8.0登录Navcat因验证方式而报错caching_sha2_password</title>
     <url>/2021/03/14/MySQL/MySql8.0%E7%99%BB%E5%BD%95Navcat%E5%9B%A0%E9%AA%8C%E8%AF%81%E6%96%B9%E5%BC%8F%E8%80%8C%E6%8A%A5%E9%94%99caching_sha2_password-mysql80-deng-lu-navcat-yin-yan-zheng-fang-shi-er-bao-cuo-cachingsha2password/</url>
     <content><![CDATA[<p>报错内容：caching_sha2_password</p>
@@ -1686,6 +1671,21 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;123456&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>MySQL</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Maven配置记录</title>
+    <url>/2019/10/26/Maven/Maven%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95-maven%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1.下载安装"></a>1.下载安装</h1><h1 id="2-创建环境变量"><a href="#2-创建环境变量" class="headerlink" title="2.创建环境变量"></a>2.创建环境变量</h1><ol>
+<li>M2_HOME<br>E:\GreenSoftware\apache-maven-3.6.2</li>
+<li>PATH添加%M2_HOME%\bin</li>
+<li>mvn -v<h1 id="3-配置文件修改"><a href="#3-配置文件修改" class="headerlink" title="3.配置文件修改"></a>3.配置文件修改</h1>替换阿里仓库及本地仓库地址<br>阿里仓库<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 阿里云仓库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 中央仓库1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>repo1<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo1.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 中央仓库2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>repo2<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo2.maven.org/maven2/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>本地仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;localRepository&gt;E:\WorkSpace\MVNRES&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Maven</category>
       </categories>
   </entry>
   <entry>
@@ -3341,13 +3341,11 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>资源分享_Spring4视频教程_.md</title>
-    <url>/2018/05/30/%E5%85%B6%E4%BB%96/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB_Spring4%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B_.md-2019102314155438064/</url>
-    <content><![CDATA[<p>title: ‘资源分享:Spring4视频教程 ‘<br>date: ‘2018-05-30 02:47:07’<br>updated: ‘2018-08-16 15:18:39’<br>tags: [资源分享]<br>permalink: /articles/2018/05/30/1527619343942.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/05/e2072cb09e2448be925ec279c718d5e5_Snipaste_20180530_025016.png" alt="Snipaste_20180530_025016png"> </p>
+    <title>资源分享：柯林斯COBUILD中阶英汉双解学习词典.md</title>
+    <url>/2018/10/25/%E5%85%B6%E4%BB%96/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB%EF%BC%9A%E6%9F%AF%E6%9E%97%E6%96%AFCOBUILD%E4%B8%AD%E9%98%B6%E8%8B%B1%E6%B1%89%E5%8F%8C%E8%A7%A3%E5%AD%A6%E4%B9%A0%E8%AF%8D%E5%85%B8.md-2019102314155140300/</url>
+    <content><![CDATA[<p><img src="https://res-qiniu.quinntian.com//file/2018/10/79731afaff7a4a07b990dedf9973a09c_image.png" alt="imagepng"> </p>
 <blockquote>
-<p>关注微信公众号    回复关键字spring4</p>
+<p>获取资源关注微信公众号 回复klszj</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -3355,11 +3353,13 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>资源分享：柯林斯COBUILD中阶英汉双解学习词典.md</title>
-    <url>/2018/10/25/%E5%85%B6%E4%BB%96/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB%EF%BC%9A%E6%9F%AF%E6%9E%97%E6%96%AFCOBUILD%E4%B8%AD%E9%98%B6%E8%8B%B1%E6%B1%89%E5%8F%8C%E8%A7%A3%E5%AD%A6%E4%B9%A0%E8%AF%8D%E5%85%B8.md-2019102314155140300/</url>
-    <content><![CDATA[<p><img src="https://res-qiniu.quinntian.com//file/2018/10/79731afaff7a4a07b990dedf9973a09c_image.png" alt="imagepng"> </p>
+    <title>资源分享_Spring4视频教程_.md</title>
+    <url>/2018/05/30/%E5%85%B6%E4%BB%96/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB_Spring4%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B_.md-2019102314155438064/</url>
+    <content><![CDATA[<p>title: ‘资源分享:Spring4视频教程 ‘<br>date: ‘2018-05-30 02:47:07’<br>updated: ‘2018-08-16 15:18:39’<br>tags: [资源分享]<br>permalink: /articles/2018/05/30/1527619343942.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/05/e2072cb09e2448be925ec279c718d5e5_Snipaste_20180530_025016.png" alt="Snipaste_20180530_025016png"> </p>
 <blockquote>
-<p>获取资源关注微信公众号 回复klszj</p>
+<p>关注微信公众号    回复关键字spring4</p>
 </blockquote>
 ]]></content>
       <categories>
