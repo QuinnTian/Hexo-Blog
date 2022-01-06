@@ -64,135 +64,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Git_bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）.md</title>
-    <url>/2018/07/30/Git/Git_bash%E8%B5%B0%E4%BB%A3%E7%90%86%E6%80%BB%E7%BB%93%EF%BC%88Http%E4%BB%A3%E7%90%86%E4%BB%A5%E5%8F%8ASSH%E8%AE%BE%E7%BD%AEHttp%E4%BB%A3%E7%90%86%E5%92%8CSocks%E4%BB%A3%E7%90%86%EF%BC%89.md-2019102314160004733/</url>
-    <content><![CDATA[<p>title: Git bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）<br>date: ‘2018-07-30 10:20:53’<br>updated: ‘2018-07-30 10:34:14’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/30/1532916041334.html</p>
-<hr>
-<p>说明：由于最近Github在国内下载速度只有20k左右，搭完梯子后寻找Git代理方法，发现网上的方法比较乱，于是总结一下。</p>
-<h3 id="1-Http代理设置"><a href="#1-Http代理设置" class="headerlink" title="1.Http代理设置"></a>1.Http代理设置</h3><ul>
-<li>命令：<code> git config --global http.proxy http://127.0.0.1:1087</code></li>
-<li>说明： 全局设置http代理</li>
-<li>此命令修改的文件为 <code> C:\Users\用户名\.gitconfig</code> (Windows环境下)</li>
-<li>取消设置 <code>git config --global --unset http.proxy</code></li>
-<li>网上还有一种设置https代理，如上代码改为<code>https</code>，但并未发现有效<h3 id="2-设置SSH代理"><a href="#2-设置SSH代理" class="headerlink" title="2.设置SSH代理"></a>2.设置SSH代理</h3>SSH代理最大方便之处就是无需输入密码<br>修改的文件为<code> C:\Users\用户名\.ssh\config</code> (不存在自行创建)<h4 id="2-1设置本地http或sockt代理"><a href="#2-1设置本地http或sockt代理" class="headerlink" title="2.1设置本地http或sockt代理"></a>2.1设置本地http或sockt代理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">ProxyCommand connect -H 127.0.0.1:8100 %h %p # -S为socks</span><br><span class="line">HostName %h</span><br><span class="line">Port 22</span><br><span class="line">User git</span><br><span class="line">IdentityFile  ~/.ssh/id_rsa </span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure></li>
-<li><em>说明：此设置应该是需要安装connect命令，具体下载地址为<a href="https://bitbucket.org/gotoh/connect/overview">connect.exe</a><br>由当时将此文件放到git安装目录下的bin文件夹下。connect具体命令参数参考<a href="https://bitbucket.org/gotoh/connect/wiki/Home">官方说明文档</a></em>*</li>
-</ul>
-<h4 id="2-2其他设置方法"><a href="#2-2其他设置方法" class="headerlink" title="2.2其他设置方法"></a>2.2其他设置方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 必须是 github.com</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line"># 走 HTTP 代理</span><br><span class="line"># ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=8080</span><br><span class="line"># 走 socks5 代理（如 Shadowsocks）</span><br><span class="line"># ProxyCommand nc -v -x 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure>
-<p>此方法走socket代理设置有效，http代理验证会报错</p>
-<p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/2018/07/12/Git/Github%E9%80%9F%E5%BA%A6%E8%A2%AB%E9%99%90%E5%88%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md-2019102314160241163/</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git基本命令详解及示例.md</title>
-    <url>/2018/07/23/Git/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%E5%8F%8A%E7%A4%BA%E4%BE%8B.md-2019102314160243498/</url>
-    <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/41a7bd07145c4182940a798877a487df_git_big_jb51.jpg" alt="git_big_jb51jpg"> </p>
-<h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
-<li>项目/仓库级别</li>
-</ul>
-<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
-<ul>
-<li>全局级别</li>
-</ul>
-<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
-<ul>
-<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
-<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
-<li><p>命令<br><code>git init</code></p>
-<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
-<li><p>命令<br><code>git status </code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
-</li>
-<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
-<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
-<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
-<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
-<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
-</li>
-</ul>
-<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
-<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
-<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
-<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
-<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
-<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
-<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
-<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
-<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
-<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
-<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
-<ul>
-<li>删除操作提交到本地库，指针位置指向历史记录</li>
-<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
-</ul>
-<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
-<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
-<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
-<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
-</ul>
-<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
-<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
-<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
-<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
-<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
-<p>示例</p>
-<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
-<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
-<p>冲突的解决</p>
-<ul>
-<li>1.编辑文件，把文件修改到满意程度</li>
-<li>2.git add[文件名]</li>
-<li>3.git commit -m[]此时不需要加文件名</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
-    <url>/2018/07/24/Java/Tomcat7%E8%BF%9B%E5%85%A5%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C401%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-2019102314154178147/</url>
-    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat不同项目使用不同的端口号.md</title>
-    <url>/2018/07/21/Java/Tomcat%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7.md-2019102314154447278/</url>
-    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
-<hr>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
-<p>Tomcat设置不输入项目名直接访问</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>ES6笔记</title>
     <url>/2020/12/09/JavaScript/ES6%E7%AC%94%E8%AE%B0-es6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="es6是什么"><a href="#es6是什么" class="headerlink" title="es6是什么"></a>es6是什么</h1><blockquote>
@@ -662,60 +533,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Centos7搭建SS方法.md</title>
-    <url>/2018/07/24/Linux/Centos7%E6%90%AD%E5%BB%BASS%E6%96%B9%E6%B3%95.md-2019102314155706419/</url>
-    <content><![CDATA[<p>title: Centos7搭建SS方法<br>date: ‘2018-07-24 10:43:33’<br>updated: ‘2018-07-24 11:05:53’<br>tags: [SS, 后端, Linux]<br>permalink: /articles/2018/07/24/1532400212591.html</p>
-<hr>
-<p>参考文章地址<br><a href="https://blog.csdn.net/u013309540/article/details/74330305">https://blog.csdn.net/u013309540/article/details/74330305</a><br><a href="https://blog.csdn.net/tmacsky/article/details/78795809">https://blog.csdn.net/tmacsky/article/details/78795809</a><br>SS：<a href="https://github.com/shadowsocks">https://github.com/shadowsocks</a></p>
-<h4 id="1-安装pip"><a href="#1-安装pip" class="headerlink" title="1.安装pip"></a>1.安装pip</h4><h5 id="1-1安装epel扩展源"><a href="#1-1安装epel扩展源" class="headerlink" title="1.1安装epel扩展源"></a>1.1安装epel扩展源</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2安装python-pip"><a href="#1-2安装python-pip" class="headerlink" title="1.2安装python-pip"></a>1.2安装python-pip</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum -y install python-pip</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-3升级pip"><a href="#1-3升级pip" class="headerlink" title="1.3升级pip"></a>1.3升级pip</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pip install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-<p>显示Complete！后表示安装成功，最好清除下cache。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum clean all</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-安装shdowsocks"><a href="#2-安装shdowsocks" class="headerlink" title="2.安装shdowsocks"></a>2.安装shdowsocks</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
-
-<p>安装过程中可能会提示pip版本低了，需要更新下pip。</p>
-<h5 id="2-1配置服务端"><a href="#2-1配置服务端" class="headerlink" title="2.1配置服务端"></a>2.1配置服务端</h5><p>新建一个配置文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
-
-<p>然后输入如下内容：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;    &quot;server&quot;:&quot;server_ip&quot;,    &quot;server_port&quot;:25,    &quot;local_address&quot;: &quot;127.0.0.1&quot;,    &quot;local_port&quot;:1080,    &quot;password&quot;:&quot;password&quot;,    &quot;timeout&quot;:300,    &quot;method&quot;:&quot;aes-256-cfb&quot;,    &quot;fast_open&quot;: false &#125; </span><br></pre></td></tr></table></figure>
-
-<p>多用户支持可以如下设置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123; &quot;server&quot;:&quot;0.0.0.0&quot;, &quot;local_address&quot;:&quot;127.0.0.1&quot;, </span><br><span class="line">&quot;local_port&quot;:1080, </span><br><span class="line">&quot;port_password&quot;:&#123; &quot;8989&quot;:&quot;password8989&quot;, </span><br><span class="line">&quot;7979&quot;:&quot;password7979&quot;, </span><br><span class="line">&quot;6969&quot;:&quot;password6969&quot; &#125;, </span><br><span class="line">&quot;timeout&quot;:300, </span><br><span class="line">&quot;method&quot;:&quot;aes-256-cfb&quot;, </span><br><span class="line">&quot;fast_open&quot;: false &#125;</span><br></pre></td></tr></table></figure>
-
-<p>主要需要设置server_ip、port和password三项，设置好后保存退出。</p>
-<h5 id="2-2启动shadowsocks"><a href="#2-2启动shadowsocks" class="headerlink" title="2.2启动shadowsocks"></a>2.2启动shadowsocks</h5><p>最好将其设置成服务启动。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/systemd/system/shadowsocks.service</span><br></pre></td></tr></table></figure>
-
-<p>然后输入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]Description=Shadowsocks [Service]TimeoutStartSec=0ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json [Install]WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>启动服务：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl enable shadowsocks</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start shadowsocks</span><br></pre></td></tr></table></figure>
-
-<p>查看服务是否启动成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status shadowsocks -l</span><br></pre></td></tr></table></figure>
-
-<p>如需要停止服务使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop shadowsocks</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-3开启防火墙端口"><a href="#2-3开启防火墙端口" class="headerlink" title="2.3开启防火墙端口"></a>2.3开启防火墙端口</h5><p>如果没设置防火墙端口开启，可能不能访问到该端口服务。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=25/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-加速"><a href="#3-加速" class="headerlink" title="3.加速"></a>3.加速</h4><p>加速可以选择用锐速或者BBR，这里就不赘述了。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Centos7以上版本Vsftpd安装、Firewall和SELinux配置</title>
     <url>/2018/07/24/Linux/Centos7%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%ACVsftpd%E5%AE%89%E8%A3%85%E3%80%81Firewall%E5%92%8CSELinux%E9%85%8D%E7%BD%AE-2019102314160021092/</url>
     <content><![CDATA[<p>title: Centos7以上版本 vsftpd安装、firewall和SELinux配置<br>date: ‘2018-07-24 10:56:13’<br>updated: ‘2018-07-24 10:59:26’<br>tags: [Linux]<br>permalink: /articles/2018/07/24/1532400973145.html</p>
@@ -764,6 +581,60 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#vsftpd userlist</span><br><span class="line">#If userlist_deny=NO, only allow users in this file</span><br><span class="line">#If userlist_deny=YES (default), never allow users in this file, and</span><br><span class="line">#do not even prompt for a password.</span><br><span class="line">#Note that the default vsftpd pam config also checks /etc/vsftpd/ftpusers</span><br><span class="line">#for users that are denied.</span><br><span class="line">#root</span><br><span class="line">bin</span><br><span class="line">daemon</span><br><span class="line">adm</span><br><span class="line">lp</span><br><span class="line">sync</span><br><span class="line">shutdown</span><br><span class="line">halt</span><br><span class="line">mail</span><br><span class="line">news</span><br><span class="line">uucp</span><br><span class="line">operator</span><br><span class="line">games</span><br><span class="line">nobody</span><br></pre></td></tr></table></figure>
 
 <h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><p>CentOS7中是用这个命令：<br><code>systemctl restart vsftpd.service</code><br>如果是其它系统：<br><code>service restart vsftpd</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Centos7搭建SS方法.md</title>
+    <url>/2018/07/24/Linux/Centos7%E6%90%AD%E5%BB%BASS%E6%96%B9%E6%B3%95.md-2019102314155706419/</url>
+    <content><![CDATA[<p>title: Centos7搭建SS方法<br>date: ‘2018-07-24 10:43:33’<br>updated: ‘2018-07-24 11:05:53’<br>tags: [SS, 后端, Linux]<br>permalink: /articles/2018/07/24/1532400212591.html</p>
+<hr>
+<p>参考文章地址<br><a href="https://blog.csdn.net/u013309540/article/details/74330305">https://blog.csdn.net/u013309540/article/details/74330305</a><br><a href="https://blog.csdn.net/tmacsky/article/details/78795809">https://blog.csdn.net/tmacsky/article/details/78795809</a><br>SS：<a href="https://github.com/shadowsocks">https://github.com/shadowsocks</a></p>
+<h4 id="1-安装pip"><a href="#1-安装pip" class="headerlink" title="1.安装pip"></a>1.安装pip</h4><h5 id="1-1安装epel扩展源"><a href="#1-1安装epel扩展源" class="headerlink" title="1.1安装epel扩展源"></a>1.1安装epel扩展源</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-2安装python-pip"><a href="#1-2安装python-pip" class="headerlink" title="1.2安装python-pip"></a>1.2安装python-pip</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum -y install python-pip</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-3升级pip"><a href="#1-3升级pip" class="headerlink" title="1.3升级pip"></a>1.3升级pip</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+
+<p>显示Complete！后表示安装成功，最好清除下cache。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum clean all</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-安装shdowsocks"><a href="#2-安装shdowsocks" class="headerlink" title="2.安装shdowsocks"></a>2.安装shdowsocks</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+
+<p>安装过程中可能会提示pip版本低了，需要更新下pip。</p>
+<h5 id="2-1配置服务端"><a href="#2-1配置服务端" class="headerlink" title="2.1配置服务端"></a>2.1配置服务端</h5><p>新建一个配置文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
+
+<p>然后输入如下内容：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;    &quot;server&quot;:&quot;server_ip&quot;,    &quot;server_port&quot;:25,    &quot;local_address&quot;: &quot;127.0.0.1&quot;,    &quot;local_port&quot;:1080,    &quot;password&quot;:&quot;password&quot;,    &quot;timeout&quot;:300,    &quot;method&quot;:&quot;aes-256-cfb&quot;,    &quot;fast_open&quot;: false &#125; </span><br></pre></td></tr></table></figure>
+
+<p>多用户支持可以如下设置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123; &quot;server&quot;:&quot;0.0.0.0&quot;, &quot;local_address&quot;:&quot;127.0.0.1&quot;, </span><br><span class="line">&quot;local_port&quot;:1080, </span><br><span class="line">&quot;port_password&quot;:&#123; &quot;8989&quot;:&quot;password8989&quot;, </span><br><span class="line">&quot;7979&quot;:&quot;password7979&quot;, </span><br><span class="line">&quot;6969&quot;:&quot;password6969&quot; &#125;, </span><br><span class="line">&quot;timeout&quot;:300, </span><br><span class="line">&quot;method&quot;:&quot;aes-256-cfb&quot;, </span><br><span class="line">&quot;fast_open&quot;: false &#125;</span><br></pre></td></tr></table></figure>
+
+<p>主要需要设置server_ip、port和password三项，设置好后保存退出。</p>
+<h5 id="2-2启动shadowsocks"><a href="#2-2启动shadowsocks" class="headerlink" title="2.2启动shadowsocks"></a>2.2启动shadowsocks</h5><p>最好将其设置成服务启动。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/systemd/system/shadowsocks.service</span><br></pre></td></tr></table></figure>
+
+<p>然后输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]Description=Shadowsocks [Service]TimeoutStartSec=0ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json [Install]WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>启动服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl enable shadowsocks</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start shadowsocks</span><br></pre></td></tr></table></figure>
+
+<p>查看服务是否启动成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status shadowsocks -l</span><br></pre></td></tr></table></figure>
+
+<p>如需要停止服务使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop shadowsocks</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-3开启防火墙端口"><a href="#2-3开启防火墙端口" class="headerlink" title="2.3开启防火墙端口"></a>2.3开启防火墙端口</h5><p>如果没设置防火墙端口开启，可能不能访问到该端口服务。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=25/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-加速"><a href="#3-加速" class="headerlink" title="3.加速"></a>3.加速</h4><p>加速可以选择用锐速或者BBR，这里就不赘述了。</p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -1211,67 +1082,6 @@
       </categories>
   </entry>
   <entry>
-    <title>每天复习一点Linux命令003之userdel和passwd</title>
-    <url>/2020/02/13/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd/</url>
-    <content><![CDATA[<h1 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h1><ul>
-<li><p>含义：删除用户</p>
-</li>
-<li><p>格式 <code>userdel [option]</code></p>
-</li>
-<li><p>可选项 -r</p>
-<ul>
-<li>含义：同时删除用户以及home下的所有关于该用户的文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h1><ul>
-<li><p>含义：使用新建用户命令<code>useradd</code>时并没有指定密码，所以默认无法使用，必须指定密码。</p>
-</li>
-<li><p>格式：<code>passwd [option] [username]</code></p>
-</li>
-<li><p>可选项</p>
-<table>
-<thead>
-<tr>
-<th align="center">选项</th>
-<th align="center">意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-l</td>
-<td align="center">锁定用户口令，无法使用。</td>
-</tr>
-<tr>
-<td align="center">-u</td>
-<td align="center">口令解锁</td>
-</tr>
-<tr>
-<td align="center">-d</td>
-<td align="center">关闭用户登录时输入密码的功能，即无需密码登录，权限ROOT下可以操作。</td>
-</tr>
-<tr>
-<td align="center">-f</td>
-<td align="center">用户下次登录必须修改密码</td>
-</tr>
-<tr>
-<td align="center">-s</td>
-<td align="center">指定用户密码的种类</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>示例</p>
-<p>新建用户后，这时用户并不能使用，必须设置密码</p>
-<p><code>passwd wang</code></p>
-<p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200213232036.png" alt="图片"></p>
-<p>使用<code>tail -l /etc/shadow</code>查看wang用户的！！！已经取消。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>每天复习一点Linux命令004之用户组命令groupadd、groupmod、groupdel</title>
     <url>/2020/02/14/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4004%E4%B9%8B%E7%94%A8%E6%88%B7%E7%BB%84%E5%91%BD%E4%BB%A4groupadd%E3%80%81groupmod%E3%80%81groupdel-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4004%E4%B9%8B%E7%94%A8%E6%88%B7%E7%BB%84%E5%91%BD%E4%BB%A4groupaddgroupmodgroupdel/</url>
     <content><![CDATA[<p>用户组：用户组与用户多对多。在创建文件或目录时都会制定一个用户组。</p>
@@ -1499,6 +1309,67 @@
       </categories>
   </entry>
   <entry>
+    <title>每天复习一点Linux命令003之userdel和passwd</title>
+    <url>/2020/02/13/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd/</url>
+    <content><![CDATA[<h1 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h1><ul>
+<li><p>含义：删除用户</p>
+</li>
+<li><p>格式 <code>userdel [option]</code></p>
+</li>
+<li><p>可选项 -r</p>
+<ul>
+<li>含义：同时删除用户以及home下的所有关于该用户的文件</li>
+</ul>
+</li>
+</ul>
+<h1 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h1><ul>
+<li><p>含义：使用新建用户命令<code>useradd</code>时并没有指定密码，所以默认无法使用，必须指定密码。</p>
+</li>
+<li><p>格式：<code>passwd [option] [username]</code></p>
+</li>
+<li><p>可选项</p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-l</td>
+<td align="center">锁定用户口令，无法使用。</td>
+</tr>
+<tr>
+<td align="center">-u</td>
+<td align="center">口令解锁</td>
+</tr>
+<tr>
+<td align="center">-d</td>
+<td align="center">关闭用户登录时输入密码的功能，即无需密码登录，权限ROOT下可以操作。</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">用户下次登录必须修改密码</td>
+</tr>
+<tr>
+<td align="center">-s</td>
+<td align="center">指定用户密码的种类</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>示例</p>
+<p>新建用户后，这时用户并不能使用，必须设置密码</p>
+<p><code>passwd wang</code></p>
+<p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200213232036.png" alt="图片"></p>
+<p>使用<code>tail -l /etc/shadow</code>查看wang用户的！！！已经取消。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每天复习一点Linux命令007之rm、mkdir、rmdir、cd</title>
     <url>/2020/02/17/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4007%E4%B9%8Brm%E3%80%81mkdir%E3%80%81rmdir%E3%80%81cd-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux007%E4%B9%8Brmmkdirrmdircd/</url>
     <content><![CDATA[<h2 id="2-5-rm"><a href="#2-5-rm" class="headerlink" title="2.5 rm"></a>2.5 rm</h2><ul>
@@ -1652,6 +1523,31 @@
 ]]></content>
       <categories>
         <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
+    <url>/2018/07/24/Java/Tomcat7%E8%BF%9B%E5%85%A5%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C401%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-2019102314154178147/</url>
+    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tomcat不同项目使用不同的端口号.md</title>
+    <url>/2018/07/21/Java/Tomcat%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7.md-2019102314154447278/</url>
+    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
+<hr>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
+<p>Tomcat设置不输入项目名直接访问</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -1996,90 +1892,6 @@
 ]]></content>
       <categories>
         <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx启动、停止和重启方法.md</title>
-    <url>/2018/07/21/Nginx/Nginx%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF%E6%96%B9%E6%B3%95.md-2019102314153884055/</url>
-    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
-<hr>
-<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
-<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
-</ul>
-<ol>
-<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
-<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
-<li>进入Nginx安装目录下sbin/下</li>
-<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
-<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx转发请求到新域名同时不改变URL</title>
-    <url>/2021/02/22/Nginx/Nginx%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82%E5%88%B0%E6%96%B0%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E4%B8%8D%E6%94%B9%E5%8F%98URL-nginx-zhuan-fa-qing-qiu-dao-xin-yu-ming-tong-shi-bu-gai-bian-url/</url>
-    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
-    <url>/2021/02/24/Nginx/Nginx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E3%80%81%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6%E3%80%81%E9%85%8D%E7%BD%AEhttp%E8%B7%B3%E8%BD%AC%E5%88%B0https%E3%80%81www%E8%B7%B3%E8%BD%AC%E5%88%B0%E4%B8%BB%E5%9F%9F%E5%90%8D%E5%8F%82%E8%80%83%E9%85%8D%E7%BD%AE-nginx-pei-zhi-fan-xiang-dai-li--pei-zhi-ssl-zheng-shu--pei-zhi-http-tiao-zhuan-dao-httpswww-tiao-zhuan-dao-zhu-yu-ming-can-kao-pei-zhi/</url>
-    <content><![CDATA[<p>以下配置文件如下功能</p>
-<ol>
-<li>配置反向代理</li>
-<li>配置http跳转从https</li>
-<li>配置ssl证书</li>
-<li>监听80和443端口</li>
-<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置域名以及映射内网不同端口.md</title>
-    <url>/2018/07/21/Nginx/Nginx%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%BB%A5%E5%8F%8A%E6%98%A0%E5%B0%84%E5%86%85%E7%BD%91%E4%B8%8D%E5%90%8C%E7%AB%AF%E5%8F%A3.md-2019102314153869473/</url>
-    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
-<hr>
-<p><strong>Nginx.conf</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置过滤websockt类型请求同时转发请求保持URL不变</title>
-    <url>/2021/02/20/Nginx/Nginx%E9%85%8D%E7%BD%AE%E8%BF%87%E6%BB%A4websockt%E7%B1%BB%E5%9E%8B%E8%AF%B7%E6%B1%82%E5%90%8C%E6%97%B6%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82%E4%BF%9D%E6%8C%81URL%E4%B8%8D%E5%8F%98-nginx-pei-zhi-guo-lv-websockt-lei-xing-qing-qiu-tong-shi-zhuan-fa-qing-qiu-bao-chi-url-bu-bian/</url>
-    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
-    <url>/2021/02/22/Nginx/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86Cloudflare%E6%8A%A5502%E5%92%8C503%E9%94%99%E8%AF%AF-ru-he-jie-jue-nginx-fan-xiang-dai-li-cloudflare-bao-502-he-503-cuo-wu/</url>
-    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
-<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
-<p>改成这样即可反代成功。<br>反代成功</p>
-<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
       </categories>
   </entry>
   <entry>
@@ -2811,6 +2623,90 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
       </categories>
   </entry>
   <entry>
+    <title>Nginx启动、停止和重启方法.md</title>
+    <url>/2018/07/21/Nginx/Nginx%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF%E6%96%B9%E6%B3%95.md-2019102314153884055/</url>
+    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+<hr>
+<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
+<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
+</ul>
+<ol>
+<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
+<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
+<li>进入Nginx安装目录下sbin/下</li>
+<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
+<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx转发请求到新域名同时不改变URL</title>
+    <url>/2021/02/22/Nginx/Nginx%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82%E5%88%B0%E6%96%B0%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E4%B8%8D%E6%94%B9%E5%8F%98URL-nginx-zhuan-fa-qing-qiu-dao-xin-yu-ming-tong-shi-bu-gai-bian-url/</url>
+    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
+    <url>/2021/02/24/Nginx/Nginx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E3%80%81%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6%E3%80%81%E9%85%8D%E7%BD%AEhttp%E8%B7%B3%E8%BD%AC%E5%88%B0https%E3%80%81www%E8%B7%B3%E8%BD%AC%E5%88%B0%E4%B8%BB%E5%9F%9F%E5%90%8D%E5%8F%82%E8%80%83%E9%85%8D%E7%BD%AE-nginx-pei-zhi-fan-xiang-dai-li--pei-zhi-ssl-zheng-shu--pei-zhi-http-tiao-zhuan-dao-httpswww-tiao-zhuan-dao-zhu-yu-ming-can-kao-pei-zhi/</url>
+    <content><![CDATA[<p>以下配置文件如下功能</p>
+<ol>
+<li>配置反向代理</li>
+<li>配置http跳转从https</li>
+<li>配置ssl证书</li>
+<li>监听80和443端口</li>
+<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置域名以及映射内网不同端口.md</title>
+    <url>/2018/07/21/Nginx/Nginx%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%BB%A5%E5%8F%8A%E6%98%A0%E5%B0%84%E5%86%85%E7%BD%91%E4%B8%8D%E5%90%8C%E7%AB%AF%E5%8F%A3.md-2019102314153869473/</url>
+    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
+<hr>
+<p><strong>Nginx.conf</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置过滤websockt类型请求同时转发请求保持URL不变</title>
+    <url>/2021/02/20/Nginx/Nginx%E9%85%8D%E7%BD%AE%E8%BF%87%E6%BB%A4websockt%E7%B1%BB%E5%9E%8B%E8%AF%B7%E6%B1%82%E5%90%8C%E6%97%B6%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82%E4%BF%9D%E6%8C%81URL%E4%B8%8D%E5%8F%98-nginx-pei-zhi-guo-lv-websockt-lei-xing-qing-qiu-tong-shi-zhuan-fa-qing-qiu-bao-chi-url-bu-bian/</url>
+    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
+    <url>/2021/02/22/Nginx/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86Cloudflare%E6%8A%A5502%E5%92%8C503%E9%94%99%E8%AF%AF-ru-he-jie-jue-nginx-fan-xiang-dai-li-cloudflare-bao-502-he-503-cuo-wu/</url>
+    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
+<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
+<p>改成这样即可反代成功。<br>反代成功</p>
+<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SpringMVC实现上传Excel文件并读取至数据库.md</title>
     <url>/2018/07/20/Spring/SpringMVC%E5%AE%9E%E7%8E%B0%E4%B8%8A%E4%BC%A0Excel%E6%96%87%E4%BB%B6%E5%B9%B6%E8%AF%BB%E5%8F%96%E8%87%B3%E6%95%B0%E6%8D%AE%E5%BA%93.md-2019102314154190575/</url>
     <content><![CDATA[<p>title: SpringMVC实现上传Excel文件并读取至数据库<br>date: ‘2018-07-20 12:19:30’<br>updated: ‘2018-07-20 13:02:39’<br>tags: [SpringMVC, 文件上传, 后端]<br>permalink: /articles/2018/07/20/1532060369942.html</p>
@@ -3194,21 +3090,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>XMind8破解版.md</title>
-    <url>/2018/07/11/%E5%85%B6%E4%BB%96/XMind8%E7%A0%B4%E8%A7%A3%E7%89%88.md-2019102314154425017/</url>
-    <content><![CDATA[<p>title: XMind8破解版<br>date: ‘2018-07-11 16:25:32’<br>updated: ‘2018-08-16 15:18:10’<br>tags: [xmind]<br>permalink: /articles/2018/07/11/1531297531630.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/d94d1d7c9503400bbc1cbcdbdccfd302_Snipaste_20180711_164834.png" alt="Snipaste_20180711_164834png"><br><strong>xmind 8 update 1补丁破解方法</strong></p>
-<p>安装版本如果你安装的是 Xmind 8 原版，即全新安装，请根据以下教程执行破解：<br>Step 1 -全新下载最新版本的 Xmind 8（注必须是英文官方的版本，中文代{过}{滤}理网站的版本修改过，无法使用破解）。<br>Step 2 -安装完毕后，点击文末的下载按钮下载破解补丁文件包，将 XMindCrack.zip 内的文件解压到 Xmind 的安装目录，默认安装路径为 C:\Program Files (x86)\XMind；<br>Step 3 -将 XMindCrack.jar 复制到 D 盘根目录；<br>Step 4 -将 Xmind 安装目录下的 XMind.ini 复制至桌面，使用记事本打开增加一行“-javaagent:D:/XMindCrack.jar”（引号内的内容，引号无需复制），保存后将文件重新拖拽或者复制到 Xmind 的安装目录；<br>Step 5 -断开网络, 或者使用防火墙阻止 XMind 联网, 或者在 hosts 中添加 0.0.0.0 <a href="http://www.xmind.net(建议采用断网或者增加hosts记录法)./">www.xmind.net（建议采用断网或者增加hosts记录法）。</a><br>Step 6 -打开 XMind, “帮助-序列号”，随便输入邮箱地址和下面的序列号激活软件<br><strong>输入序列号</strong>，XAka34A2rVRYJ4XBIU35UZMUEEF64CMMIYZCK2FZZUQNODEKUHGJLFMSLIQMQUCUBXRENLK6NZL37JXP4PZXQFILMQ2RG5R7G4QNDO3PSOEUBOCDRYSSXZGRARV6MGA33TN2AMUBHEL4FXMWYTTJDEINJXUAV4BAYKBDCZQWVF3LWYXSDCXY546U3NBGOI3ZPAP2SO3CSQFNB7VVIY123456789012345</p>
-<blockquote>
-<p>关注微信公众号    回复关键字xmind</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>jdbc连接报The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized o</title>
     <url>/2020/12/08/%E5%85%B6%E4%BB%96/jdbc%E8%BF%9E%E6%8E%A5%E6%8A%A5The%20server%20time%20zone%20value%20&#39;%C3%96%C3%90%C2%B9%C3%BA%C2%B1%C3%AA%C3%97%C2%BC%C3%8A%C2%B1%C2%BC%C3%A4&#39;%20is%20unrecognized%20o-jdbc%E8%BF%9E%E6%8E%A5%E6%8A%A5theservertimezonevalueisunrecognizedo/</url>
     <content><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><blockquote>
@@ -3223,6 +3104,21 @@ chmod 777 /var/log/caddy/caddy.log
 <p>然后记得重启MySQL的服务，打开cmd窗口登录MySQL执行show variables like ‘%time_zone%’;这句命令，</p>
 <p>然后在mysql执行语句:</p>
 <p>set global time_zone=’+8:00’</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>XMind8破解版.md</title>
+    <url>/2018/07/11/%E5%85%B6%E4%BB%96/XMind8%E7%A0%B4%E8%A7%A3%E7%89%88.md-2019102314154425017/</url>
+    <content><![CDATA[<p>title: XMind8破解版<br>date: ‘2018-07-11 16:25:32’<br>updated: ‘2018-08-16 15:18:10’<br>tags: [xmind]<br>permalink: /articles/2018/07/11/1531297531630.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/d94d1d7c9503400bbc1cbcdbdccfd302_Snipaste_20180711_164834.png" alt="Snipaste_20180711_164834png"><br><strong>xmind 8 update 1补丁破解方法</strong></p>
+<p>安装版本如果你安装的是 Xmind 8 原版，即全新安装，请根据以下教程执行破解：<br>Step 1 -全新下载最新版本的 Xmind 8（注必须是英文官方的版本，中文代{过}{滤}理网站的版本修改过，无法使用破解）。<br>Step 2 -安装完毕后，点击文末的下载按钮下载破解补丁文件包，将 XMindCrack.zip 内的文件解压到 Xmind 的安装目录，默认安装路径为 C:\Program Files (x86)\XMind；<br>Step 3 -将 XMindCrack.jar 复制到 D 盘根目录；<br>Step 4 -将 Xmind 安装目录下的 XMind.ini 复制至桌面，使用记事本打开增加一行“-javaagent:D:/XMindCrack.jar”（引号内的内容，引号无需复制），保存后将文件重新拖拽或者复制到 Xmind 的安装目录；<br>Step 5 -断开网络, 或者使用防火墙阻止 XMind 联网, 或者在 hosts 中添加 0.0.0.0 <a href="http://www.xmind.net(建议采用断网或者增加hosts记录法)./">www.xmind.net（建议采用断网或者增加hosts记录法）。</a><br>Step 6 -打开 XMind, “帮助-序列号”，随便输入邮箱地址和下面的序列号激活软件<br><strong>输入序列号</strong>，XAka34A2rVRYJ4XBIU35UZMUEEF64CMMIYZCK2FZZUQNODEKUHGJLFMSLIQMQUCUBXRENLK6NZL37JXP4PZXQFILMQ2RG5R7G4QNDO3PSOEUBOCDRYSSXZGRARV6MGA33TN2AMUBHEL4FXMWYTTJDEINJXUAV4BAYKBDCZQWVF3LWYXSDCXY546U3NBGOI3ZPAP2SO3CSQFNB7VVIY123456789012345</p>
+<blockquote>
+<p>关注微信公众号    回复关键字xmind</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3532,6 +3428,110 @@ chmod 777 /var/log/caddy/caddy.log
 ]]></content>
       <categories>
         <category>设计模式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git_bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）.md</title>
+    <url>/2018/07/30/Git/Git_bash%E8%B5%B0%E4%BB%A3%E7%90%86%E6%80%BB%E7%BB%93%EF%BC%88Http%E4%BB%A3%E7%90%86%E4%BB%A5%E5%8F%8ASSH%E8%AE%BE%E7%BD%AEHttp%E4%BB%A3%E7%90%86%E5%92%8CSocks%E4%BB%A3%E7%90%86%EF%BC%89.md-2019102314160004733/</url>
+    <content><![CDATA[<p>title: Git bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）<br>date: ‘2018-07-30 10:20:53’<br>updated: ‘2018-07-30 10:34:14’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/30/1532916041334.html</p>
+<hr>
+<p>说明：由于最近Github在国内下载速度只有20k左右，搭完梯子后寻找Git代理方法，发现网上的方法比较乱，于是总结一下。</p>
+<h3 id="1-Http代理设置"><a href="#1-Http代理设置" class="headerlink" title="1.Http代理设置"></a>1.Http代理设置</h3><ul>
+<li>命令：<code> git config --global http.proxy http://127.0.0.1:1087</code></li>
+<li>说明： 全局设置http代理</li>
+<li>此命令修改的文件为 <code> C:\Users\用户名\.gitconfig</code> (Windows环境下)</li>
+<li>取消设置 <code>git config --global --unset http.proxy</code></li>
+<li>网上还有一种设置https代理，如上代码改为<code>https</code>，但并未发现有效<h3 id="2-设置SSH代理"><a href="#2-设置SSH代理" class="headerlink" title="2.设置SSH代理"></a>2.设置SSH代理</h3>SSH代理最大方便之处就是无需输入密码<br>修改的文件为<code> C:\Users\用户名\.ssh\config</code> (不存在自行创建)<h4 id="2-1设置本地http或sockt代理"><a href="#2-1设置本地http或sockt代理" class="headerlink" title="2.1设置本地http或sockt代理"></a>2.1设置本地http或sockt代理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">ProxyCommand connect -H 127.0.0.1:8100 %h %p # -S为socks</span><br><span class="line">HostName %h</span><br><span class="line">Port 22</span><br><span class="line">User git</span><br><span class="line">IdentityFile  ~/.ssh/id_rsa </span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure></li>
+<li><em>说明：此设置应该是需要安装connect命令，具体下载地址为<a href="https://bitbucket.org/gotoh/connect/overview">connect.exe</a><br>由当时将此文件放到git安装目录下的bin文件夹下。connect具体命令参数参考<a href="https://bitbucket.org/gotoh/connect/wiki/Home">官方说明文档</a></em>*</li>
+</ul>
+<h4 id="2-2其他设置方法"><a href="#2-2其他设置方法" class="headerlink" title="2.2其他设置方法"></a>2.2其他设置方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 必须是 github.com</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line"># 走 HTTP 代理</span><br><span class="line"># ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=8080</span><br><span class="line"># 走 socks5 代理（如 Shadowsocks）</span><br><span class="line"># ProxyCommand nc -v -x 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure>
+<p>此方法走socket代理设置有效，http代理验证会报错</p>
+<p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/2018/07/12/Git/Github%E9%80%9F%E5%BA%A6%E8%A2%AB%E9%99%90%E5%88%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md-2019102314160241163/</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git基本命令详解及示例.md</title>
+    <url>/2018/07/23/Git/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%E5%8F%8A%E7%A4%BA%E4%BE%8B.md-2019102314160243498/</url>
+    <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/41a7bd07145c4182940a798877a487df_git_big_jb51.jpg" alt="git_big_jb51jpg"> </p>
+<h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
+<li>项目/仓库级别</li>
+</ul>
+<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
+<ul>
+<li>全局级别</li>
+</ul>
+<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
+<ul>
+<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
+<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
+<li><p>命令<br><code>git init</code></p>
+<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
+<li><p>命令<br><code>git status </code></p>
+</li>
+<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
+</li>
+<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
+<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
+<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
+</li>
+<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
+<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
+<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
+</li>
+</ul>
+<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
+<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
+<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
+<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
+<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
+<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
+<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
+<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
+<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
+<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
+<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
+<ul>
+<li>删除操作提交到本地库，指针位置指向历史记录</li>
+<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
+</ul>
+<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
+<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
+<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
+<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
+</ul>
+<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
+<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
+<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
+<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
+<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
+<p>示例</p>
+<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
+<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
+<p>冲突的解决</p>
+<ul>
+<li>1.编辑文件，把文件修改到满意程度</li>
+<li>2.git add[文件名]</li>
+<li>3.git commit -m[]此时不需要加文件名</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git</category>
       </categories>
   </entry>
 </search>
