@@ -1885,20 +1885,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Mybatis批量更新时遇到大坑.md</title>
-    <url>/2018/07/20/Mybatis/Mybatis%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%97%B6%E9%81%87%E5%88%B0%E5%A4%A7%E5%9D%91.md-2019102314153507439/</url>
-    <content><![CDATA[<p>title: Mybatis批量更新时遇到大坑<br>date: ‘2018-07-20 18:40:30’<br>updated: ‘2018-07-20 18:41:35’<br>tags: [Mybatis, 后端]<br>permalink: /articles/2018/07/20/1532083230130.html</p>
-<hr>
-<p>批量更新代码如下</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">id=&quot;insertMessageReply&quot; parameterType=&quot;list&quot;&gt;</span><br><span class="line">  collection=&quot;list&quot; close=&quot;&quot; index=&quot;index&quot; item=&quot;item&quot; separator=&quot;;&quot;&gt;</span><br><span class="line">  insert into message_reply(create_time,from_username)</span><br><span class="line">    values</span><br><span class="line">        (</span><br><span class="line">    #&#123;item.CreateTime,jdbcType=BIGINT&#125;,</span><br><span class="line">    #&#123;item.FromUserName,jdbcType=VARCHAR&#125;,</span><br><span class="line">    </span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
-<p>执行时总是报语法错误<br>1.<strong>Mybatis批量插入时必须在连接地址后面加?allowMultiQueries=true</strong></p>
-<p>2.另外还需注意分隔符必须是<strong>分号; separator=”;”</strong></p>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Mybatis学习-第一个mybatis项目.md</title>
     <url>/2018/07/17/Mybatis/Mybatis%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E9%A1%B9%E7%9B%AE.md-2019102314153541277/</url>
     <content><![CDATA[<p>title: Mybatis学习-第一个mybatis项目<br>date: ‘2018-07-17 08:27:15’<br>updated: ‘2018-07-17 08:29:06’<br>tags: [mybatis]<br>permalink: /articles/2018/07/17/1531786963221.html</p>
@@ -1924,23 +1910,17 @@
       </categories>
   </entry>
   <entry>
-    <title>Nginx启动、停止和重启方法.md</title>
-    <url>/2018/07/21/Nginx/Nginx%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF%E6%96%B9%E6%B3%95.md-2019102314153884055/</url>
-    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+    <title>Mybatis批量更新时遇到大坑.md</title>
+    <url>/2018/07/20/Mybatis/Mybatis%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E6%97%B6%E9%81%87%E5%88%B0%E5%A4%A7%E5%9D%91.md-2019102314153507439/</url>
+    <content><![CDATA[<p>title: Mybatis批量更新时遇到大坑<br>date: ‘2018-07-20 18:40:30’<br>updated: ‘2018-07-20 18:41:35’<br>tags: [Mybatis, 后端]<br>permalink: /articles/2018/07/20/1532083230130.html</p>
 <hr>
-<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
-<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
-</ul>
-<ol>
-<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
-<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
-<li>进入Nginx安装目录下sbin/下</li>
-<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
-<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
-</ol>
+<p>批量更新代码如下</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">id=&quot;insertMessageReply&quot; parameterType=&quot;list&quot;&gt;</span><br><span class="line">  collection=&quot;list&quot; close=&quot;&quot; index=&quot;index&quot; item=&quot;item&quot; separator=&quot;;&quot;&gt;</span><br><span class="line">  insert into message_reply(create_time,from_username)</span><br><span class="line">    values</span><br><span class="line">        (</span><br><span class="line">    #&#123;item.CreateTime,jdbcType=BIGINT&#125;,</span><br><span class="line">    #&#123;item.FromUserName,jdbcType=VARCHAR&#125;,</span><br><span class="line">    </span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<p>执行时总是报语法错误<br>1.<strong>Mybatis批量插入时必须在连接地址后面加?allowMultiQueries=true</strong></p>
+<p>2.另外还需注意分隔符必须是<strong>分号; separator=”;”</strong></p>
 ]]></content>
       <categories>
-        <category>Nginx</category>
+        <category>Mybatis</category>
       </categories>
   </entry>
   <entry>
@@ -2019,21 +1999,30 @@
       </categories>
   </entry>
   <entry>
-    <title>Nginx转发请求到新域名同时不改变URL</title>
-    <url>/2021/02/22/Nginx/Nginx%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82%E5%88%B0%E6%96%B0%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E4%B8%8D%E6%94%B9%E5%8F%98URL-nginx-zhuan-fa-qing-qiu-dao-xin-yu-ming-tong-shi-bu-gai-bian-url/</url>
-    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Nginx启动、停止和重启方法.md</title>
+    <url>/2018/07/21/Nginx/Nginx%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF%E6%96%B9%E6%B3%95.md-2019102314153884055/</url>
+    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+<hr>
+<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
+<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
+</ul>
+<ol>
+<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
+<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
+<li>进入Nginx安装目录下sbin/下</li>
+<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
+<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
+</ol>
+]]></content>
       <categories>
         <category>Nginx</category>
       </categories>
   </entry>
   <entry>
-    <title>Nginx配置域名以及映射内网不同端口.md</title>
-    <url>/2018/07/21/Nginx/Nginx%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%BB%A5%E5%8F%8A%E6%98%A0%E5%B0%84%E5%86%85%E7%BD%91%E4%B8%8D%E5%90%8C%E7%AB%AF%E5%8F%A3.md-2019102314153869473/</url>
-    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
-<hr>
-<p><strong>Nginx.conf</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Nginx转发请求到新域名同时不改变URL</title>
+    <url>/2021/02/22/Nginx/Nginx%E8%BD%AC%E5%8F%91%E8%AF%B7%E6%B1%82%E5%88%B0%E6%96%B0%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E4%B8%8D%E6%94%B9%E5%8F%98URL-nginx-zhuan-fa-qing-qiu-dao-xin-yu-ming-tong-shi-bu-gai-bian-url/</url>
+    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Nginx</category>
       </categories>
@@ -2055,17 +2044,12 @@
       </categories>
   </entry>
   <entry>
-    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
-    <url>/2021/02/22/Nginx/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86Cloudflare%E6%8A%A5502%E5%92%8C503%E9%94%99%E8%AF%AF-ru-he-jie-jue-nginx-fan-xiang-dai-li-cloudflare-bao-502-he-503-cuo-wu/</url>
-    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
-<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
-<p>改成这样即可反代成功。<br>反代成功</p>
-<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
-]]></content>
+    <title>Nginx配置域名以及映射内网不同端口.md</title>
+    <url>/2018/07/21/Nginx/Nginx%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%BB%A5%E5%8F%8A%E6%98%A0%E5%B0%84%E5%86%85%E7%BD%91%E4%B8%8D%E5%90%8C%E7%AB%AF%E5%8F%A3.md-2019102314153869473/</url>
+    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
+<hr>
+<p><strong>Nginx.conf</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Nginx</category>
       </categories>
@@ -2077,6 +2061,22 @@
 <h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
+    <url>/2021/02/22/Nginx/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86Cloudflare%E6%8A%A5502%E5%92%8C503%E9%94%99%E8%AF%AF-ru-he-jie-jue-nginx-fan-xiang-dai-li-cloudflare-bao-502-he-503-cuo-wu/</url>
+    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
+<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
+<p>改成这样即可反代成功。<br>反代成功</p>
+<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
 ]]></content>
       <categories>
         <category>Nginx</category>
@@ -3279,6 +3279,15 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
+    <title>华为光猫破解教程和工具</title>
+    <url>/2021/03/13/%E5%85%B6%E4%BB%96/%E5%8D%8E%E4%B8%BA%E5%85%89%E7%8C%AB%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B%E5%92%8C%E5%B7%A5%E5%85%B7-hua-wei-guang-mao-po-jie-jiao-cheng-he-gong-ju/</url>
+    <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>吐槽工信部域名备案的各种坑</title>
     <url>/2021/02/26/%E5%85%B6%E4%BB%96/%E5%90%90%E6%A7%BD%E5%B7%A5%E4%BF%A1%E9%83%A8%E5%9F%9F%E5%90%8D%E5%A4%87%E6%A1%88%E7%9A%84%E5%90%84%E7%A7%8D%E5%9D%91-tu-cao-gong-xin-bu-yu-ming-bei-an/</url>
     <content><![CDATA[<ol>
@@ -3298,15 +3307,6 @@ chmod 777 /var/log/caddy/caddy.log
 <li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>华为光猫破解教程和工具</title>
-    <url>/2021/03/13/%E5%85%B6%E4%BB%96/%E5%8D%8E%E4%B8%BA%E5%85%89%E7%8C%AB%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B%E5%92%8C%E5%B7%A5%E5%85%B7-hua-wei-guang-mao-po-jie-jiao-cheng-he-gong-ju/</url>
-    <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
 ]]></content>
       <categories>
         <category>其他</category>
