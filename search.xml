@@ -168,17 +168,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
-    <url>/2018/07/24/Java/Tomcat7%E8%BF%9B%E5%85%A5%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C401%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-2019102314154178147/</url>
-    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Tomcat不同项目使用不同的端口号.md</title>
     <url>/2018/07/21/Java/Tomcat%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7.md-2019102314154447278/</url>
     <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
@@ -188,6 +177,17 @@
 <p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
 <p>Tomcat设置不输入项目名直接访问</p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
+    <url>/2018/07/24/Java/Tomcat7%E8%BF%9B%E5%85%A5%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C401%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-2019102314154178147/</url>
+    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -504,27 +504,6 @@
       </categories>
   </entry>
   <entry>
-    <title>CenOS配置JDK</title>
-    <url>/2018/07/24/Linux/CenOS%E9%85%8D%E7%BD%AEJDK-2019102314155747091/</url>
-    <content><![CDATA[<p>title: CenOS配置JDK<br>date: ‘2018-07-24 10:52:09’<br>updated: ‘2018-07-24 10:56:58’<br>tags: [Linux, Java]<br>permalink: /articles/2018/07/24/1532400728584.html</p>
-<hr>
-<p>原博客文章备份： <a href="https://blog.csdn.net/leofitz/article/details/79883844">https://blog.csdn.net/leofitz/article/details/79883844</a></p>
-<h1 id="CenOS配置JDK7"><a href="#CenOS配置JDK7" class="headerlink" title="CenOS配置JDK7"></a>CenOS配置JDK7</h1><p>2018年04月10日 17:06:20</p>
-<p>阅读数：18 <a href="https://mp.csdn.net/postedit/79883844">编辑</a></p>
-<h3 id="1-删除系统自带的JDK"><a href="#1-删除系统自带的JDK" class="headerlink" title="1.删除系统自带的JDK"></a>1.删除系统自带的JDK</h3><p><code>rpm -qa | grep jdk</code><br><img src="https://img-blog.csdn.net/20180410163432871?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>rpm -e --nodeps</code>删除<br><img src="https://img-blog.csdn.net/20180410163748904?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-<h3 id="2-下载JDK"><a href="#2-下载JDK" class="headerlink" title="2.下载JDK"></a>2.下载JDK</h3><p>jdk7u79-linux-x64.tar.gz</p>
-<h3 id="3-安装JDK"><a href="#3-安装JDK" class="headerlink" title="3.安装JDK"></a>3.安装JDK</h3><h4 id="3-1-检测当前系统中jdk的安装版本"><a href="#3-1-检测当前系统中jdk的安装版本" class="headerlink" title="3.1 检测当前系统中jdk的安装版本"></a>3.1 检测当前系统中jdk的安装版本</h4><p><code>java -version</code>显示未找到此命令<br><img src="https://img-blog.csdn.net/20180410164541407?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-<h4 id="3-2-解压下载好的jdk7u79-linux-x64-tar-gz"><a href="#3-2-解压下载好的jdk7u79-linux-x64-tar-gz" class="headerlink" title="3.2 解压下载好的jdk7u79-linux-x64.tar.gz"></a>3.2 解压下载好的jdk7u79-linux-x64.tar.gz</h4><p>当前安装包在我的myftp文件夹中，解压到目标文件夹<br><code>tar -zxvf jdk7u79-linux-x64.tar.gz -C /usr/lib/jvm</code></p>
-<p><img src="https://img-blog.csdn.net/20180410165319714?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-<h5 id="3-3-配置环境变量"><a href="#3-3-配置环境变量" class="headerlink" title="3.3 配置环境变量"></a>3.3 配置环境变量</h5><p><code>vim /etc/profile</code><br>在前面添加环境变量</p>
-<p><code>export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_131  export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</code><br><img src="https://img-blog.csdn.net/20180410170250726?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>source /etc/profile</code>执行后立即生效无需重启</p>
-<h4 id="3-4-查看Java版本安装完毕"><a href="#3-4-查看Java版本安装完毕" class="headerlink" title="3.4 查看Java版本安装完毕"></a>3.4 查看Java版本安装完毕</h4><p><code>java -version</code><br><img src="https://img-blog.csdn.net/20180410170527733?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CentOS7使用Firewalld打开关闭防火墙与端口</title>
     <url>/2018/07/24/Linux/CentOS7%E4%BD%BF%E7%94%A8Firewalld%E6%89%93%E5%BC%80%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99%E4%B8%8E%E7%AB%AF%E5%8F%A3-2019102314155705067/</url>
     <content><![CDATA[<p>title: CentOS7使用firewalld打开关闭防火墙与端口<br>date: ‘2018-07-24 10:47:52’<br>updated: ‘2018-07-24 10:58:09’<br>tags: [Linux]<br>permalink: /articles/2018/07/24/1532400461850.html</p>
@@ -558,6 +537,27 @@
 <p>删除</p>
 <p>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
 <p>收藏至：<a href="https://www.cnblogs.com/moxiaoan/p/5683743.html">https://www.cnblogs.com/moxiaoan/p/5683743.html</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CenOS配置JDK</title>
+    <url>/2018/07/24/Linux/CenOS%E9%85%8D%E7%BD%AEJDK-2019102314155747091/</url>
+    <content><![CDATA[<p>title: CenOS配置JDK<br>date: ‘2018-07-24 10:52:09’<br>updated: ‘2018-07-24 10:56:58’<br>tags: [Linux, Java]<br>permalink: /articles/2018/07/24/1532400728584.html</p>
+<hr>
+<p>原博客文章备份： <a href="https://blog.csdn.net/leofitz/article/details/79883844">https://blog.csdn.net/leofitz/article/details/79883844</a></p>
+<h1 id="CenOS配置JDK7"><a href="#CenOS配置JDK7" class="headerlink" title="CenOS配置JDK7"></a>CenOS配置JDK7</h1><p>2018年04月10日 17:06:20</p>
+<p>阅读数：18 <a href="https://mp.csdn.net/postedit/79883844">编辑</a></p>
+<h3 id="1-删除系统自带的JDK"><a href="#1-删除系统自带的JDK" class="headerlink" title="1.删除系统自带的JDK"></a>1.删除系统自带的JDK</h3><p><code>rpm -qa | grep jdk</code><br><img src="https://img-blog.csdn.net/20180410163432871?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>rpm -e --nodeps</code>删除<br><img src="https://img-blog.csdn.net/20180410163748904?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<h3 id="2-下载JDK"><a href="#2-下载JDK" class="headerlink" title="2.下载JDK"></a>2.下载JDK</h3><p>jdk7u79-linux-x64.tar.gz</p>
+<h3 id="3-安装JDK"><a href="#3-安装JDK" class="headerlink" title="3.安装JDK"></a>3.安装JDK</h3><h4 id="3-1-检测当前系统中jdk的安装版本"><a href="#3-1-检测当前系统中jdk的安装版本" class="headerlink" title="3.1 检测当前系统中jdk的安装版本"></a>3.1 检测当前系统中jdk的安装版本</h4><p><code>java -version</code>显示未找到此命令<br><img src="https://img-blog.csdn.net/20180410164541407?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<h4 id="3-2-解压下载好的jdk7u79-linux-x64-tar-gz"><a href="#3-2-解压下载好的jdk7u79-linux-x64-tar-gz" class="headerlink" title="3.2 解压下载好的jdk7u79-linux-x64.tar.gz"></a>3.2 解压下载好的jdk7u79-linux-x64.tar.gz</h4><p>当前安装包在我的myftp文件夹中，解压到目标文件夹<br><code>tar -zxvf jdk7u79-linux-x64.tar.gz -C /usr/lib/jvm</code></p>
+<p><img src="https://img-blog.csdn.net/20180410165319714?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<h5 id="3-3-配置环境变量"><a href="#3-3-配置环境变量" class="headerlink" title="3.3 配置环境变量"></a>3.3 配置环境变量</h5><p><code>vim /etc/profile</code><br>在前面添加环境变量</p>
+<p><code>export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_131  export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</code><br><img src="https://img-blog.csdn.net/20180410170250726?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>source /etc/profile</code>执行后立即生效无需重启</p>
+<h4 id="3-4-查看Java版本安装完毕"><a href="#3-4-查看Java版本安装完毕" class="headerlink" title="3.4 查看Java版本安装完毕"></a>3.4 查看Java版本安装完毕</h4><p><code>java -version</code><br><img src="https://img-blog.csdn.net/20180410170527733?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -1810,6 +1810,15 @@
       </categories>
   </entry>
   <entry>
+    <title>Mybatis generator targetRuntime=&quot;MyBatis3DynamicSql&quot; 报错</title>
+    <url>/2020/12/08/Mybatis/Mybatis%20generator%20targetRuntime=_MyBatis3DynamicSql_%20%E6%8A%A5%E9%94%99-mybatisgeneratortargetruntimemybatis3dynamicsql%E6%8A%A5%E9%94%99targetruntimeincontextmysqltablesisinvalid/</url>
+    <content><![CDATA[<p>Mybatis generator targetRuntime=”MyBatis3DynamicSql” 报错targetRuntime in context MysqlTables is invalid<br><img src="https://quinntian.com/upload/2020/12/image-05b9917a705d4a69890d41ee5a40dae1.png" alt="image.png"><br><strong>如果你的配置文件中写了，xml的配置要删掉，或者直接换成mybtis3,因为设置位第一个不会生成xml文件。下表</strong><br>这里补充一下targetRuntime的几个值的意义，因为官方英文文档。<br><img src="https://quinntian.com/upload/2020/12/image-e21d2d8d4fce4180b3dc44d521798060.png" alt="image.png"><br><img src="https://quinntian.com/upload/2020/12/image-1c1d409971d3408e8e31532661b7cb52.png" alt="image.png"><br>参考 <a href="https://blog.csdn.net/seek_of/article/details/105911997">https://blog.csdn.net/seek_of/article/details/105911997</a></p>
+]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+  </entry>
+  <entry>
     <title>MyBatis一对多嵌套查询结果映射</title>
     <url>/2020/12/10/Mybatis/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E6%98%A0%E5%B0%84-m-y-b-a-t-i-s-yi-dui-duo-qian-tao-cha-xun-jie-guo-ying-she/</url>
     <content><![CDATA[<p><strong>简单理解就是：此种方法指直接书写连表SQL，然后将结果一次性映射到几个实体上，而不是先查主表映射到实体后,再查从表再映射到实体</strong><br><strong>比较官方的说法叫做一对多collection集合嵌套结果映射</strong><br>步骤</p>
@@ -1826,15 +1835,6 @@
 <p>运行结果</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Creating a new SqlSession</span><br><span class="line">SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e489bb8] was not registered for synchronization because synchronization is not active</span><br><span class="line">JDBC Connection [HikariProxyConnection@595755231 wrapping com.mysql.cj.jdbc.ConnectionImpl@182fd26b] will not be managed by Spring</span><br><span class="line">==&gt;  Preparing: select u.id, u.o_id, u.name, u.password, u.mobile, u.email, u.creatime, u.login_time, u.last_login_time, u.login_count, g.id, g.group_name, g.f_id, g.creatime, g.description from tk_user u left join tk_user_group ug on ug.user_id = u.id left join tk_group g on g.id = ug.group_id</span><br><span class="line">==&gt; Parameters: </span><br><span class="line">&lt;==    Columns: id, o_id, name, password, mobile, email, creatime, login_time, last_login_time, login_count, id, group_name, f_id, creatime, description</span><br><span class="line">&lt;==        Row: 1, 1, admin, admin, 15166623676, admin@admin.com, 2020-12-08 16:18:59, 2020-12-08 16:19:03, 2020-12-07 16:19:07, 0, 1, 用户组1, 0, 2020-12-08 16:34:00, 用户组1描述</span><br><span class="line">&lt;==        Row: 1, 1, admin, admin, 15166623676, admin@admin.com, 2020-12-08 16:18:59, 2020-12-08 16:19:03, 2020-12-07 16:19:07, 0, 3, 用户组3, 0, 2020-12-08 16:34:47, 用户组3描述</span><br><span class="line">&lt;==        Row: 2, null, test1, null, null, null, null, null, null, 0, null, null, null, null, null</span><br><span class="line">&lt;==      Total: 3</span><br><span class="line">Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e489bb8]</span><br><span class="line">[TkUser(id=1, oId=1, name=admin, password=admin, mobile=15166623676, email=admin@admin.com, creatime=2020-12-08T16:18:59, loginTime=2020-12-08T16:19:03, lastLoginTime=2020-12-07T16:19:07, loginCount=0, tkGroups=[TkGroup(id=1, groupName=用户组1, fId=0, creatime=2020-12-08T16:18:59, description=用户组1描述)], tkRoles=null, tkPermits=null, tkOrg=null), TkUser(id=2, oId=null, name=test1, password=null, mobile=null, email=null, creatime=null, loginTime=null, lastLoginTime=null, loginCount=0, tkGroups=[TkGroup(id=2, groupName=null, fId=null, creatime=null, description=null)], tkRoles=null, tkPermits=null, tkOrg=null)]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="4-关于自动合并问题"><a href="#4-关于自动合并问题" class="headerlink" title="4.关于自动合并问题"></a>4.关于自动合并问题</h1><p><strong>重点说明：关于SQL查询结果一共是有三条结果，其中两条是重复的，这里框架自动合并了，其原理就是设置了<id column="id" property="id" />标签，框架会自动判断查询结果的ID进行自动合并。另外如果没有ID标签框架会自动比对每条字段下的结果，相同合并</strong></p>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Mybatis generator targetRuntime=&quot;MyBatis3DynamicSql&quot; 报错</title>
-    <url>/2020/12/08/Mybatis/Mybatis%20generator%20targetRuntime=_MyBatis3DynamicSql_%20%E6%8A%A5%E9%94%99-mybatisgeneratortargetruntimemybatis3dynamicsql%E6%8A%A5%E9%94%99targetruntimeincontextmysqltablesisinvalid/</url>
-    <content><![CDATA[<p>Mybatis generator targetRuntime=”MyBatis3DynamicSql” 报错targetRuntime in context MysqlTables is invalid<br><img src="https://quinntian.com/upload/2020/12/image-05b9917a705d4a69890d41ee5a40dae1.png" alt="image.png"><br><strong>如果你的配置文件中写了，xml的配置要删掉，或者直接换成mybtis3,因为设置位第一个不会生成xml文件。下表</strong><br>这里补充一下targetRuntime的几个值的意义，因为官方英文文档。<br><img src="https://quinntian.com/upload/2020/12/image-e21d2d8d4fce4180b3dc44d521798060.png" alt="image.png"><br><img src="https://quinntian.com/upload/2020/12/image-1c1d409971d3408e8e31532661b7cb52.png" alt="image.png"><br>参考 <a href="https://blog.csdn.net/seek_of/article/details/105911997">https://blog.csdn.net/seek_of/article/details/105911997</a></p>
 ]]></content>
       <categories>
         <category>Mybatis</category>
@@ -2981,24 +2981,6 @@ lsmod | grep bbr
       </categories>
   </entry>
   <entry>
-    <title>IDEA配置注释模板</title>
-    <url>/2019/07/13/%E5%85%B6%E4%BB%96/IDEA%E9%85%8D%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF-idea%E9%85%8D%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h4 id="1-打开如下配置界面"><a href="#1-打开如下配置界面" class="headerlink" title="1. 打开如下配置界面"></a>1. 打开如下配置界面</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991072983.png" alt="enter description here"></p>
-<p>setting-&gt;live templates</p>
-<h4 id="2-自己创建一个组"><a href="#2-自己创建一个组" class="headerlink" title="2. 自己创建一个组"></a>2. 自己创建一个组</h4><p>添加如下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="xml"><span class="tag">&lt;<span class="name">pre</span>&gt;</span>$method$ method<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span></span><br><span class="line">$params$</span><br><span class="line"> * @<span class="keyword">return</span> $return$</span><br><span class="line"> * @author &lt;a href=<span class="string">&quot;mailto:sdtkin1996@gmail.com&quot;</span>&gt;QuinnTian&lt;/a&gt; </span><br><span class="line"> * @since $DATE$ $time$ </span><br><span class="line"> */!</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-编辑参数列表"><a href="#3-编辑参数列表" class="headerlink" title="3. 编辑参数列表"></a>3. 编辑参数列表</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991209203.png" alt="enter description here"></p>
-<p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991254605.png" alt="enter description here"></p>
-<p>第二个参数脚本代码如下</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">groovyScript(<span class="string">&quot;def result=&#x27;&#x27;; def params=\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#x27;[\\\\[|\\\\]|\\\\s]&#x27;, &#x27;&#x27;).split(&#x27;,&#x27;).toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=&#x27; * @param &#x27; + params[i] + ((i &lt; params.size() - 1) ? &#x27;\\n&#x27; : &#x27;&#x27;)&#125;; return result&quot;</span>, methodParameters())</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>IEDA_2018.1_安装插件_Mybatis_plugin_v3.58_crack_Iedis_v2.56_crack.md</title>
     <url>/2018/07/14/%E5%85%B6%E4%BB%96/IEDA_2018.1_%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6_Mybatis_plugin_v3.58_crack_Iedis_v2.56_crack.md-2019102314160545343/</url>
     <content><![CDATA[<p>title: IEDA 2018.1 安装插件 Mybatis plugin v3.58 crack Iedis v2.56 crack<br>date: ‘2018-07-14 11:55:54’<br>updated: ‘2018-07-14 12:07:40’<br>tags: [IDEA, Mybatis plugin]<br>permalink: /articles/2018/07/14/1531539806011.html</p>
@@ -3021,6 +3003,24 @@ lsmod | grep bbr
 <li> 使用 javassist 动态修改代码</li>
 <li> 使用 vertx web 创建本地认证服务器<br>原文地址：<a href="https://shawnho.me/2017/12/20/ideaagent/">https://shawnho.me/2017/12/20/ideaagent/</a></li>
 </ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>IDEA配置注释模板</title>
+    <url>/2019/07/13/%E5%85%B6%E4%BB%96/IDEA%E9%85%8D%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF-idea%E9%85%8D%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h4 id="1-打开如下配置界面"><a href="#1-打开如下配置界面" class="headerlink" title="1. 打开如下配置界面"></a>1. 打开如下配置界面</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991072983.png" alt="enter description here"></p>
+<p>setting-&gt;live templates</p>
+<h4 id="2-自己创建一个组"><a href="#2-自己创建一个组" class="headerlink" title="2. 自己创建一个组"></a>2. 自己创建一个组</h4><p>添加如下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="xml"><span class="tag">&lt;<span class="name">pre</span>&gt;</span>$method$ method<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span></span><br><span class="line">$params$</span><br><span class="line"> * @<span class="keyword">return</span> $return$</span><br><span class="line"> * @author &lt;a href=<span class="string">&quot;mailto:sdtkin1996@gmail.com&quot;</span>&gt;QuinnTian&lt;/a&gt; </span><br><span class="line"> * @since $DATE$ $time$ </span><br><span class="line"> */!</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-编辑参数列表"><a href="#3-编辑参数列表" class="headerlink" title="3. 编辑参数列表"></a>3. 编辑参数列表</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991209203.png" alt="enter description here"></p>
+<p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991254605.png" alt="enter description here"></p>
+<p>第二个参数脚本代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">groovyScript(<span class="string">&quot;def result=&#x27;&#x27;; def params=\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#x27;[\\\\[|\\\\]|\\\\s]&#x27;, &#x27;&#x27;).split(&#x27;,&#x27;).toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=&#x27; * @param &#x27; + params[i] + ((i &lt; params.size() - 1) ? &#x27;\\n&#x27; : &#x27;&#x27;)&#125;; return result&quot;</span>, methodParameters())</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>其他</category>
