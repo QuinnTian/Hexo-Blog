@@ -1211,6 +1211,67 @@
       </categories>
   </entry>
   <entry>
+    <title>每天复习一点Linux命令003之userdel和passwd</title>
+    <url>/2020/02/13/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd/</url>
+    <content><![CDATA[<h1 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h1><ul>
+<li><p>含义：删除用户</p>
+</li>
+<li><p>格式 <code>userdel [option]</code></p>
+</li>
+<li><p>可选项 -r</p>
+<ul>
+<li>含义：同时删除用户以及home下的所有关于该用户的文件</li>
+</ul>
+</li>
+</ul>
+<h1 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h1><ul>
+<li><p>含义：使用新建用户命令<code>useradd</code>时并没有指定密码，所以默认无法使用，必须指定密码。</p>
+</li>
+<li><p>格式：<code>passwd [option] [username]</code></p>
+</li>
+<li><p>可选项</p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-l</td>
+<td align="center">锁定用户口令，无法使用。</td>
+</tr>
+<tr>
+<td align="center">-u</td>
+<td align="center">口令解锁</td>
+</tr>
+<tr>
+<td align="center">-d</td>
+<td align="center">关闭用户登录时输入密码的功能，即无需密码登录，权限ROOT下可以操作。</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">用户下次登录必须修改密码</td>
+</tr>
+<tr>
+<td align="center">-s</td>
+<td align="center">指定用户密码的种类</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>示例</p>
+<p>新建用户后，这时用户并不能使用，必须设置密码</p>
+<p><code>passwd wang</code></p>
+<p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200213232036.png" alt="图片"></p>
+<p>使用<code>tail -l /etc/shadow</code>查看wang用户的！！！已经取消。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每天复习一点Linux命令004之用户组命令groupadd、groupmod、groupdel</title>
     <url>/2020/02/14/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4004%E4%B9%8B%E7%94%A8%E6%88%B7%E7%BB%84%E5%91%BD%E4%BB%A4groupadd%E3%80%81groupmod%E3%80%81groupdel-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4004%E4%B9%8B%E7%94%A8%E6%88%B7%E7%BB%84%E5%91%BD%E4%BB%A4groupaddgroupmodgroupdel/</url>
     <content><![CDATA[<p>用户组：用户组与用户多对多。在创建文件或目录时都会制定一个用户组。</p>
@@ -1272,67 +1333,6 @@
 <ul>
 <li>注意点：用户组内必须无用户，否则先执行删除用户操作。</li>
 </ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>每天复习一点Linux命令003之userdel和passwd</title>
-    <url>/2020/02/13/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4003%E4%B9%8Buserdel%E5%92%8Cpasswd/</url>
-    <content><![CDATA[<h1 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h1><ul>
-<li><p>含义：删除用户</p>
-</li>
-<li><p>格式 <code>userdel [option]</code></p>
-</li>
-<li><p>可选项 -r</p>
-<ul>
-<li>含义：同时删除用户以及home下的所有关于该用户的文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h1><ul>
-<li><p>含义：使用新建用户命令<code>useradd</code>时并没有指定密码，所以默认无法使用，必须指定密码。</p>
-</li>
-<li><p>格式：<code>passwd [option] [username]</code></p>
-</li>
-<li><p>可选项</p>
-<table>
-<thead>
-<tr>
-<th align="center">选项</th>
-<th align="center">意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-l</td>
-<td align="center">锁定用户口令，无法使用。</td>
-</tr>
-<tr>
-<td align="center">-u</td>
-<td align="center">口令解锁</td>
-</tr>
-<tr>
-<td align="center">-d</td>
-<td align="center">关闭用户登录时输入密码的功能，即无需密码登录，权限ROOT下可以操作。</td>
-</tr>
-<tr>
-<td align="center">-f</td>
-<td align="center">用户下次登录必须修改密码</td>
-</tr>
-<tr>
-<td align="center">-s</td>
-<td align="center">指定用户密码的种类</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>示例</p>
-<p>新建用户后，这时用户并不能使用，必须设置密码</p>
-<p><code>passwd wang</code></p>
-<p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200213232036.png" alt="图片"></p>
-<p>使用<code>tail -l /etc/shadow</code>查看wang用户的！！！已经取消。</p>
 </li>
 </ul>
 ]]></content>
@@ -1645,6 +1645,16 @@
       </categories>
   </entry>
   <entry>
+    <title>每天复习一点Linux命令011之vim</title>
+    <url>/2020/02/20/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4011%E4%B9%8Bvim-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4011%E4%B9%8Bvim/</url>
+    <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">格式：vim 选项 文件名 </span><br><span class="line">默认：默认不加任何是创建一个空文件</span><br><span class="line">选项</span><br><span class="line">	-c command 在对文件进行编辑前，要先执行command命令</span><br><span class="line">	-r filename 恢复文件</span><br><span class="line">	-R 以只读方式编辑文件</span><br><span class="line">	+n file 编辑file文件，并把光标放到第n行</span><br><span class="line">	+ file 编辑file文件并将光标放到最后一行</span><br><span class="line">	+ /string file 编辑file文件，并将光标置于第一个 string所表示字符串行</span><br><span class="line">vim工作模式</span><br><span class="line">	一般模式：vim命令进入就是默认一般模式，在该模式下用户输入的就是命令，这个模式允许光标移动，允许搜索文本。</span><br><span class="line">	   文件的保存、修改是在一般模式下进行的。</span><br><span class="line">		:W 存储 :Q 退出 q! 强制退出不保存</span><br><span class="line">		:Wq 存储并退出</span><br><span class="line">	插入模式：在一般模式下输入i、o、a进入，进入此模式下，用户的输入都保存在缓冲区，退出插入模式用Esc.</span><br><span class="line">	  移动光标常用命令</span><br><span class="line">		移动光标：h\j + Enter\k-\l 左右上下</span><br><span class="line">		移动当前段前或段尾：&#123; &#125;</span><br><span class="line">		移动当前句子前或尾：( )</span><br><span class="line">		移动当前行的第一个非空字符：^</span><br><span class="line">		移动到当前行末尾：$</span><br><span class="line">		移动到行n: :n</span><br><span class="line">	  编辑文件常用命令</span><br><span class="line">		删除光标当前位置字符 x</span><br><span class="line">		删除光标所在整行文件 dd</span><br><span class="line">		删除当前光标位置到该行结束所有文本 d$</span><br><span class="line">		从当前光标位置向前删除单词 dw</span><br><span class="line">		将下一行文本合并到本行行尾 J</span><br><span class="line">		在当前光标位置后附加内容 a</span><br><span class="line">		在当前光标所在行后附加内容 A</span><br><span class="line"> 底行工作模式</span><br><span class="line">	用户输入的任何文字当做命令。</span><br><span class="line">	切换：一般模式到底行模式/</span><br><span class="line">	搜索字符命令：/字符 自动搜索光标往下的内容</span><br><span class="line">			    ?字符 自动搜索光标往上的内容</span><br><span class="line">				:n1,n2s/word1/word2/g 搜索n1到n2行名字为字符1的字符串，并把他们全部换成word2</span><br><span class="line">				:1,$ss/word1/word2/g,搜索第一行到最后一行名字为word1的字符串并全部替换</span><br><span class="line">	替换命令： :s/old/new 把old替换成new 默认替换第一次，若全部替换需要加g :s/old/new/g</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://quinntian.com/upload/2020/2/image-e179e295e6eb467a818a44e347b82f2a.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Maven配置记录</title>
     <url>/2019/10/26/Maven/Maven%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95-maven%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1.下载安装"></a>1.下载安装</h1><h1 id="2-创建环境变量"><a href="#2-创建环境变量" class="headerlink" title="2.创建环境变量"></a>2.创建环境变量</h1><ol>
@@ -1657,16 +1667,6 @@
 ]]></content>
       <categories>
         <category>Maven</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>每天复习一点Linux命令011之vim</title>
-    <url>/2020/02/20/Linux/%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9Linux%E5%91%BD%E4%BB%A4011%E4%B9%8Bvim-%E6%AF%8F%E5%A4%A9%E5%A4%8D%E4%B9%A0%E4%B8%80%E7%82%B9linux%E5%91%BD%E4%BB%A4011%E4%B9%8Bvim/</url>
-    <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">格式：vim 选项 文件名 </span><br><span class="line">默认：默认不加任何是创建一个空文件</span><br><span class="line">选项</span><br><span class="line">	-c command 在对文件进行编辑前，要先执行command命令</span><br><span class="line">	-r filename 恢复文件</span><br><span class="line">	-R 以只读方式编辑文件</span><br><span class="line">	+n file 编辑file文件，并把光标放到第n行</span><br><span class="line">	+ file 编辑file文件并将光标放到最后一行</span><br><span class="line">	+ /string file 编辑file文件，并将光标置于第一个 string所表示字符串行</span><br><span class="line">vim工作模式</span><br><span class="line">	一般模式：vim命令进入就是默认一般模式，在该模式下用户输入的就是命令，这个模式允许光标移动，允许搜索文本。</span><br><span class="line">	   文件的保存、修改是在一般模式下进行的。</span><br><span class="line">		:W 存储 :Q 退出 q! 强制退出不保存</span><br><span class="line">		:Wq 存储并退出</span><br><span class="line">	插入模式：在一般模式下输入i、o、a进入，进入此模式下，用户的输入都保存在缓冲区，退出插入模式用Esc.</span><br><span class="line">	  移动光标常用命令</span><br><span class="line">		移动光标：h\j + Enter\k-\l 左右上下</span><br><span class="line">		移动当前段前或段尾：&#123; &#125;</span><br><span class="line">		移动当前句子前或尾：( )</span><br><span class="line">		移动当前行的第一个非空字符：^</span><br><span class="line">		移动到当前行末尾：$</span><br><span class="line">		移动到行n: :n</span><br><span class="line">	  编辑文件常用命令</span><br><span class="line">		删除光标当前位置字符 x</span><br><span class="line">		删除光标所在整行文件 dd</span><br><span class="line">		删除当前光标位置到该行结束所有文本 d$</span><br><span class="line">		从当前光标位置向前删除单词 dw</span><br><span class="line">		将下一行文本合并到本行行尾 J</span><br><span class="line">		在当前光标位置后附加内容 a</span><br><span class="line">		在当前光标所在行后附加内容 A</span><br><span class="line"> 底行工作模式</span><br><span class="line">	用户输入的任何文字当做命令。</span><br><span class="line">	切换：一般模式到底行模式/</span><br><span class="line">	搜索字符命令：/字符 自动搜索光标往下的内容</span><br><span class="line">			    ?字符 自动搜索光标往上的内容</span><br><span class="line">				:n1,n2s/word1/word2/g 搜索n1到n2行名字为字符1的字符串，并把他们全部换成word2</span><br><span class="line">				:1,$ss/word1/word2/g,搜索第一行到最后一行名字为word1的字符串并全部替换</span><br><span class="line">	替换命令： :s/old/new 把old替换成new 默认替换第一次，若全部替换需要加g :s/old/new/g</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://quinntian.com/upload/2020/2/image-e179e295e6eb467a818a44e347b82f2a.png" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -3279,15 +3279,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>华为光猫破解教程和工具</title>
-    <url>/2021/03/13/%E5%85%B6%E4%BB%96/%E5%8D%8E%E4%B8%BA%E5%85%89%E7%8C%AB%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B%E5%92%8C%E5%B7%A5%E5%85%B7-hua-wei-guang-mao-po-jie-jiao-cheng-he-gong-ju/</url>
-    <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>吐槽工信部域名备案的各种坑</title>
     <url>/2021/02/26/%E5%85%B6%E4%BB%96/%E5%90%90%E6%A7%BD%E5%B7%A5%E4%BF%A1%E9%83%A8%E5%9F%9F%E5%90%8D%E5%A4%87%E6%A1%88%E7%9A%84%E5%90%84%E7%A7%8D%E5%9D%91-tu-cao-gong-xin-bu-yu-ming-bei-an/</url>
     <content><![CDATA[<ol>
@@ -3307,6 +3298,15 @@ chmod 777 /var/log/caddy/caddy.log
 <li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>华为光猫破解教程和工具</title>
+    <url>/2021/03/13/%E5%85%B6%E4%BB%96/%E5%8D%8E%E4%B8%BA%E5%85%89%E7%8C%AB%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B%E5%92%8C%E5%B7%A5%E5%85%B7-hua-wei-guang-mao-po-jie-jiao-cheng-he-gong-ju/</url>
+    <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
 ]]></content>
       <categories>
         <category>其他</category>
