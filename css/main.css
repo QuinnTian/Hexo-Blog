@@ -2961,7 +2961,7 @@ body {
   backgound-position: 50% 50%;
 }
 .main-inner {
-  opacity: 0.9;
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
 .sidebar {
   opacity: 0.9;
