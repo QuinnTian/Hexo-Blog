@@ -2954,7 +2954,7 @@ mark.search-keyword {
   }
 }
 body {
-  background: url("/images/background/sea-background.jpg");
+  background: url("https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/blog-imgs/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
