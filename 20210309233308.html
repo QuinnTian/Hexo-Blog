@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#222">
+  <meta name="google-site-verification" content="DDD43Za9iVLYOIdGCc_RYA1cbtcH6VnlepUBIuW9ybY">
+  <meta name="msvalidate.01" content="bd44be630e92a5050ba3f8afd14262dc">
+  <meta name="baidu-site-verification" content="code-Qpmxg27xY1">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="写在前面 我是用手动安装的，如果是用脚本安装和docker安装请忽略。 另外如果你想在centos7下装7.1+或8.0,必须装好python3. 中文版没找到专业版下载地址，直接去英文版https:&#x2F;&#x2F;download.seafile.com&#x2F;d&#x2F;6e5297246c&#x2F;?p&#x3D;&#x2F;pro 3用户免费，中文官网并没有明确指明  安装参考文档最好看英文文档和中文文档结合，有些中文文档并没有讲英文文档，比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS8安装Seafile8.0专业版遇到的问题.md">
+<meta property="og:url" content="http://example.com/20210309233308.html">
+<meta property="og:site_name" content="北纬36度">
+<meta property="og:description" content="写在前面 我是用手动安装的，如果是用脚本安装和docker安装请忽略。 另外如果你想在centos7下装7.1+或8.0,必须装好python3. 中文版没找到专业版下载地址，直接去英文版https:&#x2F;&#x2F;download.seafile.com&#x2F;d&#x2F;6e5297246c&#x2F;?p&#x3D;&#x2F;pro 3用户免费，中文官网并没有明确指明  安装参考文档最好看英文文档和中文文档结合，有些中文文档并没有讲英文文档，比">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-09T15:33:08.728Z">
+<meta property="article:modified_time" content="2021-03-09T15:33:08.728Z">
+<meta property="article:author" content="Quinn Tian">
+<meta property="article:tag" content="北纬36度,我在北纬36度,北纬36度有我">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/20210309233308.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/20210309233308.html","path":"20210309233308.html","title":"CentOS8安装Seafile8.0专业版遇到的问题.md"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CentOS8安装Seafile8.0专业版遇到的问题.md | 北纬36度</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">北纬36度</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">面朝大海，春暖花开</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">0</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益</a></li>
+        <li class="menu-item menu-item-links"><a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+        <li class="menu-item menu-item-comments"><a href="/comments" rel="section"><i class="fa fa-link fa-fw"></i>留言</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">2.</span> <span class="nav-text">安装参考文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">3.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">安装中遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E5%AE%89%E8%A3%85Mysqlclient%E6%8A%A5%E9%94%99"><span class="nav-number">4.1.</span> <span class="nav-text">没有安装Mysqlclient报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fatal-error-Python-h-No-such-file-or-directory"><span class="nav-number">4.2.</span> <span class="nav-text"># fatal error: Python.h: No such file or directory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E7%BB%8F%E5%90%AF%E5%8A%A8seahub%EF%BC%8C%E6%B2%A1%E6%9C%89%E6%8A%A5%E9%94%99%EF%BC%8C%E4%BD%86%E6%98%AF%E5%A4%96%E7%BD%91%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE"><span class="nav-number">4.3.</span> <span class="nav-text">已经启动seahub，没有报错，但是外网无法访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seafile-LibreOffice-seahub%E5%89%8D%E7%AB%AF%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%EF%BC%8C%E6%8A%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E9%83%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E6%8A%A5%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E5%A4%B1%E8%B4%A5"><span class="nav-number">4.4.</span> <span class="nav-text">seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Quinn Tian"
+      src="/images/favicon/android-chrome-192x192.png">
+  <p class="site-author-name" itemprop="name">Quinn Tian</p>
+  <div class="site-description" itemprop="description">个人博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/QuinnTian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;QuinnTian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sdtkin1996@outlook.com" title="E-Mail → mailto:sdtkin1996@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/quinntian" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/20210309233308.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CentOS8安装Seafile8.0专业版遇到的问题.md
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-09 23:33:08" itemprop="dateCreated datePublished" datetime="2021-03-09T23:33:08+08:00">2021-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="CentOS8安装Seafile8.0专业版遇到的问题.md" href="/20210309233308.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::0d6a6ab212f0e3ab5f7a5d4b1a473d80" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li>我是用手动安装的，如果是用脚本安装和docker安装请忽略。</li>
+<li>另外如果你想在centos7下装7.1+或8.0,必须装好python3.</li>
+<li>中文版没找到专业版下载地址，直接去英文版<a target="_blank" rel="noopener" href="https://download.seafile.com/d/6e5297246c/?p=/pro">https://download.seafile.com/d/6e5297246c/?p=/pro</a> 3用户免费，中文官网并没有明确指明</li>
+</ul>
+<h1 id="安装参考文档"><a href="#安装参考文档" class="headerlink" title="安装参考文档"></a>安装参考文档</h1><p>最好看英文文档和中文文档结合，有些中文文档并没有讲<br>英文文档，比如装着装着报错，肯定是没安装某些库。seafile安装会把python一家老小许多库全都装都一边。</p>
+<ul>
+<li>英文文档<br><a target="_blank" rel="noopener" href="https://manual.seafile.com/deploy_pro/office_documents_preview/#faq-about-office-document-preview">https://manual.seafile.com/deploy_pro/office_documents_preview/#faq-about-office-document-preview</a></li>
+<li>中文文档<br><a target="_blank" rel="noopener" href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_pro/office_documents_preview.md">https://cloud.seafile.com/published/seafile-manual-cn/deploy_pro/office_documents_preview.md</a><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1>系统环境：centos8.0<h1 id="安装中遇到的问题"><a href="#安装中遇到的问题" class="headerlink" title="安装中遇到的问题"></a>安装中遇到的问题</h1><h2 id="没有安装Mysqlclient报错"><a href="#没有安装Mysqlclient报错" class="headerlink" title="没有安装Mysqlclient报错"></a>没有安装Mysqlclient报错</h2>因为centos8是用的python3<br><code>pip3 install MySQLdb</code>前提是你要安装了pip3<br>否则<code>yum -y install pip3</code><h2 id="fatal-error-Python-h-No-such-file-or-directory"><a href="#fatal-error-Python-h-No-such-file-or-directory" class="headerlink" title="# fatal error: Python.h: No such file or directory"></a># fatal error: Python.h: No such file or directory</h2>没有安装<code>python3-dev</code><br><code>yum -y install install python3-dev</code><h2 id="已经启动seahub，没有报错，但是外网无法访问"><a href="#已经启动seahub，没有报错，但是外网无法访问" class="headerlink" title="已经启动seahub，没有报错，但是外网无法访问"></a>已经启动seahub，没有报错，但是外网无法访问</h2>排除防火墙和安全组、SElinux<br>因为<code>seafile7.0以后</code>就不支持直接8000访问了<br>编辑seafile安装目录下的<code>gunicorn.conf 把 bind=127.0.0.1 改成0.0.0.0</code>就可访问了<h2 id="seafile-LibreOffice-seahub前端报错问题，报服务器内部错误，报文件转换失败"><a href="#seafile-LibreOffice-seahub前端报错问题，报服务器内部错误，报文件转换失败" class="headerlink" title="seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败"></a>seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败</h2></li>
+</ul>
+<ol>
+<li>升级LibreOffice版本</li>
+<li>先查看日志，虽然中文文档写让看seafevent.log但是里面是不显示office报错的，英文文档写让看seahub.log<br>/conf/seafevents.conf，添加<br>[OFFICE CONVERTER]<br>enabled = true<br>host = 127.0.0.1 # 本机的IP地址，默认 127.0.0.1<br>port = 6000 # 端口，默认6000<br>workers = 1 # 并发运行 libreoffice 的进程数<br>outputdir = /tmp/ # 转换后的 office/pdf 文件的缓存路径。 默认是 /tmp/.<br>打开 seafile/conf/seahub_settings.py，添加:<br>OFFICE_CONVERTOR_ROOT = ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:6000/%E2%80%99">http://127.0.0.1:6000/’</a> # 与seafevents.conf中的 host 和 port 保持一致<br>重启seafilehub</li>
+<li><strong>如果重启后报文件转换失败</strong>，<br>还有一种可能，这点再英文文档中提到了，但是中文文档没写<code>This error indicates you have not installed the package. Install it by .libreoffice-headless&quot;sudo yum install libreoffice-headless&quot;</code>没安装这个库<br>还不行执行<code>pkill -f soffice.bin</code></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Quinn Tian
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/20210309233308.html" title="CentOS8安装Seafile8.0专业版遇到的问题.md">http://example.com/20210309233308.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20210308015415.html" rel="prev" title="华为光猫破解教程+工具">
+                  <i class="fa fa-chevron-left"></i> 华为光猫破解教程+工具
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/20210312140206.html" rel="next" title="在CentOS8上安装Nginx+Nextcloud21">
+                  在CentOS8上安装Nginx+Nextcloud21 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<hr/>
+      <div class="comment-button-group">
+          <a class="btn comment-button gitalk">使用Gitalk评论</a>
+          <a class="btn comment-button changyan">使用畅言评论</a>
+      </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div>
+        <div class="comment-position changyan">
+          <div class="comments" id="SOHUCS" sid="0d6a6ab212f0e3ab5f7a5d4b1a473d80"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-dog"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quinn Tian</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">212k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:12</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61d6f375f7a354a1" async="async"></script>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: false
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvQumdtE","appkey":"698fa7a4afe9eb8b0025302c9c31e98d"}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"QuinnTian","repo":"QuinnTian.github.io","client_id":"08347823158e8c24034a","client_secret":"8137a25f0b1ae88965e2b90ab994213dd76fd3eb","admin_user":"QuinnTian","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"0d6a6ab212f0e3ab5f7a5d4b1a473d80"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

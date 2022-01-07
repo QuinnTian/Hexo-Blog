@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#222">
+  <meta name="google-site-verification" content="DDD43Za9iVLYOIdGCc_RYA1cbtcH6VnlepUBIuW9ybY">
+  <meta name="msvalidate.01" content="bd44be630e92a5050ba3f8afd14262dc">
+  <meta name="baidu-site-verification" content="code-Qpmxg27xY1">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="title: JavaScript匿名函数和回调函数的理解date: ‘2018-09-03 16:46:23’updated: ‘2018-09-03 17:06:42’tags: [JavaScript]permalink: &#x2F;articles&#x2F;2018&#x2F;09&#x2F;03&#x2F;1535964349016.html  匿名函数匿名函数又称闭包函数，顾名思义就是没有函数名的函数 1.创建函数的方式普通函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript匿名函数和回调函数的理解.md">
+<meta property="og:url" content="http://example.com/20180903164623.html">
+<meta property="og:site_name" content="北纬36度">
+<meta property="og:description" content="title: JavaScript匿名函数和回调函数的理解date: ‘2018-09-03 16:46:23’updated: ‘2018-09-03 17:06:42’tags: [JavaScript]permalink: &#x2F;articles&#x2F;2018&#x2F;09&#x2F;03&#x2F;1535964349016.html  匿名函数匿名函数又称闭包函数，顾名思义就是没有函数名的函数 1.创建函数的方式普通函数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-09-03T08:46:23.000Z">
+<meta property="article:modified_time" content="2020-01-25T07:48:49.000Z">
+<meta property="article:author" content="Quinn Tian">
+<meta property="article:tag" content="北纬36度,我在北纬36度,北纬36度有我">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/20180903164623.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/20180903164623.html","path":"20180903164623.html","title":"JavaScript匿名函数和回调函数的理解.md"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaScript匿名函数和回调函数的理解.md | 北纬36度</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">北纬36度</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">面朝大海，春暖花开</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">0</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">94</span></a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益</a></li>
+        <li class="menu-item menu-item-links"><a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+        <li class="menu-item menu-item-comments"><a href="/comments" rel="section"><i class="fa fa-link fa-fw"></i>留言</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">匿名函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">1.创建函数的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E7%94%A8%E9%80%94"><span class="nav-number">1.2.</span> <span class="nav-text">2.匿名函数用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">3.匿名函数调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E9%97%AD%E5%8C%85"><span class="nav-number">1.4.</span> <span class="nav-text">4.闭包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">回调函数</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Quinn Tian"
+      src="/images/favicon/android-chrome-192x192.png">
+  <p class="site-author-name" itemprop="name">Quinn Tian</p>
+  <div class="site-description" itemprop="description">个人博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/QuinnTian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;QuinnTian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sdtkin1996@outlook.com" title="E-Mail → mailto:sdtkin1996@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/quinntian" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/20180903164623.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript匿名函数和回调函数的理解.md
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-09-03 16:46:23" itemprop="dateCreated datePublished" datetime="2018-09-03T16:46:23+08:00">2018-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-01-25 15:48:49" itemprop="dateModified" datetime="2020-01-25T15:48:49+08:00">2020-01-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="JavaScript匿名函数和回调函数的理解.md" href="/20180903164623.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::b0d36ea48ed72a59581de4c233a9c4b4" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
+<hr>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
+<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
+<p>匿名函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
+<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
+<p>或使用小括号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
+<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
+<p>匿名函数链式调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
+<p>不常见的匿名函数调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
+<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
+<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
+<p>传递函数作为回调</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Quinn Tian
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/20180903164623.html" title="JavaScript匿名函数和回调函数的理解.md">http://example.com/20180903164623.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20180731225413.html" rel="prev" title="MySql回顾（一）数据定义（数据库定义、表定义、索引和视图定义）.md">
+                  <i class="fa fa-chevron-left"></i> MySql回顾（一）数据定义（数据库定义、表定义、索引和视图定义）.md
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/20181025110055.html" rel="next" title="资源分享：软考软件设计师第五版教材.md">
+                  资源分享：软考软件设计师第五版教材.md <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<hr/>
+      <div class="comment-button-group">
+          <a class="btn comment-button gitalk">使用Gitalk评论</a>
+          <a class="btn comment-button changyan">使用畅言评论</a>
+      </div>
+        <div class="comment-position gitalk">
+          <div class="comments gitalk-container"></div>
+        </div>
+        <div class="comment-position changyan">
+          <div class="comments" id="SOHUCS" sid="b0d36ea48ed72a59581de4c233a9c4b4"></div>
+        </div><script data-pjax src="/js/comments-buttons.js"></script>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-dog"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quinn Tian</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">212k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:12</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61d6f375f7a354a1" async="async"></script>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: false
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvQumdtE","appkey":"698fa7a4afe9eb8b0025302c9c31e98d"}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"QuinnTian","repo":"QuinnTian.github.io","client_id":"08347823158e8c24034a","client_secret":"8137a25f0b1ae88965e2b90ab994213dd76fd3eb","admin_user":"QuinnTian","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b0d36ea48ed72a59581de4c233a9c4b4"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
