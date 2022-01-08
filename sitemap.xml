@@ -977,13 +977,6 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/tags/%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2022-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/tags/SEO/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -1013,6 +1006,13 @@
   
   <url>
     <loc>https://quinntian.com/tags/%E7%AB%99%E7%82%B9%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2022-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1091,14 +1091,14 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Git/</loc>
+    <loc>https://quinntian.com/categories/Hexo/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Hexo/</loc>
+    <loc>https://quinntian.com/categories/Git/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
