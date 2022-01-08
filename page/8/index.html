@@ -91,7 +91,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">99</span></a></li>
         <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益</a></li>
         <li class="menu-item menu-item-links"><a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
@@ -178,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -592,7 +592,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/20180730102053.html" class="post-title-link" itemprop="url">Git_bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）.md</a>
+          <a href="/20180730102053.html" class="post-title-link" itemprop="url">Git配置代理</a>
         </h2>
 
         <div class="post-meta-container">
@@ -610,7 +610,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2020-12-28 16:19:48" itemprop="dateModified" datetime="2020-12-28T16:19:48+08:00">2020-12-28</time>
+      <time title="修改时间：2022-01-09 02:40:35" itemprop="dateModified" datetime="2022-01-09T02:40:35+08:00">2022-01-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -631,7 +631,7 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="Git_bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）.md" href="/20180730102053.html#SOHUCS" itemprop="discussionUrl">
+    <a title="Git配置代理" href="/20180730102053.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::091901ba7f4495384a3f3ffe7978f639" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -643,7 +643,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>554</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -661,17 +661,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>title: Git bash走代理总结（Http代理以及SSH设置Http代理和Socks代理）<br>date: ‘2018-07-30 10:20:53’<br>updated: ‘2018-07-30 10:34:14’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/30/1532916041334.html</p>
-<hr>
-<p>说明：由于最近Github在国内下载速度只有20k左右，搭完梯子后寻找Git代理方法，发现网上的方法比较乱，于是总结一下。</p>
-<h3 id="1-Http代理设置"><a href="#1-Http代理设置" class="headerlink" title="1.Http代理设置"></a>1.Http代理设置</h3><ul>
-<li>命令：<code> git config --global http.proxy http://127.0.0.1:1087</code></li>
-<li>说明： 全局设置http代理</li>
-<li>此命令修改的文件为 <code> C:\Users\用户名\.gitconfig</code> (Windows环境下)</li>
-<li>取消设置 <code>git config --global --unset http.proxy</code></li>
-<li>网上还有一种设置https代理，如上代码改为<code>https</code>，但并未发现有效<h3 id="2-设置SSH代理"><a href="#2-设置SSH代理" class="headerlink" title="2.设置SSH代理"></a>2.设置SSH代理</h3>SSH代理最大方便之处就是无需输入密码<br>修改的文件为<code> C:\Users\用户名\.ssh\config</code> (不存在自行创建)<h4 id="2-1设置本地http或sockt代理"><a href="#2-1设置本地http或sockt代理" class="headerlink" title="2.1设置本地http或sockt代理"></a>2.1设置本地http或sockt代理</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">ProxyCommand connect -H 127.0.0.1:8100 %h %p # -S为socks</span><br><span class="line">HostName %h</span><br><span class="line">Port 22</span><br><span class="line">User git</span><br><span class="line">IdentityFile  ~/.ssh/id_rsa </span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure></li>
-<li><em>说明：此设置应该是需要安装connect命令，具体下载地址为<a target="_blank" rel="noopener" href="https://bitbucket.org/gotoh/connect/overview">connect.exe</a><br>由当时将此文件放到git安装目录下的bin文件夹下。connect具体命令参数参考<a target="_blank" rel="noopener" href="https://bitbucket.org/gotoh/connect/wiki/Home">官方说明文档</a></em>*</li>
-</ul>
+          <p>Github国内访问过慢，可以配置代理</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20180730102053.html#more" rel="contents">
