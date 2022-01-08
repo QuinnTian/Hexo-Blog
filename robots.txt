@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://quinntian.com/sitemap.xml
+Sitemap: https://quinntian.com/baidusitemap.xml
