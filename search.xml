@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>css定位总结</title>
+    <url>/20200223223801.html</url>
+    <content><![CDATA[<h1 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">块级元素 独占一行、可设宽高、默认父元素宽度、高度如果不设置只能靠内容撑起</span><br><span class="line">	常见元素 <span class="selector-tag">div</span> h <span class="selector-tag">p</span> <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> </span><br><span class="line">行内元素 在一行显示、不可设宽高、紧靠内容撑起宽高</span><br><span class="line">	常见元素 <span class="selector-tag">span</span> <span class="selector-tag">a</span> <span class="selector-tag">strong</span> <span class="selector-tag">b</span> <span class="selector-tag">em</span> l <span class="selector-tag">del</span> s</span><br><span class="line">行内块元素 在一行显示、可设宽高、不会默认父元素宽度</span><br><span class="line">	常见元素 <span class="selector-tag">img</span> <span class="selector-tag">input</span> <span class="selector-tag">td</span></span><br><span class="line">四种定位</span><br><span class="line">通过 <span class="attribute">position</span> 属性设置</span><br><span class="line">static</span><br><span class="line">relative</span><br><span class="line">absolute</span><br><span class="line">fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">postion:relative</span><br><span class="line">top:</span><br><span class="line">buttom:</span><br><span class="line">right:</span><br><span class="line">left</span><br><span class="line">偏移原来位置，且原位置所占空间保留。</span><br></pre></td></tr></table></figure>
+
+<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute</span><br><span class="line">根据祖先元素偏移，原来位置空间删除。</span><br></pre></td></tr></table></figure>
+
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">float</span>:</span><br><span class="line">偏移后只是原位置不占据空间，但是文字会浮动其周围，原因是早起就是为了开发环绕图片的所开发的。</span><br><span class="line">解决各种元素环绕的方法就是设置clear.</span><br><span class="line">clear:right left both inherit 就是说该元素的哪一边不允许出现浮动元素</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>css框模型总结</title>
     <url>/20200223214408.html</url>
     <content><![CDATA[<h1 id="css框模型"><a href="#css框模型" class="headerlink" title="css框模型"></a>css框模型</h1><p><img src="https://quinntian.com/upload/2020/2/image-b1d9940ce7124af6b0100718386301b0.png" alt="image.png"></p>
@@ -13,22 +29,6 @@
 <h2 id="border"><a href="#border" class="headerlink" title="border"></a>border</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-style</span></span><br><span class="line"><span class="attribute">none</span>	定义无边框。</span><br><span class="line">hidden	与 &quot;<span class="attribute">none</span>&quot; 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。</span><br><span class="line">dotted	定义点状边框。在大多数浏览器中呈现为实线。</span><br><span class="line">dashed	定义虚线。在大多数浏览器中呈现为实线。</span><br><span class="line">solid	定义实线。</span><br><span class="line">double	定义双线。双线的宽度等于 <span class="attribute">border-width</span> 的值。</span><br><span class="line">groove	定义 <span class="number">3</span>D 凹槽边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">ridge	定义 <span class="number">3</span>D 垄状边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">inset	定义 <span class="number">3</span>D inset 边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">outset	定义 <span class="number">3</span>D outset 边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line"><span class="attribute">inherit</span>	规定应该从父元素继承边框样式。</span><br><span class="line"><span class="attribute">border-width</span></span><br><span class="line">thin	定义细的边框。</span><br><span class="line">medium	默认。定义中等的边框。</span><br><span class="line">thick	定义粗的边框。</span><br><span class="line">length	允许您自定义边框的宽度。</span><br><span class="line"><span class="attribute">inherit</span>	规定应该从父元素继承边框宽度。</span><br><span class="line"><span class="attribute">border-color</span></span><br><span class="line">透明色：transparent</span><br><span class="line">统一设置</span><br><span class="line"><span class="attribute">border</span>:宽度 样式 颜色</span><br><span class="line">样式必须设置</span><br><span class="line">宽度、样式、颜色都可以四方向分别设置上右下左、单独设置，值传递和外边距一样。</span><br></pre></td></tr></table></figure>
 
 <h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span> 长度\百分比  不允许负值</span><br><span class="line"><span class="attribute">padding</span> 上左下右</span><br><span class="line"><span class="attribute">padding-top</span>/buttom/<span class="attribute">right</span>/<span class="attribute">left</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>css定位总结</title>
-    <url>/20200223223801.html</url>
-    <content><![CDATA[<h1 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">块级元素 独占一行、可设宽高、默认父元素宽度、高度如果不设置只能靠内容撑起</span><br><span class="line">	常见元素 <span class="selector-tag">div</span> h <span class="selector-tag">p</span> <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> </span><br><span class="line">行内元素 在一行显示、不可设宽高、紧靠内容撑起宽高</span><br><span class="line">	常见元素 <span class="selector-tag">span</span> <span class="selector-tag">a</span> <span class="selector-tag">strong</span> <span class="selector-tag">b</span> <span class="selector-tag">em</span> l <span class="selector-tag">del</span> s</span><br><span class="line">行内块元素 在一行显示、可设宽高、不会默认父元素宽度</span><br><span class="line">	常见元素 <span class="selector-tag">img</span> <span class="selector-tag">input</span> <span class="selector-tag">td</span></span><br><span class="line">四种定位</span><br><span class="line">通过 <span class="attribute">position</span> 属性设置</span><br><span class="line">static</span><br><span class="line">relative</span><br><span class="line">absolute</span><br><span class="line">fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">postion:relative</span><br><span class="line">top:</span><br><span class="line">buttom:</span><br><span class="line">right:</span><br><span class="line">left</span><br><span class="line">偏移原来位置，且原位置所占空间保留。</span><br></pre></td></tr></table></figure>
-
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute</span><br><span class="line">根据祖先元素偏移，原来位置空间删除。</span><br></pre></td></tr></table></figure>
-
-<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">float</span>:</span><br><span class="line">偏移后只是原位置不占据空间，但是文字会浮动其周围，原因是早起就是为了开发环绕图片的所开发的。</span><br><span class="line">解决各种元素环绕的方法就是设置clear.</span><br><span class="line">clear:right left both inherit 就是说该元素的哪一边不允许出现浮动元素</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -305,6 +305,45 @@
       </categories>
   </entry>
   <entry>
+    <title>JavaScript匿名函数和回调函数的理解.md</title>
+    <url>/20180903164623.html</url>
+    <content><![CDATA[<p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
+<hr>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
+<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
+<p>匿名函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
+<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
+<p>或使用小括号</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
+<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
+<p>匿名函数链式调用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
+<p>不常见的匿名函数调用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
+<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
+<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
+<p>传递函数作为回调</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ES6笔记</title>
     <url>/20201209203609.html</url>
     <content><![CDATA[<h1 id="es6是什么"><a href="#es6是什么" class="headerlink" title="es6是什么"></a>es6是什么</h1><blockquote>
@@ -360,45 +399,6 @@
 
 
 
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript匿名函数和回调函数的理解.md</title>
-    <url>/20180903164623.html</url>
-    <content><![CDATA[<p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
-<hr>
-<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
-<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
-<p>匿名函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
-<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
-<p>或使用小括号</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
-<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
-<p>匿名函数链式调用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
-<p>不常见的匿名函数调用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
-<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
-<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
-<p>传递函数作为回调</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -699,6 +699,60 @@
       </categories>
   </entry>
   <entry>
+    <title>Centos7以上版本Vsftpd安装、Firewall和SELinux配置</title>
+    <url>/20180724105613.html</url>
+    <content><![CDATA[<p>title: Centos7以上版本 vsftpd安装、firewall和SELinux配置<br>date: ‘2018-07-24 10:56:13’<br>updated: ‘2018-07-24 10:59:26’<br>tags: [Linux]<br>permalink: /articles/2018/07/24/1532400973145.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79842559">https://blog.csdn.net/leofitz/article/details/79842559</a><br>   <strong>CentOS7.0以上版本更换了防火墙为firewall</strong><br>   <strong>CentOS7.0之前版本的防火墙配置不再适用</strong></p>
+<h2 id="firewall防火墙配置"><a href="#firewall防火墙配置" class="headerlink" title="firewall防火墙配置"></a><strong>firewall防火墙配置</strong></h2><h3 id="重启防火墙服务"><a href="#重启防火墙服务" class="headerlink" title="重启防火墙服务"></a>重启防火墙服务</h3><p><code>systemctl restart firewalld.service</code></p>
+<h3 id="重载防火墙配置"><a href="#重载防火墙配置" class="headerlink" title="重载防火墙配置"></a>重载防火墙配置</h3><p><code>firewall-cmd --reload</code></p>
+<h3 id="添加端口"><a href="#添加端口" class="headerlink" title="添加端口"></a>添加端口</h3><p><code>firewall-cmd --zone=public --add-port=21/tcp --permanent</code></p>
+<h3 id="添加vsftpd服务"><a href="#添加vsftpd服务" class="headerlink" title="添加vsftpd服务"></a>添加vsftpd服务</h3><p><code>firewall-cmd --permanent --add-service=ftp</code></p>
+<h2 id="SELinux配置"><a href="#SELinux配置" class="headerlink" title="SELinux配置"></a><strong>SELinux配置</strong></h2><h3 id="为什么要设置SELinux"><a href="#为什么要设置SELinux" class="headerlink" title="为什么要设置SELinux?"></a>为什么要设置SELinux?</h3><ul>
+<li>  SELinux(Security-Enhanced Linux)是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。NSA是在Linux社区的帮助下开发了一种访问控制体系，在这种访问控制体系的限制下，进程只能访问那些在他的任务中所需要文件。</li>
+<li>  SELinux旨在提高Linux系统的安全性，提供强健的安全保证，可防御未知攻击。</li>
+<li>  大部分情况下，我们访问ftp的时候会被SELinux拦截，当然如果你没也设置SELiunx也能正常访问，此步可以跳过。</li>
+<li>  大家通常的作法是关闭SELiunx，这样做会引起其它安全问题，嫌麻烦的可以直接关闭：</li>
+</ul>
+<h3 id="通常直接关闭"><a href="#通常直接关闭" class="headerlink" title="通常直接关闭"></a>通常直接关闭</h3><p><code>vi /etc/selinux/config</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#SELINUX=enforcing #注释掉</span><br><span class="line"></span><br><span class="line">#SELINUXTYPE=targeted #注释掉</span><br><span class="line"></span><br><span class="line">SELINUX=disabled #增加</span><br><span class="line"></span><br><span class="line">:wq! #保存退出</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-SELinux（只做参考可以直接关闭）"><a href="#配置-SELinux（只做参考可以直接关闭）" class="headerlink" title="配置 SELinux（只做参考可以直接关闭）"></a>配置 SELinux（只做参考可以直接关闭）</h3><p>setenforce 0 #让SELinux进入Permissive模式（宽容模式）<br>SELiunx一共有三种模式： </p>
+<ul>
+<li>enforcing（强制模式 ）：开始限制domain/type </li>
+<li>permissive（宽容模式） ：仅会有警告信息 </li>
+<li>disabled（关闭）：关闭SELinux</li>
+</ul>
+<p>设置SELiunx：</p>
+<blockquote>
+<p>[root@localhost ~]# /usr/sbin/sestatus -v #查看SELinux状态 SELinux<br>status: enabled #启用 SELinuxfs mount:<br>/sys/fs/selinux SELinux root directory: /etc/selinux Loaded<br>policy name: targeted Current mode:<br>enforcing</p>
+</blockquote>
+<p><code>setenforce 0 #暂时让SELinux进入Permissive模式</code></p>
+<p>这个时候我们尝试访问一下ftp目录，发现能够正常访问。<br>我们查看一下权限：</p>
+<blockquote>
+<p>[root@localhost ~]# getsebool -a | grep ftp<br>ftpd_anon_write –&gt; off<br>ftpd_connect_all_unreserved –&gt; off<br>ftpd_connect_db –&gt; off<br>ftpd_full_access –&gt; off<br>ftpd_use_cifs –&gt; off<br>ftpd_use_fusefs –&gt; off<br>ftpd_use_nfs –&gt; off<br>ftpd_use_passive_mode –&gt; off<br>httpd_can_connect_ftp –&gt; off<br>httpd_enable_ftp_server –&gt; off<br>tftp_anon_write –&gt; off<br>tftp_home_dir –&gt; off<br>ftp_home_dir和allow_ftpd_full_access必须为on 才能使vsftpd 具有访问ftp根目录，以及文件传输等权限。</p>
+</blockquote>
+<p><code>setsebool -P tftp_home_dir 1</code><br><code>setsebool -P allow_ftpd_full_access 1</code><br>让我们再回到强制模式：<br><code>setenforce 1 #进入Enforcing模式</code><br>如果还是不行的话，可能是我们的目录没有权限：<br><code>chmod -R 777 /usr/yong.cao/ftp #ftp的访问路径</code></p>
+<h3 id="配置vsftpd"><a href="#配置vsftpd" class="headerlink" title="配置vsftpd"></a><strong>配置vsftpd</strong></h3><ul>
+<li>  用<code>vim /etc/vsftpd/vsftpd.conf</code>打开后修改或者新增：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">anonymous_enable=NO    #不允许匿名访问</span><br><span class="line"></span><br><span class="line">write_enable=YES    #写权限</span><br><span class="line"></span><br><span class="line">local_root=/usr/yong.cao/ftp   #这里是我自定义的ftp目录</span><br><span class="line"></span><br><span class="line">chroot_local_user=YES    #这个是限制ftp用户只能在自己目录，如果ftp可以跳到其它任意目录是比较危险的，建议限制</span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES   #2.3.5之后，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了，需新增此配置</span><br></pre></td></tr></table></figure>
+
+<h3 id="激活root用户"><a href="#激活root用户" class="headerlink" title="激活root用户"></a><strong>激活root用户</strong></h3><p>处于安全考虑，root用户是不能作为ftp的登录账户的，如果在没有限制访问目录的情况下，root用户可以在ftp里访问任一文件，所以默认是不能登录ftp的。当然，你也可以为新建一些用户，专门作为ftp用户，个人习惯，用虚拟机的时候我一般直接用root用户登录ftp。</p>
+<p>我们需要注释或者删除/etc/vsftpd/ftpusers和/etc/vsftpd/user_list中的root：</p>
+<p><code>vi /etc/vsftpd/ftpusers</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#Users that are not allowed to login via ftp</span><br><span class="line">#root</span><br><span class="line">bin</span><br><span class="line">daemon</span><br><span class="line">adm</span><br><span class="line">lp</span><br><span class="line">sync</span><br><span class="line">shutdown</span><br><span class="line">halt</span><br><span class="line">mail</span><br><span class="line">news</span><br><span class="line">uucp</span><br><span class="line">operator</span><br><span class="line">games</span><br><span class="line">nobody</span><br></pre></td></tr></table></figure>
+
+<p><code>vi /etc/vsftpd/user_list</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#vsftpd userlist</span><br><span class="line">#If userlist_deny=NO, only allow users in this file</span><br><span class="line">#If userlist_deny=YES (default), never allow users in this file, and</span><br><span class="line">#do not even prompt for a password.</span><br><span class="line">#Note that the default vsftpd pam config also checks /etc/vsftpd/ftpusers</span><br><span class="line">#for users that are denied.</span><br><span class="line">#root</span><br><span class="line">bin</span><br><span class="line">daemon</span><br><span class="line">adm</span><br><span class="line">lp</span><br><span class="line">sync</span><br><span class="line">shutdown</span><br><span class="line">halt</span><br><span class="line">mail</span><br><span class="line">news</span><br><span class="line">uucp</span><br><span class="line">operator</span><br><span class="line">games</span><br><span class="line">nobody</span><br></pre></td></tr></table></figure>
+
+<h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><p>CentOS7中是用这个命令：<br><code>systemctl restart vsftpd.service</code><br>如果是其它系统：<br><code>service restart vsftpd</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Centos7以上Nginx配置成系统服务自启动</title>
     <url>/20210224181345.html</url>
     <content><![CDATA[<h1 id="创建开机自启文件"><a href="#创建开机自启文件" class="headerlink" title="创建开机自启文件"></a>创建开机自启文件</h1><p>首先在以下目录创建文件</p>
@@ -768,60 +822,6 @@
 <p><code>systemctl enable nginx.service</code></p>
 <p>停止开机自启动</p>
 <p><code>systemctl disable nginx.service</code></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Centos7以上版本Vsftpd安装、Firewall和SELinux配置</title>
-    <url>/20180724105613.html</url>
-    <content><![CDATA[<p>title: Centos7以上版本 vsftpd安装、firewall和SELinux配置<br>date: ‘2018-07-24 10:56:13’<br>updated: ‘2018-07-24 10:59:26’<br>tags: [Linux]<br>permalink: /articles/2018/07/24/1532400973145.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79842559">https://blog.csdn.net/leofitz/article/details/79842559</a><br>   <strong>CentOS7.0以上版本更换了防火墙为firewall</strong><br>   <strong>CentOS7.0之前版本的防火墙配置不再适用</strong></p>
-<h2 id="firewall防火墙配置"><a href="#firewall防火墙配置" class="headerlink" title="firewall防火墙配置"></a><strong>firewall防火墙配置</strong></h2><h3 id="重启防火墙服务"><a href="#重启防火墙服务" class="headerlink" title="重启防火墙服务"></a>重启防火墙服务</h3><p><code>systemctl restart firewalld.service</code></p>
-<h3 id="重载防火墙配置"><a href="#重载防火墙配置" class="headerlink" title="重载防火墙配置"></a>重载防火墙配置</h3><p><code>firewall-cmd --reload</code></p>
-<h3 id="添加端口"><a href="#添加端口" class="headerlink" title="添加端口"></a>添加端口</h3><p><code>firewall-cmd --zone=public --add-port=21/tcp --permanent</code></p>
-<h3 id="添加vsftpd服务"><a href="#添加vsftpd服务" class="headerlink" title="添加vsftpd服务"></a>添加vsftpd服务</h3><p><code>firewall-cmd --permanent --add-service=ftp</code></p>
-<h2 id="SELinux配置"><a href="#SELinux配置" class="headerlink" title="SELinux配置"></a><strong>SELinux配置</strong></h2><h3 id="为什么要设置SELinux"><a href="#为什么要设置SELinux" class="headerlink" title="为什么要设置SELinux?"></a>为什么要设置SELinux?</h3><ul>
-<li>  SELinux(Security-Enhanced Linux)是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。NSA是在Linux社区的帮助下开发了一种访问控制体系，在这种访问控制体系的限制下，进程只能访问那些在他的任务中所需要文件。</li>
-<li>  SELinux旨在提高Linux系统的安全性，提供强健的安全保证，可防御未知攻击。</li>
-<li>  大部分情况下，我们访问ftp的时候会被SELinux拦截，当然如果你没也设置SELiunx也能正常访问，此步可以跳过。</li>
-<li>  大家通常的作法是关闭SELiunx，这样做会引起其它安全问题，嫌麻烦的可以直接关闭：</li>
-</ul>
-<h3 id="通常直接关闭"><a href="#通常直接关闭" class="headerlink" title="通常直接关闭"></a>通常直接关闭</h3><p><code>vi /etc/selinux/config</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#SELINUX=enforcing #注释掉</span><br><span class="line"></span><br><span class="line">#SELINUXTYPE=targeted #注释掉</span><br><span class="line"></span><br><span class="line">SELINUX=disabled #增加</span><br><span class="line"></span><br><span class="line">:wq! #保存退出</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置-SELinux（只做参考可以直接关闭）"><a href="#配置-SELinux（只做参考可以直接关闭）" class="headerlink" title="配置 SELinux（只做参考可以直接关闭）"></a>配置 SELinux（只做参考可以直接关闭）</h3><p>setenforce 0 #让SELinux进入Permissive模式（宽容模式）<br>SELiunx一共有三种模式： </p>
-<ul>
-<li>enforcing（强制模式 ）：开始限制domain/type </li>
-<li>permissive（宽容模式） ：仅会有警告信息 </li>
-<li>disabled（关闭）：关闭SELinux</li>
-</ul>
-<p>设置SELiunx：</p>
-<blockquote>
-<p>[root@localhost ~]# /usr/sbin/sestatus -v #查看SELinux状态 SELinux<br>status: enabled #启用 SELinuxfs mount:<br>/sys/fs/selinux SELinux root directory: /etc/selinux Loaded<br>policy name: targeted Current mode:<br>enforcing</p>
-</blockquote>
-<p><code>setenforce 0 #暂时让SELinux进入Permissive模式</code></p>
-<p>这个时候我们尝试访问一下ftp目录，发现能够正常访问。<br>我们查看一下权限：</p>
-<blockquote>
-<p>[root@localhost ~]# getsebool -a | grep ftp<br>ftpd_anon_write –&gt; off<br>ftpd_connect_all_unreserved –&gt; off<br>ftpd_connect_db –&gt; off<br>ftpd_full_access –&gt; off<br>ftpd_use_cifs –&gt; off<br>ftpd_use_fusefs –&gt; off<br>ftpd_use_nfs –&gt; off<br>ftpd_use_passive_mode –&gt; off<br>httpd_can_connect_ftp –&gt; off<br>httpd_enable_ftp_server –&gt; off<br>tftp_anon_write –&gt; off<br>tftp_home_dir –&gt; off<br>ftp_home_dir和allow_ftpd_full_access必须为on 才能使vsftpd 具有访问ftp根目录，以及文件传输等权限。</p>
-</blockquote>
-<p><code>setsebool -P tftp_home_dir 1</code><br><code>setsebool -P allow_ftpd_full_access 1</code><br>让我们再回到强制模式：<br><code>setenforce 1 #进入Enforcing模式</code><br>如果还是不行的话，可能是我们的目录没有权限：<br><code>chmod -R 777 /usr/yong.cao/ftp #ftp的访问路径</code></p>
-<h3 id="配置vsftpd"><a href="#配置vsftpd" class="headerlink" title="配置vsftpd"></a><strong>配置vsftpd</strong></h3><ul>
-<li>  用<code>vim /etc/vsftpd/vsftpd.conf</code>打开后修改或者新增：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">anonymous_enable=NO    #不允许匿名访问</span><br><span class="line"></span><br><span class="line">write_enable=YES    #写权限</span><br><span class="line"></span><br><span class="line">local_root=/usr/yong.cao/ftp   #这里是我自定义的ftp目录</span><br><span class="line"></span><br><span class="line">chroot_local_user=YES    #这个是限制ftp用户只能在自己目录，如果ftp可以跳到其它任意目录是比较危险的，建议限制</span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES   #2.3.5之后，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了，需新增此配置</span><br></pre></td></tr></table></figure>
-
-<h3 id="激活root用户"><a href="#激活root用户" class="headerlink" title="激活root用户"></a><strong>激活root用户</strong></h3><p>处于安全考虑，root用户是不能作为ftp的登录账户的，如果在没有限制访问目录的情况下，root用户可以在ftp里访问任一文件，所以默认是不能登录ftp的。当然，你也可以为新建一些用户，专门作为ftp用户，个人习惯，用虚拟机的时候我一般直接用root用户登录ftp。</p>
-<p>我们需要注释或者删除/etc/vsftpd/ftpusers和/etc/vsftpd/user_list中的root：</p>
-<p><code>vi /etc/vsftpd/ftpusers</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#Users that are not allowed to login via ftp</span><br><span class="line">#root</span><br><span class="line">bin</span><br><span class="line">daemon</span><br><span class="line">adm</span><br><span class="line">lp</span><br><span class="line">sync</span><br><span class="line">shutdown</span><br><span class="line">halt</span><br><span class="line">mail</span><br><span class="line">news</span><br><span class="line">uucp</span><br><span class="line">operator</span><br><span class="line">games</span><br><span class="line">nobody</span><br></pre></td></tr></table></figure>
-
-<p><code>vi /etc/vsftpd/user_list</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#vsftpd userlist</span><br><span class="line">#If userlist_deny=NO, only allow users in this file</span><br><span class="line">#If userlist_deny=YES (default), never allow users in this file, and</span><br><span class="line">#do not even prompt for a password.</span><br><span class="line">#Note that the default vsftpd pam config also checks /etc/vsftpd/ftpusers</span><br><span class="line">#for users that are denied.</span><br><span class="line">#root</span><br><span class="line">bin</span><br><span class="line">daemon</span><br><span class="line">adm</span><br><span class="line">lp</span><br><span class="line">sync</span><br><span class="line">shutdown</span><br><span class="line">halt</span><br><span class="line">mail</span><br><span class="line">news</span><br><span class="line">uucp</span><br><span class="line">operator</span><br><span class="line">games</span><br><span class="line">nobody</span><br></pre></td></tr></table></figure>
-
-<h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><p>CentOS7中是用这个命令：<br><code>systemctl restart vsftpd.service</code><br>如果是其它系统：<br><code>service restart vsftpd</code></p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -2241,6 +2241,34 @@
       </categories>
   </entry>
   <entry>
+    <title>python元组用法</title>
+    <url>/20210227165913.html</url>
+    <content><![CDATA[<h1 id="1-元组与列表"><a href="#1-元组与列表" class="headerlink" title="1.元组与列表"></a>1.元组与列表</h1><ol>
+<li>列表可以修改，<strong>元组不可以修改</strong></li>
+<li>列表用[],元组用()</li>
+<li>都是有序的</li>
+<li>元组的关键字couple</li>
+<li>访问元组与访问列表的方式一样<h1 id="2-定义元组"><a href="#2-定义元组" class="headerlink" title="2.定义元组"></a>2.定义元组</h1>定义<code>元组名=（....,....）</code>访问<code>元组名[index]</code><br>case1:<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一组元组表示长方形的长和宽，其值应该是不变的</span></span><br><span class="line">demensions = (<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br><span class="line"><span class="comment"># 索引访问</span></span><br><span class="line"><span class="built_in">print</span>(demensions[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+试图修改元组值<br>case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">demensions[<span class="number">0</span>] = <span class="number">40</span></span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Traceback (most recent call last):<br>File “C:\Users\Quinn\PycharmProjects\pythonProject\couple1.py”, line 8, in <module><br> demensions[0] = 40<br>TypeError: ‘tuple’ object does not support item assignment</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="3-遍历元组中的值"><a href="#3-遍历元组中的值" class="headerlink" title="3.遍历元组中的值"></a>3.遍历元组中的值</h1><p>case1</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">couple2 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> couple2:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-元组重新赋值"><a href="#4-元组重新赋值" class="headerlink" title="4.元组重新赋值"></a>4.元组重新赋值</h1><p>对于整个元组重新赋值是合法的，但是修改元组中的某个值不合法<br>case</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组重新赋值</span></span><br><span class="line">couple3 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br><span class="line">couple3 =(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>(2, 7, 3, 4, 19)<br>(2, 1)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python中输入函数和while循环</title>
     <url>/20210301010434.html</url>
     <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
@@ -2271,34 +2299,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移除列表中所有含特定值的元素</span></span><br><span class="line">list1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;one&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">&#x27;one&#x27;</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="string">&#x27;one&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
 <h1 id="5-while在字典中用法"><a href="#5-while在字典中用法" class="headerlink" title="5.while在字典中用法"></a>5.while在字典中用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># while填充字典</span></span><br><span class="line"></span><br><span class="line">dist = &#123;&#125;</span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&#x27;请输入名字：&#x27;</span>)</span><br><span class="line">    val = <span class="built_in">input</span>(<span class="string">&#x27;请输出籍贯：&#x27;</span>)</span><br><span class="line">    repeat = <span class="built_in">input</span>(<span class="string">&#x27;是否还有要调查的人呢？yse or no&#x27;</span>)</span><br><span class="line">    dist[key] = val</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">&#x27;no&#x27;</span>:</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dist)</span><br><span class="line"></span><br><span class="line">请输入名字：xiaoming</span><br><span class="line">请输出籍贯：sd</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> noyes</span><br><span class="line">请输入名字：xiaohong</span><br><span class="line">请输出籍贯：qingdao</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> nono</span><br><span class="line">&#123;<span class="string">&#x27;xiaoming&#x27;</span>: <span class="string">&#x27;sd&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>: <span class="string">&#x27;qingdao&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python元组用法</title>
-    <url>/20210227165913.html</url>
-    <content><![CDATA[<h1 id="1-元组与列表"><a href="#1-元组与列表" class="headerlink" title="1.元组与列表"></a>1.元组与列表</h1><ol>
-<li>列表可以修改，<strong>元组不可以修改</strong></li>
-<li>列表用[],元组用()</li>
-<li>都是有序的</li>
-<li>元组的关键字couple</li>
-<li>访问元组与访问列表的方式一样<h1 id="2-定义元组"><a href="#2-定义元组" class="headerlink" title="2.定义元组"></a>2.定义元组</h1>定义<code>元组名=（....,....）</code>访问<code>元组名[index]</code><br>case1:<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一组元组表示长方形的长和宽，其值应该是不变的</span></span><br><span class="line">demensions = (<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br><span class="line"><span class="comment"># 索引访问</span></span><br><span class="line"><span class="built_in">print</span>(demensions[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-试图修改元组值<br>case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">demensions[<span class="number">0</span>] = <span class="number">40</span></span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Traceback (most recent call last):<br>File “C:\Users\Quinn\PycharmProjects\pythonProject\couple1.py”, line 8, in <module><br> demensions[0] = 40<br>TypeError: ‘tuple’ object does not support item assignment</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="3-遍历元组中的值"><a href="#3-遍历元组中的值" class="headerlink" title="3.遍历元组中的值"></a>3.遍历元组中的值</h1><p>case1</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">couple2 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> couple2:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-元组重新赋值"><a href="#4-元组重新赋值" class="headerlink" title="4.元组重新赋值"></a>4.元组重新赋值</h1><p>对于整个元组重新赋值是合法的，但是修改元组中的某个值不合法<br>case</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组重新赋值</span></span><br><span class="line">couple3 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br><span class="line">couple3 =(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>(2, 7, 3, 4, 19)<br>(2, 1)</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>Python</category>

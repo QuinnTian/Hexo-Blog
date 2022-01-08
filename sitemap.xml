@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://quinntian.com/404.html</loc>
+    
+    <lastmod>2022-01-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://quinntian.com/20220109002232.html</loc>
     
     <lastmod>2022-01-08</lastmod>
@@ -102,15 +111,6 @@
   
   <url>
     <loc>https://quinntian.com/links/linklist.json</loc>
-    
-    <lastmod>2022-01-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/404/index.html</loc>
     
     <lastmod>2022-01-06</lastmod>
     
