@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://quinntian.com/20220106005336.html</loc>
+    
+    <lastmod>2022-01-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://quinntian.com/links/index.html</loc>
     
     <lastmod>2022-01-07</lastmod>
@@ -32,15 +41,6 @@
     <loc>https://quinntian.com/404/index.html</loc>
     
     <lastmod>2022-01-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/20220106005336.html</loc>
-    
-    <lastmod>2022-01-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -934,6 +934,13 @@
   </url>
   
   <url>
+    <loc>https://quinntian.com/categories/Java/</loc>
+    <lastmod>2022-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://quinntian.com/categories/JavaScript/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -942,13 +949,6 @@
   
   <url>
     <loc>https://quinntian.com/categories/Linux/</loc>
-    <lastmod>2022-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/categories/Java/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -983,14 +983,14 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Spring/</loc>
+    <loc>https://quinntian.com/categories/Python/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Python/</loc>
+    <loc>https://quinntian.com/categories/Spring/</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
