@@ -3231,7 +3231,10 @@ chmod 777 /var/log/caddy/caddy.log
   <entry>
     <title>v2ray报错汇总</title>
     <url>/20220106005336.html</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">客户端报错</span><br><span class="line">app/proxyman/inbound: connection ends &gt; proxy/socks: connection ends &gt; context canceled</span><br><span class="line">V2Ray 4.41.1 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.16.6 windows/amd64)</span><br><span class="line">2022/01/06 00:43:37 [Info] [2751399112] app/proxyman/outbound: failed to process outbound traffic &gt; proxy/vmess/outbound: connection ends &gt; context canceled</span><br><span class="line">服务端报错</span><br><span class="line">rejected  common/drain: common/drain: unable to drain connection &gt; websocket: close 1000 (normal) &gt; proxy/vmess/encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced = false . You will not be able to enable legacy header workaround in the future.</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>自 2022 年 1 月 1 日起，服务器端将默认禁用对于 MD5 认证信息 的兼容。任何使用 MD5 认证信息的客户端将无法连接到禁用 VMess MD5 认证信息的服务器端，从而导致服务端和客户端报错。</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">客户端报错</span><br><span class="line">app/proxyman/inbound: connection ends &gt; proxy/socks: connection ends &gt; context canceled</span><br><span class="line">V2Ray 4.41.1 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.16.6 windows/amd64)</span><br><span class="line">2022/01/06 00:43:37 [Info] [2751399112] app/proxyman/outbound: failed to process outbound traffic &gt; proxy/vmess/outbound: connection ends &gt; context canceled</span><br><span class="line">服务端报错</span><br><span class="line">rejected  common/drain: common/drain: unable to drain connection &gt; websocket: close 1000 (normal) &gt; proxy/vmess/encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced = false . You will not be able to enable legacy header workaround in the future.</span><br></pre></td></tr></table></figure>
 <p>解决方法</p>
 <p>TIP</p>
 <p>在 v4.28.1 版本后，**客户端 AlterID 设置为 0 **代表启用 VMessAEAD ；服务端为自动适配，可同时兼容启用和未开启 VMessAEAD 的客户端。</p>
@@ -3245,6 +3248,14 @@ chmod 777 /var/log/caddy/caddy.log
 <p>自 2022 年 1 月 1 日起，服务器端将默认禁用对于 MD5 认证信息 的兼容。任何使用 MD5 认证信息的客户端将无法连接到禁用 VMess MD5 认证信息的服务器端。</p>
 <p><strong>在服务器端可以通过设置环境变量 v2ray.vmess.aead.forced = true 以关闭对于 MD5 认证信息的兼容。 或者 v2ray.vmess.aead.forced = false 以强制开启对于 MD5 认证信息 认证机制的兼容 （不受到 2022 年自动禁用机制的影响） 。 (v4.35.0+)</strong></p>
 ]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>华为光猫破解教程+工具</title>
+    <url>/20210308015415.html</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>其他</category>
       </categories>
@@ -3271,17 +3282,26 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>华为光猫破解教程+工具</title>
-    <url>/20210308015415.html</url>
-    <content><![CDATA[]]></content>
+    <title>华为光猫破解教程和工具</title>
+    <url>/20210313174840.html</url>
+    <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
+]]></content>
       <categories>
         <category>其他</category>
       </categories>
   </entry>
   <entry>
-    <title>华为光猫破解教程和工具</title>
-    <url>/20210313174840.html</url>
-    <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
+    <title>思维导图软件Mindmanager_2016_64位原版+破解方法.md</title>
+    <url>/20180711163756.html</url>
+    <content><![CDATA[<p>title: 思维导图软件Mindmanager 2016 64位原版+破解方法<br>date: ‘2018-07-11 16:37:56’<br>updated: ‘2018-08-16 15:17:04’<br>tags: [Mindmanager, 思维导图, 破解]<br>permalink: /articles/2018/07/11/1531298276159.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/693db6b8f90f48f592522388cd76ac05_Snipaste_20180711_173614.png" alt="Snipaste_20180711_173614png"> </p>
+<p>mindjet_mindmanager_2016_trial_64_wm.exe<br>mindjet_mindmanager_2016_trial_32_wm.exe<br>分别为对应系统的安装文件（windows）</p>
+<p>安装后不要打开，打开对应系统的文件夹<br>MP16-999-2P94-6338-2254-32位<br>MP16-999-2P94-6338-2254-64位<br>然后将里面的文件替换到C盘安装目录下</p>
+<p>MP16-999-2P94-6338-2254（64位）<br>MP16-999-2P94-6338-2254（32位）<br>分别为对应系统的注册码</p>
+<blockquote>
+<p>关注微信公众号    回复关键字mind</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3307,23 +3327,6 @@ chmod 777 /var/log/caddy/caddy.log
 <li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>思维导图软件Mindmanager_2016_64位原版+破解方法.md</title>
-    <url>/20180711163756.html</url>
-    <content><![CDATA[<p>title: 思维导图软件Mindmanager 2016 64位原版+破解方法<br>date: ‘2018-07-11 16:37:56’<br>updated: ‘2018-08-16 15:17:04’<br>tags: [Mindmanager, 思维导图, 破解]<br>permalink: /articles/2018/07/11/1531298276159.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/693db6b8f90f48f592522388cd76ac05_Snipaste_20180711_173614.png" alt="Snipaste_20180711_173614png"> </p>
-<p>mindjet_mindmanager_2016_trial_64_wm.exe<br>mindjet_mindmanager_2016_trial_32_wm.exe<br>分别为对应系统的安装文件（windows）</p>
-<p>安装后不要打开，打开对应系统的文件夹<br>MP16-999-2P94-6338-2254-32位<br>MP16-999-2P94-6338-2254-64位<br>然后将里面的文件替换到C盘安装目录下</p>
-<p>MP16-999-2P94-6338-2254（64位）<br>MP16-999-2P94-6338-2254（32位）<br>分别为对应系统的注册码</p>
-<blockquote>
-<p>关注微信公众号    回复关键字mind</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>其他</category>

@@ -22,11 +22,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
 <meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="北纬36度">
-<meta property="og:url" content="http://example.com/page/6/index.html">
+<meta property="og:url" content="https://quinntian.com/page/6/index.html">
 <meta property="og:site_name" content="北纬36度">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/page/6/">
+<link rel="canonical" href="https://quinntian.com/page/6/">
 
 
 
@@ -188,16 +188,6 @@
   </div>
 
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      友情链接
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
-        </li>
-    </ul>
-  </div>
 
         </div>
       </div>
@@ -232,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200217000044.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200217000044.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -345,7 +335,7 @@ lsmod | grep bbr
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200216235908.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200216235908.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -504,63 +494,14 @@ Configuration OK.
     ○ alterId: 不要设置过大，否则不识别，虽然官方文档给的数字很大。
     ○ 端口号不要设置过大，尤其是在用caddy转发的时候，caddy有bug比如你转发一个上万的端口号，无法转发。
 </code></pre>
-<h1 id="3-常见的命令"><a href="#3-常见的命令" class="headerlink" title="3. 常见的命令"></a>3. 常见的命令</h1><pre><code>systemctl status v2ray
-</code></pre>
-<h1 id="4-caddy安装"><a href="#4-caddy安装" class="headerlink" title="4. caddy安装"></a>4. caddy安装</h1><pre><code>在完成V2Ray的安装和配置后，下面就需要实现Web+TLS的功能了。我们可以使用源码或脚本的方式安装Caddy，但是因为Caddy使用的是Go语音编写的，可能需要golang的编译器，存在一些门槛，所以推荐脚本方式安装。运行下面的命令，等待脚本执行完成。
-curl https://getcaddy.com | bash -s personal
-是用caddy搭建tls简单，证书可以自申请。
-</code></pre>
-<h1 id="5-Caddy配置"><a href="#5-Caddy配置" class="headerlink" title="5. Caddy配置"></a>5. Caddy配置</h1><pre><code>我选择使用生产环境的配置，这样比较规范吧。一般情况下会放到 /etc/caddy 里。
-
-mkdir /etc/caddy
-touch /etc/caddy/Caddyfile
-chown -R root:www-data /etc/caddy
-
-除了配置文件，caddy 会自动生成 ssl 证书，需要一个文件夹放置 ssl 证书。
-
-mkdir /etc/ssl/caddy
-chown -R www-data:root /etc/ssl/caddy
-chmod 0770 /etc/ssl/caddy
-
-因为 ssl 文件夹里会放置私钥，所以权限设置成 770 禁止其他用户访问。
-创建好这些文件和目录了之后，我们需要把 caddy 配置成一个服务，这样就可以开机自动运行，并且管理起来也方便。因为目前大多数发行版都使用 systemd 了，所以这里只讲一下如何配置 system。
-
-# 从 github 下载 systemd 配置文件 
-curl -s https://raw.githubusercontent.com/mholt/caddy/master/dist/init/linux-systemd/caddy.service -o /etc/systemd/system/caddy.service 
-sudo systemctl daemon-reload # 重新加载 systemd 配置
-
-将caddy.service文件中以下三项配置选项的注释符#删除，如下：
-
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-
-启动Caddy服务。
-
-systemctl enable caddy.service # 设置 caddy 服务自启动
-systemctl status caddy.service # 查看 caddy 状态
-</code></pre>
-<h1 id="6-Caddy配置"><a href="#6-Caddy配置" class="headerlink" title="6. Caddy配置"></a>6. Caddy配置</h1><pre><code>ray.mydomain.me #你的站点域名
-&#123;
-  log /var/log/caddy/caddy.log
-  tls test@csds.xxx
-  proxy /v2ray localhost:1028 &#123; #注意这里需要与v2ray中配置的监听端口及WebSocket所使用的HTTP协议路径一致
-    websocket
-    header_upstream -Origin
-  &#125;
-&#125;
-注意要有空格
-第四行的 tls 指令告诉 caddy 为网站开启 https 并自动申请证书，后面的 email 参数是告知 CA 申请人的邮箱。（caddy 会默认使用 let’s encrypt 申请证书并续约，很方便吧）
-
-这里需要注意一点的是，因为caddy.service中默认的进程运行用户和用户组为www-data，所以日志文件也需要让www-data用户能够有权限读写，当然你也可以选择将日志文件存放在配置文件目录中。
-
-touch /var/log/caddy/caddy.log
-chown -R root:www-data /var/log/caddy/
-chmod 777 /var/log/caddy/caddy.log 
-</code></pre>
-<h1 id="7-配置v2rayN客户端"><a href="#7-配置v2rayN客户端" class="headerlink" title="7. 配置v2rayN客户端"></a>7. 配置v2rayN客户端</h1><pre><code>下载地址：https://github.com/2dust/v2rayN
-</code></pre>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20200216235908.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -586,7 +527,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200216234840.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200216234840.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -700,7 +641,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200215233136.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200215233136.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -902,7 +843,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200214234122.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200214234122.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1016,15 +957,14 @@ chmod 777 /var/log/caddy/caddy.log
 </tbody></table>
 </li>
 </ul>
-<p>groupdel</p>
-<ul>
-<li><p>用途：删除用户组</p>
-<ul>
-<li>注意点：用户组内必须无用户，否则先执行删除用户操作。</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20200214234122.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1050,7 +990,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200213232500.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200213232500.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1190,7 +1130,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200212182634.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200212182634.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1331,7 +1271,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200211230109.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200211230109.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1421,48 +1361,14 @@ chmod 777 /var/log/caddy/caddy.log
 </ul>
 </li>
 </ul>
-<p>用户创建完后不能登陆必须使用password命令设置用户密码才能使用。</p>
-<ul>
-<li><p>[option]含义</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-g [inital_grp]</td>
-<td>指定用户所属的组，不指定自动创建同名的组。☆</td>
-</tr>
-<tr>
-<td>-G [grp]</td>
-<td>用户添加附属组。</td>
-</tr>
-<tr>
-<td>-D</td>
-<td>用于现实或设置useradd命令使用的默认值。</td>
-</tr>
-<tr>
-<td>-d [directory]</td>
-<td>指定用户主目录，若目录不存在，则用-m选项来创建主目录。☆</td>
-</tr>
-<tr>
-<td>-m</td>
-<td>使用的目录如果不存在，自动建立☆</td>
-</tr>
-<tr>
-<td>-u UID</td>
-<td>指定用户用户号。</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>使用<code>tail-l</code>查看用户/etc/passwd和/etc/shadow文件，前者用于查看新建目录用户信息，后者用于查看用户密码信息。</p>
-<p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200211225302.png"></p>
-<p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200211225659.png"></p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20200211230109.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1488,7 +1394,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200131012620.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200131012620.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1558,23 +1464,15 @@ chmod 777 /var/log/caddy/caddy.log
     <div class="post-body" itemprop="articleBody">
           <h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0. 写在前面"></a>0. 写在前面</h1><p><strong>数据无价 定时备份</strong></p>
 <h1 id="1-创建备份数据库存放处"><a href="#1-创建备份数据库存放处" class="headerlink" title="1. 创建备份数据库存放处"></a>1. 创建备份数据库存放处</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /backup/data</span><br></pre></td></tr></table></figure>
-<h1 id="2-编写脚本"><a href="#2-编写脚本" class="headerlink" title="2. 编写脚本"></a>2. 编写脚本</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">DATE=`date +%Y%m%d%H%M`                #备份日期时间</span><br><span class="line">DATABASE=                              #备份数据库名称</span><br><span class="line">DB_USERNAME=root                       #数据库账号</span><br><span class="line">DB_PASSWORD=&quot;&quot;       		       #数据库密码</span><br><span class="line">BACKUP_PATH=/backup/data               #备份数据，禁止放在网站目录下</span><br><span class="line"></span><br><span class="line">#备份命令</span><br><span class="line"></span><br><span class="line">/usr/bin/mysqldump-u $DB_USERNAME-p $DB_PASSWORD -h 127.0.0.1 -R --opt $DATABASE | gzip &gt; $&#123;BACKUP_PATH&#125;\/$&#123;DATABASE&#125;_$&#123;DATE&#125;.sql.gz</span><br><span class="line"></span><br><span class="line">#删除7天前备份文件</span><br><span class="line">find $&#123;BACKUP_PATH&#125; -mtime +7 -name &quot;$&#123;DATABASE&#125;_*.sql.gz&quot; -exec rm -f &#123;&#125; \;</span><br></pre></td></tr></table></figure>
-<h1 id="3-测试脚本"><a href="#3-测试脚本" class="headerlink" title="3. 测试脚本"></a>3. 测试脚本</h1><p>给脚本执行权限 #chmod +x mysql_backup.sh<br>sh 你的脚本</p>
-<h1 id="4-配置定时任务"><a href="#4-配置定时任务" class="headerlink" title="4. 配置定时任务"></a>4. 配置定时任务</h1><p><code>crontab -e</code>设置定时要求</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 * * * * /mysql_backup.sh #设置每天五点调用</span><br></pre></td></tr></table></figure>
-<p><code>crontab -l</code>列出当前任务<br><code>service crontab reload</code>重新载入配置文件</p>
-<h1 id="6-关于crontab命令"><a href="#6-关于crontab命令" class="headerlink" title="6. 关于crontab命令"></a>6. 关于crontab命令</h1><h2 id="6-1-格式"><a href="#6-1-格式" class="headerlink" title="6.1 格式"></a>6.1 格式</h2><p><code>crontab [ -u user ] &#123; -l | -r | -e &#125;</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-e : 执行文字编辑器来设定时程表，内定的文字编辑器是 VI，如果你想用别的文							 	 </span><br><span class="line">字编辑器，则请先设定 VISUAL 环境变数来指定使用那个文字编辑器(比如说 setenv </span><br><span class="line">VISUAL joe)</span><br><span class="line">-r : 删除目前的时程表</span><br><span class="line">-l : 列出目前的时程表</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li>
-<li>当 f1 为 * 时表示每分钟都要执行 program，f2 为 * 时表示每小时都要执行程序，其馀类推</li>
-<li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li>
-<li>当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推</li>
-<li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12) </span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
-<h2 id="6-2-例子"><a href="#6-2-例子" class="headerlink" title="6.2 例子"></a>6.2 例子</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">每月每天每小时的第 0 分钟执行一次 /bin/ls</span><br><span class="line"></span><br><span class="line">0 * * * * /bin/ls</span><br><span class="line">在 12 月内, 每天的早上 6 点到 12 点，每隔 3 个小时 0 分钟执行一次 /usr/bin/backup</span><br><span class="line"></span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line">周一到周五每天下午 5:00 寄一封信给 alex@domain.name</span><br><span class="line"></span><br><span class="line">0 17 * * 1-5 mail -s &quot;hi&quot; alex@domain.name &lt; /tmp/maildata</span><br><span class="line">每月每天的午夜 0 点 20 分, 2 点 20 分, 4 点 20 分....执行 echo &quot;haha&quot;</span><br><span class="line"></span><br><span class="line">20 0-23/2 * * * echo &quot;haha&quot;</span><br><span class="line">下面再看看几个具体的例子：</span><br><span class="line"></span><br><span class="line">0 */2 * * * /sbin/service httpd restart  意思是每两个小时重启一次apache </span><br><span class="line"></span><br><span class="line">50 7 * * * /sbin/service sshd start  意思是每天7：50开启ssh服务 </span><br><span class="line"></span><br><span class="line">50 22 * * * /sbin/service sshd stop  意思是每天22：50关闭ssh服务 </span><br><span class="line"></span><br><span class="line">0 0 1,15 * * fsck /home  每月1号和15号检查/home 磁盘 </span><br><span class="line"></span><br><span class="line">1 * * * * /home/bruce/backup  每小时的第一分执行 /home/bruce/backup这个文件 </span><br><span class="line"></span><br><span class="line">00 03 * * 1-5 find /home &quot;*.xxx&quot; -mtime +4 -exec rm &#123;&#125; \;  每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。</span><br><span class="line"></span><br><span class="line">30 6 */10 * * ls  意思是每月的1、11、21、31日是的6：30执行一次ls命令</span><br></pre></td></tr></table></figure>
-<h2 id="6-3-其他"><a href="#6-3-其他" class="headerlink" title="6.3 其他"></a>6.3 其他</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/sbin/service crond start //启动服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond stop //关闭服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond restart //重启服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond reload //重新载入配置</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+<h1 id="2-编写脚本"><a href="#2-编写脚本" class="headerlink" title="2. 编写脚本"></a>2. 编写脚本</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20200131012620.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1600,7 +1498,7 @@ chmod 777 /var/log/caddy/caddy.log
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20191026231750.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20191026231750.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1675,7 +1573,14 @@ chmod 777 /var/log/caddy/caddy.log
 </ol>
 <p>本地仓库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;E:\WorkSpace\MVNRES&lt;/localRepository&gt;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20191026231750.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

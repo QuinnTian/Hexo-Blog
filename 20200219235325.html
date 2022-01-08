@@ -22,13 +22,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
-<meta name="description" content="2.9 chmod访问权限：只读、只写和可执行。  可读：就是只让你读，其他的不能做。 可执行：就是将该文件作为一种程序可读。 可写：就是能往里面写东西。  三种类型的用户：文件所有者、同组用户和其他用户。  文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。  文件或目录所拥有的的权限有三组  文件的读、写和执行权限。 同组用户的三个权限。 其他用户的三个权限。  一个文件的">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
+<meta name="description" content="2.9 chmod访问权限：只读、只写和可执行。  可读：就是只让你读，其他的不能做。 可执行：就是将该文件作为一种程序可读。 可写：就是能往里面写东西。  三种类型的用户：文件所有者、同组用户和其他用户。  文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天复习一个Linux命令008之chmod、chown">
-<meta property="og:url" content="http://example.com/20200219235325.html">
+<meta property="og:url" content="https://quinntian.com/20200219235325.html">
 <meta property="og:site_name" content="北纬36度">
-<meta property="og:description" content="2.9 chmod访问权限：只读、只写和可执行。  可读：就是只让你读，其他的不能做。 可执行：就是将该文件作为一种程序可读。 可写：就是能往里面写东西。  三种类型的用户：文件所有者、同组用户和其他用户。  文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。  文件或目录所拥有的的权限有三组  文件的读、写和执行权限。 同组用户的三个权限。 其他用户的三个权限。  一个文件的">
+<meta property="og:description" content="2.9 chmod访问权限：只读、只写和可执行。  可读：就是只让你读，其他的不能做。 可执行：就是将该文件作为一种程序可读。 可写：就是能往里面写东西。  三种类型的用户：文件所有者、同组用户和其他用户。  文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-19T15:53:25.000Z">
 <meta property="article:modified_time" content="2020-04-01T13:50:52.000Z">
@@ -37,11 +37,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/20200219235325.html">
+<link rel="canonical" href="https://quinntian.com/20200219235325.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/20200219235325.html","path":"20200219235325.html","title":"每天复习一个Linux命令008之chmod、chown"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://quinntian.com/20200219235325.html","path":"20200219235325.html","title":"每天复习一个Linux命令008之chmod、chown"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>每天复习一个Linux命令008之chmod、chown | 北纬36度</title>
@@ -191,16 +191,6 @@
   </div>
 
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      友情链接
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
-        </li>
-    </ul>
-  </div>
 
         </div>
       </div>
@@ -236,7 +226,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20200219235325.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20200219235325.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -386,7 +376,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://example.com/20200219235325.html" title="每天复习一个Linux命令008之chmod、chown">http://example.com/20200219235325.html</a>
+      <a href="https://quinntian.com/20200219235325.html" title="每天复习一个Linux命令008之chmod、chown">https://quinntian.com/20200219235325.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！

@@ -22,11 +22,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
 <meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="北纬36度">
-<meta property="og:url" content="http://example.com/page/8/index.html">
+<meta property="og:url" content="https://quinntian.com/page/8/index.html">
 <meta property="og:site_name" content="北纬36度">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/page/8/">
+<link rel="canonical" href="https://quinntian.com/page/8/">
 
 
 
@@ -188,16 +188,6 @@
   </div>
 
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      友情链接
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
-        </li>
-    </ul>
-  </div>
 
         </div>
       </div>
@@ -232,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180724105209.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180724105209.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -304,16 +294,14 @@
 <hr>
 <p>原博客文章备份： <a target="_blank" rel="noopener" href="https://blog.csdn.net/leofitz/article/details/79883844">https://blog.csdn.net/leofitz/article/details/79883844</a></p>
 <h1 id="CenOS配置JDK7"><a href="#CenOS配置JDK7" class="headerlink" title="CenOS配置JDK7"></a>CenOS配置JDK7</h1><p>2018年04月10日 17:06:20</p>
-<p>阅读数：18 <a target="_blank" rel="noopener" href="https://mp.csdn.net/postedit/79883844">编辑</a></p>
-<h3 id="1-删除系统自带的JDK"><a href="#1-删除系统自带的JDK" class="headerlink" title="1.删除系统自带的JDK"></a>1.删除系统自带的JDK</h3><p><code>rpm -qa | grep jdk</code><br><img src="https://img-blog.csdn.net/20180410163432871?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>rpm -e --nodeps</code>删除<br><img src="https://img-blog.csdn.net/20180410163748904?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-<h3 id="2-下载JDK"><a href="#2-下载JDK" class="headerlink" title="2.下载JDK"></a>2.下载JDK</h3><p>jdk7u79-linux-x64.tar.gz</p>
-<h3 id="3-安装JDK"><a href="#3-安装JDK" class="headerlink" title="3.安装JDK"></a>3.安装JDK</h3><h4 id="3-1-检测当前系统中jdk的安装版本"><a href="#3-1-检测当前系统中jdk的安装版本" class="headerlink" title="3.1 检测当前系统中jdk的安装版本"></a>3.1 检测当前系统中jdk的安装版本</h4><p><code>java -version</code>显示未找到此命令<br><img src="https://img-blog.csdn.net/20180410164541407?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-<h4 id="3-2-解压下载好的jdk7u79-linux-x64-tar-gz"><a href="#3-2-解压下载好的jdk7u79-linux-x64-tar-gz" class="headerlink" title="3.2 解压下载好的jdk7u79-linux-x64.tar.gz"></a>3.2 解压下载好的jdk7u79-linux-x64.tar.gz</h4><p>当前安装包在我的myftp文件夹中，解压到目标文件夹<br><code>tar -zxvf jdk7u79-linux-x64.tar.gz -C /usr/lib/jvm</code></p>
-<p><img src="https://img-blog.csdn.net/20180410165319714?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-<h5 id="3-3-配置环境变量"><a href="#3-3-配置环境变量" class="headerlink" title="3.3 配置环境变量"></a>3.3 配置环境变量</h5><p><code>vim /etc/profile</code><br>在前面添加环境变量</p>
-<p><code>export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_131  export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</code><br><img src="https://img-blog.csdn.net/20180410170250726?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br><code>source /etc/profile</code>执行后立即生效无需重启</p>
-<h4 id="3-4-查看Java版本安装完毕"><a href="#3-4-查看Java版本安装完毕" class="headerlink" title="3.4 查看Java版本安装完毕"></a>3.4 查看Java版本安装完毕</h4><p><code>java -version</code><br><img src="https://img-blog.csdn.net/20180410170527733?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGVvRml0eg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180724105209.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -339,7 +327,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180724105005.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180724105005.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -436,7 +424,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180724104752.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180724104752.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -509,33 +497,14 @@
 <p>1、firewalld的基本使用</p>
 <p>启动： systemctl start firewalld</p>
 <p>关闭： systemctl stop firewalld</p>
-<p>查看状态： systemctl status firewalld </p>
-<p>开机禁用  ： systemctl disable firewalld</p>
-<p>开机启用  ： systemctl enable firewalld</p>
-<p>2.systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。</p>
-<p>启动一个服务：systemctl start firewalld.service<br>关闭一个服务：systemctl stop firewalld.service<br>重启一个服务：systemctl restart firewalld.service<br>显示一个服务的状态：systemctl status firewalld.service<br>在开机时启用一个服务：systemctl enable firewalld.service<br>在开机时禁用一个服务：systemctl disable firewalld.service<br>查看服务是否开机启动：systemctl is-enabled firewalld.service<br>查看已启动的服务列表：systemctl list-unit-files|grep enabled<br>查看启动失败的服务列表：systemctl –failed</p>
-<p>3.配置firewalld-cmd</p>
-<p>查看版本： firewall-cmd –version</p>
-<p>查看帮助： firewall-cmd –help</p>
-<p>显示状态： firewall-cmd –state</p>
-<p>查看所有打开的端口： firewall-cmd –zone=public –list-ports</p>
-<p>更新防火墙规则： firewall-cmd –reload</p>
-<p>查看区域信息:  firewall-cmd –get-active-zones</p>
-<p>查看指定接口所属区域： firewall-cmd –get-zone-of-interface=eth0</p>
-<p>拒绝所有包：firewall-cmd –panic-on</p>
-<p>取消拒绝状态： firewall-cmd –panic-off</p>
-<p>查看是否拒绝： firewall-cmd –query-panic</p>
-<p>那怎么开启一个端口呢</p>
-<p>添加</p>
-<p>firewall-cmd –zone=public –add-port=80/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）</p>
-<p>重新载入</p>
-<p>firewall-cmd –reload</p>
-<p>查看</p>
-<p>firewall-cmd –zone= public –query-port=80/tcp</p>
-<p>删除</p>
-<p>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
-<p>收藏至：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/moxiaoan/p/5683743.html">https://www.cnblogs.com/moxiaoan/p/5683743.html</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180724104752.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -561,7 +530,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180724104333.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180724104333.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -632,50 +601,15 @@
           <p>title: Centos7搭建SS方法<br>date: ‘2018-07-24 10:43:33’<br>updated: ‘2018-07-24 11:05:53’<br>tags: [SS, 后端, Linux]<br>permalink: /articles/2018/07/24/1532400212591.html</p>
 <hr>
 <p>参考文章地址<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013309540/article/details/74330305">https://blog.csdn.net/u013309540/article/details/74330305</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/tmacsky/article/details/78795809">https://blog.csdn.net/tmacsky/article/details/78795809</a><br>SS：<a target="_blank" rel="noopener" href="https://github.com/shadowsocks">https://github.com/shadowsocks</a></p>
-<h4 id="1-安装pip"><a href="#1-安装pip" class="headerlink" title="1.安装pip"></a>1.安装pip</h4><h5 id="1-1安装epel扩展源"><a href="#1-1安装epel扩展源" class="headerlink" title="1.1安装epel扩展源"></a>1.1安装epel扩展源</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2安装python-pip"><a href="#1-2安装python-pip" class="headerlink" title="1.2安装python-pip"></a>1.2安装python-pip</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install python-pip</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-3升级pip"><a href="#1-3升级pip" class="headerlink" title="1.3升级pip"></a>1.3升级pip</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-<p>显示Complete！后表示安装成功，最好清除下cache。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum clean all</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-安装shdowsocks"><a href="#2-安装shdowsocks" class="headerlink" title="2.安装shdowsocks"></a>2.安装shdowsocks</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
-
-<p>安装过程中可能会提示pip版本低了，需要更新下pip。</p>
-<h5 id="2-1配置服务端"><a href="#2-1配置服务端" class="headerlink" title="2.1配置服务端"></a>2.1配置服务端</h5><p>新建一个配置文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
-
-<p>然后输入如下内容：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;    &quot;server&quot;:&quot;server_ip&quot;,    &quot;server_port&quot;:25,    &quot;local_address&quot;: &quot;127.0.0.1&quot;,    &quot;local_port&quot;:1080,    &quot;password&quot;:&quot;password&quot;,    &quot;timeout&quot;:300,    &quot;method&quot;:&quot;aes-256-cfb&quot;,    &quot;fast_open&quot;: false &#125; </span><br></pre></td></tr></table></figure>
-
-<p>多用户支持可以如下设置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;server&quot;:&quot;0.0.0.0&quot;, &quot;local_address&quot;:&quot;127.0.0.1&quot;, </span><br><span class="line">&quot;local_port&quot;:1080, </span><br><span class="line">&quot;port_password&quot;:&#123; &quot;8989&quot;:&quot;password8989&quot;, </span><br><span class="line">&quot;7979&quot;:&quot;password7979&quot;, </span><br><span class="line">&quot;6969&quot;:&quot;password6969&quot; &#125;, </span><br><span class="line">&quot;timeout&quot;:300, </span><br><span class="line">&quot;method&quot;:&quot;aes-256-cfb&quot;, </span><br><span class="line">&quot;fast_open&quot;: false &#125;</span><br></pre></td></tr></table></figure>
-
-<p>主要需要设置server_ip、port和password三项，设置好后保存退出。</p>
-<h5 id="2-2启动shadowsocks"><a href="#2-2启动shadowsocks" class="headerlink" title="2.2启动shadowsocks"></a>2.2启动shadowsocks</h5><p>最好将其设置成服务启动。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/systemd/system/shadowsocks.service</span><br></pre></td></tr></table></figure>
-
-<p>然后输入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Unit]Description=Shadowsocks [Service]TimeoutStartSec=0ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json [Install]WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>启动服务：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable shadowsocks</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start shadowsocks</span><br></pre></td></tr></table></figure>
-
-<p>查看服务是否启动成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status shadowsocks -l</span><br></pre></td></tr></table></figure>
-
-<p>如需要停止服务使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop shadowsocks</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-3开启防火墙端口"><a href="#2-3开启防火墙端口" class="headerlink" title="2.3开启防火墙端口"></a>2.3开启防火墙端口</h5><p>如果没设置防火墙端口开启，可能不能访问到该端口服务。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=25/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-加速"><a href="#3-加速" class="headerlink" title="3.加速"></a>3.加速</h4><p>加速可以选择用锐速或者BBR，这里就不赘述了。</p>
-
+<h4 id="1-安装pip"><a href="#1-安装pip" class="headerlink" title="1.安装pip"></a>1.安装pip</h4><h5 id="1-1安装epel扩展源"><a href="#1-1安装epel扩展源" class="headerlink" title="1.1安装epel扩展源"></a>1.1安装epel扩展源</h5>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180724104333.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -701,7 +635,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180723204037.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180723204037.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -775,64 +709,14 @@
 <h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
 <li>项目/仓库级别</li>
 </ul>
-<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
-<ul>
-<li>全局级别</li>
-</ul>
-<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
-<ul>
-<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
-<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
-<li><p>命令<br><code>git init</code></p>
-<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
-<li><p>命令<br><code>git status </code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
-</li>
-<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
-<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
-<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
-<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
-<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
-</li>
-</ul>
-<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
-<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
-<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
-<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
-<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
-<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
-<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
-<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
-<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
-<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
-<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
-<ul>
-<li>删除操作提交到本地库，指针位置指向历史记录</li>
-<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
-</ul>
-<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
-<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
-<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
-<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
-</ul>
-<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
-<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
-<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
-<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
-<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
-<p>示例</p>
-<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
-<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
-<p>冲突的解决</p>
-<ul>
-<li>1.编辑文件，把文件修改到满意程度</li>
-<li>2.git add[文件名]</li>
-<li>3.git commit -m[]此时不需要加文件名</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180723204037.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -858,7 +742,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180723112040.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180723112040.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -930,7 +814,14 @@
 <hr>
 <h2 id="标准的Maven结构"><a href="#标准的Maven结构" class="headerlink" title="标准的Maven结构"></a>标准的Maven结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1.  + project  </span><br><span class="line">2.    |  </span><br><span class="line">3.    + pom.xml  </span><br><span class="line">4.    |  </span><br><span class="line">5.    + src /  </span><br><span class="line">6.       + main /  </span><br><span class="line">7.       | + java    java源代码文件,最终会打包编译到WEB/INF下的classes目录  </span><br><span class="line">8.       | + resources 资源库，会自动复制到classes目录里  </span><br><span class="line">9.       | + filters  资源过滤文件  </span><br><span class="line">10.       | + webapp web应用程序资源文件  </span><br><span class="line">11.       + test /  </span><br><span class="line">12.       | + java  测试java源文件内容  </span><br><span class="line">13.       | + resources 测试的资源文件  </span><br><span class="line">14.       | + filters  测试的资源过滤文件  </span><br><span class="line">15.       + it /  </span><br><span class="line">16.       + assembly /  </span><br><span class="line">17.       + site / |  </span><br><span class="line">18.    + .idea /  </span><br><span class="line">19.    +  project.iml  </span><br><span class="line">20.  + LICENSE.txt   工程许可说明  </span><br><span class="line">21.  + NOTICE.txt   项目所需要的依赖的说明文件  </span><br><span class="line">22.  + README.txt 项目工程说明文档</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><img src="https://res.quinntian.xyz//file/2018/07/52892db58d80427f90a7b8e9e7864adf_Snipaste_20180723_110629.png" alt="Snipaste_20180723_110629png"> </p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180723112040.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -956,7 +847,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180721123139.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180721123139.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1029,7 +920,14 @@
 <li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
 <li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
 </ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180721123139.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1055,7 +953,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180721121432.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180721121432.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1145,7 +1043,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180721120413.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180721120413.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1218,8 +1116,14 @@
 <p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
 <p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
 <p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
-<p>Tomcat设置不输入项目名直接访问</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180721120413.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1245,7 +1149,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/20180721115142.html">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20180721115142.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
@@ -1317,31 +1221,14 @@
 <hr>
 <p><strong>linux下文件的复制、移动与删除命令为：cp，mv，rm</strong></p>
 <h1 id="一、文件复制命令cp"><a href="#一、文件复制命令cp" class="headerlink" title="一、文件复制命令cp"></a>一、文件复制命令cp</h1><p>命令格式：cp [-adfilprsu] 源文件(source) 目标文件(destination)<br>cp [option] source1 source2 source3 … directory<br>参数说明：<br>-a:是指archive的意思，也说是指复制所有的目录<br>-d:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身<br>-f:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制<br>-i:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作<br>-l:建立硬连接(hard link)的连接文件，而非复制文件本身<br>-p:与文件的属性一起复制，而非使用默认属性<br>-r:递归复制，用于目录的复制操作<br>-s:复制成符号连接文件(symbolic link)，即“快捷方式”文件<br>-u:若目标文件比源文件旧，更新目标文件 </p>
-<p>如将/test1目录下的file1复制到/test3目录，并将文件名改为file2,可输入以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /test1/file1 /test3/file2</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二、文件移动命令mv"><a href="#二、文件移动命令mv" class="headerlink" title="二、文件移动命令mv"></a>二、文件移动命令mv</h1><p>命令格式：mv [-fiv] source destination<br>参数说明：<br>-f:force，强制直接移动而不询问<br>-i:若目标文件(destination)已经存在，就会询问是否覆盖<br>-u:若目标文件已经存在，且源文件比较新，才会更新</p>
-<p>如将/test1目录下的file1复制到/test3 目录，并将文件名改为file2,可输入以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /test1/file1 /test3/file2</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三、文件删除命令rm"><a href="#三、文件删除命令rm" class="headerlink" title="三、文件删除命令rm"></a>三、文件删除命令rm</h1><p>命令格式：rm [fir] 文件或目录<br>参数说明：<br>-f:强制删除<br>-i:交互模式，在删除前询问用户是否操作<br>-r:递归删除，常用在目录的删除</p>
-<p>如删除/test目录下的file1文件，可以输入以下命令：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> -i /<span class="keyword">test</span>/file1</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>复制：<br>CP命令<br>格式: CP [选项]  源文件或目录   目的文件或目录<br>选项说明:-b 同名,备分原来的文件<br>        -f 强制覆盖同名文件<br>        -r  按递归方式保留原目录结构复制文件</p>
-<p>cp -Rf /home/user1/* /root/temp/<br>将 /home/user1目录下的所有东西拷到/root/temp/下而不拷贝user1目录本身。<br>即格式为：cp -rf 原路径/ 目的路径/</p>
-<p>移动：<br>mv ./WorkReport/web.xml ./WorkReport/WEB-INF/<br>注：移动/WorkReport/web.xml文件到/WorkReport/WEB-INF/</p>
-<p>mv /data/new /data/old/<br>注：移动/data/new 到/data/old/文件夹下<br>注意点：移动文件夹的话就不要再加 / 了</p>
-<p>如果是移动文件夹下的所有文件的话就可以文件夹后面跟上 /* </p>
-<p>mv /data/new/* /data/old/</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20180721115142.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -2962,20 +2962,9 @@ body {
 }
 .main-inner {
   background: rgba(255,255,255,0.7) none repeat scroll !important;
-  z-index: 20;
-}
-.search-pop-overlay {
-  opacity: 1;
 }
 .header-inner {
-  background: rgba(255,255,255,0.9);
-}
-.popup {
-  background: #fff none repeat scroll !important;
-  z-index: 9999 !important;
-}
-.search-popup {
-  background: #fff none repeat scroll !important;
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
 }
 .footer {
   color: #fff;
