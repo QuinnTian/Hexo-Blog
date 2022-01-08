@@ -770,6 +770,22 @@
       </categories>
   </entry>
   <entry>
+    <title>Centos配置Tomcat</title>
+    <url>/20180724105414.html</url>
+    <content><![CDATA[<p>title: Centos配置Tomcat<br>date: ‘2018-07-24 10:54:14’<br>updated: ‘2018-07-24 10:56:47’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400848708.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79884819">https://blog.csdn.net/leofitz/article/details/79884819</a></p>
+<h4 id="1-配置jdk"><a href="#1-配置jdk" class="headerlink" title="1.配置jdk"></a>1.配置jdk</h4><p>详见配置jdk的<a href="https://blog.csdn.net/LeoFitz/article/details/79883844">博文</a></p>
+<h4 id="2-下载并上传到自己的Centos中"><a href="#2-下载并上传到自己的Centos中" class="headerlink" title="2.下载并上传到自己的Centos中"></a>2.下载并上传到自己的Centos中</h4><p>下载<a href="https://download.csdn.net/download/leofitz/10339430">Tomcat7.0</a>或者去Tomcat官网自行下载<br>上传到自己的Centos服务器中</p>
+<h4 id="3-安装Tomcat服务器"><a href="#3-安装Tomcat服务器" class="headerlink" title="3. 安装Tomcat服务器"></a>3. 安装Tomcat服务器</h4><h5 id="3-1-解压安装包"><a href="#3-1-解压安装包" class="headerlink" title="3.1 解压安装包"></a>3.1 解压安装包</h5><p><code>tar zxvf apache-tomcat-7.0.85.tar.gz</code><br><img src="https://img-blog.csdn.net/20180410173204208?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><br><img src="https://img-blog.csdn.net/20180410173535737?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<h5 id="3-2-修改tomcat服务器的启动端口"><a href="#3-2-修改tomcat服务器的启动端口" class="headerlink" title="3.2 修改tomcat服务器的启动端口"></a>3.2 修改tomcat服务器的启动端口</h5><p><img src="https://img-blog.csdn.net/20180410173704266?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><br><code>vi server.xml</code><br><img src="https://img-blog.csdn.net/20180410173841555?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<h4 id="4-服务器的启动与停止"><a href="#4-服务器的启动与停止" class="headerlink" title="4. 服务器的启动与停止"></a>4. 服务器的启动与停止</h4><p>进入服务器的bin目录下<br>启动 <code>./startup.sh</code><br>停止<code>./shutdown.sh</code><br>查看端口号是否被占用 <code>lsof -i:端口号</code><br><img src="https://img-blog.csdn.net/20180410174126372?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Centos下Nginx源码安装</title>
     <url>/20210224181226.html</url>
     <content><![CDATA[<h1 id="1-安装编译工具"><a href="#1-安装编译工具" class="headerlink" title="1.安装编译工具"></a>1.安装编译工具</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel</span><br></pre></td></tr></table></figure>
@@ -792,22 +808,6 @@
 <h1 id="4-常见命令"><a href="#4-常见命令" class="headerlink" title="4.常见命令"></a>4.常见命令</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 检查配置文件格式</span><br><span class="line">/usr/local/webserver/nginx/sbin/nginx -t</span><br><span class="line">/usr/local/webserver/nginx/sbin/nginx -s reload            # 重新载入配置文件</span><br><span class="line">/usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx</span><br><span class="line">/usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx</span><br></pre></td></tr></table></figure>
 <h1 id="5-将nginx配置成系统服务"><a href="#5-将nginx配置成系统服务" class="headerlink" title="5.将nginx配置成系统服务"></a>5.将nginx配置成系统服务</h1>参考<a href="https://quinntian.com/?p=103">https://quinntian.com/?p=103</a></li>
 </ol>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Centos配置Tomcat</title>
-    <url>/20180724105414.html</url>
-    <content><![CDATA[<p>title: Centos配置Tomcat<br>date: ‘2018-07-24 10:54:14’<br>updated: ‘2018-07-24 10:56:47’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400848708.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79884819">https://blog.csdn.net/leofitz/article/details/79884819</a></p>
-<h4 id="1-配置jdk"><a href="#1-配置jdk" class="headerlink" title="1.配置jdk"></a>1.配置jdk</h4><p>详见配置jdk的<a href="https://blog.csdn.net/LeoFitz/article/details/79883844">博文</a></p>
-<h4 id="2-下载并上传到自己的Centos中"><a href="#2-下载并上传到自己的Centos中" class="headerlink" title="2.下载并上传到自己的Centos中"></a>2.下载并上传到自己的Centos中</h4><p>下载<a href="https://download.csdn.net/download/leofitz/10339430">Tomcat7.0</a>或者去Tomcat官网自行下载<br>上传到自己的Centos服务器中</p>
-<h4 id="3-安装Tomcat服务器"><a href="#3-安装Tomcat服务器" class="headerlink" title="3. 安装Tomcat服务器"></a>3. 安装Tomcat服务器</h4><h5 id="3-1-解压安装包"><a href="#3-1-解压安装包" class="headerlink" title="3.1 解压安装包"></a>3.1 解压安装包</h5><p><code>tar zxvf apache-tomcat-7.0.85.tar.gz</code><br><img src="https://img-blog.csdn.net/20180410173204208?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><br><img src="https://img-blog.csdn.net/20180410173535737?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
-<h5 id="3-2-修改tomcat服务器的启动端口"><a href="#3-2-修改tomcat服务器的启动端口" class="headerlink" title="3.2 修改tomcat服务器的启动端口"></a>3.2 修改tomcat服务器的启动端口</h5><p><img src="https://img-blog.csdn.net/20180410173704266?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><br><code>vi server.xml</code><br><img src="https://img-blog.csdn.net/20180410173841555?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
-<h4 id="4-服务器的启动与停止"><a href="#4-服务器的启动与停止" class="headerlink" title="4. 服务器的启动与停止"></a>4. 服务器的启动与停止</h4><p>进入服务器的bin目录下<br>启动 <code>./startup.sh</code><br>停止<code>./shutdown.sh</code><br>查看端口号是否被占用 <code>lsof -i:端口号</code><br><img src="https://img-blog.csdn.net/20180410174126372?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xlb0ZpdHo=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -2028,17 +2028,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Nginx配置域名以及映射内网不同端口.md</title>
-    <url>/20180721121432.html</url>
-    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
-<hr>
-<p><strong>Nginx.conf</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
     <url>/20210224182829.html</url>
     <content><![CDATA[<p>以下配置文件如下功能</p>
@@ -2050,6 +2039,17 @@
 <li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置域名以及映射内网不同端口.md</title>
+    <url>/20180721121432.html</url>
+    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
+<hr>
+<p><strong>Nginx.conf</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Nginx</category>
       </categories>
@@ -2723,24 +2723,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
       </categories>
   </entry>
   <entry>
-    <title>python类编码风格</title>
-    <url>/20210301133334.html</url>
-    <content><![CDATA[<ol>
-<li>类名驼峰命名法</li>
-<li>实例名和模块名小写，之间用下划线</li>
-<li>每个类定义后跟一个文档注释</li>
-<li>每个模块也应该跟一个文档字符串</li>
-<li>每个方法名下面也要跟一个文档注释</li>
-<li>两个空行分隔类</li>
-<li>类中用一个空行分隔方法</li>
-<li>先导入标准库，后空行，再导入你自己写模块</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>python类的用法</title>
     <url>/20210303121106.html</url>
     <content><![CDATA[<h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h1><h2 id="1-1基本格式"><a href="#1-1基本格式" class="headerlink" title="1.1基本格式"></a>1.1基本格式</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名()：</span></span><br><span class="line"><span class="class">	<span class="title">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">		</span><br><span class="line">		...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -2805,6 +2787,24 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 <h1 id="12-模块导入模块"><a href="#12-模块导入模块" class="headerlink" title="12.模块导入模块"></a>12.模块导入模块</h1><p>electic_car.py模块 是依赖car的，因此需要导入car模块，你不导入实例化会报错</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> car <span class="keyword">import</span> Car</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Electric_car</span>():</span></span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
 <p>事实表述意思就是模块也可以使用导入语句，因为如上不同模块之间也有依赖关系</p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python类编码风格</title>
+    <url>/20210301133334.html</url>
+    <content><![CDATA[<ol>
+<li>类名驼峰命名法</li>
+<li>实例名和模块名小写，之间用下划线</li>
+<li>每个类定义后跟一个文档注释</li>
+<li>每个模块也应该跟一个文档字符串</li>
+<li>每个方法名下面也要跟一个文档注释</li>
+<li>两个空行分隔类</li>
+<li>类中用一个空行分隔方法</li>
+<li>先导入标准库，后空行，再导入你自己写模块</li>
+</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -2999,46 +2999,6 @@ lsmod | grep bbr
       </categories>
   </entry>
   <entry>
-    <title>IEDA_2018.1_安装插件_Mybatis_plugin_v3.58_crack_Iedis_v2.56_crack.md</title>
-    <url>/20180714115554.html</url>
-    <content><![CDATA[<p>title: IEDA 2018.1 安装插件 Mybatis plugin v3.58 crack Iedis v2.56 crack<br>date: ‘2018-07-14 11:55:54’<br>updated: ‘2018-07-14 12:07:40’<br>tags: [IDEA, Mybatis plugin]<br>permalink: /articles/2018/07/14/1531539806011.html</p>
-<hr>
-<p>ideaagent v1.2 下载地址 <a href="https://github.com/mrshawnho/ideaagent">https://github.com/mrshawnho/ideaagent</a><br>同时下载插件+破解软件 <a href="https://pan.baidu.com/s/1FgRz7r9Pu2fb2ybZkGFJVA">下载地址</a>密码：zju3</p>
-<h2 id="特色功能"><a href="#特色功能" class="headerlink" title="特色功能"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E7%89%B9%E8%89%B2%E5%8A%9F%E8%83%BD" title="特色功能"></a>特色功能</h2><h3 id="ideaagent-v1-2"><a href="#ideaagent-v1-2" class="headerlink" title="ideaagent v1.2"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#ideaagent-v1-2" title="ideaagent v1.2"></a>ideaagent v1.2</h3><p>Mybatis plugin v3.58 crack<br>Iedis v2.56 crack<br>支持 IntelliJ IDEA 2018.1</p>
-<h3 id="ideaagent-v1-12"><a href="#ideaagent-v1-12" class="headerlink" title="ideaagent v1.12"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#ideaagent-v1-12" title="ideaagent v1.12"></a>ideaagent v1.12</h3><p>Mybatis plugin v3.53 crack<br>Iedis v2.43 crack<br>支持 IntelliJ IDEA 2017.3.5</p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" title="使用方法"></a>使用方法</h2><ol>
-<li> 下载 <a href="https://github.com/mrshawnho/ideaagent/releases">ideaagent-1.2.jar</a></li>
-<li>打开 idea.vmoptions (Help -&gt; Edit Custom VM Options…)<br> 最下方插入 <code>-javaagent:/download/ideaagent-1.2.jar</code><br> <a href="https://shawnho.me/uploads/ideaagent/001.png"><img src="https://shawnho.me/uploads/ideaagent/001.png"></a></li>
-<li>重启 idea<br> 首次启动需要信任本地服务器 ssl 证书，点击接受后如未激活，再次重启即可<br> <a href="https://shawnho.me/uploads/ideaagent/002.png"><img src="https://shawnho.me/uploads/ideaagent/002.png"></a></li>
-</ol>
-<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83" title="测试环境"></a>测试环境</h2><ol>
-<li> Windows 10 &amp;&amp; MacOS High Sierra</li>
-<li> JDK 1.8</li>
-<li> IDEA 2018.1</li>
-</ol>
-<h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0" title="技术实现"></a>技术实现</h2><ol>
-<li> 使用 java instrumentation 创建代理</li>
-<li> 使用 javassist 动态修改代码</li>
-<li> 使用 vertx web 创建本地认证服务器<br>原文地址：<a href="https://shawnho.me/2017/12/20/ideaagent/">https://shawnho.me/2017/12/20/ideaagent/</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Idea插件.ignore用于忽略不需要提交Git的文件.md</title>
-    <url>/20180723112040.html</url>
-    <content><![CDATA[<p>title: Idea插件.ignore用于忽略不需要提交Git的文件<br>date: ‘2018-07-23 11:20:40’<br>updated: ‘2018-08-16 08:27:00’<br>tags: [IDEA]<br>permalink: /articles/2018/07/23/1532316040291.html</p>
-<hr>
-<h2 id="标准的Maven结构"><a href="#标准的Maven结构" class="headerlink" title="标准的Maven结构"></a>标准的Maven结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.  + project  </span><br><span class="line">2.    |  </span><br><span class="line">3.    + pom.xml  </span><br><span class="line">4.    |  </span><br><span class="line">5.    + src /  </span><br><span class="line">6.       + main /  </span><br><span class="line">7.       | + java    java源代码文件,最终会打包编译到WEB/INF下的classes目录  </span><br><span class="line">8.       | + resources 资源库，会自动复制到classes目录里  </span><br><span class="line">9.       | + filters  资源过滤文件  </span><br><span class="line">10.       | + webapp web应用程序资源文件  </span><br><span class="line">11.       + test /  </span><br><span class="line">12.       | + java  测试java源文件内容  </span><br><span class="line">13.       | + resources 测试的资源文件  </span><br><span class="line">14.       | + filters  测试的资源过滤文件  </span><br><span class="line">15.       + it /  </span><br><span class="line">16.       + assembly /  </span><br><span class="line">17.       + site / |  </span><br><span class="line">18.    + .idea /  </span><br><span class="line">19.    +  project.iml  </span><br><span class="line">20.  + LICENSE.txt   工程许可说明  </span><br><span class="line">21.  + NOTICE.txt   项目所需要的依赖的说明文件  </span><br><span class="line">22.  + README.txt 项目工程说明文档</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://res.quinntian.xyz//file/2018/07/52892db58d80427f90a7b8e9e7864adf_Snipaste_20180723_110629.png" alt="Snipaste_20180723_110629png"> </p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>V2ray+caddy+tls+websocket配置全记录</title>
     <url>/20200216235908.html</url>
     <content><![CDATA[<p>参考的安装过程<br>V2ray官方说明文档：<a href="https://www.v2ray.com/">https://www.v2ray.com/</a></p>
@@ -3194,15 +3154,40 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>XMind8破解版.md</title>
-    <url>/20180711162532.html</url>
-    <content><![CDATA[<p>title: XMind8破解版<br>date: ‘2018-07-11 16:25:32’<br>updated: ‘2018-08-16 15:18:10’<br>tags: [xmind]<br>permalink: /articles/2018/07/11/1531297531630.html</p>
+    <title>IEDA_2018.1_安装插件_Mybatis_plugin_v3.58_crack_Iedis_v2.56_crack.md</title>
+    <url>/20180714115554.html</url>
+    <content><![CDATA[<p>title: IEDA 2018.1 安装插件 Mybatis plugin v3.58 crack Iedis v2.56 crack<br>date: ‘2018-07-14 11:55:54’<br>updated: ‘2018-07-14 12:07:40’<br>tags: [IDEA, Mybatis plugin]<br>permalink: /articles/2018/07/14/1531539806011.html</p>
 <hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/d94d1d7c9503400bbc1cbcdbdccfd302_Snipaste_20180711_164834.png" alt="Snipaste_20180711_164834png"><br><strong>xmind 8 update 1补丁破解方法</strong></p>
-<p>安装版本如果你安装的是 Xmind 8 原版，即全新安装，请根据以下教程执行破解：<br>Step 1 -全新下载最新版本的 Xmind 8（注必须是英文官方的版本，中文代{过}{滤}理网站的版本修改过，无法使用破解）。<br>Step 2 -安装完毕后，点击文末的下载按钮下载破解补丁文件包，将 XMindCrack.zip 内的文件解压到 Xmind 的安装目录，默认安装路径为 C:\Program Files (x86)\XMind；<br>Step 3 -将 XMindCrack.jar 复制到 D 盘根目录；<br>Step 4 -将 Xmind 安装目录下的 XMind.ini 复制至桌面，使用记事本打开增加一行“-javaagent:D:/XMindCrack.jar”（引号内的内容，引号无需复制），保存后将文件重新拖拽或者复制到 Xmind 的安装目录；<br>Step 5 -断开网络, 或者使用防火墙阻止 XMind 联网, 或者在 hosts 中添加 0.0.0.0 <a href="http://www.xmind.net(建议采用断网或者增加hosts记录法)./">www.xmind.net（建议采用断网或者增加hosts记录法）。</a><br>Step 6 -打开 XMind, “帮助-序列号”，随便输入邮箱地址和下面的序列号激活软件<br><strong>输入序列号</strong>，XAka34A2rVRYJ4XBIU35UZMUEEF64CMMIYZCK2FZZUQNODEKUHGJLFMSLIQMQUCUBXRENLK6NZL37JXP4PZXQFILMQ2RG5R7G4QNDO3PSOEUBOCDRYSSXZGRARV6MGA33TN2AMUBHEL4FXMWYTTJDEINJXUAV4BAYKBDCZQWVF3LWYXSDCXY546U3NBGOI3ZPAP2SO3CSQFNB7VVIY123456789012345</p>
-<blockquote>
-<p>关注微信公众号    回复关键字xmind</p>
-</blockquote>
+<p>ideaagent v1.2 下载地址 <a href="https://github.com/mrshawnho/ideaagent">https://github.com/mrshawnho/ideaagent</a><br>同时下载插件+破解软件 <a href="https://pan.baidu.com/s/1FgRz7r9Pu2fb2ybZkGFJVA">下载地址</a>密码：zju3</p>
+<h2 id="特色功能"><a href="#特色功能" class="headerlink" title="特色功能"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E7%89%B9%E8%89%B2%E5%8A%9F%E8%83%BD" title="特色功能"></a>特色功能</h2><h3 id="ideaagent-v1-2"><a href="#ideaagent-v1-2" class="headerlink" title="ideaagent v1.2"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#ideaagent-v1-2" title="ideaagent v1.2"></a>ideaagent v1.2</h3><p>Mybatis plugin v3.58 crack<br>Iedis v2.56 crack<br>支持 IntelliJ IDEA 2018.1</p>
+<h3 id="ideaagent-v1-12"><a href="#ideaagent-v1-12" class="headerlink" title="ideaagent v1.12"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#ideaagent-v1-12" title="ideaagent v1.12"></a>ideaagent v1.12</h3><p>Mybatis plugin v3.53 crack<br>Iedis v2.43 crack<br>支持 IntelliJ IDEA 2017.3.5</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" title="使用方法"></a>使用方法</h2><ol>
+<li> 下载 <a href="https://github.com/mrshawnho/ideaagent/releases">ideaagent-1.2.jar</a></li>
+<li>打开 idea.vmoptions (Help -&gt; Edit Custom VM Options…)<br> 最下方插入 <code>-javaagent:/download/ideaagent-1.2.jar</code><br> <a href="https://shawnho.me/uploads/ideaagent/001.png"><img src="https://shawnho.me/uploads/ideaagent/001.png"></a></li>
+<li>重启 idea<br> 首次启动需要信任本地服务器 ssl 证书，点击接受后如未激活，再次重启即可<br> <a href="https://shawnho.me/uploads/ideaagent/002.png"><img src="https://shawnho.me/uploads/ideaagent/002.png"></a></li>
+</ol>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83" title="测试环境"></a>测试环境</h2><ol>
+<li> Windows 10 &amp;&amp; MacOS High Sierra</li>
+<li> JDK 1.8</li>
+<li> IDEA 2018.1</li>
+</ol>
+<h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a><a href="https://shawnho.me/2017/12/20/ideaagent/#%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0" title="技术实现"></a>技术实现</h2><ol>
+<li> 使用 java instrumentation 创建代理</li>
+<li> 使用 javassist 动态修改代码</li>
+<li> 使用 vertx web 创建本地认证服务器<br>原文地址：<a href="https://shawnho.me/2017/12/20/ideaagent/">https://shawnho.me/2017/12/20/ideaagent/</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Idea插件.ignore用于忽略不需要提交Git的文件.md</title>
+    <url>/20180723112040.html</url>
+    <content><![CDATA[<p>title: Idea插件.ignore用于忽略不需要提交Git的文件<br>date: ‘2018-07-23 11:20:40’<br>updated: ‘2018-08-16 08:27:00’<br>tags: [IDEA]<br>permalink: /articles/2018/07/23/1532316040291.html</p>
+<hr>
+<h2 id="标准的Maven结构"><a href="#标准的Maven结构" class="headerlink" title="标准的Maven结构"></a>标准的Maven结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.  + project  </span><br><span class="line">2.    |  </span><br><span class="line">3.    + pom.xml  </span><br><span class="line">4.    |  </span><br><span class="line">5.    + src /  </span><br><span class="line">6.       + main /  </span><br><span class="line">7.       | + java    java源代码文件,最终会打包编译到WEB/INF下的classes目录  </span><br><span class="line">8.       | + resources 资源库，会自动复制到classes目录里  </span><br><span class="line">9.       | + filters  资源过滤文件  </span><br><span class="line">10.       | + webapp web应用程序资源文件  </span><br><span class="line">11.       + test /  </span><br><span class="line">12.       | + java  测试java源文件内容  </span><br><span class="line">13.       | + resources 测试的资源文件  </span><br><span class="line">14.       | + filters  测试的资源过滤文件  </span><br><span class="line">15.       + it /  </span><br><span class="line">16.       + assembly /  </span><br><span class="line">17.       + site / |  </span><br><span class="line">18.    + .idea /  </span><br><span class="line">19.    +  project.iml  </span><br><span class="line">20.  + LICENSE.txt   工程许可说明  </span><br><span class="line">21.  + NOTICE.txt   项目所需要的依赖的说明文件  </span><br><span class="line">22.  + README.txt 项目工程说明文档</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://res.quinntian.xyz//file/2018/07/52892db58d80427f90a7b8e9e7864adf_Snipaste_20180723_110629.png" alt="Snipaste_20180723_110629png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3233,6 +3218,21 @@ chmod 777 /var/log/caddy/caddy.log
       </tags>
   </entry>
   <entry>
+    <title>XMind8破解版.md</title>
+    <url>/20180711162532.html</url>
+    <content><![CDATA[<p>title: XMind8破解版<br>date: ‘2018-07-11 16:25:32’<br>updated: ‘2018-08-16 15:18:10’<br>tags: [xmind]<br>permalink: /articles/2018/07/11/1531297531630.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/d94d1d7c9503400bbc1cbcdbdccfd302_Snipaste_20180711_164834.png" alt="Snipaste_20180711_164834png"><br><strong>xmind 8 update 1补丁破解方法</strong></p>
+<p>安装版本如果你安装的是 Xmind 8 原版，即全新安装，请根据以下教程执行破解：<br>Step 1 -全新下载最新版本的 Xmind 8（注必须是英文官方的版本，中文代{过}{滤}理网站的版本修改过，无法使用破解）。<br>Step 2 -安装完毕后，点击文末的下载按钮下载破解补丁文件包，将 XMindCrack.zip 内的文件解压到 Xmind 的安装目录，默认安装路径为 C:\Program Files (x86)\XMind；<br>Step 3 -将 XMindCrack.jar 复制到 D 盘根目录；<br>Step 4 -将 Xmind 安装目录下的 XMind.ini 复制至桌面，使用记事本打开增加一行“-javaagent:D:/XMindCrack.jar”（引号内的内容，引号无需复制），保存后将文件重新拖拽或者复制到 Xmind 的安装目录；<br>Step 5 -断开网络, 或者使用防火墙阻止 XMind 联网, 或者在 hosts 中添加 0.0.0.0 <a href="http://www.xmind.net(建议采用断网或者增加hosts记录法)./">www.xmind.net（建议采用断网或者增加hosts记录法）。</a><br>Step 6 -打开 XMind, “帮助-序列号”，随便输入邮箱地址和下面的序列号激活软件<br><strong>输入序列号</strong>，XAka34A2rVRYJ4XBIU35UZMUEEF64CMMIYZCK2FZZUQNODEKUHGJLFMSLIQMQUCUBXRENLK6NZL37JXP4PZXQFILMQ2RG5R7G4QNDO3PSOEUBOCDRYSSXZGRARV6MGA33TN2AMUBHEL4FXMWYTTJDEINJXUAV4BAYKBDCZQWVF3LWYXSDCXY546U3NBGOI3ZPAP2SO3CSQFNB7VVIY123456789012345</p>
+<blockquote>
+<p>关注微信公众号    回复关键字xmind</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>jdbc连接报The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized o</title>
     <url>/20201208200301.html</url>
     <content><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><blockquote>
@@ -3253,25 +3253,23 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>vscode配置picgo插件实现GitHub当图床</title>
+    <title>VSCode配置Picgo插件实现GitHub当图床</title>
     <url>/20220105003457.html</url>
-    <content><![CDATA[<ol>
-<li><p>安装vscode</p>
-</li>
-<li><p>打开vscode，侧面插件市场搜索picgo安装</p>
-</li>
-<li><p>安装后重启，再次打开插件市场，选择picgo右下方的设置小按钮，选择扩展设置，配置Github有关信息，具体配置如图和下面配置信息</p>
- <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">配置信息说明</span><br><span class="line">current:选择github</span><br><span class="line">branch:选择你所在分支，一般是master或main</span><br><span class="line">custom url:选择CDN用于加速图片输出，用如果不配置，会导致图片无法预览</span><br><span class="line">    配置格式https:<span class="comment">//cdn.jsdelivr.net/gh/你的GitHub用户名/存放图床的仓库名</span></span><br><span class="line">path:仓库下的文件夹</span><br><span class="line">    如果需要存放在某个仓库下文件夹</span><br><span class="line">    比如picgo仓库里的img文件夹</span><br><span class="line">        img/</span><br><span class="line">        不可以省略/，否则不会识别为文件夹</span><br><span class="line">        不可以写成/img，否则会识别服务端错误</span><br><span class="line">repo:你的GitHub用户名/仓库名</span><br><span class="line">token:GitHub申请的token</span><br><span class="line">    申请步骤</span><br><span class="line">    登录GitHub后点击头像下拉选择setting，选择developer setting，选择personal access token，新建一个token，输入名称和设置有效期，勾选repo权限，生成后的授权码赋值到此</span><br></pre></td></tr></table></figure>
-
-<p> <img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220104220611.png" alt="20220104220611"></p>
-</li>
-<li><p>快捷键</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">win/unix系统</span><br><span class="line">    ctrl alt u 从剪贴板复制上传</span><br><span class="line">    ctrl alt e 弹出文件管理器选择上传</span><br><span class="line">    ctrl alt o 弹出截屏上传</span><br><span class="line">苹果系统</span><br><span class="line">    ctrl opt u</span><br><span class="line">    ctrl opt e</span><br><span class="line">    ctrl opt o</span><br></pre></td></tr></table></figure></li>
-</ol>
+    <content><![CDATA[<p>利用VSCode的PicGo插件可以直接实现截图粘贴自动上传并返回MD格式插入到文档中</p>
+<span id="more"></span>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="1-安装VSCode"><a href="#1-安装VSCode" class="headerlink" title="1.安装VSCode"></a>1.安装VSCode</h1><h1 id="2-VSCode配置"><a href="#2-VSCode配置" class="headerlink" title="2.VSCode配置"></a>2.VSCode配置</h1><p>侧面插件市场搜索PicGo安装，安装后重启，再次打开插件市场，选择PicGo右下方的设置小按钮，选择扩展设置，配置Github有关信息，具体配置如图和下面配置信息</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">配置信息说明</span></span><br><span class="line"><span class="string">current:选择github</span></span><br><span class="line"><span class="string">branch:选择你所在分支，一般是master或main</span></span><br><span class="line"><span class="string">custom</span> <span class="string">url:选择CDN用于加速图片输出，用如果不配置，会导致图片无法预览</span></span><br><span class="line">    <span class="string">配置格式https://cdn.jsdelivr.net/gh/你的GitHub用户名/存放图床的仓库名</span></span><br><span class="line"><span class="string">path:仓库下的文件夹</span></span><br><span class="line">    <span class="string">如果需要存放在某个仓库下文件夹</span></span><br><span class="line">    <span class="string">比如picgo仓库里的img文件夹</span></span><br><span class="line">        <span class="string">img/</span></span><br><span class="line">        <span class="string">不可以省略/，否则不会识别为文件夹</span></span><br><span class="line">        <span class="string">不可以写成/img，否则会识别服务端错误</span></span><br><span class="line"><span class="string">repo:你的GitHub用户名/仓库名</span></span><br><span class="line"><span class="string">token:GitHub申请的token</span></span><br><span class="line">    <span class="string">申请步骤</span></span><br><span class="line">    <span class="string">登录GitHub后点击头像下拉选择setting，选择developer</span> <span class="string">setting，选择personal</span> <span class="string">access</span> <span class="string">token，新建一个token，输入名称和设置有效期，勾选repo权限，生成后的授权码赋值到此</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220104220611.png" alt="20220104220611"></p>
+<h1 id="3-快捷键说明"><a href="#3-快捷键说明" class="headerlink" title="3.快捷键说明"></a>3.快捷键说明</h1>   <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">win/unix系统</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">u</span> <span class="string">从剪贴板复制上传</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">e</span> <span class="string">弹出文件管理器选择上传</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">o</span> <span class="string">弹出截屏上传</span></span><br><span class="line"><span class="string">苹果系统</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">u</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">e</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">o</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>其他</category>
       </categories>
+      <tags>
+        <tag>VSCode</tag>
+        <tag>图床</tag>
+        <tag>PicGo</tag>
+      </tags>
   </entry>
   <entry>
     <title>华为光猫破解教程+工具</title>
@@ -3285,23 +3283,6 @@ chmod 777 /var/log/caddy/caddy.log
     <title>华为光猫破解教程和工具</title>
     <url>/20210313174840.html</url>
     <content><![CDATA[<p><a href="https://cloud.quinntian.com/s/tkW5QLbABXxc6XA">下载地址</a><br>密码：请留言</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>思维导图软件Mindmanager_2016_64位原版+破解方法.md</title>
-    <url>/20180711163756.html</url>
-    <content><![CDATA[<p>title: 思维导图软件Mindmanager 2016 64位原版+破解方法<br>date: ‘2018-07-11 16:37:56’<br>updated: ‘2018-08-16 15:17:04’<br>tags: [Mindmanager, 思维导图, 破解]<br>permalink: /articles/2018/07/11/1531298276159.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/693db6b8f90f48f592522388cd76ac05_Snipaste_20180711_173614.png" alt="Snipaste_20180711_173614png"> </p>
-<p>mindjet_mindmanager_2016_trial_64_wm.exe<br>mindjet_mindmanager_2016_trial_32_wm.exe<br>分别为对应系统的安装文件（windows）</p>
-<p>安装后不要打开，打开对应系统的文件夹<br>MP16-999-2P94-6338-2254-32位<br>MP16-999-2P94-6338-2254-64位<br>然后将里面的文件替换到C盘安装目录下</p>
-<p>MP16-999-2P94-6338-2254（64位）<br>MP16-999-2P94-6338-2254（32位）<br>分别为对应系统的注册码</p>
-<blockquote>
-<p>关注微信公众号    回复关键字mind</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3327,6 +3308,23 @@ chmod 777 /var/log/caddy/caddy.log
 <li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>思维导图软件Mindmanager_2016_64位原版+破解方法.md</title>
+    <url>/20180711163756.html</url>
+    <content><![CDATA[<p>title: 思维导图软件Mindmanager 2016 64位原版+破解方法<br>date: ‘2018-07-11 16:37:56’<br>updated: ‘2018-08-16 15:17:04’<br>tags: [Mindmanager, 思维导图, 破解]<br>permalink: /articles/2018/07/11/1531298276159.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/693db6b8f90f48f592522388cd76ac05_Snipaste_20180711_173614.png" alt="Snipaste_20180711_173614png"> </p>
+<p>mindjet_mindmanager_2016_trial_64_wm.exe<br>mindjet_mindmanager_2016_trial_32_wm.exe<br>分别为对应系统的安装文件（windows）</p>
+<p>安装后不要打开，打开对应系统的文件夹<br>MP16-999-2P94-6338-2254-32位<br>MP16-999-2P94-6338-2254-64位<br>然后将里面的文件替换到C盘安装目录下</p>
+<p>MP16-999-2P94-6338-2254（64位）<br>MP16-999-2P94-6338-2254（32位）<br>分别为对应系统的注册码</p>
+<blockquote>
+<p>关注微信公众号    回复关键字mind</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>其他</category>
