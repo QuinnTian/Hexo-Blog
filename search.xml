@@ -1924,6 +1924,15 @@
       </categories>
   </entry>
   <entry>
+    <title>Mybatis generator targetRuntime=&quot;MyBatis3DynamicSql&quot; 报错</title>
+    <url>/20201208202012.html</url>
+    <content><![CDATA[<p>Mybatis generator targetRuntime=”MyBatis3DynamicSql” 报错targetRuntime in context MysqlTables is invalid<br><img src="https://quinntian.com/upload/2020/12/image-05b9917a705d4a69890d41ee5a40dae1.png" alt="image.png"><br><strong>如果你的配置文件中写了，xml的配置要删掉，或者直接换成mybtis3,因为设置位第一个不会生成xml文件。下表</strong><br>这里补充一下targetRuntime的几个值的意义，因为官方英文文档。<br><img src="https://quinntian.com/upload/2020/12/image-e21d2d8d4fce4180b3dc44d521798060.png" alt="image.png"><br><img src="https://quinntian.com/upload/2020/12/image-1c1d409971d3408e8e31532661b7cb52.png" alt="image.png"><br>参考 <a href="https://blog.csdn.net/seek_of/article/details/105911997">https://blog.csdn.net/seek_of/article/details/105911997</a></p>
+]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+  </entry>
+  <entry>
     <title>MyBatis一对多嵌套查询结果映射</title>
     <url>/20201210174131.html</url>
     <content><![CDATA[<p><strong>简单理解就是：此种方法指直接书写连表SQL，然后将结果一次性映射到几个实体上，而不是先查主表映射到实体后,再查从表再映射到实体</strong><br><strong>比较官方的说法叫做一对多collection集合嵌套结果映射</strong><br>步骤</p>
@@ -1940,15 +1949,6 @@
 <p>运行结果</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Creating a new SqlSession</span><br><span class="line">SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e489bb8] was not registered for synchronization because synchronization is not active</span><br><span class="line">JDBC Connection [HikariProxyConnection@595755231 wrapping com.mysql.cj.jdbc.ConnectionImpl@182fd26b] will not be managed by Spring</span><br><span class="line">==&gt;  Preparing: select u.id, u.o_id, u.name, u.password, u.mobile, u.email, u.creatime, u.login_time, u.last_login_time, u.login_count, g.id, g.group_name, g.f_id, g.creatime, g.description from tk_user u left join tk_user_group ug on ug.user_id = u.id left join tk_group g on g.id = ug.group_id</span><br><span class="line">==&gt; Parameters: </span><br><span class="line">&lt;==    Columns: id, o_id, name, password, mobile, email, creatime, login_time, last_login_time, login_count, id, group_name, f_id, creatime, description</span><br><span class="line">&lt;==        Row: 1, 1, admin, admin, 15166623676, admin@admin.com, 2020-12-08 16:18:59, 2020-12-08 16:19:03, 2020-12-07 16:19:07, 0, 1, 用户组1, 0, 2020-12-08 16:34:00, 用户组1描述</span><br><span class="line">&lt;==        Row: 1, 1, admin, admin, 15166623676, admin@admin.com, 2020-12-08 16:18:59, 2020-12-08 16:19:03, 2020-12-07 16:19:07, 0, 3, 用户组3, 0, 2020-12-08 16:34:47, 用户组3描述</span><br><span class="line">&lt;==        Row: 2, null, test1, null, null, null, null, null, null, 0, null, null, null, null, null</span><br><span class="line">&lt;==      Total: 3</span><br><span class="line">Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e489bb8]</span><br><span class="line">[TkUser(id=1, oId=1, name=admin, password=admin, mobile=15166623676, email=admin@admin.com, creatime=2020-12-08T16:18:59, loginTime=2020-12-08T16:19:03, lastLoginTime=2020-12-07T16:19:07, loginCount=0, tkGroups=[TkGroup(id=1, groupName=用户组1, fId=0, creatime=2020-12-08T16:18:59, description=用户组1描述)], tkRoles=null, tkPermits=null, tkOrg=null), TkUser(id=2, oId=null, name=test1, password=null, mobile=null, email=null, creatime=null, loginTime=null, lastLoginTime=null, loginCount=0, tkGroups=[TkGroup(id=2, groupName=null, fId=null, creatime=null, description=null)], tkRoles=null, tkPermits=null, tkOrg=null)]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="4-关于自动合并问题"><a href="#4-关于自动合并问题" class="headerlink" title="4.关于自动合并问题"></a>4.关于自动合并问题</h1><p><strong>重点说明：关于SQL查询结果一共是有三条结果，其中两条是重复的，这里框架自动合并了，其原理就是设置了<id column="id" property="id" />标签，框架会自动判断查询结果的ID进行自动合并。另外如果没有ID标签框架会自动比对每条字段下的结果，相同合并</strong></p>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Mybatis generator targetRuntime=&quot;MyBatis3DynamicSql&quot; 报错</title>
-    <url>/20201208202012.html</url>
-    <content><![CDATA[<p>Mybatis generator targetRuntime=”MyBatis3DynamicSql” 报错targetRuntime in context MysqlTables is invalid<br><img src="https://quinntian.com/upload/2020/12/image-05b9917a705d4a69890d41ee5a40dae1.png" alt="image.png"><br><strong>如果你的配置文件中写了，xml的配置要删掉，或者直接换成mybtis3,因为设置位第一个不会生成xml文件。下表</strong><br>这里补充一下targetRuntime的几个值的意义，因为官方英文文档。<br><img src="https://quinntian.com/upload/2020/12/image-e21d2d8d4fce4180b3dc44d521798060.png" alt="image.png"><br><img src="https://quinntian.com/upload/2020/12/image-1c1d409971d3408e8e31532661b7cb52.png" alt="image.png"><br>参考 <a href="https://blog.csdn.net/seek_of/article/details/105911997">https://blog.csdn.net/seek_of/article/details/105911997</a></p>
 ]]></content>
       <categories>
         <category>Mybatis</category>
@@ -2243,6 +2243,34 @@
       </categories>
   </entry>
   <entry>
+    <title>python元组用法</title>
+    <url>/20210227165913.html</url>
+    <content><![CDATA[<h1 id="1-元组与列表"><a href="#1-元组与列表" class="headerlink" title="1.元组与列表"></a>1.元组与列表</h1><ol>
+<li>列表可以修改，<strong>元组不可以修改</strong></li>
+<li>列表用[],元组用()</li>
+<li>都是有序的</li>
+<li>元组的关键字couple</li>
+<li>访问元组与访问列表的方式一样<h1 id="2-定义元组"><a href="#2-定义元组" class="headerlink" title="2.定义元组"></a>2.定义元组</h1>定义<code>元组名=（....,....）</code>访问<code>元组名[index]</code><br>case1:<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一组元组表示长方形的长和宽，其值应该是不变的</span></span><br><span class="line">demensions = (<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br><span class="line"><span class="comment"># 索引访问</span></span><br><span class="line"><span class="built_in">print</span>(demensions[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+试图修改元组值<br>case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">demensions[<span class="number">0</span>] = <span class="number">40</span></span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Traceback (most recent call last):<br>File “C:\Users\Quinn\PycharmProjects\pythonProject\couple1.py”, line 8, in <module><br> demensions[0] = 40<br>TypeError: ‘tuple’ object does not support item assignment</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="3-遍历元组中的值"><a href="#3-遍历元组中的值" class="headerlink" title="3.遍历元组中的值"></a>3.遍历元组中的值</h1><p>case1</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">couple2 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> couple2:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-元组重新赋值"><a href="#4-元组重新赋值" class="headerlink" title="4.元组重新赋值"></a>4.元组重新赋值</h1><p>对于整个元组重新赋值是合法的，但是修改元组中的某个值不合法<br>case</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组重新赋值</span></span><br><span class="line">couple3 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br><span class="line">couple3 =(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>(2, 7, 3, 4, 19)<br>(2, 1)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python中输入函数和while循环</title>
     <url>/20210301010434.html</url>
     <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
@@ -2273,34 +2301,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移除列表中所有含特定值的元素</span></span><br><span class="line">list1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;one&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">&#x27;one&#x27;</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="string">&#x27;one&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
 <h1 id="5-while在字典中用法"><a href="#5-while在字典中用法" class="headerlink" title="5.while在字典中用法"></a>5.while在字典中用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># while填充字典</span></span><br><span class="line"></span><br><span class="line">dist = &#123;&#125;</span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&#x27;请输入名字：&#x27;</span>)</span><br><span class="line">    val = <span class="built_in">input</span>(<span class="string">&#x27;请输出籍贯：&#x27;</span>)</span><br><span class="line">    repeat = <span class="built_in">input</span>(<span class="string">&#x27;是否还有要调查的人呢？yse or no&#x27;</span>)</span><br><span class="line">    dist[key] = val</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">&#x27;no&#x27;</span>:</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dist)</span><br><span class="line"></span><br><span class="line">请输入名字：xiaoming</span><br><span class="line">请输出籍贯：sd</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> noyes</span><br><span class="line">请输入名字：xiaohong</span><br><span class="line">请输出籍贯：qingdao</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> nono</span><br><span class="line">&#123;<span class="string">&#x27;xiaoming&#x27;</span>: <span class="string">&#x27;sd&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>: <span class="string">&#x27;qingdao&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python元组用法</title>
-    <url>/20210227165913.html</url>
-    <content><![CDATA[<h1 id="1-元组与列表"><a href="#1-元组与列表" class="headerlink" title="1.元组与列表"></a>1.元组与列表</h1><ol>
-<li>列表可以修改，<strong>元组不可以修改</strong></li>
-<li>列表用[],元组用()</li>
-<li>都是有序的</li>
-<li>元组的关键字couple</li>
-<li>访问元组与访问列表的方式一样<h1 id="2-定义元组"><a href="#2-定义元组" class="headerlink" title="2.定义元组"></a>2.定义元组</h1>定义<code>元组名=（....,....）</code>访问<code>元组名[index]</code><br>case1:<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一组元组表示长方形的长和宽，其值应该是不变的</span></span><br><span class="line">demensions = (<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br><span class="line"><span class="comment"># 索引访问</span></span><br><span class="line"><span class="built_in">print</span>(demensions[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-试图修改元组值<br>case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">demensions[<span class="number">0</span>] = <span class="number">40</span></span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Traceback (most recent call last):<br>File “C:\Users\Quinn\PycharmProjects\pythonProject\couple1.py”, line 8, in <module><br> demensions[0] = 40<br>TypeError: ‘tuple’ object does not support item assignment</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="3-遍历元组中的值"><a href="#3-遍历元组中的值" class="headerlink" title="3.遍历元组中的值"></a>3.遍历元组中的值</h1><p>case1</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">couple2 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> couple2:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-元组重新赋值"><a href="#4-元组重新赋值" class="headerlink" title="4.元组重新赋值"></a>4.元组重新赋值</h1><p>对于整个元组重新赋值是合法的，但是修改元组中的某个值不合法<br>case</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组重新赋值</span></span><br><span class="line">couple3 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br><span class="line">couple3 =(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(couple3)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>(2, 7, 3, 4, 19)<br>(2, 1)</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>Python</category>
