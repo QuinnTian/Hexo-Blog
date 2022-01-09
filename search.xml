@@ -307,6 +307,317 @@
       </categories>
   </entry>
   <entry>
+    <title>ES6笔记</title>
+    <url>/20201209203609.html</url>
+    <content><![CDATA[<h1 id="es6是什么"><a href="#es6是什么" class="headerlink" title="es6是什么"></a>es6是什么</h1><blockquote>
+<p>ECMAScript 6 目前基本成为业界标准，它的普及速度比 ES5 要快很多，主要原因是现代浏览器对 ES6 的支持相当迅速，尤其是 Chrome 和 Firefox 浏览器，已经支持 ES6 中绝大多数的特性。</p>
+</blockquote>
+<p><strong>就是最新的JavaScript标准，之前是es5</strong></p>
+<h1 id="let、const-和-block-作用域"><a href="#let、const-和-block-作用域" class="headerlink" title="let、const 和 block 作用域"></a>let、const 和 block 作用域</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">  let a = <span class="number">3</span>;</span><br><span class="line">  console.log(a); <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(a); <span class="comment">// 2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>let 允许创建块级作用域，ES6 推荐在函数中使用 let 定义变量，而非 var：</p>
+</blockquote>
+<p><strong>创建块级作用域，在函数体中使用不再用var 定义变量了，而是let</strong></p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">const</span> ARR = [<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">  ARR.push(<span class="number">7</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(ARR); <span class="comment">// [5,6,7]</span></span><br><span class="line">  ARR = <span class="number">10</span>; <span class="comment">// TypeError</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>同样在块级作用域有效的另一个变量声明方式是 const，它可以声明一个常量。ES6 中，const 声明的常量类似于指针，它指向某个引用，也就是说这个「常量」并非一成不变的</p>
+</blockquote>
+<p><strong>使用const声明块级变量，声明的是常量，类似于C中的指针（引用），不是一成不变的</strong></p>
+<blockquote>
+<p>let 关键词声明的变量不具备变量提升（hoisting）特性<br>let 和 const 声明只在最靠近的一个块中（花括号内）有效<br>当使用常量 const 声明时，请使用大写变量，如：CAPITAL_CASING<br>const 在声明时必须被赋值</p>
+</blockquote>
+<ul>
+<li><strong>let关键字声明的变量不具备变量提升，所谓变量提升就是：先声明后用和先用后声明都一样，js默认提升到首部，但是用let就不行，变量不会被默认上升到首部，也就是说在哪声明后下面能用，之上不能使用</strong></li>
+<li><strong>作用域问题：let和var声明靠近最近的花括号中可以使用</strong></li>
+<li>**声明标准问题：const必须使用大写变量</li>
+<li><strong>const声明必须赋值</strong><h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><blockquote>
+<p>ES6 中，箭头函数就是函数的一种简写形式，使用括号包裹参数，跟随一个 =&gt;，紧接着是函数体：</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>函数的简写形式</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var getPrice = function() &#123;</span><br><span class="line">  return 4.55;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">// Implementation with Arrow Function</span><br><span class="line">var getPrice = () =&gt; 4.55;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>第一种js常见的函数，第二种函数简写形式<br>具体语法—&gt;++（函数参数）=&gt;{函数体}++</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">let arr = [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;orange&#x27;];</span><br><span class="line"> </span><br><span class="line">let breakfast = arr.map(fruit =&gt; &#123;</span><br><span class="line">  return fruit + &#x27;s&#x27;;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">console.log(breakfast); // apples bananas oranges</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> <strong>关于上面map函数可能看不懂是JavaScript的原生函数，其中fruit是函数的参数，这里因为一个参数省略了括号</strong>，<br>他的作用是<br>map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。<br>map() 方法按照原始数组元素顺序依次处理元素。<br><strong>就是返回经过函数处理的数组，也就是说调用这个方法，会把数组中的数据依次传入后面的函数处理</strong><br>语法：<strong>array.map(function(currentValue,index,arr), thisValue)</strong><br><strong>其中第二个参数是可选值</strong>，参见 <a href="https://www.runoob.com/jsref/jsref-map.html">https://www.runoob.com/jsref/jsref-map.html</a><br><strong>下面是正常使用非es6简化函数的用法</strong></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var numbers = [65, 44, 12, 4];</span><br><span class="line"></span><br><span class="line">function multiplyArrayElement(num) &#123;</span><br><span class="line">    return num * document.getElementById(&quot;multiplyWith&quot;).value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = numbers.map(multiplyArrayElement);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>箭头函数让this对象总是指向对象本身</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">  this.age = 0;</span><br><span class="line"> </span><br><span class="line">  setInterval(function growUp() &#123;</span><br><span class="line">    // 在非严格模式下，growUp() 函数的 this 指向 window 对象</span><br><span class="line">    this.age++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">alert(this.age);</span><br><span class="line">&#125;</span><br><span class="line">var person = new Person();</span><br></pre></td></tr></table></figure>
+<p><strong>运行后会发现浏览器的提示永远都是0，也就是说明grow函数内的this.age指向的并不是外部函数person里的this.age，而是指向的windows对象</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">  var self = this;</span><br><span class="line">  self.age = 0;</span><br><span class="line"> </span><br><span class="line">  setInterval(function growUp() &#123;</span><br><span class="line">    self.age++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>所以在这种写法中，如果grow函数需要使用外部的函数的age，我们通常的做法是先将this赋值给一个对象，这样就避免了指向Windows对象</strong><br><strong>但是使用箭头函数避免上述麻烦</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">unction Person()&#123;</span><br><span class="line">  this.age = 0;</span><br><span class="line"> </span><br><span class="line">  setInterval(() =&gt; &#123;</span><br><span class="line">    // |this| 指向 person 对象</span><br><span class="line">    this.age++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var person = new Person();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="函数参数默认值"><a href="#函数参数默认值" class="headerlink" title="函数参数默认值"></a>函数参数默认值</h1><p><strong>ES6 中允许你对函数参数设置默认值</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">let getFinalPrice = (price, tax=0.7) =&gt; price + price * tax;</span><br><span class="line">getFinalPrice(500); // 850</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Spread-Rest-操作符"><a href="#Spread-Rest-操作符" class="headerlink" title="Spread / Rest 操作符"></a>Spread / Rest 操作符</h1><blockquote>
+<p>Spread / Rest 操作符指的是 …，具体是 Spread 还是 Rest 需要看上下文语境。</p>
+</blockquote>
+<p><strong>就是三个点…</strong><br>当被用于迭代器中时，它是一个 Spread 操作符：<br><strong>作为数组传入，但是参数是三个此时…的作用就是迭代数组分别传入参数</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function foo(x,y,z) &#123;</span><br><span class="line">  console.log(x,y,z);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">let arr = [1,2,3];</span><br><span class="line">foo(...arr); // 1 2 3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>用于函数传参的时候是一个rest<br><strong>数组传参的时候，把参数转换为数组形式</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function foo(...args) &#123;</span><br><span class="line">  console.log(args);</span><br><span class="line">&#125;</span><br><span class="line">foo( 1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript匿名函数和回调函数的理解.md</title>
+    <url>/20180903164623.html</url>
+    <content><![CDATA[<p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
+<hr>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
+<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
+<p>匿名函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
+<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
+<p>或使用小括号</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
+<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
+<p>匿名函数链式调用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
+<p>不常见的匿名函数调用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
+<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
+<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
+<p>传递函数作为回调</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript要点笔记</title>
+    <url>/20201209212359.html</url>
+    <content><![CDATA[<h1 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h1><blockquote>
+<p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。<br>JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">x = <span class="number">5</span>; <span class="comment">// 变量 x 设置为 5</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x;                     <span class="comment">// 在元素中显示 x</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x; <span class="comment">// 声明 x</span></span><br><span class="line"><span class="comment">//结果相同</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x; <span class="comment">// 声明 x</span></span><br><span class="line">x = <span class="number">5</span>; <span class="comment">// 变量 x 设置为 5</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x;                     <span class="comment">// 在元素中显示 x</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>变量提升：函数声明和变量声明总是会被解释器悄悄地被”提升”到方法体的最顶部</strong></li>
+</ul>
+<p><strong>变量初始化不会提升</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 初始化 x</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x + <span class="string">&quot; &quot;</span> + y;           <span class="comment">// 显示 x 和 y</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">7</span>; <span class="comment">// 初始化 y</span></span><br><span class="line">等同于</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 初始化 x</span></span><br><span class="line"><span class="keyword">var</span> y;     <span class="comment">// 声明 y</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x + <span class="string">&quot; &quot;</span> + y;           <span class="comment">// 显示 x 和 y</span></span><br><span class="line"></span><br><span class="line">y = <span class="number">7</span>;    <span class="comment">// 设置 y 为 7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>运行显示y未定义；所谓初始化就是声明的同时附初始值。上面y未被声明的原因是，使用在前，初始化在在后，但初始化不会提升变量</strong><br>改成如下，可以正常运行，是因为初始化在上，尽管未被提升。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 初始化 x</span></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">7</span>; <span class="comment">// 初始化 y</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x + <span class="string">&quot; &quot;</span> + y;           <span class="comment">// 显示 x 和 y</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>为了避免这些问题，通常我们在每个作用域开始前声明这些变量，这也是正常的 JavaScript 解析步骤，易于我们理解。</strong></li>
+<li><strong>JavaScript 严格模式(strict mode)不允许使用未声明的变量。</strong><h1 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h1><blockquote>
+<p>JavaScript 严格模式（strict mode）即在严格的条件下运行。<br>“use strict” 指令在 JavaScript 1.8.5 (ECMAScript5) 中新增。<br>它不是一条语句，但是是一个字面量表达式，在 JavaScript 旧版本中会被忽略。<br>“use strict” 的目的是指定代码在严格条件下执行。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>严格模式下你不能使用未声明的变量。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">支持严格模式的浏览器:</span><br><span class="line">Internet Explorer <span class="number">10</span> +、 Firefox <span class="number">4</span>+ Chrome <span class="number">13</span>+、 Safari <span class="number">5.1</span>+、 Opera <span class="number">12</span>+。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>不允许删除变量或对象</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">delete</span> x;                <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>不允许删除函数。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">p1, p2</span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">delete</span> x;                <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>不允许变量重名:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">p1, p1</span>) </span>&#123;&#125;;   <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许使用八进制:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">010</span>;             <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>不允许使用转义字符:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = \<span class="number">010</span>;            <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>不允许对只读属性赋值:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&quot;x&quot;</span>, &#123;<span class="attr">value</span>:<span class="number">0</span>, <span class="attr">writable</span>:<span class="literal">false</span>&#125;);</span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">3.14</span>;            <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>不允许对一个使用getter方法读取的属性进行赋值</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="keyword">get</span> <span class="title">x</span>() &#123;<span class="keyword">return</span> <span class="number">0</span>&#125; &#125;;</span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">3.14</span>;            <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>不允许删除一个不允许删除的属性：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">delete Object.prototype; <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>变量名不能使用 “eval” 字符串:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">eval</span> = <span class="number">3.14</span>;         <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>变量名不能使用 “arguments” 字符串:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">arguments</span> = <span class="number">3.14</span>;    <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>不允许使用以下这种语句</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">with</span> (<span class="built_in">Math</span>)&#123;x = cos(<span class="number">2</span>)&#125;; <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>由于一些安全原因，在作用域 eval() 创建的变量不能被调用：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="built_in">eval</span> (<span class="string">&quot;var x = 2&quot;</span>);</span><br><span class="line">alert (x);               <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>禁止this关键字指向全局对象。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !<span class="built_in">this</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 返回false，因为&quot;this&quot;指向全局对象，&quot;!this&quot;就是false</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> !<span class="built_in">this</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 返回true，因为严格模式下，this的值为undefined，所以&quot;!this&quot;为true。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>因此，使用构造函数时，如果忘了加new，this不再指向全局对象，而是报错。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;</span><br><span class="line">    <span class="built_in">this</span>.a = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line">f();<span class="comment">// 报错，this未定义</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>保留关键字</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">为了向将来Javascript的新版本过渡，严格模式新增了一些保留关键字：</span><br><span class="line"></span><br><span class="line">implements</span><br><span class="line">interface</span><br><span class="line"><span class="keyword">let</span></span><br><span class="line">package</span><br><span class="line">private</span><br><span class="line">protected</span><br><span class="line">public</span><br><span class="line"><span class="keyword">static</span></span><br><span class="line"><span class="keyword">yield</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
+<p>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。</p>
+</blockquote>
+<h2 id="函数的基本语法"><a href="#函数的基本语法" class="headerlink" title="函数的基本语法"></a>函数的基本语法</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionname</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 执行代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>大小写敏感</strong></p>
+<h2 id="返回值函数"><a href="#返回值函数" class="headerlink" title="返回值函数"></a>返回值函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数内的变量是<strong>局部变量</strong>，<strong>函数外声明的是全局变量</strong></li>
+<li><strong>声明周期：局部变量函数运行完，全局变量页面关闭</strong></li>
+</ul>
+<p><strong>变量如果没声明就赋值，则会把变量赋值为windows</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> var1 = <span class="number">1</span>; <span class="comment">// 不可配置全局属性</span></span><br><span class="line">var2 = <span class="number">2</span>; <span class="comment">// 没有使用 var 声明，可配置全局属性</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">this</span>.var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.var2); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> var1; <span class="comment">// false 无法删除</span></span><br><span class="line"><span class="built_in">console</span>.log(var1); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> var2; </span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">delete</span> var2); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(var2); <span class="comment">// 已经删除 报错变量未定义</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>意思是未声明全局变量可以配置也就是可以删除，声明的不可以配置也就是不可以删除</strong></p>
+<h2 id="函数表达式即匿名函数"><a href="#函数表达式即匿名函数" class="headerlink" title="函数表达式即匿名函数"></a>函数表达式即匿名函数</h2><p><strong>所谓函数表达式就是将函数赋值给一个变量的格式，这个变量以后就可以当做函数来使用，而不是以往只能用带括号的形式调用</strong><br><strong>另外这种格式，还有另外一种叫法++匿名函数++</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;<span class="keyword">return</span> a * b&#125;;</span><br><span class="line"><span class="keyword">var</span> z = x(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="内置构造函数来定义函数"><a href="#内置构造函数来定义函数" class="headerlink" title="内置构造函数来定义函数"></a>内置构造函数来定义函数</h2><p><strong>使用函数构造器，通过js内置的函数构造器进行定义</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myFunction = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;return a * b&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="keyword">var</span> myFunction = <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;<span class="keyword">return</span> a * b&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><p><strong>参见提升</strong><br><strong>函数可以在声明之前就可以调用。提升将函数的作用域提升到前面</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">myFunction(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>使用表达式定义函数无法提升</strong></p>
+<h2 id="自调用函数"><a href="#自调用函数" class="headerlink" title="自调用函数"></a>自调用函数</h2><ul>
+<li><strong>只有函数表达式才能自调用，其格式是在后面加一个括号</strong><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">&quot;Hello!!&quot;</span>;      <span class="comment">// 我将调用自己</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>上面的函数用一个括号括起来的意思是说明这是一个函数表达式-匿名函数</strong></p>
+<h2 id="函数可以当做值和表达式使用"><a href="#函数可以当做值和表达式使用" class="headerlink" title="函数可以当做值和表达式使用"></a>函数可以当做值和表达式使用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>) * <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="函数是对象"><a href="#函数是对象" class="headerlink" title="函数是对象"></a>函数是对象</h2><p><strong>在js中任何一个都可以当做对象</strong></p>
+<blockquote>
+<p>在 JavaScript 中使用 typeof 操作符判断函数类型将返回 “function” 。<br>但是JavaScript 函数描述为一个对象更加准确。<br><strong>JavaScript的函数是由属性和方法的</strong><br>比如arguments.length返回函数调用参数个数。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>toString方法可以函数作为一个字符串返回，运行后整个函数会作为一个字符串输出</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> txt = myFunction.toString();</span><br></pre></td></tr></table></figure>
+<h2 id="函数与对象里的方法的关系"><a href="#函数与对象里的方法的关系" class="headerlink" title="函数与对象里的方法的关系"></a>函数与对象里的方法的关系</h2><ul>
+<li><strong>函数如果在所定义对象里出现，叫做对象方法</strong></li>
+<li><strong>函数如果用于创建新的对象，叫做对象的构造函数</strong><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2></li>
+</ul>
+<p><strong>在es6笔记中提到</strong><br><strong>声明函数的语法变了，变得更加简洁</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(参数<span class="number">1</span>, 参数<span class="number">2</span>, …, 参数N) =&gt; &#123; 函数声明 &#125;</span><br><span class="line"></span><br><span class="line">(参数<span class="number">1</span>, 参数<span class="number">2</span>, …, 参数N) =&gt; 表达式(单一)</span><br><span class="line"><span class="comment">// 相当于：(参数1, 参数2, …, 参数N) =&gt;&#123; return 表达式; &#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>当括号里的参数只有一个的时候，可以把括号省略不写</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(单一参数) =&gt; &#123;函数声明&#125;</span><br><span class="line">单一参数 =&gt; &#123;函数声明&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如果没有参数，则圆括号必须写</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">() =&gt; &#123;函数声明&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>es5当前与es6的对比</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x * y;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>有的箭头函数没有自己的this,所以不适合用于对象中的方法，参见<a href="#%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95">对象方法</a></strong></li>
+<li>箭头函数会帮我绑定外层this的值，也就是说一个函数里如果有一个箭头函数，那么在里面的this和外层函数的this所指向的都是外层。<a href="%E5%8F%82%E8%A7%81es6%E7%9A%84this">参见es6的this</a></li>
+<li><strong>箭头函数不能提升，必须先声明后使用</strong></li>
+<li>使用箭头函数最好使用const声明，而不是var,因为函数是个常量<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123; <span class="keyword">return</span> x * y &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="函数的显式参数和隐式参数"><a href="#函数的显式参数和隐式参数" class="headerlink" title="函数的显式参数和隐式参数"></a>函数的显式参数和隐式参数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">functionName</span>(<span class="params">parameter1, parameter2, parameter3</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 要执行的代码……</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><strong>什么是显式参数：显式参数就是定义函数的时候会显式的指明参数</strong></li>
+<li><strong>什么是隐式参数：就是调用函数传递函数真正的值</strong></li>
+<li><strong>类似Java中的形参和实参</strong></li>
+</ul>
+<p><strong>参数规则</strong></p>
+<ul>
+<li><strong>显式参数不需要指定类数据类型</strong></li>
+<li><strong>隐式参数没有类型检测</strong></li>
+<li><strong>隐式参数的个数没有限制，不会检测，传几个是几个</strong></li>
+<li><strong>在ES5中参数掉用的时候如果没有出入参数，参数默认设置位undefined，但是建议最好设置一个默认值</strong><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function myFunction(x, y) &#123;</span><br><span class="line">    if (y === undefined) &#123;</span><br><span class="line">          y = 0;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">function myFunction(x, y) &#123;</span><br><span class="line">    y = y || 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>上面面||意思是或的意思，如果函数定义了那么代表是true，如果参数未定义则是undefined代表false，那么会返回0，并赋值给y</strong></p>
+<h2 id="ES6函数支持设置默认值"><a href="#ES6函数支持设置默认值" class="headerlink" title="ES6函数支持设置默认值"></a>ES6函数支持设置默认值</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y = <span class="number">10</span></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// y is 10 if not passed or undefined</span></span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">myFunction(<span class="number">0</span>, <span class="number">2</span>) <span class="comment">// 输出 2</span></span><br><span class="line">myFunction(<span class="number">5</span>); <span class="comment">// 输出 15, y 参数的默认值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="函数里的内置对象arguments"><a href="#函数里的内置对象arguments" class="headerlink" title="函数里的内置对象arguments"></a>函数里的内置对象arguments</h2><p><strong>函数是一个对象，里面内置一个对象，arguments里有函数调用的参数数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">x = findMax(<span class="number">1</span>, <span class="number">123</span>, <span class="number">500</span>, <span class="number">115</span>, <span class="number">44</span>, <span class="number">88</span>);</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMax</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i, max = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length &lt; <span class="number">2</span>) <span class="keyword">return</span> max;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>[i] &gt; max) &#123;</span><br><span class="line">            max = <span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>上面的函数 尽管没有显示参数，但是仍然可以传递参数进去，见显式参数和隐式参数，但是传入的参数如何使用，这时候就可以用arguments对象，这个对象以数组的方式存储函数的参数列表</strong></p>
+<h2 id="函数通过值传递参数"><a href="#函数通过值传递参数" class="headerlink" title="函数通过值传递参数"></a>函数通过值传递参数</h2><p><strong>函数通过隐式参数将值传入函数内，在函数内修改参数的值，不会影响外部值，也不会影响显示参数的初始值</strong></p>
+<h2 id="函数通过对象传递参数"><a href="#函数通过对象传递参数" class="headerlink" title="函数通过对象传递参数"></a>函数通过对象传递参数</h2><p><strong>因为是对象，对象是一种引用，所以在函数内修改对象的属性，就会修改其初始值，因为对象是一种引用</strong></p>
+<h2 id="函数作为一个函数调用与this的指向"><a href="#函数作为一个函数调用与this的指向" class="headerlink" title="函数作为一个函数调用与this的指向"></a>函数作为一个函数调用与this的指向</h2><ul>
+<li><strong>在函数中this的作用：谁调用指向谁</strong></li>
+<li><strong>直接调用：<code>函数名（参数列表）</code></strong><blockquote>
+<p>函数不属于任何对象。但是在 JavaScript 中它始终是默认的全局对象。<br>在 HTML 中默认的全局对象是 HTML 页面本身，所以函数是属于 HTML 页面。<br>在浏览器中的页面对象是浏览器窗口(window 对象)。以上函数会自动变为 window 对象的函数。<br>myFunction() 和 window.myFunction() 是一样的：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.myFunction(<span class="number">10</span>, <span class="number">2</span>);    <span class="comment">// window.myFunction(10, 2) 返回 20</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>函数中的this</strong><br><strong>函数中的this指向其谁调用就指向谁</strong>，<strong>因此如果不是被自身调用就会指向被调用者，在web浏览器中就会指向windows对象（浏览器）</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">myFunction();                <span class="comment">// 返回 window 对象</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="函数作为方法调用与this的指向"><a href="#函数作为方法调用与this的指向" class="headerlink" title="函数作为方法调用与this的指向"></a>函数作为方法调用与this的指向</h2><p><strong>函数在对象中叫做方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    <span class="attr">firstName</span>:<span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">fullName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.firstName + <span class="string">&quot; &quot;</span> + <span class="built_in">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName();         <span class="comment">// 返回 &quot;John Doe&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>上述函数做一个对象中的方法，函数同时也是一个对象，其所有者是对象myObject，那么this所代表的是函数的拥有者myObject对象</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">ar myObject = &#123;</span><br><span class="line">    <span class="attr">firstName</span>:<span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">fullName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName();          <span class="comment">// 返回 [object Object] (所有者对象)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用构造函数调用函数与this指向"><a href="#使用构造函数调用函数与this指向" class="headerlink" title="使用构造函数调用函数与this指向"></a>使用构造函数调用函数与this指向</h2><ul>
+<li><strong>什么是调用函数的构造函数：在调用函数前，前面增加一个new</strong></li>
+<li><strong>实际是指调用函数的构造函数，会创建一个新的对象，这个新对象继承了构造函数的属性和方法</strong><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数：只是函数体内写法不同，其他语法未变</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.firstName = arg1;</span><br><span class="line">    <span class="built_in">this</span>.lastName  = arg2;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// This    creates a new object</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> myFunction(<span class="string">&quot;John&quot;</span>,<span class="string">&quot;Doe&quot;</span>);</span><br><span class="line">x.firstName;                             <span class="comment">// 返回 &quot;John&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>这里的this没有任何的值，只有当函数被调用实例化的时候才会创建,实例化后这里的this是指向新创建对象本身，因为这里是指新创建的实例其继承构造函数中的属性和方法，严格来说已经不叫函数对象</strong></p>
+<h2 id="函数的方法调用函数"><a href="#函数的方法调用函数" class="headerlink" title="函数的方法调用函数"></a>函数的方法调用函数</h2><p><strong>函数是一种对象，那么对象就有属性和方法</strong><br><strong>在函数对象中有预定义的两个方法可以调用函数，叫做call()和apply（）</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;p id=<span class="string">&quot;demo&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> myObject;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">return</span> a * b;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">&#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">myObject = myFunction.call(myObject, <span class="number">10</span>, <span class="number">2</span>);    <span class="comment">// 返回 20</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>).innerHTML = myObject; </span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">&lt;script&gt;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> myObject, myArray;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">return</span> a * b;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">&#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">myArray = [<span class="number">10</span>, <span class="number">2</span>]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">myObject = myFunction.apply(myObject, myArray);      <span class="comment">// 返回 20</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>).innerHTML = myObject; </span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。<br>在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。<br>通过 call() 或 apply() 方法你可以设置 this 的值, 且作为已存在对象的新方法调用。</p>
+</blockquote>
+<p><strong>两个方法的第一参数都是传入一个对象</strong><br><strong>不同的是apply第二个参数传入的是数组，而call单独传入</strong></p>
+<h1 id="js对象"><a href="#js对象" class="headerlink" title="js对象"></a>js对象</h1><blockquote>
+<p>JavaScript 对象是拥有属性和方法的数据。</p>
+</blockquote>
+<p><strong>在js中什么都是变量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="string">&quot;Fiat&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>上面是变量赋值为…</strong><br><strong>对象是变量，变量也是对象，不同的是对象可以包含多个变量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> car = &#123;<span class="attr">type</span>:<span class="string">&quot;Fiat&quot;</span>, <span class="attr">model</span>:<span class="number">500</span>, <span class="attr">color</span>:<span class="string">&quot;white&quot;</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="对象定义"><a href="#对象定义" class="headerlink" title="对象定义"></a>对象定义</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    <span class="attr">firstName</span>:<span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>:<span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">50</span>,</span><br><span class="line">    <span class="attr">eyeColor</span>:<span class="string">&quot;blue&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h2><p><strong>对象是键值对的容器</strong><br><strong>所以上面的键值对叫做对象属性</strong></p>
+<blockquote>
+<p><strong>类似</strong><br>PHP 中的关联数组<br>Python 中的字典<br>C 语言中的哈希表<br>Java 中的哈希映射<br>Ruby 和 Perl 中的哈希表</p>
+</blockquote>
+<h2 id="访问对象属性"><a href="#访问对象属性" class="headerlink" title="访问对象属性"></a>访问对象属性</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">person.lastName;</span><br><span class="line">person[<span class="string">&quot;lastName&quot;</span>];</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>一种类似java对象.属性名，一种类似键值对取值</strong></p>
+<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法<span id="对象方法"></h2><p><strong>访问</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">name = person.fullName();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>创建</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">methodName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 代码 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    <span class="attr">firstName</span>: <span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span> : <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">id</span> : <span class="number">5566</span>,</span><br><span class="line">    <span class="attr">fullName</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">this</span>.firstName + <span class="string">&quot; &quot;</span> + <span class="built_in">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>格式是++方法名：function{方法体}++</strong><br><strong>对象的方法和单独创建函数格式不同</strong></p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p><strong>抽象来说js作用域就是变量、对象、函数的集合</strong></p>
+<h2 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 此处不能调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>函数内是局部作用域，声明的变量是局部变量不能再外部使用，函数运行完销毁</strong></p>
+<h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> carName = <span class="string">&quot; Volvo&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>函数外是全局作用域，声明的变量叫全局变量，任何地方可用，浏览器关闭销毁</strong></li>
+<li><strong>没有声明，就赋值，是全局变量，尽管可能在函数体内声明了，如下</strong></li>
+<li><strong>函数的参数是局部变量</strong><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="变量生命周期"><a href="#变量生命周期" class="headerlink" title="变量生命周期"></a>变量生命周期</h2></li>
+<li>局部变量函数用完就销毁</li>
+<li>全局变量浏览器关闭才销毁<h2 id="HTML全局变量与window对象"><a href="#HTML全局变量与window对象" class="headerlink" title="HTML全局变量与window对象"></a>HTML全局变量与window对象</h2></li>
+</ul>
+<p><strong>window对象是全局变量，同时所有的全局变量都是属于window对象，所以可以如下调用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此处可使用 window.carName</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;<span class="comment">//此处是全局变量因为没有var定义就直接赋值了</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>什么是事件？发生在html元素上的事，比如单击一个按钮</strong><br><strong>只有你使用了js才会触发这些事件</strong><br><strong>HTML的事件可以使浏览器的行为，如HTML 页面完成加载，也可是用户行为如1</strong><br><strong>事件触发可以去执行一些js代码</strong></p>
+<p><strong>事件的使用</strong><br><strong>在HTML元素的属性中有事件属性</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;button onclick=<span class="string">&quot;getElementById(&#x27;demo&#x27;).innerHTML=Date()&quot;</span>&gt;现在的时间是?&lt;/button&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>这里的onclick就是HTML元素的一个属性，事件属性，在属性值里可以书写js代码！</strong><br><strong>如何调用js代码，比较常见的是在事件的属性值里书写js代码</strong></p>
+<blockquote>
+<p>事件可以用于处理表单验证，用户输入，用户行为及浏览器动作:<br>页面加载时触发事件<br>页面关闭时触发事件<br>用户点击按钮执行动作<br>验证用户输入内容的合法性<br>等等 …<br>可以使用多种方法来执行 JavaScript 事件代码：</p>
+</blockquote>
+<ul>
+<li>HTML 事件属性可以直接执行 JavaScript 代码</li>
+<li>HTML 事件属性可以调用 JavaScript 函数</li>
+<li>你可以为 HTML 元素指定自己的事件处理程序<br>你可以阻止事件的发生。<br>等等 ..</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CenOS配置JDK</title>
     <url>/20180724105209.html</url>
     <content><![CDATA[<p>title: CenOS配置JDK<br>date: ‘2018-07-24 10:52:09’<br>updated: ‘2018-07-24 10:56:58’<br>tags: [Linux, Java]<br>permalink: /articles/2018/07/24/1532400728584.html</p>
@@ -1144,41 +1455,6 @@
       </categories>
   </entry>
   <entry>
-    <title>每天复习一点Linux命令006之cp与mv</title>
-    <url>/20200216234840.html</url>
-    <content><![CDATA[<h2 id="2-2-cp"><a href="#2-2-cp" class="headerlink" title="2.2 cp"></a>2.2 cp</h2><ul>
-<li>用途：复制文件或目录</li>
-<li>格式：<code>cp [option] [source] [destination]</code></li>
-<li>option<ul>
-<li>-a 复制目录时使用，保留链接、文件属性，递归复制。（默认是改变文件属性，比如修改时间、权限等）</li>
-<li>-d 复制时保留链接。</li>
-<li>-f  删除已经存在的文件不提示。</li>
-<li>-i  覆盖目标文件的时候给出提示。☆</li>
-<li>-p 复制源文件的时候，把修改时间和访问权限一块复制。</li>
-<li>-r  若目标源文件是目录，则会将其子目录和文件全部复制。（如果直接复制目录会报错）☆</li>
-<li>-l 不进行复制，只是链接文件。☆</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-mv"><a href="#2-3-mv" class="headerlink" title="2.3 mv"></a>2.3 mv</h2><ul>
-<li>用途：文件或目录移动。☆文件/目录重命名。</li>
-<li>格式：<code>mv [opt] [source] [destination]</code><ul>
-<li>跨文件系统复制时，会删除原有文件删除，所以要注意。</li>
-</ul>
-</li>
-<li>opt<ul>
-<li>-i 交互式操作</li>
-<li>-p移动时保持权限</li>
-<li>-f禁止交互式操作</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>每天复习一点Linux命令005之ls</title>
     <url>/20200215233136.html</url>
     <content><![CDATA[<blockquote>
@@ -1294,6 +1570,41 @@
 <td></td>
 </tr>
 </tbody></table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>每天复习一点Linux命令006之cp与mv</title>
+    <url>/20200216234840.html</url>
+    <content><![CDATA[<h2 id="2-2-cp"><a href="#2-2-cp" class="headerlink" title="2.2 cp"></a>2.2 cp</h2><ul>
+<li>用途：复制文件或目录</li>
+<li>格式：<code>cp [option] [source] [destination]</code></li>
+<li>option<ul>
+<li>-a 复制目录时使用，保留链接、文件属性，递归复制。（默认是改变文件属性，比如修改时间、权限等）</li>
+<li>-d 复制时保留链接。</li>
+<li>-f  删除已经存在的文件不提示。</li>
+<li>-i  覆盖目标文件的时候给出提示。☆</li>
+<li>-p 复制源文件的时候，把修改时间和访问权限一块复制。</li>
+<li>-r  若目标源文件是目录，则会将其子目录和文件全部复制。（如果直接复制目录会报错）☆</li>
+<li>-l 不进行复制，只是链接文件。☆</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-mv"><a href="#2-3-mv" class="headerlink" title="2.3 mv"></a>2.3 mv</h2><ul>
+<li>用途：文件或目录移动。☆文件/目录重命名。</li>
+<li>格式：<code>mv [opt] [source] [destination]</code><ul>
+<li>跨文件系统复制时，会删除原有文件删除，所以要注意。</li>
+</ul>
+</li>
+<li>opt<ul>
+<li>-i 交互式操作</li>
+<li>-p移动时保持权限</li>
+<li>-f禁止交互式操作</li>
+</ul>
 </li>
 </ul>
 ]]></content>
@@ -1455,317 +1766,6 @@
 ]]></content>
       <categories>
         <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ES6笔记</title>
-    <url>/20201209203609.html</url>
-    <content><![CDATA[<h1 id="es6是什么"><a href="#es6是什么" class="headerlink" title="es6是什么"></a>es6是什么</h1><blockquote>
-<p>ECMAScript 6 目前基本成为业界标准，它的普及速度比 ES5 要快很多，主要原因是现代浏览器对 ES6 的支持相当迅速，尤其是 Chrome 和 Firefox 浏览器，已经支持 ES6 中绝大多数的特性。</p>
-</blockquote>
-<p><strong>就是最新的JavaScript标准，之前是es5</strong></p>
-<h1 id="let、const-和-block-作用域"><a href="#let、const-和-block-作用域" class="headerlink" title="let、const 和 block 作用域"></a>let、const 和 block 作用域</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">  let a = <span class="number">3</span>;</span><br><span class="line">  console.log(a); <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(a); <span class="comment">// 2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>let 允许创建块级作用域，ES6 推荐在函数中使用 let 定义变量，而非 var：</p>
-</blockquote>
-<p><strong>创建块级作用域，在函数体中使用不再用var 定义变量了，而是let</strong></p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">const</span> ARR = [<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">  ARR.push(<span class="number">7</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(ARR); <span class="comment">// [5,6,7]</span></span><br><span class="line">  ARR = <span class="number">10</span>; <span class="comment">// TypeError</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>同样在块级作用域有效的另一个变量声明方式是 const，它可以声明一个常量。ES6 中，const 声明的常量类似于指针，它指向某个引用，也就是说这个「常量」并非一成不变的</p>
-</blockquote>
-<p><strong>使用const声明块级变量，声明的是常量，类似于C中的指针（引用），不是一成不变的</strong></p>
-<blockquote>
-<p>let 关键词声明的变量不具备变量提升（hoisting）特性<br>let 和 const 声明只在最靠近的一个块中（花括号内）有效<br>当使用常量 const 声明时，请使用大写变量，如：CAPITAL_CASING<br>const 在声明时必须被赋值</p>
-</blockquote>
-<ul>
-<li><strong>let关键字声明的变量不具备变量提升，所谓变量提升就是：先声明后用和先用后声明都一样，js默认提升到首部，但是用let就不行，变量不会被默认上升到首部，也就是说在哪声明后下面能用，之上不能使用</strong></li>
-<li><strong>作用域问题：let和var声明靠近最近的花括号中可以使用</strong></li>
-<li>**声明标准问题：const必须使用大写变量</li>
-<li><strong>const声明必须赋值</strong><h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><blockquote>
-<p>ES6 中，箭头函数就是函数的一种简写形式，使用括号包裹参数，跟随一个 =&gt;，紧接着是函数体：</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>函数的简写形式</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var getPrice = function() &#123;</span><br><span class="line">  return 4.55;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">// Implementation with Arrow Function</span><br><span class="line">var getPrice = () =&gt; 4.55;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>第一种js常见的函数，第二种函数简写形式<br>具体语法—&gt;++（函数参数）=&gt;{函数体}++</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">let arr = [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;orange&#x27;];</span><br><span class="line"> </span><br><span class="line">let breakfast = arr.map(fruit =&gt; &#123;</span><br><span class="line">  return fruit + &#x27;s&#x27;;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">console.log(breakfast); // apples bananas oranges</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p> <strong>关于上面map函数可能看不懂是JavaScript的原生函数，其中fruit是函数的参数，这里因为一个参数省略了括号</strong>，<br>他的作用是<br>map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。<br>map() 方法按照原始数组元素顺序依次处理元素。<br><strong>就是返回经过函数处理的数组，也就是说调用这个方法，会把数组中的数据依次传入后面的函数处理</strong><br>语法：<strong>array.map(function(currentValue,index,arr), thisValue)</strong><br><strong>其中第二个参数是可选值</strong>，参见 <a href="https://www.runoob.com/jsref/jsref-map.html">https://www.runoob.com/jsref/jsref-map.html</a><br><strong>下面是正常使用非es6简化函数的用法</strong></p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">var numbers = [65, 44, 12, 4];</span><br><span class="line"></span><br><span class="line">function multiplyArrayElement(num) &#123;</span><br><span class="line">    return num * document.getElementById(&quot;multiplyWith&quot;).value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = numbers.map(multiplyArrayElement);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>箭头函数让this对象总是指向对象本身</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">  this.age = 0;</span><br><span class="line"> </span><br><span class="line">  setInterval(function growUp() &#123;</span><br><span class="line">    // 在非严格模式下，growUp() 函数的 this 指向 window 对象</span><br><span class="line">    this.age++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">alert(this.age);</span><br><span class="line">&#125;</span><br><span class="line">var person = new Person();</span><br></pre></td></tr></table></figure>
-<p><strong>运行后会发现浏览器的提示永远都是0，也就是说明grow函数内的this.age指向的并不是外部函数person里的this.age，而是指向的windows对象</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">  var self = this;</span><br><span class="line">  self.age = 0;</span><br><span class="line"> </span><br><span class="line">  setInterval(function growUp() &#123;</span><br><span class="line">    self.age++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>所以在这种写法中，如果grow函数需要使用外部的函数的age，我们通常的做法是先将this赋值给一个对象，这样就避免了指向Windows对象</strong><br><strong>但是使用箭头函数避免上述麻烦</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">unction Person()&#123;</span><br><span class="line">  this.age = 0;</span><br><span class="line"> </span><br><span class="line">  setInterval(() =&gt; &#123;</span><br><span class="line">    // |this| 指向 person 对象</span><br><span class="line">    this.age++;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var person = new Person();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="函数参数默认值"><a href="#函数参数默认值" class="headerlink" title="函数参数默认值"></a>函数参数默认值</h1><p><strong>ES6 中允许你对函数参数设置默认值</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">let getFinalPrice = (price, tax=0.7) =&gt; price + price * tax;</span><br><span class="line">getFinalPrice(500); // 850</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="Spread-Rest-操作符"><a href="#Spread-Rest-操作符" class="headerlink" title="Spread / Rest 操作符"></a>Spread / Rest 操作符</h1><blockquote>
-<p>Spread / Rest 操作符指的是 …，具体是 Spread 还是 Rest 需要看上下文语境。</p>
-</blockquote>
-<p><strong>就是三个点…</strong><br>当被用于迭代器中时，它是一个 Spread 操作符：<br><strong>作为数组传入，但是参数是三个此时…的作用就是迭代数组分别传入参数</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function foo(x,y,z) &#123;</span><br><span class="line">  console.log(x,y,z);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">let arr = [1,2,3];</span><br><span class="line">foo(...arr); // 1 2 3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>用于函数传参的时候是一个rest<br><strong>数组传参的时候，把参数转换为数组形式</strong></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function foo(...args) &#123;</span><br><span class="line">  console.log(args);</span><br><span class="line">&#125;</span><br><span class="line">foo( 1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript匿名函数和回调函数的理解.md</title>
-    <url>/20180903164623.html</url>
-    <content><![CDATA[<p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
-<hr>
-<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
-<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
-<p>匿名函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
-<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
-<p>或使用小括号</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
-<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
-<p>匿名函数链式调用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
-<p>不常见的匿名函数调用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
-<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
-<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
-<p>传递函数作为回调</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript要点笔记</title>
-    <url>/20201209212359.html</url>
-    <content><![CDATA[<h1 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h1><blockquote>
-<p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。<br>JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">x = <span class="number">5</span>; <span class="comment">// 变量 x 设置为 5</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x;                     <span class="comment">// 在元素中显示 x</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x; <span class="comment">// 声明 x</span></span><br><span class="line"><span class="comment">//结果相同</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x; <span class="comment">// 声明 x</span></span><br><span class="line">x = <span class="number">5</span>; <span class="comment">// 变量 x 设置为 5</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x;                     <span class="comment">// 在元素中显示 x</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>变量提升：函数声明和变量声明总是会被解释器悄悄地被”提升”到方法体的最顶部</strong></li>
-</ul>
-<p><strong>变量初始化不会提升</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 初始化 x</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x + <span class="string">&quot; &quot;</span> + y;           <span class="comment">// 显示 x 和 y</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">7</span>; <span class="comment">// 初始化 y</span></span><br><span class="line">等同于</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 初始化 x</span></span><br><span class="line"><span class="keyword">var</span> y;     <span class="comment">// 声明 y</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x + <span class="string">&quot; &quot;</span> + y;           <span class="comment">// 显示 x 和 y</span></span><br><span class="line"></span><br><span class="line">y = <span class="number">7</span>;    <span class="comment">// 设置 y 为 7</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>运行显示y未定义；所谓初始化就是声明的同时附初始值。上面y未被声明的原因是，使用在前，初始化在在后，但初始化不会提升变量</strong><br>改成如下，可以正常运行，是因为初始化在上，尽管未被提升。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 初始化 x</span></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">7</span>; <span class="comment">// 初始化 y</span></span><br><span class="line"></span><br><span class="line">elem = <span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>); <span class="comment">// 查找元素</span></span><br><span class="line">elem.innerHTML = x + <span class="string">&quot; &quot;</span> + y;           <span class="comment">// 显示 x 和 y</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>为了避免这些问题，通常我们在每个作用域开始前声明这些变量，这也是正常的 JavaScript 解析步骤，易于我们理解。</strong></li>
-<li><strong>JavaScript 严格模式(strict mode)不允许使用未声明的变量。</strong><h1 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h1><blockquote>
-<p>JavaScript 严格模式（strict mode）即在严格的条件下运行。<br>“use strict” 指令在 JavaScript 1.8.5 (ECMAScript5) 中新增。<br>它不是一条语句，但是是一个字面量表达式，在 JavaScript 旧版本中会被忽略。<br>“use strict” 的目的是指定代码在严格条件下执行。</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>严格模式下你不能使用未声明的变量。</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">支持严格模式的浏览器:</span><br><span class="line">Internet Explorer <span class="number">10</span> +、 Firefox <span class="number">4</span>+ Chrome <span class="number">13</span>+、 Safari <span class="number">5.1</span>+、 Opera <span class="number">12</span>+。</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>不允许删除变量或对象</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">delete</span> x;                <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>不允许删除函数。</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">p1, p2</span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">delete</span> x;                <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>不允许变量重名:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">p1, p1</span>) </span>&#123;&#125;;   <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
-<p><strong>不允许使用八进制:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">010</span>;             <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>不允许使用转义字符:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x = \<span class="number">010</span>;            <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>不允许对只读属性赋值:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&quot;x&quot;</span>, &#123;<span class="attr">value</span>:<span class="number">0</span>, <span class="attr">writable</span>:<span class="literal">false</span>&#125;);</span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">3.14</span>;            <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>不允许对一个使用getter方法读取的属性进行赋值</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="keyword">get</span> <span class="title">x</span>() &#123;<span class="keyword">return</span> <span class="number">0</span>&#125; &#125;;</span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">3.14</span>;            <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>不允许删除一个不允许删除的属性：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">delete Object.prototype; <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>变量名不能使用 “eval” 字符串:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">eval</span> = <span class="number">3.14</span>;         <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>变量名不能使用 “arguments” 字符串:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">arguments</span> = <span class="number">3.14</span>;    <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>不允许使用以下这种语句</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">with</span> (<span class="built_in">Math</span>)&#123;x = cos(<span class="number">2</span>)&#125;; <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>由于一些安全原因，在作用域 eval() 创建的变量不能被调用：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="built_in">eval</span> (<span class="string">&quot;var x = 2&quot;</span>);</span><br><span class="line">alert (x);               <span class="comment">// 报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>禁止this关键字指向全局对象。</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !<span class="built_in">this</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 返回false，因为&quot;this&quot;指向全局对象，&quot;!this&quot;就是false</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> !<span class="built_in">this</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 返回true，因为严格模式下，this的值为undefined，所以&quot;!this&quot;为true。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>因此，使用构造函数时，如果忘了加new，this不再指向全局对象，而是报错。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;</span><br><span class="line">    <span class="built_in">this</span>.a = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line">f();<span class="comment">// 报错，this未定义</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>保留关键字</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">为了向将来Javascript的新版本过渡，严格模式新增了一些保留关键字：</span><br><span class="line"></span><br><span class="line">implements</span><br><span class="line">interface</span><br><span class="line"><span class="keyword">let</span></span><br><span class="line">package</span><br><span class="line">private</span><br><span class="line">protected</span><br><span class="line">public</span><br><span class="line"><span class="keyword">static</span></span><br><span class="line"><span class="keyword">yield</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
-<p>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。</p>
-</blockquote>
-<h2 id="函数的基本语法"><a href="#函数的基本语法" class="headerlink" title="函数的基本语法"></a>函数的基本语法</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionname</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 执行代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>大小写敏感</strong></p>
-<h2 id="返回值函数"><a href="#返回值函数" class="headerlink" title="返回值函数"></a>返回值函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>函数内的变量是<strong>局部变量</strong>，<strong>函数外声明的是全局变量</strong></li>
-<li><strong>声明周期：局部变量函数运行完，全局变量页面关闭</strong></li>
-</ul>
-<p><strong>变量如果没声明就赋值，则会把变量赋值为windows</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> var1 = <span class="number">1</span>; <span class="comment">// 不可配置全局属性</span></span><br><span class="line">var2 = <span class="number">2</span>; <span class="comment">// 没有使用 var 声明，可配置全局属性</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">this</span>.var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.var1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.var2); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> var1; <span class="comment">// false 无法删除</span></span><br><span class="line"><span class="built_in">console</span>.log(var1); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> var2; </span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">delete</span> var2); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(var2); <span class="comment">// 已经删除 报错变量未定义</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>意思是未声明全局变量可以配置也就是可以删除，声明的不可以配置也就是不可以删除</strong></p>
-<h2 id="函数表达式即匿名函数"><a href="#函数表达式即匿名函数" class="headerlink" title="函数表达式即匿名函数"></a>函数表达式即匿名函数</h2><p><strong>所谓函数表达式就是将函数赋值给一个变量的格式，这个变量以后就可以当做函数来使用，而不是以往只能用带括号的形式调用</strong><br><strong>另外这种格式，还有另外一种叫法++匿名函数++</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;<span class="keyword">return</span> a * b&#125;;</span><br><span class="line"><span class="keyword">var</span> z = x(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="内置构造函数来定义函数"><a href="#内置构造函数来定义函数" class="headerlink" title="内置构造函数来定义函数"></a>内置构造函数来定义函数</h2><p><strong>使用函数构造器，通过js内置的函数构造器进行定义</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myFunction = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;return a * b&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="keyword">var</span> myFunction = <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;<span class="keyword">return</span> a * b&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><p><strong>参见提升</strong><br><strong>函数可以在声明之前就可以调用。提升将函数的作用域提升到前面</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">myFunction(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>使用表达式定义函数无法提升</strong></p>
-<h2 id="自调用函数"><a href="#自调用函数" class="headerlink" title="自调用函数"></a>自调用函数</h2><ul>
-<li><strong>只有函数表达式才能自调用，其格式是在后面加一个括号</strong><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="string">&quot;Hello!!&quot;</span>;      <span class="comment">// 我将调用自己</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>上面的函数用一个括号括起来的意思是说明这是一个函数表达式-匿名函数</strong></p>
-<h2 id="函数可以当做值和表达式使用"><a href="#函数可以当做值和表达式使用" class="headerlink" title="函数可以当做值和表达式使用"></a>函数可以当做值和表达式使用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = myFunction(<span class="number">4</span>, <span class="number">3</span>) * <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="函数是对象"><a href="#函数是对象" class="headerlink" title="函数是对象"></a>函数是对象</h2><p><strong>在js中任何一个都可以当做对象</strong></p>
-<blockquote>
-<p>在 JavaScript 中使用 typeof 操作符判断函数类型将返回 “function” 。<br>但是JavaScript 函数描述为一个对象更加准确。<br><strong>JavaScript的函数是由属性和方法的</strong><br>比如arguments.length返回函数调用参数个数。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>toString方法可以函数作为一个字符串返回，运行后整个函数会作为一个字符串输出</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> txt = myFunction.toString();</span><br></pre></td></tr></table></figure>
-<h2 id="函数与对象里的方法的关系"><a href="#函数与对象里的方法的关系" class="headerlink" title="函数与对象里的方法的关系"></a>函数与对象里的方法的关系</h2><ul>
-<li><strong>函数如果在所定义对象里出现，叫做对象方法</strong></li>
-<li><strong>函数如果用于创建新的对象，叫做对象的构造函数</strong><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2></li>
-</ul>
-<p><strong>在es6笔记中提到</strong><br><strong>声明函数的语法变了，变得更加简洁</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(参数<span class="number">1</span>, 参数<span class="number">2</span>, …, 参数N) =&gt; &#123; 函数声明 &#125;</span><br><span class="line"></span><br><span class="line">(参数<span class="number">1</span>, 参数<span class="number">2</span>, …, 参数N) =&gt; 表达式(单一)</span><br><span class="line"><span class="comment">// 相当于：(参数1, 参数2, …, 参数N) =&gt;&#123; return 表达式; &#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>当括号里的参数只有一个的时候，可以把括号省略不写</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(单一参数) =&gt; &#123;函数声明&#125;</span><br><span class="line">单一参数 =&gt; &#123;函数声明&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>如果没有参数，则圆括号必须写</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">() =&gt; &#123;函数声明&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>es5当前与es6的对比</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x * y;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>有的箭头函数没有自己的this,所以不适合用于对象中的方法，参见<a href="#%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95">对象方法</a></strong></li>
-<li>箭头函数会帮我绑定外层this的值，也就是说一个函数里如果有一个箭头函数，那么在里面的this和外层函数的this所指向的都是外层。<a href="%E5%8F%82%E8%A7%81es6%E7%9A%84this">参见es6的this</a></li>
-<li><strong>箭头函数不能提升，必须先声明后使用</strong></li>
-<li>使用箭头函数最好使用const声明，而不是var,因为函数是个常量<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123; <span class="keyword">return</span> x * y &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="函数的显式参数和隐式参数"><a href="#函数的显式参数和隐式参数" class="headerlink" title="函数的显式参数和隐式参数"></a>函数的显式参数和隐式参数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">functionName</span>(<span class="params">parameter1, parameter2, parameter3</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 要执行的代码……</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><strong>什么是显式参数：显式参数就是定义函数的时候会显式的指明参数</strong></li>
-<li><strong>什么是隐式参数：就是调用函数传递函数真正的值</strong></li>
-<li><strong>类似Java中的形参和实参</strong></li>
-</ul>
-<p><strong>参数规则</strong></p>
-<ul>
-<li><strong>显式参数不需要指定类数据类型</strong></li>
-<li><strong>隐式参数没有类型检测</strong></li>
-<li><strong>隐式参数的个数没有限制，不会检测，传几个是几个</strong></li>
-<li><strong>在ES5中参数掉用的时候如果没有出入参数，参数默认设置位undefined，但是建议最好设置一个默认值</strong><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">function myFunction(x, y) &#123;</span><br><span class="line">    if (y === undefined) &#123;</span><br><span class="line">          y = 0;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">function myFunction(x, y) &#123;</span><br><span class="line">    y = y || 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>上面面||意思是或的意思，如果函数定义了那么代表是true，如果参数未定义则是undefined代表false，那么会返回0，并赋值给y</strong></p>
-<h2 id="ES6函数支持设置默认值"><a href="#ES6函数支持设置默认值" class="headerlink" title="ES6函数支持设置默认值"></a>ES6函数支持设置默认值</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y = <span class="number">10</span></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// y is 10 if not passed or undefined</span></span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">myFunction(<span class="number">0</span>, <span class="number">2</span>) <span class="comment">// 输出 2</span></span><br><span class="line">myFunction(<span class="number">5</span>); <span class="comment">// 输出 15, y 参数的默认值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="函数里的内置对象arguments"><a href="#函数里的内置对象arguments" class="headerlink" title="函数里的内置对象arguments"></a>函数里的内置对象arguments</h2><p><strong>函数是一个对象，里面内置一个对象，arguments里有函数调用的参数数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">x = findMax(<span class="number">1</span>, <span class="number">123</span>, <span class="number">500</span>, <span class="number">115</span>, <span class="number">44</span>, <span class="number">88</span>);</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMax</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i, max = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length &lt; <span class="number">2</span>) <span class="keyword">return</span> max;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>[i] &gt; max) &#123;</span><br><span class="line">            max = <span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>上面的函数 尽管没有显示参数，但是仍然可以传递参数进去，见显式参数和隐式参数，但是传入的参数如何使用，这时候就可以用arguments对象，这个对象以数组的方式存储函数的参数列表</strong></p>
-<h2 id="函数通过值传递参数"><a href="#函数通过值传递参数" class="headerlink" title="函数通过值传递参数"></a>函数通过值传递参数</h2><p><strong>函数通过隐式参数将值传入函数内，在函数内修改参数的值，不会影响外部值，也不会影响显示参数的初始值</strong></p>
-<h2 id="函数通过对象传递参数"><a href="#函数通过对象传递参数" class="headerlink" title="函数通过对象传递参数"></a>函数通过对象传递参数</h2><p><strong>因为是对象，对象是一种引用，所以在函数内修改对象的属性，就会修改其初始值，因为对象是一种引用</strong></p>
-<h2 id="函数作为一个函数调用与this的指向"><a href="#函数作为一个函数调用与this的指向" class="headerlink" title="函数作为一个函数调用与this的指向"></a>函数作为一个函数调用与this的指向</h2><ul>
-<li><strong>在函数中this的作用：谁调用指向谁</strong></li>
-<li><strong>直接调用：<code>函数名（参数列表）</code></strong><blockquote>
-<p>函数不属于任何对象。但是在 JavaScript 中它始终是默认的全局对象。<br>在 HTML 中默认的全局对象是 HTML 页面本身，所以函数是属于 HTML 页面。<br>在浏览器中的页面对象是浏览器窗口(window 对象)。以上函数会自动变为 window 对象的函数。<br>myFunction() 和 window.myFunction() 是一样的：</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.myFunction(<span class="number">10</span>, <span class="number">2</span>);    <span class="comment">// window.myFunction(10, 2) 返回 20</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>函数中的this</strong><br><strong>函数中的this指向其谁调用就指向谁</strong>，<strong>因此如果不是被自身调用就会指向被调用者，在web浏览器中就会指向windows对象（浏览器）</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">myFunction();                <span class="comment">// 返回 window 对象</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="函数作为方法调用与this的指向"><a href="#函数作为方法调用与this的指向" class="headerlink" title="函数作为方法调用与this的指向"></a>函数作为方法调用与this的指向</h2><p><strong>函数在对象中叫做方法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    <span class="attr">firstName</span>:<span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">fullName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.firstName + <span class="string">&quot; &quot;</span> + <span class="built_in">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName();         <span class="comment">// 返回 &quot;John Doe&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>上述函数做一个对象中的方法，函数同时也是一个对象，其所有者是对象myObject，那么this所代表的是函数的拥有者myObject对象</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">ar myObject = &#123;</span><br><span class="line">    <span class="attr">firstName</span>:<span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">fullName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myObject.fullName();          <span class="comment">// 返回 [object Object] (所有者对象)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用构造函数调用函数与this指向"><a href="#使用构造函数调用函数与this指向" class="headerlink" title="使用构造函数调用函数与this指向"></a>使用构造函数调用函数与this指向</h2><ul>
-<li><strong>什么是调用函数的构造函数：在调用函数前，前面增加一个new</strong></li>
-<li><strong>实际是指调用函数的构造函数，会创建一个新的对象，这个新对象继承了构造函数的属性和方法</strong><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数：只是函数体内写法不同，其他语法未变</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.firstName = arg1;</span><br><span class="line">    <span class="built_in">this</span>.lastName  = arg2;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// This    creates a new object</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> myFunction(<span class="string">&quot;John&quot;</span>,<span class="string">&quot;Doe&quot;</span>);</span><br><span class="line">x.firstName;                             <span class="comment">// 返回 &quot;John&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>这里的this没有任何的值，只有当函数被调用实例化的时候才会创建,实例化后这里的this是指向新创建对象本身，因为这里是指新创建的实例其继承构造函数中的属性和方法，严格来说已经不叫函数对象</strong></p>
-<h2 id="函数的方法调用函数"><a href="#函数的方法调用函数" class="headerlink" title="函数的方法调用函数"></a>函数的方法调用函数</h2><p><strong>函数是一种对象，那么对象就有属性和方法</strong><br><strong>在函数对象中有预定义的两个方法可以调用函数，叫做call()和apply（）</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;p id=<span class="string">&quot;demo&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> myObject;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">return</span> a * b;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">&#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">myObject = myFunction.call(myObject, <span class="number">10</span>, <span class="number">2</span>);    <span class="comment">// 返回 20</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>).innerHTML = myObject; </span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">&lt;script&gt;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> myObject, myArray;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">a, b</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">return</span> a * b;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">&#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">myArray = [<span class="number">10</span>, <span class="number">2</span>]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">myObject = myFunction.apply(myObject, myArray);      <span class="comment">// 返回 20</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="built_in">document</span>.getElementById(<span class="string">&quot;demo&quot;</span>).innerHTML = myObject; </span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。<br>在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。<br>通过 call() 或 apply() 方法你可以设置 this 的值, 且作为已存在对象的新方法调用。</p>
-</blockquote>
-<p><strong>两个方法的第一参数都是传入一个对象</strong><br><strong>不同的是apply第二个参数传入的是数组，而call单独传入</strong></p>
-<h1 id="js对象"><a href="#js对象" class="headerlink" title="js对象"></a>js对象</h1><blockquote>
-<p>JavaScript 对象是拥有属性和方法的数据。</p>
-</blockquote>
-<p><strong>在js中什么都是变量</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="string">&quot;Fiat&quot;</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>上面是变量赋值为…</strong><br><strong>对象是变量，变量也是对象，不同的是对象可以包含多个变量</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> car = &#123;<span class="attr">type</span>:<span class="string">&quot;Fiat&quot;</span>, <span class="attr">model</span>:<span class="number">500</span>, <span class="attr">color</span>:<span class="string">&quot;white&quot;</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="对象定义"><a href="#对象定义" class="headerlink" title="对象定义"></a>对象定义</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    <span class="attr">firstName</span>:<span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span>:<span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">50</span>,</span><br><span class="line">    <span class="attr">eyeColor</span>:<span class="string">&quot;blue&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h2><p><strong>对象是键值对的容器</strong><br><strong>所以上面的键值对叫做对象属性</strong></p>
-<blockquote>
-<p><strong>类似</strong><br>PHP 中的关联数组<br>Python 中的字典<br>C 语言中的哈希表<br>Java 中的哈希映射<br>Ruby 和 Perl 中的哈希表</p>
-</blockquote>
-<h2 id="访问对象属性"><a href="#访问对象属性" class="headerlink" title="访问对象属性"></a>访问对象属性</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">person.lastName;</span><br><span class="line">person[<span class="string">&quot;lastName&quot;</span>];</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>一种类似java对象.属性名，一种类似键值对取值</strong></p>
-<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法<span id="对象方法"></h2><p><strong>访问</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">name = person.fullName();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>创建</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">methodName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 代码 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    <span class="attr">firstName</span>: <span class="string">&quot;John&quot;</span>,</span><br><span class="line">    <span class="attr">lastName</span> : <span class="string">&quot;Doe&quot;</span>,</span><br><span class="line">    <span class="attr">id</span> : <span class="number">5566</span>,</span><br><span class="line">    <span class="attr">fullName</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">this</span>.firstName + <span class="string">&quot; &quot;</span> + <span class="built_in">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>格式是++方法名：function{方法体}++</strong><br><strong>对象的方法和单独创建函数格式不同</strong></p>
-<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p><strong>抽象来说js作用域就是变量、对象、函数的集合</strong></p>
-<h2 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 此处不能调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>函数内是局部作用域，声明的变量是局部变量不能再外部使用，函数运行完销毁</strong></p>
-<h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> carName = <span class="string">&quot; Volvo&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>函数外是全局作用域，声明的变量叫全局变量，任何地方可用，浏览器关闭销毁</strong></li>
-<li><strong>没有声明，就赋值，是全局变量，尽管可能在函数体内声明了，如下</strong></li>
-<li><strong>函数的参数是局部变量</strong><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="变量生命周期"><a href="#变量生命周期" class="headerlink" title="变量生命周期"></a>变量生命周期</h2></li>
-<li>局部变量函数用完就销毁</li>
-<li>全局变量浏览器关闭才销毁<h2 id="HTML全局变量与window对象"><a href="#HTML全局变量与window对象" class="headerlink" title="HTML全局变量与window对象"></a>HTML全局变量与window对象</h2></li>
-</ul>
-<p><strong>window对象是全局变量，同时所有的全局变量都是属于window对象，所以可以如下调用</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此处可使用 window.carName</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;<span class="comment">//此处是全局变量因为没有var定义就直接赋值了</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><p><strong>什么是事件？发生在html元素上的事，比如单击一个按钮</strong><br><strong>只有你使用了js才会触发这些事件</strong><br><strong>HTML的事件可以使浏览器的行为，如HTML 页面完成加载，也可是用户行为如1</strong><br><strong>事件触发可以去执行一些js代码</strong></p>
-<p><strong>事件的使用</strong><br><strong>在HTML元素的属性中有事件属性</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;button onclick=<span class="string">&quot;getElementById(&#x27;demo&#x27;).innerHTML=Date()&quot;</span>&gt;现在的时间是?&lt;/button&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>这里的onclick就是HTML元素的一个属性，事件属性，在属性值里可以书写js代码！</strong><br><strong>如何调用js代码，比较常见的是在事件的属性值里书写js代码</strong></p>
-<blockquote>
-<p>事件可以用于处理表单验证，用户输入，用户行为及浏览器动作:<br>页面加载时触发事件<br>页面关闭时触发事件<br>用户点击按钮执行动作<br>验证用户输入内容的合法性<br>等等 …<br>可以使用多种方法来执行 JavaScript 事件代码：</p>
-</blockquote>
-<ul>
-<li>HTML 事件属性可以直接执行 JavaScript 代码</li>
-<li>HTML 事件属性可以调用 JavaScript 函数</li>
-<li>你可以为 HTML 元素指定自己的事件处理程序<br>你可以阻止事件的发生。<br>等等 ..</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
       </categories>
   </entry>
   <entry>
