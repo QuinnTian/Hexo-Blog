@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"text":"使用Gitalk评论","order":-2},"changyan":{"order":-1,"text":"使用畅言评论"},"utterances":{"order":-3,"text":"使用utterances评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
 <meta name="description" content="写在前面 我是用手动安装的，如果是用脚本安装和docker安装请忽略。 另外如果你想在centos7下装7.1+或8.0,必须装好python3. 中文版没找到专业版下载地址，直接去英文版https:&#x2F;&#x2F;download.seafile.com&#x2F;d&#x2F;6e5297246c&#x2F;?p&#x3D;&#x2F;pro 3用户免费，中文官网并没有明确指明  安装参考文档最好看英文文档和中文文档结合，有些中文文档并没有讲英文文档，比">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS8安装Seafile8.0专业版遇到的问题.md">
@@ -380,18 +380,18 @@
 
 <hr/>
       <div class="comment-button-group">
+          <a class="btn comment-button utterances">使用utterances评论</a>
           <a class="btn comment-button gitalk">使用Gitalk评论</a>
           <a class="btn comment-button changyan">使用畅言评论</a>
-          <a class="btn comment-button utterances">utterances</a>
       </div>
+        <div class="comment-position utterances">
+          <div class="comments utterances-container"></div>
+        </div>
         <div class="comment-position gitalk">
           <div class="comments gitalk-container"></div>
         </div>
         <div class="comment-position changyan">
           <div class="comments" id="SOHUCS" sid="0d6a6ab212f0e3ab5f7a5d4b1a473d80"></div>
-        </div>
-        <div class="comment-position utterances">
-          <div class="comments utterances-container"></div>
         </div><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/comments-buttons.min.js"></script>
 
 </div>
