@@ -639,6 +639,29 @@
       </categories>
   </entry>
   <entry>
+    <title>CentOS8安装Seafile8.0专业版遇到的问题.md</title>
+    <url>/20210309233308.html</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li>我是用手动安装的，如果是用脚本安装和docker安装请忽略。</li>
+<li>另外如果你想在centos7下装7.1+或8.0,必须装好python3.</li>
+<li>中文版没找到专业版下载地址，直接去英文版<a href="https://download.seafile.com/d/6e5297246c/?p=/pro">https://download.seafile.com/d/6e5297246c/?p=/pro</a> 3用户免费，中文官网并没有明确指明</li>
+</ul>
+<h1 id="安装参考文档"><a href="#安装参考文档" class="headerlink" title="安装参考文档"></a>安装参考文档</h1><p>最好看英文文档和中文文档结合，有些中文文档并没有讲<br>英文文档，比如装着装着报错，肯定是没安装某些库。seafile安装会把python一家老小许多库全都装都一边。</p>
+<ul>
+<li>英文文档<br><a href="https://manual.seafile.com/deploy_pro/office_documents_preview/#faq-about-office-document-preview">https://manual.seafile.com/deploy_pro/office_documents_preview/#faq-about-office-document-preview</a></li>
+<li>中文文档<br><a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_pro/office_documents_preview.md">https://cloud.seafile.com/published/seafile-manual-cn/deploy_pro/office_documents_preview.md</a><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1>系统环境：centos8.0<h1 id="安装中遇到的问题"><a href="#安装中遇到的问题" class="headerlink" title="安装中遇到的问题"></a>安装中遇到的问题</h1><h2 id="没有安装Mysqlclient报错"><a href="#没有安装Mysqlclient报错" class="headerlink" title="没有安装Mysqlclient报错"></a>没有安装Mysqlclient报错</h2>因为centos8是用的python3<br><code>pip3 install MySQLdb</code>前提是你要安装了pip3<br>否则<code>yum -y install pip3</code><h2 id="fatal-error-Python-h-No-such-file-or-directory"><a href="#fatal-error-Python-h-No-such-file-or-directory" class="headerlink" title="# fatal error: Python.h: No such file or directory"></a># fatal error: Python.h: No such file or directory</h2>没有安装<code>python3-dev</code><br><code>yum -y install install python3-dev</code><h2 id="已经启动seahub，没有报错，但是外网无法访问"><a href="#已经启动seahub，没有报错，但是外网无法访问" class="headerlink" title="已经启动seahub，没有报错，但是外网无法访问"></a>已经启动seahub，没有报错，但是外网无法访问</h2>排除防火墙和安全组、SElinux<br>因为<code>seafile7.0以后</code>就不支持直接8000访问了<br>编辑seafile安装目录下的<code>gunicorn.conf 把 bind=127.0.0.1 改成0.0.0.0</code>就可访问了<h2 id="seafile-LibreOffice-seahub前端报错问题，报服务器内部错误，报文件转换失败"><a href="#seafile-LibreOffice-seahub前端报错问题，报服务器内部错误，报文件转换失败" class="headerlink" title="seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败"></a>seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败</h2></li>
+</ul>
+<ol>
+<li>升级LibreOffice版本</li>
+<li>先查看日志，虽然中文文档写让看seafevent.log但是里面是不显示office报错的，英文文档写让看seahub.log<br>/conf/seafevents.conf，添加<br>[OFFICE CONVERTER]<br>enabled = true<br>host = 127.0.0.1 # 本机的IP地址，默认 127.0.0.1<br>port = 6000 # 端口，默认6000<br>workers = 1 # 并发运行 libreoffice 的进程数<br>outputdir = /tmp/ # 转换后的 office/pdf 文件的缓存路径。 默认是 /tmp/.<br>打开 seafile/conf/seahub_settings.py，添加:<br>OFFICE_CONVERTOR_ROOT = ‘<a href="http://127.0.0.1:6000/%E2%80%99">http://127.0.0.1:6000/’</a> # 与seafevents.conf中的 host 和 port 保持一致<br>重启seafilehub</li>
+<li><strong>如果重启后报文件转换失败</strong>，<br>还有一种可能，这点再英文文档中提到了，但是中文文档没写<code>This error indicates you have not installed the package. Install it by .libreoffice-headless&quot;sudo yum install libreoffice-headless&quot;</code>没安装这个库<br>还不行执行<code>pkill -f soffice.bin</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CentOS7使用Firewalld打开关闭防火墙与端口</title>
     <url>/20180724104752.html</url>
     <content><![CDATA[<p>title: CentOS7使用firewalld打开关闭防火墙与端口<br>date: ‘2018-07-24 10:47:52’<br>updated: ‘2018-07-24 10:58:09’<br>tags: [Linux]<br>permalink: /articles/2018/07/24/1532400461850.html</p>
@@ -672,29 +695,6 @@
 <p>删除</p>
 <p>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
 <p>收藏至：<a href="https://www.cnblogs.com/moxiaoan/p/5683743.html">https://www.cnblogs.com/moxiaoan/p/5683743.html</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CentOS8安装Seafile8.0专业版遇到的问题.md</title>
-    <url>/20210309233308.html</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li>我是用手动安装的，如果是用脚本安装和docker安装请忽略。</li>
-<li>另外如果你想在centos7下装7.1+或8.0,必须装好python3.</li>
-<li>中文版没找到专业版下载地址，直接去英文版<a href="https://download.seafile.com/d/6e5297246c/?p=/pro">https://download.seafile.com/d/6e5297246c/?p=/pro</a> 3用户免费，中文官网并没有明确指明</li>
-</ul>
-<h1 id="安装参考文档"><a href="#安装参考文档" class="headerlink" title="安装参考文档"></a>安装参考文档</h1><p>最好看英文文档和中文文档结合，有些中文文档并没有讲<br>英文文档，比如装着装着报错，肯定是没安装某些库。seafile安装会把python一家老小许多库全都装都一边。</p>
-<ul>
-<li>英文文档<br><a href="https://manual.seafile.com/deploy_pro/office_documents_preview/#faq-about-office-document-preview">https://manual.seafile.com/deploy_pro/office_documents_preview/#faq-about-office-document-preview</a></li>
-<li>中文文档<br><a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_pro/office_documents_preview.md">https://cloud.seafile.com/published/seafile-manual-cn/deploy_pro/office_documents_preview.md</a><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1>系统环境：centos8.0<h1 id="安装中遇到的问题"><a href="#安装中遇到的问题" class="headerlink" title="安装中遇到的问题"></a>安装中遇到的问题</h1><h2 id="没有安装Mysqlclient报错"><a href="#没有安装Mysqlclient报错" class="headerlink" title="没有安装Mysqlclient报错"></a>没有安装Mysqlclient报错</h2>因为centos8是用的python3<br><code>pip3 install MySQLdb</code>前提是你要安装了pip3<br>否则<code>yum -y install pip3</code><h2 id="fatal-error-Python-h-No-such-file-or-directory"><a href="#fatal-error-Python-h-No-such-file-or-directory" class="headerlink" title="# fatal error: Python.h: No such file or directory"></a># fatal error: Python.h: No such file or directory</h2>没有安装<code>python3-dev</code><br><code>yum -y install install python3-dev</code><h2 id="已经启动seahub，没有报错，但是外网无法访问"><a href="#已经启动seahub，没有报错，但是外网无法访问" class="headerlink" title="已经启动seahub，没有报错，但是外网无法访问"></a>已经启动seahub，没有报错，但是外网无法访问</h2>排除防火墙和安全组、SElinux<br>因为<code>seafile7.0以后</code>就不支持直接8000访问了<br>编辑seafile安装目录下的<code>gunicorn.conf 把 bind=127.0.0.1 改成0.0.0.0</code>就可访问了<h2 id="seafile-LibreOffice-seahub前端报错问题，报服务器内部错误，报文件转换失败"><a href="#seafile-LibreOffice-seahub前端报错问题，报服务器内部错误，报文件转换失败" class="headerlink" title="seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败"></a>seafile LibreOffice seahub前端报错问题，报服务器内部错误，报文件转换失败</h2></li>
-</ul>
-<ol>
-<li>升级LibreOffice版本</li>
-<li>先查看日志，虽然中文文档写让看seafevent.log但是里面是不显示office报错的，英文文档写让看seahub.log<br>/conf/seafevents.conf，添加<br>[OFFICE CONVERTER]<br>enabled = true<br>host = 127.0.0.1 # 本机的IP地址，默认 127.0.0.1<br>port = 6000 # 端口，默认6000<br>workers = 1 # 并发运行 libreoffice 的进程数<br>outputdir = /tmp/ # 转换后的 office/pdf 文件的缓存路径。 默认是 /tmp/.<br>打开 seafile/conf/seahub_settings.py，添加:<br>OFFICE_CONVERTOR_ROOT = ‘<a href="http://127.0.0.1:6000/%E2%80%99">http://127.0.0.1:6000/’</a> # 与seafevents.conf中的 host 和 port 保持一致<br>重启seafilehub</li>
-<li><strong>如果重启后报文件转换失败</strong>，<br>还有一种可能，这点再英文文档中提到了，但是中文文档没写<code>This error indicates you have not installed the package. Install it by .libreoffice-headless&quot;sudo yum install libreoffice-headless&quot;</code>没安装这个库<br>还不行执行<code>pkill -f soffice.bin</code></li>
-</ol>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -1133,6 +1133,72 @@
       </categories>
   </entry>
   <entry>
+    <title>每天复习一个Linux命令008之chmod、chown</title>
+    <url>/20200219235325.html</url>
+    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
+<ul>
+<li>可读：就是只让你读，其他的不能做。</li>
+<li>可执行：就是将该文件作为一种程序可读。</li>
+<li>可写：就是能往里面写东西。</li>
+</ul>
+<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
+<ul>
+<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
+</ul>
+<p>文件或目录所拥有的的权限有三组</p>
+<ul>
+<li>文件的读、写和执行权限。</li>
+<li>同组用户的三个权限。</li>
+<li>其他用户的三个权限。</li>
+</ul>
+<p>一个文件的权限查看，用<code>ls l</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首位什么类型，比如-代表目录，d代表文件。</li>
+<li>后面就是三种用户的权限，没有就是-。</li>
+</ul>
+<p>chmod</p>
+<ul>
+<li><p>用途：就是更改目录或者文件的权限。</p>
+</li>
+<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
+<ul>
+<li><p>字母法</p>
+<ul>
+<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>数字阀</p>
+<ul>
+<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
+</li>
+<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
+<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
+<li>用法：<code>chown option owner filename</code></li>
+<li>选项<ul>
+<li>-c 更改后如果更改成功才显示。</li>
+<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
+<li>-f  更改后如果无法更改，不会显示错误信息。</li>
+<li>-v 显示所有者变更详情。</li>
+<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每天复习一点Linux命令001之useradd命令</title>
     <url>/20200211230109.html</url>
     <content><![CDATA[<p>Linux用户管理</p>
@@ -1196,72 +1262,6 @@
 <li><p>使用<code>tail-l</code>查看用户/etc/passwd和/etc/shadow文件，前者用于查看新建目录用户信息，后者用于查看用户密码信息。</p>
 <p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200211225302.png"></p>
 <p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200211225659.png"></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>每天复习一个Linux命令008之chmod、chown</title>
-    <url>/20200219235325.html</url>
-    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
-<ul>
-<li>可读：就是只让你读，其他的不能做。</li>
-<li>可执行：就是将该文件作为一种程序可读。</li>
-<li>可写：就是能往里面写东西。</li>
-</ul>
-<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
-<ul>
-<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
-</ul>
-<p>文件或目录所拥有的的权限有三组</p>
-<ul>
-<li>文件的读、写和执行权限。</li>
-<li>同组用户的三个权限。</li>
-<li>其他用户的三个权限。</li>
-</ul>
-<p>一个文件的权限查看，用<code>ls l</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>首位什么类型，比如-代表目录，d代表文件。</li>
-<li>后面就是三种用户的权限，没有就是-。</li>
-</ul>
-<p>chmod</p>
-<ul>
-<li><p>用途：就是更改目录或者文件的权限。</p>
-</li>
-<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
-<ul>
-<li><p>字母法</p>
-<ul>
-<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>数字阀</p>
-<ul>
-<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
-</li>
-<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
-<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
-<li>用法：<code>chown option owner filename</code></li>
-<li>选项<ul>
-<li>-c 更改后如果更改成功才显示。</li>
-<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
-<li>-f  更改后如果无法更改，不会显示错误信息。</li>
-<li>-v 显示所有者变更详情。</li>
-<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
-</ul>
 </li>
 </ul>
 ]]></content>
