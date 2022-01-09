@@ -1133,72 +1133,6 @@
       </categories>
   </entry>
   <entry>
-    <title>每天复习一个Linux命令008之chmod、chown</title>
-    <url>/20200219235325.html</url>
-    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
-<ul>
-<li>可读：就是只让你读，其他的不能做。</li>
-<li>可执行：就是将该文件作为一种程序可读。</li>
-<li>可写：就是能往里面写东西。</li>
-</ul>
-<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
-<ul>
-<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
-</ul>
-<p>文件或目录所拥有的的权限有三组</p>
-<ul>
-<li>文件的读、写和执行权限。</li>
-<li>同组用户的三个权限。</li>
-<li>其他用户的三个权限。</li>
-</ul>
-<p>一个文件的权限查看，用<code>ls l</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>首位什么类型，比如-代表目录，d代表文件。</li>
-<li>后面就是三种用户的权限，没有就是-。</li>
-</ul>
-<p>chmod</p>
-<ul>
-<li><p>用途：就是更改目录或者文件的权限。</p>
-</li>
-<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
-<ul>
-<li><p>字母法</p>
-<ul>
-<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>数字阀</p>
-<ul>
-<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
-</li>
-<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
-<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
-<li>用法：<code>chown option owner filename</code></li>
-<li>选项<ul>
-<li>-c 更改后如果更改成功才显示。</li>
-<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
-<li>-f  更改后如果无法更改，不会显示错误信息。</li>
-<li>-v 显示所有者变更详情。</li>
-<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>每天复习一点Linux命令001之useradd命令</title>
     <url>/20200211230109.html</url>
     <content><![CDATA[<p>Linux用户管理</p>
@@ -1262,6 +1196,72 @@
 <li><p>使用<code>tail-l</code>查看用户/etc/passwd和/etc/shadow文件，前者用于查看新建目录用户信息，后者用于查看用户密码信息。</p>
 <p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200211225302.png"></p>
 <p><img src="https://raw.githubusercontent.com/QuinnTian/imgchr/master/imgs/20200211225659.png"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>每天复习一个Linux命令008之chmod、chown</title>
+    <url>/20200219235325.html</url>
+    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
+<ul>
+<li>可读：就是只让你读，其他的不能做。</li>
+<li>可执行：就是将该文件作为一种程序可读。</li>
+<li>可写：就是能往里面写东西。</li>
+</ul>
+<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
+<ul>
+<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
+</ul>
+<p>文件或目录所拥有的的权限有三组</p>
+<ul>
+<li>文件的读、写和执行权限。</li>
+<li>同组用户的三个权限。</li>
+<li>其他用户的三个权限。</li>
+</ul>
+<p>一个文件的权限查看，用<code>ls l</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首位什么类型，比如-代表目录，d代表文件。</li>
+<li>后面就是三种用户的权限，没有就是-。</li>
+</ul>
+<p>chmod</p>
+<ul>
+<li><p>用途：就是更改目录或者文件的权限。</p>
+</li>
+<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
+<ul>
+<li><p>字母法</p>
+<ul>
+<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>数字阀</p>
+<ul>
+<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
+</li>
+<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
+<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
+<li>用法：<code>chown option owner filename</code></li>
+<li>选项<ul>
+<li>-c 更改后如果更改成功才显示。</li>
+<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
+<li>-f  更改后如果无法更改，不会显示错误信息。</li>
+<li>-v 显示所有者变更详情。</li>
+<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
+</ul>
 </li>
 </ul>
 ]]></content>
@@ -1924,15 +1924,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Mybatis generator targetRuntime=&quot;MyBatis3DynamicSql&quot; 报错</title>
-    <url>/20201208202012.html</url>
-    <content><![CDATA[<p>Mybatis generator targetRuntime=”MyBatis3DynamicSql” 报错targetRuntime in context MysqlTables is invalid<br><img src="https://quinntian.com/upload/2020/12/image-05b9917a705d4a69890d41ee5a40dae1.png" alt="image.png"><br><strong>如果你的配置文件中写了，xml的配置要删掉，或者直接换成mybtis3,因为设置位第一个不会生成xml文件。下表</strong><br>这里补充一下targetRuntime的几个值的意义，因为官方英文文档。<br><img src="https://quinntian.com/upload/2020/12/image-e21d2d8d4fce4180b3dc44d521798060.png" alt="image.png"><br><img src="https://quinntian.com/upload/2020/12/image-1c1d409971d3408e8e31532661b7cb52.png" alt="image.png"><br>参考 <a href="https://blog.csdn.net/seek_of/article/details/105911997">https://blog.csdn.net/seek_of/article/details/105911997</a></p>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
     <title>MyBatis一对多嵌套查询结果映射</title>
     <url>/20201210174131.html</url>
     <content><![CDATA[<p><strong>简单理解就是：此种方法指直接书写连表SQL，然后将结果一次性映射到几个实体上，而不是先查主表映射到实体后,再查从表再映射到实体</strong><br><strong>比较官方的说法叫做一对多collection集合嵌套结果映射</strong><br>步骤</p>
@@ -1949,6 +1940,15 @@
 <p>运行结果</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">Creating a new SqlSession</span><br><span class="line">SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e489bb8] was not registered for synchronization because synchronization is not active</span><br><span class="line">JDBC Connection [HikariProxyConnection@595755231 wrapping com.mysql.cj.jdbc.ConnectionImpl@182fd26b] will not be managed by Spring</span><br><span class="line">==&gt;  Preparing: select u.id, u.o_id, u.name, u.password, u.mobile, u.email, u.creatime, u.login_time, u.last_login_time, u.login_count, g.id, g.group_name, g.f_id, g.creatime, g.description from tk_user u left join tk_user_group ug on ug.user_id = u.id left join tk_group g on g.id = ug.group_id</span><br><span class="line">==&gt; Parameters: </span><br><span class="line">&lt;==    Columns: id, o_id, name, password, mobile, email, creatime, login_time, last_login_time, login_count, id, group_name, f_id, creatime, description</span><br><span class="line">&lt;==        Row: 1, 1, admin, admin, 15166623676, admin@admin.com, 2020-12-08 16:18:59, 2020-12-08 16:19:03, 2020-12-07 16:19:07, 0, 1, 用户组1, 0, 2020-12-08 16:34:00, 用户组1描述</span><br><span class="line">&lt;==        Row: 1, 1, admin, admin, 15166623676, admin@admin.com, 2020-12-08 16:18:59, 2020-12-08 16:19:03, 2020-12-07 16:19:07, 0, 3, 用户组3, 0, 2020-12-08 16:34:47, 用户组3描述</span><br><span class="line">&lt;==        Row: 2, null, test1, null, null, null, null, null, null, 0, null, null, null, null, null</span><br><span class="line">&lt;==      Total: 3</span><br><span class="line">Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e489bb8]</span><br><span class="line">[TkUser(id=1, oId=1, name=admin, password=admin, mobile=15166623676, email=admin@admin.com, creatime=2020-12-08T16:18:59, loginTime=2020-12-08T16:19:03, lastLoginTime=2020-12-07T16:19:07, loginCount=0, tkGroups=[TkGroup(id=1, groupName=用户组1, fId=0, creatime=2020-12-08T16:18:59, description=用户组1描述)], tkRoles=null, tkPermits=null, tkOrg=null), TkUser(id=2, oId=null, name=test1, password=null, mobile=null, email=null, creatime=null, loginTime=null, lastLoginTime=null, loginCount=0, tkGroups=[TkGroup(id=2, groupName=null, fId=null, creatime=null, description=null)], tkRoles=null, tkPermits=null, tkOrg=null)]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="4-关于自动合并问题"><a href="#4-关于自动合并问题" class="headerlink" title="4.关于自动合并问题"></a>4.关于自动合并问题</h1><p><strong>重点说明：关于SQL查询结果一共是有三条结果，其中两条是重复的，这里框架自动合并了，其原理就是设置了<id column="id" property="id" />标签，框架会自动判断查询结果的ID进行自动合并。另外如果没有ID标签框架会自动比对每条字段下的结果，相同合并</strong></p>
+]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Mybatis generator targetRuntime=&quot;MyBatis3DynamicSql&quot; 报错</title>
+    <url>/20201208202012.html</url>
+    <content><![CDATA[<p>Mybatis generator targetRuntime=”MyBatis3DynamicSql” 报错targetRuntime in context MysqlTables is invalid<br><img src="https://quinntian.com/upload/2020/12/image-05b9917a705d4a69890d41ee5a40dae1.png" alt="image.png"><br><strong>如果你的配置文件中写了，xml的配置要删掉，或者直接换成mybtis3,因为设置位第一个不会生成xml文件。下表</strong><br>这里补充一下targetRuntime的几个值的意义，因为官方英文文档。<br><img src="https://quinntian.com/upload/2020/12/image-e21d2d8d4fce4180b3dc44d521798060.png" alt="image.png"><br><img src="https://quinntian.com/upload/2020/12/image-1c1d409971d3408e8e31532661b7cb52.png" alt="image.png"><br>参考 <a href="https://blog.csdn.net/seek_of/article/details/105911997">https://blog.csdn.net/seek_of/article/details/105911997</a></p>
 ]]></content>
       <categories>
         <category>Mybatis</category>
@@ -3406,6 +3406,31 @@ chmod 777 /var/log/caddy/caddy.log
       </tags>
   </entry>
   <entry>
+    <title>吐槽工信部域名备案的各种坑</title>
+    <url>/20210226144736.html</url>
+    <content><![CDATA[<ol>
+<li><p>空壳主体和空壳网站清理不及时，各个省清理时间也不固定，感觉想起来就清。我朋友的域名空壳网站两三年至今未清理。</p>
+</li>
+<li><p>备案查询系统简陋无比，早年备案系统还能用身份证查询，现在倒好只能用备案号或姓名查询，试问我如何知道我的信息被盗用？好歹增加一个根据身份证查把。不知道姓名会有重名吗？</p>
+</li>
+<li><p>域名备案各省规范不一，甚至不知道存不存在一个人有多个备案主体可能。</p>
+</li>
+<li><p>注销备案各个省份不一，甚至某些省份连个申请注销备案方式都找不到，有些省份可以线上，有些省份必须邮寄，真不敢相信……，同样注册备案也是，不同省要求不一样，有的允许跨省，有的不允许，有的限制年龄，有的不限制，有的要求要本省手机号，还有有的甚至需要备案关闭网站，……无语了</p>
+</li>
+<li><p><strong>域名备案信息是个人都能查到，查姓名查出一堆主体，试问这样有什么意义，假设查出三个主体，一个主体关联网站发布违法信息但网站信息上并没有公布联系方式，去找另外两个网站的站长怎么办？前几天就遇到了，人家查到了通过域名查到了姓名，但是那个网站上没有站长联系方式，于是通过姓名查到相同姓名的网站主体，找上门来了。我也很无奈，只能解释是重名，备案要看主体号，而不是姓名。这不是坑人吗</strong>。某些第三方网站，查到后会把该企业名称（姓名）的所有备案主体列出来，这是为什么呢？因为对于个人备案<strong>企业名称</strong>会显示网站负责人名字也就是<strong>你名字</strong>，搞笑吧，所以网站负责人虽然不显示又有何用呢。</p>
+<blockquote>
+<p>备案主体：就是比如粤B2-20090059这就是备案主体，一般来说一个人只能有一个，也就是身份证一一对应，如果想有接入多个网站在后面加-1，比如粤B2-20090059-1，粤B2-20090059-2等等</p>
+</blockquote>
+</li>
+<li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>牛客网华为云9元一年学生机白嫖分享</title>
     <url>/20200128113629.html</url>
     <content><![CDATA[<p><strong>本博客于20200110迁移到华为云，就是下面的9元一年的学生机，原价99元，满足条件后返还90。另外在华为云和牛客网博客上发表博文前100名，可以得到体重秤，我的已经发货了。现在是2月10号以后的第二批，提前白嫖仍然可以得到体重秤，时间为2020年2月12日12：00 — 2020年2月29日晚上23：59。</strong><br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a><br>牛客网x华为云服务器活动<br>2020年新年第二弹来啦！<br>还是熟悉的返现（实惠良心）：<br>通过牛客专属链接新注册华为云账号，购买指定套餐即可获得返现！<br>并且，写博文，还送华为体重秤！</p>
@@ -3443,25 +3468,11 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>吐槽工信部域名备案的各种坑</title>
-    <url>/20210226144736.html</url>
-    <content><![CDATA[<ol>
-<li><p>空壳主体和空壳网站清理不及时，各个省清理时间也不固定，感觉想起来就清。我朋友的域名空壳网站两三年至今未清理。</p>
-</li>
-<li><p>备案查询系统简陋无比，早年备案系统还能用身份证查询，现在倒好只能用备案号或姓名查询，试问我如何知道我的信息被盗用？好歹增加一个根据身份证查把。不知道姓名会有重名吗？</p>
-</li>
-<li><p>域名备案各省规范不一，甚至不知道存不存在一个人有多个备案主体可能。</p>
-</li>
-<li><p>注销备案各个省份不一，甚至某些省份连个申请注销备案方式都找不到，有些省份可以线上，有些省份必须邮寄，真不敢相信……，同样注册备案也是，不同省要求不一样，有的允许跨省，有的不允许，有的限制年龄，有的不限制，有的要求要本省手机号，还有有的甚至需要备案关闭网站，……无语了</p>
-</li>
-<li><p><strong>域名备案信息是个人都能查到，查姓名查出一堆主体，试问这样有什么意义，假设查出三个主体，一个主体关联网站发布违法信息但网站信息上并没有公布联系方式，去找另外两个网站的站长怎么办？前几天就遇到了，人家查到了通过域名查到了姓名，但是那个网站上没有站长联系方式，于是通过姓名查到相同姓名的网站主体，找上门来了。我也很无奈，只能解释是重名，备案要看主体号，而不是姓名。这不是坑人吗</strong>。某些第三方网站，查到后会把该企业名称（姓名）的所有备案主体列出来，这是为什么呢？因为对于个人备案<strong>企业名称</strong>会显示网站负责人名字也就是<strong>你名字</strong>，搞笑吧，所以网站负责人虽然不显示又有何用呢。</p>
-<blockquote>
-<p>备案主体：就是比如粤B2-20090059这就是备案主体，一般来说一个人只能有一个，也就是身份证一一对应，如果想有接入多个网站在后面加-1，比如粤B2-20090059-1，粤B2-20090059-2等等</p>
-</blockquote>
-</li>
-<li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
-</li>
-</ol>
+    <title>用Navicat自动备份MySQL数据库</title>
+    <url>/20180525164327.html</url>
+    <content><![CDATA[<p>title: 用Navicat自动备份Mysql数据库<br>date: ‘2018-05-25 16:43:27’<br>updated: ‘2018-05-25 18:16:05’<br>tags: [Navicat, Mysql]<br>permalink: /articles/2018/05/25/1527237800309.html</p>
+<hr>
+<h4 id="1-选择计划任务"><a href="#1-选择计划任务" class="headerlink" title="1.选择计划任务"></a>1.选择计划任务</h4><h4 id="2-选择数据库双击后有方自动创建脚本"><a href="#2-选择数据库双击后有方自动创建脚本" class="headerlink" title="2.选择数据库双击后有方自动创建脚本"></a>2.选择数据库双击后有方自动创建脚本</h4><h4 id="3-双击创建好的脚本后，下方自动生成"><a href="#3-双击创建好的脚本后，下方自动生成" class="headerlink" title="3.双击创建好的脚本后，下方自动生成"></a>3.双击创建好的脚本后，下方自动生成</h4><h4 id="4-点击保存输入名称"><a href="#4-点击保存输入名称" class="headerlink" title="4.点击保存输入名称"></a>4.点击保存输入名称</h4><h4 id="5-点击设置计划任务"><a href="#5-点击设置计划任务" class="headerlink" title="5.点击设置计划任务"></a>5.点击设置计划任务</h4><h4 id="6-设置密码和备份周期后应用"><a href="#6-设置密码和备份周期后应用" class="headerlink" title="6.设置密码和备份周期后应用"></a>6.设置密码和备份周期后应用</h4><p><strong>相关截图</strong><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/046ec44707814862afe07b94084ef3b9_Snipaste_20180525_161954.png" alt="Snipaste_20180525_161954png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3a383774cbdb446c95b2d1cb61a3618c_Snipaste_20180525_162113.png" alt="Snipaste_20180525_162113png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3d8e2763d63c48bd80eb3358d663ad4e_Snipaste_20180525_162124.png" alt="Snipaste_20180525_162124png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/069a2e3c38f8419091ae7a6a97cea7d8_Snipaste_20180525_162403.png" alt="Snipaste_20180525_162403png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/4b103a67dc9b4916948eb25a14eb31dc_Snipaste_20180525_162610.png" alt="Snipaste_20180525_162610png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3457172472ca4bae86f4e41abece6fd7_Snipaste_20180525_162947.png" alt="Snipaste_20180525_162947png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3476,17 +3487,6 @@ chmod 777 /var/log/caddy/caddy.log
 <blockquote>
 <p>关注微信公众号    回复关键字spring4</p>
 </blockquote>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>用Navicat自动备份MySQL数据库</title>
-    <url>/20180525164327.html</url>
-    <content><![CDATA[<p>title: 用Navicat自动备份Mysql数据库<br>date: ‘2018-05-25 16:43:27’<br>updated: ‘2018-05-25 18:16:05’<br>tags: [Navicat, Mysql]<br>permalink: /articles/2018/05/25/1527237800309.html</p>
-<hr>
-<h4 id="1-选择计划任务"><a href="#1-选择计划任务" class="headerlink" title="1.选择计划任务"></a>1.选择计划任务</h4><h4 id="2-选择数据库双击后有方自动创建脚本"><a href="#2-选择数据库双击后有方自动创建脚本" class="headerlink" title="2.选择数据库双击后有方自动创建脚本"></a>2.选择数据库双击后有方自动创建脚本</h4><h4 id="3-双击创建好的脚本后，下方自动生成"><a href="#3-双击创建好的脚本后，下方自动生成" class="headerlink" title="3.双击创建好的脚本后，下方自动生成"></a>3.双击创建好的脚本后，下方自动生成</h4><h4 id="4-点击保存输入名称"><a href="#4-点击保存输入名称" class="headerlink" title="4.点击保存输入名称"></a>4.点击保存输入名称</h4><h4 id="5-点击设置计划任务"><a href="#5-点击设置计划任务" class="headerlink" title="5.点击设置计划任务"></a>5.点击设置计划任务</h4><h4 id="6-设置密码和备份周期后应用"><a href="#6-设置密码和备份周期后应用" class="headerlink" title="6.设置密码和备份周期后应用"></a>6.设置密码和备份周期后应用</h4><p><strong>相关截图</strong><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/046ec44707814862afe07b94084ef3b9_Snipaste_20180525_161954.png" alt="Snipaste_20180525_161954png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3a383774cbdb446c95b2d1cb61a3618c_Snipaste_20180525_162113.png" alt="Snipaste_20180525_162113png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3d8e2763d63c48bd80eb3358d663ad4e_Snipaste_20180525_162124.png" alt="Snipaste_20180525_162124png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/069a2e3c38f8419091ae7a6a97cea7d8_Snipaste_20180525_162403.png" alt="Snipaste_20180525_162403png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/4b103a67dc9b4916948eb25a14eb31dc_Snipaste_20180525_162610.png" alt="Snipaste_20180525_162610png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3457172472ca4bae86f4e41abece6fd7_Snipaste_20180525_162947.png" alt="Snipaste_20180525_162947png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
