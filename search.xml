@@ -213,24 +213,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo配置一键部署到GitHub Page</title>
-    <url>/20220108224027.html</url>
-    <content><![CDATA[<p>Hexo使用hexo-deployer-git插件可以一键部署Github页面，方便快捷</p>
-<span id="more"></span>
-<h1 id="安装该插件"><a href="#安装该插件" class="headerlink" title="安装该插件"></a>安装该插件</h1><p><code>npm install hexo-deployer-git --save</code></p>
-<h1 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment">#GitHub仓库</span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>] <span class="comment">#选择分支</span></span><br><span class="line">  <span class="attr">message:</span> [<span class="string">message</span>] <span class="comment">#自定义信息一般删掉</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="运行命令推送"><a href="#运行命令推送" class="headerlink" title="运行命令推送"></a>运行命令推送</h1><p><code>hexo clean &amp;&amp; hexo deploy</code></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>一键部署</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo配置SEO</title>
     <url>/20220108195203.html</url>
     <content><![CDATA[<p>优化站点SEO相关信息，通过配置文件，配置谷歌和百度的站点验证，百度的自动推送功能</p>
@@ -282,6 +264,35 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo配置一键部署到GitHub Page</title>
+    <url>/20220108224027.html</url>
+    <content><![CDATA[<p>Hexo使用hexo-deployer-git插件可以一键部署Github页面，方便快捷</p>
+<span id="more"></span>
+<h1 id="安装该插件"><a href="#安装该插件" class="headerlink" title="安装该插件"></a>安装该插件</h1><p><code>npm install hexo-deployer-git --save</code></p>
+<h1 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment">#GitHub仓库</span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>] <span class="comment">#选择分支</span></span><br><span class="line">  <span class="attr">message:</span> [<span class="string">message</span>] <span class="comment">#自定义信息一般删掉</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="运行命令推送"><a href="#运行命令推送" class="headerlink" title="运行命令推送"></a>运行命令推送</h1><p><code>hexo clean &amp;&amp; hexo deploy</code></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>一键部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
+    <url>/20180724105005.html</url>
+    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Tomcat不同项目使用不同的端口号.md</title>
     <url>/20180721120413.html</url>
     <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
@@ -291,17 +302,6 @@
 <p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
 <p>Tomcat设置不输入项目名直接访问</p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
-    <url>/20180724105005.html</url>
-    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -1999,20 +1999,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Mybatis批量更新时遇到大坑.md</title>
-    <url>/20180720184030.html</url>
-    <content><![CDATA[<p>title: Mybatis批量更新时遇到大坑<br>date: ‘2018-07-20 18:40:30’<br>updated: ‘2018-07-20 18:41:35’<br>tags: [Mybatis, 后端]<br>permalink: /articles/2018/07/20/1532083230130.html</p>
-<hr>
-<p>批量更新代码如下</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">id=&quot;insertMessageReply&quot; parameterType=&quot;list&quot;&gt;</span><br><span class="line">  collection=&quot;list&quot; close=&quot;&quot; index=&quot;index&quot; item=&quot;item&quot; separator=&quot;;&quot;&gt;</span><br><span class="line">  insert into message_reply(create_time,from_username)</span><br><span class="line">    values</span><br><span class="line">        (</span><br><span class="line">    #&#123;item.CreateTime,jdbcType=BIGINT&#125;,</span><br><span class="line">    #&#123;item.FromUserName,jdbcType=VARCHAR&#125;,</span><br><span class="line">    </span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
-<p>执行时总是报语法错误<br>1.<strong>Mybatis批量插入时必须在连接地址后面加?allowMultiQueries=true</strong></p>
-<p>2.另外还需注意分隔符必须是<strong>分号; separator=”;”</strong></p>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Mybatis学习-第一个mybatis项目.md</title>
     <url>/20180717082715.html</url>
     <content><![CDATA[<p>title: Mybatis学习-第一个mybatis项目<br>date: ‘2018-07-17 08:27:15’<br>updated: ‘2018-07-17 08:29:06’<br>tags: [mybatis]<br>permalink: /articles/2018/07/17/1531786963221.html</p>
@@ -2032,6 +2018,20 @@
 <hr>
 <p>SLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”.<br>SLF4J: Defaulting to no-operation (NOP) logger implementation<br>SLF4J: See <a href="http://www.slf4j.org/codes.html#StaticLoggerBinder">http://www.slf4j.org/codes.html#StaticLoggerBinder</a> for further details.<br>Mon Jul 16 22:57:56 CST 2018 WARN: Establishing SSL connection without server’s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn’t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to ‘false’. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.<br>DEBUG [main] - ==&gt;  Preparing: select id,countryname,countrycode from country<br>DEBUG [main] - ==&gt; Parameters:<br>TRACE [main] - &lt;==    Columns: id, countryname, countrycode<br>TRACE [main] - &lt;==        Row: 1, 中国, CN<br>TRACE [main] - &lt;==        Row: 2, 英国, GB<br>TRACE [main] - &lt;==        Row: 3, 美国, US<br>TRACE [main] - &lt;==        Row: 4, 俄罗斯, RU<br>DEBUG [main] - &lt;==      Total: 4<br>1     中国  CN<br>2     英国  GB<br>3     美国  US<br>4    俄罗斯  RU</p>
 <hr>
+]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Mybatis批量更新时遇到大坑.md</title>
+    <url>/20180720184030.html</url>
+    <content><![CDATA[<p>title: Mybatis批量更新时遇到大坑<br>date: ‘2018-07-20 18:40:30’<br>updated: ‘2018-07-20 18:41:35’<br>tags: [Mybatis, 后端]<br>permalink: /articles/2018/07/20/1532083230130.html</p>
+<hr>
+<p>批量更新代码如下</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">id=&quot;insertMessageReply&quot; parameterType=&quot;list&quot;&gt;</span><br><span class="line">  collection=&quot;list&quot; close=&quot;&quot; index=&quot;index&quot; item=&quot;item&quot; separator=&quot;;&quot;&gt;</span><br><span class="line">  insert into message_reply(create_time,from_username)</span><br><span class="line">    values</span><br><span class="line">        (</span><br><span class="line">    #&#123;item.CreateTime,jdbcType=BIGINT&#125;,</span><br><span class="line">    #&#123;item.FromUserName,jdbcType=VARCHAR&#125;,</span><br><span class="line">    </span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<p>执行时总是报语法错误<br>1.<strong>Mybatis批量插入时必须在连接地址后面加?allowMultiQueries=true</strong></p>
+<p>2.另外还需注意分隔符必须是<strong>分号; separator=”;”</strong></p>
 ]]></content>
       <categories>
         <category>Mybatis</category>
@@ -3673,31 +3673,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>Next主题自定义配置背景图和透明度</title>
-    <url>/20220108205058.html</url>
-    <content><![CDATA[<p>Hexo主题纯色有些单调，可以通过自定义配置修改背景并实现透明化</p>
-<span id="more"></span>
-<h1 id="1-适用版本"><a href="#1-适用版本" class="headerlink" title="1. 适用版本"></a>1. 适用版本</h1><p>Next 8.9.0 &amp; Hexo 6.0.0</p>
-<h1 id="2-设置自定义背景"><a href="#2-设置自定义背景" class="headerlink" title="2. 设置自定义背景"></a>2. 设置自定义背景</h1><p>创建样式文件</p>
-<ol>
-<li>在这个目录下Hexo目录\source_data\创建styles.styl</li>
-<li>添加如下代码<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">背景图地址</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: cover;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;</span><br><span class="line">    backgound-<span class="attribute">position</span>: <span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="3-配置透明度"><a href="#3-配置透明度" class="headerlink" title="3. 配置透明度"></a>3. 配置透明度</h1><p>设置如下代码</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">//文章页面等透明化处理</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123; </span><br><span class="line"></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>) none repeat scroll <span class="meta">!important</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//菜单栏的透明度设置</span><br><span class="line"><span class="selector-class">.header-inner</span> &#123;</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.9</span>) none repeat scroll <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//页脚配置 以下颜色取决于你的背景</span><br><span class="line"><span class="selector-class">.footer</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;    </span><br><span class="line">&#125;</span><br><span class="line"> //如果没开启页脚显示Hexo版本信息和Next版本信息可以省略</span><br><span class="line"><span class="selector-class">.powered-by</span>&gt;<span class="selector-tag">a</span>&#123;</span><br><span class="line"><span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>Next</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-        <tag>透明</tag>
-        <tag>背景图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Next主题配置Gitalk评论系统</title>
     <url>/20220108211639.html</url>
     <content><![CDATA[<p>Next主题内置Gitalk评论系统，该评论系统存储在GitHub，不易丢失</p>
@@ -3726,6 +3701,31 @@ chmod 777 /var/log/caddy/caddy.log
         <tag>Next</tag>
         <tag>Gitalk</tag>
         <tag>主题配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next主题自定义配置背景图和透明度</title>
+    <url>/20220108205058.html</url>
+    <content><![CDATA[<p>Hexo主题纯色有些单调，可以通过自定义配置修改背景并实现透明化</p>
+<span id="more"></span>
+<h1 id="1-适用版本"><a href="#1-适用版本" class="headerlink" title="1. 适用版本"></a>1. 适用版本</h1><p>Next 8.9.0 &amp; Hexo 6.0.0</p>
+<h1 id="2-设置自定义背景"><a href="#2-设置自定义背景" class="headerlink" title="2. 设置自定义背景"></a>2. 设置自定义背景</h1><p>创建样式文件</p>
+<ol>
+<li>在这个目录下Hexo目录\source_data\创建styles.styl</li>
+<li>添加如下代码<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">背景图地址</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: cover;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;</span><br><span class="line">    backgound-<span class="attribute">position</span>: <span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="3-配置透明度"><a href="#3-配置透明度" class="headerlink" title="3. 配置透明度"></a>3. 配置透明度</h1><p>设置如下代码</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">//文章页面等透明化处理</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123; </span><br><span class="line"></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.7</span>) none repeat scroll <span class="meta">!important</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//菜单栏的透明度设置</span><br><span class="line"><span class="selector-class">.header-inner</span> &#123;</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.9</span>) none repeat scroll <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//页脚配置 以下颜色取决于你的背景</span><br><span class="line"><span class="selector-class">.footer</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;    </span><br><span class="line">&#125;</span><br><span class="line"> //如果没开启页脚显示Hexo版本信息和Next版本信息可以省略</span><br><span class="line"><span class="selector-class">.powered-by</span>&gt;<span class="selector-tag">a</span>&#123;</span><br><span class="line"><span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Next</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>透明</tag>
+        <tag>背景图</tag>
       </tags>
   </entry>
 </search>
