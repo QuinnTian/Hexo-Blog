@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"utterances","storage":false,"lazyload":false,"nav":{"gitalk":{"text":"Gitalk评论","order":-2},"changyan":{"order":-1,"text":"畅言评论"},"utterances":{"order":-3,"text":"言语评论"}},"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":false,"lazyload":false,"nav":{"gitalk":{"text":"Gitalk评论","order":-2},"changyan":{"order":-1,"text":"畅言评论"},"utterances":{"order":-3,"text":"言语评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
 <meta name="description" content="权限的基本概念一个文件&#x2F;目录如下 1类型标识 rwx rwx rwx  第一组文件拥有者权限 第二组文件拥有者所属组权限 第三组其他用户的权限 r权限： 文件：可以看、可以复制 目录：可以看目录有多少文件、不能看具体某个文件里面内容   w权限： 文件：可以修改、不可以删除 目录：可以创建、删除、重命名目录里面的文件   x表示可执行权限 文件：程序需要可执行不需要可读，脚本需要可执行和可读权限">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux文件权限相关命令">
@@ -432,20 +432,24 @@
 
 
 
-      <div class="comment-button-group">
-          <a class="btn comment-button utterances">言语评论</a>
-          <a class="btn comment-button gitalk">Gitalk评论</a>
-          <a class="btn comment-button changyan">畅言评论</a>
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-utterances">言语评论</a></li>
+            <li class="tab"><a href="#comment-gitalk">Gitalk评论</a></li>
+            <li class="tab"><a href="#comment-changyan">畅言评论</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments gitalk-container"></div>
+            </div>
+            <div class="tab-pane changyan" id="comment-changyan">
+              <div class="comments" id="SOHUCS" sid="722986436299e49cb3f36314f63e6b5f"></div>
+            </div>
+        </div>
       </div>
-        <div class="comment-position utterances">
-          <div class="comments utterances-container"></div>
-        </div>
-        <div class="comment-position gitalk">
-          <div class="comments gitalk-container"></div>
-        </div>
-        <div class="comment-position changyan">
-          <div class="comments" id="SOHUCS" sid="722986436299e49cb3f36314f63e6b5f"></div>
-        </div><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/comments-buttons.min.js"></script>
 
 </div>
   </main>

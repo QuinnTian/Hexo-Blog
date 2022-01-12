@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"utterances","storage":false,"lazyload":false,"nav":{"gitalk":{"text":"Gitalk评论","order":-2},"changyan":{"order":-1,"text":"畅言评论"},"utterances":{"order":-3,"text":"言语评论"}},"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"quinntian.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":false,"lazyload":false,"nav":{"gitalk":{"text":"Gitalk评论","order":-2},"changyan":{"order":-1,"text":"畅言评论"},"utterances":{"order":-3,"text":"言语评论"}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/config.min.js"></script>
 <meta name="description" content="2.2 cp 用途：复制文件或目录 格式：cp [option] [source] [destination] option -a 复制目录时使用，保留链接、文件属性，递归复制。（默认是改变文件属性，比如修改时间、权限等） -d 复制时保留链接。 -f  删除已经存在的文件不提示。 -i  覆盖目标文件的时候给出提示。☆ -p 复制源文件的时候，把修改时间和访问权限一块复制。 -r  若目标源文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天复习一点Linux命令006之cp与mv">
@@ -389,20 +389,24 @@
 
 
 
-      <div class="comment-button-group">
-          <a class="btn comment-button utterances">言语评论</a>
-          <a class="btn comment-button gitalk">Gitalk评论</a>
-          <a class="btn comment-button changyan">畅言评论</a>
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-utterances">言语评论</a></li>
+            <li class="tab"><a href="#comment-gitalk">Gitalk评论</a></li>
+            <li class="tab"><a href="#comment-changyan">畅言评论</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane utterances" id="comment-utterances">
+              <div class="comments utterances-container"></div>
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments gitalk-container"></div>
+            </div>
+            <div class="tab-pane changyan" id="comment-changyan">
+              <div class="comments" id="SOHUCS" sid="852466f3acfeeb189514488c256e8e81"></div>
+            </div>
+        </div>
       </div>
-        <div class="comment-position utterances">
-          <div class="comments utterances-container"></div>
-        </div>
-        <div class="comment-position gitalk">
-          <div class="comments gitalk-container"></div>
-        </div>
-        <div class="comment-position changyan">
-          <div class="comments" id="SOHUCS" sid="852466f3acfeeb189514488c256e8e81"></div>
-        </div><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-theme-next@8.9.0/source/js/comments-buttons.min.js"></script>
 
 </div>
   </main>
