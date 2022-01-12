@@ -988,27 +988,6 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/tags/Java/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/tags/JDK/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/tags/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/tags/Hexo/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1066,6 +1045,27 @@
   
   <url>
     <loc>https://quinntian.com/tags/%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/Java/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/JDK/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1144,13 +1144,6 @@
 
   
   <url>
-    <loc>https://quinntian.com/categories/Git/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/categories/CSS/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1158,7 +1151,7 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Java/</loc>
+    <loc>https://quinntian.com/categories/Git/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1166,6 +1159,13 @@
   
   <url>
     <loc>https://quinntian.com/categories/Hexo/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/categories/Java/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
