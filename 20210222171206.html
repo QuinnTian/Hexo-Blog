@@ -310,6 +310,13 @@
 
         </div>
         
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
         
 
 <ins class="adsbygoogle"
@@ -322,12 +329,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
         <p>将请求路径<a target="_blank" rel="noopener" href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>
     </div>
@@ -378,6 +379,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+      
     </footer>
   </article>
 </div>

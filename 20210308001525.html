@@ -311,6 +311,13 @@
 
         </div>
         
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
         
 
 <ins class="adsbygoogle"
@@ -323,12 +330,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
         <p>[toc]</p>
 <h1 id="常用匹配表参考"><a href="#常用匹配表参考" class="headerlink" title="常用匹配表参考"></a>常用匹配表参考</h1><p><code>\w</code>匹配字母、数字、下划线<br><code>\W</code>匹配不是字母、数字、下划线的字符<br><code>\s</code>匹配任意空白字符等价于<code>[\t\n\t\f]</code><br><code>\S</code>匹配任意非空字符<br><code>\d</code>匹配任意数字等价<code>[0-9]</code><br><code>\D</code>匹配任意非数字的字符<br><code>\A</code>匹配字符串开头<br><code>\Z</code>匹配字符串结尾，如果存在换行，只会匹配换行前的结束字符串<br><code>\z</code>匹配字符串结尾，如果存在换行，同时还会匹配换行符<br><code>\G</code>匹配最后匹配完成的位置<br><code>\n</code>匹配换行符<br><code>\t</code>匹配制表符<br><code>^</code>匹配一行字符串的开头<br><code>$</code>匹配一行字符串的结尾<br><code>.</code>匹配任意字符，除了换行符，当re.DOTAKK标记被指定，则可以匹配包含换行符的任意字符，<strong>这里表示匹配1个字符，如果想要匹配任意字符可以写成</strong><code>.*</code><br><code>[...]</code>表示一组字符，单独列出，比如<code>[amk]</code>匹配a或m或k<br><code>[^...]</code>不在[]的字符，比如<code>[^abc]</code>表示匹配a、b、c之外的字符<br><code>&#123;n&#125;</code>精确匹配n个前面的表达式，比如<code>\w&#123;10&#125;</code>表示往后匹配10次只要符合\w规则即可<br><code>&#123;n,m&#125;</code>匹配n到m次有前面正则表达式定义的片段，贪婪方式<br><code>a|b</code>匹配a或b<br><code>&#123;&#125;</code>匹配括号内的表达式<br><code>*</code>匹配0或多个前面的子表达式或字符<br><code>+</code>匹配1个或多个前面的子表达式或字符<br><code>？</code>匹配0个或1个前面正则表达式定义的片段</p>
 <h1 id="match方法"><a href="#match方法" class="headerlink" title="match方法"></a>match方法</h1><p>引入<code>re</code>库<br><strong>这个方法是从开头匹配</strong></p>
@@ -415,6 +416,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+      
     </footer>
   </article>
 </div>

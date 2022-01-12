@@ -310,6 +310,13 @@
 
         </div>
         
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
         
 
 <ins class="adsbygoogle"
@@ -322,12 +329,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
         <p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -385,6 +386,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+      
     </footer>
   </article>
 </div>

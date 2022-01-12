@@ -318,6 +318,13 @@
 
         </div>
         
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
         
 
 <ins class="adsbygoogle"
@@ -330,12 +337,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
         <h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0. 写在前面"></a>0. 写在前面</h1><p><strong>数据无价 定时备份</strong></p>
 <h1 id="1-创建备份数据库存放处"><a href="#1-创建备份数据库存放处" class="headerlink" title="1. 创建备份数据库存放处"></a>1. 创建备份数据库存放处</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /backup/data</span><br></pre></td></tr></table></figure>
 <h1 id="2-编写脚本"><a href="#2-编写脚本" class="headerlink" title="2. 编写脚本"></a>2. 编写脚本</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">DATE=`date +%Y%m%d%H%M`                #备份日期时间</span><br><span class="line">DATABASE=                              #备份数据库名称</span><br><span class="line">DB_USERNAME=root                       #数据库账号</span><br><span class="line">DB_PASSWORD=&quot;&quot;       		       #数据库密码</span><br><span class="line">BACKUP_PATH=/backup/data               #备份数据，禁止放在网站目录下</span><br><span class="line"></span><br><span class="line">#备份命令</span><br><span class="line"></span><br><span class="line">/usr/bin/mysqldump-u $DB_USERNAME-p $DB_PASSWORD -h 127.0.0.1 -R --opt $DATABASE | gzip &gt; $&#123;BACKUP_PATH&#125;\/$&#123;DATABASE&#125;_$&#123;DATE&#125;.sql.gz</span><br><span class="line"></span><br><span class="line">#删除7天前备份文件</span><br><span class="line">find $&#123;BACKUP_PATH&#125; -mtime +7 -name &quot;$&#123;DATABASE&#125;_*.sql.gz&quot; -exec rm -f &#123;&#125; \;</span><br></pre></td></tr></table></figure>
@@ -403,6 +404,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+      
     </footer>
   </article>
 </div>

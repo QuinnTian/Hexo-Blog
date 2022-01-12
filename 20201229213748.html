@@ -322,6 +322,13 @@
 
         </div>
         
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
         
 
 <ins class="adsbygoogle"
@@ -334,12 +341,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
         <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h1 id="单例模式的什么"><a href="#单例模式的什么" class="headerlink" title="单例模式的什么"></a>单例模式的什么</h1><p>singleton pattern是指确保某一个类只有一个实例，并且自动实例化向整个系统提供。</p>
 <h1 id="单例模式最简单例子"><a href="#单例模式最简单例子" class="headerlink" title="单例模式最简单例子"></a>单例模式最简单例子</h1><p>大臣参见皇帝，每天面见的皇帝都是同一个，用UML图可以表示成如图。<br><img src="https://quinntian.com/upload/2020/12/image-f6c7b2f5e96043ed9250de64b2a87c4a.png" alt="image.png"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> case1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;皇帝类&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Emperor</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*初始化一个皇帝，静态和最终关键字是关键*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Emperor emperor = <span class="keyword">new</span> Emperor();</span><br><span class="line">    <span class="comment">/*皇帝类的构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*静态方法用于获取皇帝的对象*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Emperor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  emperor;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*皇帝说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我就是皇帝某某.....&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> case1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minister</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> day = <span class="number">0</span>;day&lt;<span class="number">3</span>;day++)&#123;</span><br><span class="line">            Emperor emperor = Emperor.getInstance();</span><br><span class="line">            emperor.say();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*运行输出三天见得皇帝是同一个人*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -417,6 +418,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+      
     </footer>
   </article>
 </div>
