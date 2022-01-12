@@ -64,112 +64,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/20180712120823.html</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git基本命令.md</title>
-    <url>/20180723204037.html</url>
-    <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/41a7bd07145c4182940a798877a487df_git_big_jb51.jpg" alt="git_big_jb51jpg"> </p>
-<h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
-<li>项目/仓库级别</li>
-</ul>
-<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
-<ul>
-<li>全局级别</li>
-</ul>
-<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
-<ul>
-<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
-<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
-<li><p>命令<br><code>git init</code></p>
-<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
-<li><p>命令<br><code>git status </code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
-</li>
-<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
-<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
-<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
-<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
-<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
-</li>
-</ul>
-<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
-<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
-<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
-<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
-<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
-<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
-<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
-<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
-<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
-<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
-<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
-<ul>
-<li>删除操作提交到本地库，指针位置指向历史记录</li>
-<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
-</ul>
-<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
-<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
-<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
-<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
-</ul>
-<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
-<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
-<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
-<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
-<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
-<p>示例</p>
-<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
-<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
-<p>冲突的解决</p>
-<ul>
-<li>1.编辑文件，把文件修改到满意程度</li>
-<li>2.git add[文件名]</li>
-<li>3.git commit -m[]此时不需要加文件名</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git配置代理</title>
-    <url>/20180730102053.html</url>
-    <content><![CDATA[<p>Github国内访问过慢，可以配置代理</p>
-<span id="more"></span>
-
-<h1 id="设置http和https代理"><a href="#设置http和https代理" class="headerlink" title="设置http和https代理"></a>设置http和https代理</h1><p><code>git config --global http.proxy http://127.0.0.1:20211</code><br><code>git config --global https.proxy https://127.0.0.1:20211</code></p>
-<h1 id="设置socks5代理"><a href="#设置socks5代理" class="headerlink" title="设置socks5代理"></a>设置socks5代理</h1><p><code>git config --global http.proxy socks5://127.0.0.1:20210</code><br><code>git config --global https.proxy socks5://127.0.0.1:20210</code></p>
-<h1 id="全局查看设置代理"><a href="#全局查看设置代理" class="headerlink" title="全局查看设置代理"></a>全局查看设置代理</h1><p><code>git config -l --global</code></p>
-<h1 id="取消当前代理"><a href="#取消当前代理" class="headerlink" title="取消当前代理"></a>取消当前代理</h1><p><code>git config --global --unset http.proxy</code><br><code>git config --global --unset https.proxy</code></p>
-<ul>
-<li>上面将<code>--global</code>去掉是设置当前项目代理</li>
-<li>修改配置文件是C:\Users\用户名.gitconfig</li>
-</ul>
-<p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>代理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo个性化配置</title>
     <url>/20220109002232.html</url>
     <content><![CDATA[<p>有关Hexo的一些个性化配置的收集</p>
@@ -279,6 +173,112 @@
       <tags>
         <tag>Hexo</tag>
         <tag>一键部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/20180712120823.html</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git基本命令.md</title>
+    <url>/20180723204037.html</url>
+    <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/41a7bd07145c4182940a798877a487df_git_big_jb51.jpg" alt="git_big_jb51jpg"> </p>
+<h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
+<li>项目/仓库级别</li>
+</ul>
+<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
+<ul>
+<li>全局级别</li>
+</ul>
+<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
+<ul>
+<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
+<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
+<li><p>命令<br><code>git init</code></p>
+<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
+<li><p>命令<br><code>git status </code></p>
+</li>
+<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
+</li>
+<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
+<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
+<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
+</li>
+<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
+<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
+<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
+</li>
+</ul>
+<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
+<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
+<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
+<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
+<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
+<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
+<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
+<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
+<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
+<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
+<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
+<ul>
+<li>删除操作提交到本地库，指针位置指向历史记录</li>
+<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
+</ul>
+<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
+<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
+<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
+<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
+</ul>
+<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
+<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
+<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
+<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
+<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
+<p>示例</p>
+<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
+<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
+<p>冲突的解决</p>
+<ul>
+<li>1.编辑文件，把文件修改到满意程度</li>
+<li>2.git add[文件名]</li>
+<li>3.git commit -m[]此时不需要加文件名</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git配置代理</title>
+    <url>/20180730102053.html</url>
+    <content><![CDATA[<p>Github国内访问过慢，可以配置代理</p>
+<span id="more"></span>
+
+<h1 id="设置http和https代理"><a href="#设置http和https代理" class="headerlink" title="设置http和https代理"></a>设置http和https代理</h1><p><code>git config --global http.proxy http://127.0.0.1:20211</code><br><code>git config --global https.proxy https://127.0.0.1:20211</code></p>
+<h1 id="设置socks5代理"><a href="#设置socks5代理" class="headerlink" title="设置socks5代理"></a>设置socks5代理</h1><p><code>git config --global http.proxy socks5://127.0.0.1:20210</code><br><code>git config --global https.proxy socks5://127.0.0.1:20210</code></p>
+<h1 id="全局查看设置代理"><a href="#全局查看设置代理" class="headerlink" title="全局查看设置代理"></a>全局查看设置代理</h1><p><code>git config -l --global</code></p>
+<h1 id="取消当前代理"><a href="#取消当前代理" class="headerlink" title="取消当前代理"></a>取消当前代理</h1><p><code>git config --global --unset http.proxy</code><br><code>git config --global --unset https.proxy</code></p>
+<ul>
+<li>上面将<code>--global</code>去掉是设置当前项目代理</li>
+<li>修改配置文件是C:\Users\用户名.gitconfig</li>
+</ul>
+<p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>代理</tag>
       </tags>
   </entry>
   <entry>
@@ -1095,72 +1095,6 @@
       </categories>
   </entry>
   <entry>
-    <title>每天复习一个Linux命令008之chmod、chown</title>
-    <url>/20200219235325.html</url>
-    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
-<ul>
-<li>可读：就是只让你读，其他的不能做。</li>
-<li>可执行：就是将该文件作为一种程序可读。</li>
-<li>可写：就是能往里面写东西。</li>
-</ul>
-<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
-<ul>
-<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
-</ul>
-<p>文件或目录所拥有的的权限有三组</p>
-<ul>
-<li>文件的读、写和执行权限。</li>
-<li>同组用户的三个权限。</li>
-<li>其他用户的三个权限。</li>
-</ul>
-<p>一个文件的权限查看，用<code>ls l</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>首位什么类型，比如-代表目录，d代表文件。</li>
-<li>后面就是三种用户的权限，没有就是-。</li>
-</ul>
-<p>chmod</p>
-<ul>
-<li><p>用途：就是更改目录或者文件的权限。</p>
-</li>
-<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
-<ul>
-<li><p>字母法</p>
-<ul>
-<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>数字阀</p>
-<ul>
-<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
-</li>
-<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
-<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
-<li>用法：<code>chown option owner filename</code></li>
-<li>选项<ul>
-<li>-c 更改后如果更改成功才显示。</li>
-<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
-<li>-f  更改后如果无法更改，不会显示错误信息。</li>
-<li>-v 显示所有者变更详情。</li>
-<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>在CentOS8上安装Nginx+Nextcloud21</title>
     <url>/20210312140206.html</url>
     <content><![CDATA[<h1 id="1-安装Nginx"><a href="#1-安装Nginx" class="headerlink" title="1.安装Nginx"></a>1.安装Nginx</h1><p>如果是CentOS8以下替换成<code>yum</code>安装，<code>dnf</code>是新一代包管理工具。<br><code>sudo dnf install nginx</code></p>
@@ -1221,6 +1155,72 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/data(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/config(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/apps(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/assets(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/.htaccess&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/.user.ini&#x27;</span><br><span class="line"> </span><br><span class="line">restorecon -Rv &#x27;/var/www/nextcloud/&#x27;</span><br></pre></td></tr></table></figure>
 <h1 id="8-进入Nextcloud网页端安装"><a href="#8-进入Nextcloud网页端安装" class="headerlink" title="8.进入Nextcloud网页端安装"></a>8.进入Nextcloud网页端安装</h1><p>此处按界面提示操作即可</p>
 <h1 id="9-故障排除"><a href="#9-故障排除" class="headerlink" title="9.故障排除"></a>9.故障排除</h1><p>一般出现最多的是由于权限问题导致禁止访问，首先保证上面步骤中的授予某些目录权限是否执行。其次查看 nginx的<code>error.log</code>确定原因。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>每天复习一个Linux命令008之chmod、chown</title>
+    <url>/20200219235325.html</url>
+    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
+<ul>
+<li>可读：就是只让你读，其他的不能做。</li>
+<li>可执行：就是将该文件作为一种程序可读。</li>
+<li>可写：就是能往里面写东西。</li>
+</ul>
+<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
+<ul>
+<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
+</ul>
+<p>文件或目录所拥有的的权限有三组</p>
+<ul>
+<li>文件的读、写和执行权限。</li>
+<li>同组用户的三个权限。</li>
+<li>其他用户的三个权限。</li>
+</ul>
+<p>一个文件的权限查看，用<code>ls l</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首位什么类型，比如-代表目录，d代表文件。</li>
+<li>后面就是三种用户的权限，没有就是-。</li>
+</ul>
+<p>chmod</p>
+<ul>
+<li><p>用途：就是更改目录或者文件的权限。</p>
+</li>
+<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
+<ul>
+<li><p>字母法</p>
+<ul>
+<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>数字阀</p>
+<ul>
+<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
+</li>
+<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
+<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
+<li>用法：<code>chown option owner filename</code></li>
+<li>选项<ul>
+<li>-c 更改后如果更改成功才显示。</li>
+<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
+<li>-f  更改后如果无法更改，不会显示错误信息。</li>
+<li>-v 显示所有者变更详情。</li>
+<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -2013,6 +2013,20 @@
       </categories>
   </entry>
   <entry>
+    <title>Mybatis plus代码生成器生成.xml通用配置</title>
+    <url>/20201208155224.html</url>
+    <content><![CDATA[<h1 id="Maven导入依赖"><a href="#Maven导入依赖" class="headerlink" title="Maven导入依赖"></a>Maven导入依赖</h1><p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--导入mybatis plus 不需要再导入原生mybatis--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--导入mybatis plus插件生成器--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.freemarker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>freemarker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.30<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="spring-boot配置"><a href="#spring-boot配置" class="headerlink" title="spring boot配置"></a>spring boot配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...其他省略</span><br><span class="line">mybatis-plus:</span><br><span class="line">  configuration:</span><br><span class="line">    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl</span><br><span class="line">  mapper-locations:</span><br><span class="line">    classpath: mapper/*.xml</span><br></pre></td></tr></table></figure>
+<h1 id="新建java类"><a href="#新建java类" class="headerlink" title="新建java类"></a>新建java类</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.quinntian.admin.generator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.toolkit.StringPool;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.toolkit.StringUtils;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.AutoGenerator;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.InjectionConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.*;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.po.TableInfo;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generator</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 读取控制台内容</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">scanner</span><span class="params">(String tip)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        StringBuilder help = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        help.append(<span class="string">&quot;请输入&quot;</span> + tip + <span class="string">&quot;：&quot;</span>);</span><br><span class="line">        System.out.println(help.toString());</span><br><span class="line">        <span class="keyword">if</span> (scanner.hasNext()) &#123;</span><br><span class="line">            String ipt = scanner.next();</span><br><span class="line">            <span class="keyword">if</span> (StringUtils.isNotBlank(ipt)) &#123;</span><br><span class="line">                <span class="keyword">return</span> ipt;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MybatisPlusException(<span class="string">&quot;请输入正确的&quot;</span> + tip + <span class="string">&quot;！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 代码生成器</span></span><br><span class="line">        AutoGenerator mpg = <span class="keyword">new</span> AutoGenerator();</span><br><span class="line">        <span class="comment">// 全局配置</span></span><br><span class="line">        GlobalConfig gc = <span class="keyword">new</span> GlobalConfig();</span><br><span class="line">        String projectPath = System.getProperty(<span class="string">&quot;user.dir&quot;</span>);</span><br><span class="line">        gc.setOutputDir(projectPath + <span class="string">&quot;/src/main/java&quot;</span>);</span><br><span class="line">        gc.setAuthor(<span class="string">&quot;QuinnTian&quot;</span>);</span><br><span class="line">        gc.setOpen(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">//生成xml基础结果映射</span></span><br><span class="line">        gc.setBaseResultMap(<span class="keyword">true</span>);</span><br><span class="line">        gc.setBaseColumnList(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// gc.setSwagger2(true); 实体属性 Swagger2 注解</span></span><br><span class="line">        mpg.setGlobalConfig(gc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 数据源配置</span></span><br><span class="line">        DataSourceConfig dsc = <span class="keyword">new</span> DataSourceConfig();</span><br><span class="line">        dsc.setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/tk-admin?serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">// dsc.setSchemaName(&quot;public&quot;);</span></span><br><span class="line">        dsc.setDriverName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line">        dsc.setUsername(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">        dsc.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        mpg.setDataSource(dsc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 包配置</span></span><br><span class="line">        PackageConfig pc = <span class="keyword">new</span> PackageConfig();</span><br><span class="line">        <span class="comment">//pc.setModuleName(scanner(&quot;模块名&quot;));</span></span><br><span class="line">        pc.setParent(<span class="string">&quot;com.quinntian.admin&quot;</span>);</span><br><span class="line">        pc.setEntity(<span class="string">&quot;model&quot;</span>);</span><br><span class="line">        pc.setMapper(<span class="string">&quot;mapper&quot;</span>);</span><br><span class="line">        mpg.setPackageInfo(pc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义配置</span></span><br><span class="line">        InjectionConfig cfg = <span class="keyword">new</span> InjectionConfig() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">// to do nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果模板引擎是 freemarker</span></span><br><span class="line">        String templatePath = <span class="string">&quot;/templates/mapper.xml.ftl&quot;</span>;</span><br><span class="line">        <span class="comment">// 如果模板引擎是 velocity</span></span><br><span class="line">        <span class="comment">// String templatePath = &quot;/templates/mapper.xml.vm&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义输出配置</span></span><br><span class="line">        List&lt;FileOutConfig&gt; focList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">// 自定义配置会被优先输出</span></span><br><span class="line">        focList.add(<span class="keyword">new</span> FileOutConfig(templatePath) &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">outputFile</span><span class="params">(TableInfo tableInfo)</span> </span>&#123;</span><br><span class="line">                <span class="comment">// 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！</span></span><br><span class="line">                <span class="keyword">return</span> projectPath + <span class="string">&quot;/src/main/resources/mapper/&quot;</span> + pc.getModuleName()</span><br><span class="line">                        + <span class="string">&quot;/&quot;</span> + tableInfo.getEntityName() + <span class="string">&quot;Mapper&quot;</span> + StringPool.DOT_XML;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        cfg.setFileCreate(new IFileCreate() &#123;</span></span><br><span class="line"><span class="comment">            @Override</span></span><br><span class="line"><span class="comment">            public boolean isCreate(ConfigBuilder configBuilder, FileType fileType, String filePath) &#123;</span></span><br><span class="line"><span class="comment">                // 判断自定义文件夹是否需要创建</span></span><br><span class="line"><span class="comment">                checkDir(&quot;调用默认方法创建的目录，自定义目录用&quot;);</span></span><br><span class="line"><span class="comment">                if (fileType == FileType.MAPPER) &#123;</span></span><br><span class="line"><span class="comment">                    // 已经生成 mapper 文件判断存在，不想重新生成返回 false</span></span><br><span class="line"><span class="comment">                    return !new File(filePath).exists();</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">                // 允许生成模板文件</span></span><br><span class="line"><span class="comment">                return true;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;);</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        cfg.setFileOutConfigList(focList);</span><br><span class="line">        mpg.setCfg(cfg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置模板</span></span><br><span class="line">        TemplateConfig templateConfig = <span class="keyword">new</span> TemplateConfig();</span><br><span class="line">        <span class="comment">// 关闭生成控制器\服务层\MAPER，只生成mapper。xml（此处官方文档没写）https://github.com/baomidou/mybatis-plus/issues/2384</span></span><br><span class="line">        templateConfig.disable(TemplateType.CONTROLLER);</span><br><span class="line">        templateConfig.disable(TemplateType.SERVICE);</span><br><span class="line">        templateConfig.disable(TemplateType.ENTITY);</span><br><span class="line">        templateConfig.disable(TemplateType.MAPPER);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置自定义输出模板</span></span><br><span class="line">        <span class="comment">//指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别</span></span><br><span class="line">        <span class="comment">// templateConfig.setEntity(&quot;templates/entity2.java&quot;);</span></span><br><span class="line">        <span class="comment">// templateConfig.setService();</span></span><br><span class="line">        <span class="comment">// templateConfig.setController();</span></span><br><span class="line"></span><br><span class="line">        templateConfig.setXml(<span class="keyword">null</span>);</span><br><span class="line">        mpg.setTemplate(templateConfig);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 策略配置</span></span><br><span class="line">        StrategyConfig strategy = <span class="keyword">new</span> StrategyConfig();</span><br><span class="line">        strategy.setNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        strategy.setColumnNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        <span class="comment">//strategy.setSuperEntityClass(&quot;你自己的父类实体,没有就不用设置!&quot;);</span></span><br><span class="line">        <span class="comment">//strategy.setEntityLombokModel(true);</span></span><br><span class="line">        <span class="comment">//strategy.setRestControllerStyle(true);</span></span><br><span class="line">        <span class="comment">// 公共父类</span></span><br><span class="line">        <span class="comment">//strategy.setSuperControllerClass(&quot;你自己的父类控制器,没有就不用设置!&quot;);</span></span><br><span class="line">        <span class="comment">// 写于父类中的公共字段</span></span><br><span class="line">        strategy.setSuperEntityColumns(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">        strategy.setInclude(scanner(<span class="string">&quot;表名，多个英文逗号分割&quot;</span>).split(<span class="string">&quot;,&quot;</span>));</span><br><span class="line">        strategy.setControllerMappingHyphenStyle(<span class="keyword">true</span>);</span><br><span class="line">        strategy.setEntityLombokModel(<span class="keyword">true</span>);</span><br><span class="line">        strategy.setTablePrefix(pc.getModuleName() + <span class="string">&quot;_&quot;</span>);</span><br><span class="line">        mpg.setStrategy(strategy);</span><br><span class="line">        mpg.setTemplateEngine(<span class="keyword">new</span> FreemarkerTemplateEngine());</span><br><span class="line">        mpg.execute();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="运行结果参考"><a href="#运行结果参考" class="headerlink" title="运行结果参考"></a>运行结果参考</h1><p><img src="https://quinntian.com/upload/2020/12/image-53edf04baefe4057a11036349b049606.png" alt="image.png"></p>
+<h1 id="配置信息文档"><a href="#配置信息文档" class="headerlink" title="配置信息文档"></a>配置信息文档</h1><p><a href="https://mybatis.plus/guide/generator.html#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">https://mybatis.plus/guide/generator.html#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B</a></p>
+]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Mybatis学习-第一个mybatis项目.md</title>
     <url>/20180717082715.html</url>
     <content><![CDATA[<p>title: Mybatis学习-第一个mybatis项目<br>date: ‘2018-07-17 08:27:15’<br>updated: ‘2018-07-17 08:29:06’<br>tags: [mybatis]<br>permalink: /articles/2018/07/17/1531786963221.html</p>
@@ -2032,20 +2046,6 @@
 <hr>
 <p>SLF4J: Failed to load class “org.slf4j.impl.StaticLoggerBinder”.<br>SLF4J: Defaulting to no-operation (NOP) logger implementation<br>SLF4J: See <a href="http://www.slf4j.org/codes.html#StaticLoggerBinder">http://www.slf4j.org/codes.html#StaticLoggerBinder</a> for further details.<br>Mon Jul 16 22:57:56 CST 2018 WARN: Establishing SSL connection without server’s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn’t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to ‘false’. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.<br>DEBUG [main] - ==&gt;  Preparing: select id,countryname,countrycode from country<br>DEBUG [main] - ==&gt; Parameters:<br>TRACE [main] - &lt;==    Columns: id, countryname, countrycode<br>TRACE [main] - &lt;==        Row: 1, 中国, CN<br>TRACE [main] - &lt;==        Row: 2, 英国, GB<br>TRACE [main] - &lt;==        Row: 3, 美国, US<br>TRACE [main] - &lt;==        Row: 4, 俄罗斯, RU<br>DEBUG [main] - &lt;==      Total: 4<br>1     中国  CN<br>2     英国  GB<br>3     美国  US<br>4    俄罗斯  RU</p>
 <hr>
-]]></content>
-      <categories>
-        <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Mybatis plus代码生成器生成.xml通用配置</title>
-    <url>/20201208155224.html</url>
-    <content><![CDATA[<h1 id="Maven导入依赖"><a href="#Maven导入依赖" class="headerlink" title="Maven导入依赖"></a>Maven导入依赖</h1><p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--导入mybatis plus 不需要再导入原生mybatis--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--导入mybatis plus插件生成器--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.freemarker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>freemarker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.30<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="spring-boot配置"><a href="#spring-boot配置" class="headerlink" title="spring boot配置"></a>spring boot配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...其他省略</span><br><span class="line">mybatis-plus:</span><br><span class="line">  configuration:</span><br><span class="line">    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl</span><br><span class="line">  mapper-locations:</span><br><span class="line">    classpath: mapper/*.xml</span><br></pre></td></tr></table></figure>
-<h1 id="新建java类"><a href="#新建java类" class="headerlink" title="新建java类"></a>新建java类</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.quinntian.admin.generator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.toolkit.StringPool;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.toolkit.StringUtils;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.AutoGenerator;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.InjectionConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.*;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.po.TableInfo;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generator</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 读取控制台内容</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">scanner</span><span class="params">(String tip)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        StringBuilder help = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        help.append(<span class="string">&quot;请输入&quot;</span> + tip + <span class="string">&quot;：&quot;</span>);</span><br><span class="line">        System.out.println(help.toString());</span><br><span class="line">        <span class="keyword">if</span> (scanner.hasNext()) &#123;</span><br><span class="line">            String ipt = scanner.next();</span><br><span class="line">            <span class="keyword">if</span> (StringUtils.isNotBlank(ipt)) &#123;</span><br><span class="line">                <span class="keyword">return</span> ipt;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MybatisPlusException(<span class="string">&quot;请输入正确的&quot;</span> + tip + <span class="string">&quot;！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 代码生成器</span></span><br><span class="line">        AutoGenerator mpg = <span class="keyword">new</span> AutoGenerator();</span><br><span class="line">        <span class="comment">// 全局配置</span></span><br><span class="line">        GlobalConfig gc = <span class="keyword">new</span> GlobalConfig();</span><br><span class="line">        String projectPath = System.getProperty(<span class="string">&quot;user.dir&quot;</span>);</span><br><span class="line">        gc.setOutputDir(projectPath + <span class="string">&quot;/src/main/java&quot;</span>);</span><br><span class="line">        gc.setAuthor(<span class="string">&quot;QuinnTian&quot;</span>);</span><br><span class="line">        gc.setOpen(<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">//生成xml基础结果映射</span></span><br><span class="line">        gc.setBaseResultMap(<span class="keyword">true</span>);</span><br><span class="line">        gc.setBaseColumnList(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// gc.setSwagger2(true); 实体属性 Swagger2 注解</span></span><br><span class="line">        mpg.setGlobalConfig(gc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 数据源配置</span></span><br><span class="line">        DataSourceConfig dsc = <span class="keyword">new</span> DataSourceConfig();</span><br><span class="line">        dsc.setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/tk-admin?serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">// dsc.setSchemaName(&quot;public&quot;);</span></span><br><span class="line">        dsc.setDriverName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line">        dsc.setUsername(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">        dsc.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        mpg.setDataSource(dsc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 包配置</span></span><br><span class="line">        PackageConfig pc = <span class="keyword">new</span> PackageConfig();</span><br><span class="line">        <span class="comment">//pc.setModuleName(scanner(&quot;模块名&quot;));</span></span><br><span class="line">        pc.setParent(<span class="string">&quot;com.quinntian.admin&quot;</span>);</span><br><span class="line">        pc.setEntity(<span class="string">&quot;model&quot;</span>);</span><br><span class="line">        pc.setMapper(<span class="string">&quot;mapper&quot;</span>);</span><br><span class="line">        mpg.setPackageInfo(pc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义配置</span></span><br><span class="line">        InjectionConfig cfg = <span class="keyword">new</span> InjectionConfig() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">// to do nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果模板引擎是 freemarker</span></span><br><span class="line">        String templatePath = <span class="string">&quot;/templates/mapper.xml.ftl&quot;</span>;</span><br><span class="line">        <span class="comment">// 如果模板引擎是 velocity</span></span><br><span class="line">        <span class="comment">// String templatePath = &quot;/templates/mapper.xml.vm&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 自定义输出配置</span></span><br><span class="line">        List&lt;FileOutConfig&gt; focList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">// 自定义配置会被优先输出</span></span><br><span class="line">        focList.add(<span class="keyword">new</span> FileOutConfig(templatePath) &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">outputFile</span><span class="params">(TableInfo tableInfo)</span> </span>&#123;</span><br><span class="line">                <span class="comment">// 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！</span></span><br><span class="line">                <span class="keyword">return</span> projectPath + <span class="string">&quot;/src/main/resources/mapper/&quot;</span> + pc.getModuleName()</span><br><span class="line">                        + <span class="string">&quot;/&quot;</span> + tableInfo.getEntityName() + <span class="string">&quot;Mapper&quot;</span> + StringPool.DOT_XML;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        cfg.setFileCreate(new IFileCreate() &#123;</span></span><br><span class="line"><span class="comment">            @Override</span></span><br><span class="line"><span class="comment">            public boolean isCreate(ConfigBuilder configBuilder, FileType fileType, String filePath) &#123;</span></span><br><span class="line"><span class="comment">                // 判断自定义文件夹是否需要创建</span></span><br><span class="line"><span class="comment">                checkDir(&quot;调用默认方法创建的目录，自定义目录用&quot;);</span></span><br><span class="line"><span class="comment">                if (fileType == FileType.MAPPER) &#123;</span></span><br><span class="line"><span class="comment">                    // 已经生成 mapper 文件判断存在，不想重新生成返回 false</span></span><br><span class="line"><span class="comment">                    return !new File(filePath).exists();</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">                // 允许生成模板文件</span></span><br><span class="line"><span class="comment">                return true;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;);</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        cfg.setFileOutConfigList(focList);</span><br><span class="line">        mpg.setCfg(cfg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置模板</span></span><br><span class="line">        TemplateConfig templateConfig = <span class="keyword">new</span> TemplateConfig();</span><br><span class="line">        <span class="comment">// 关闭生成控制器\服务层\MAPER，只生成mapper。xml（此处官方文档没写）https://github.com/baomidou/mybatis-plus/issues/2384</span></span><br><span class="line">        templateConfig.disable(TemplateType.CONTROLLER);</span><br><span class="line">        templateConfig.disable(TemplateType.SERVICE);</span><br><span class="line">        templateConfig.disable(TemplateType.ENTITY);</span><br><span class="line">        templateConfig.disable(TemplateType.MAPPER);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置自定义输出模板</span></span><br><span class="line">        <span class="comment">//指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别</span></span><br><span class="line">        <span class="comment">// templateConfig.setEntity(&quot;templates/entity2.java&quot;);</span></span><br><span class="line">        <span class="comment">// templateConfig.setService();</span></span><br><span class="line">        <span class="comment">// templateConfig.setController();</span></span><br><span class="line"></span><br><span class="line">        templateConfig.setXml(<span class="keyword">null</span>);</span><br><span class="line">        mpg.setTemplate(templateConfig);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 策略配置</span></span><br><span class="line">        StrategyConfig strategy = <span class="keyword">new</span> StrategyConfig();</span><br><span class="line">        strategy.setNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        strategy.setColumnNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        <span class="comment">//strategy.setSuperEntityClass(&quot;你自己的父类实体,没有就不用设置!&quot;);</span></span><br><span class="line">        <span class="comment">//strategy.setEntityLombokModel(true);</span></span><br><span class="line">        <span class="comment">//strategy.setRestControllerStyle(true);</span></span><br><span class="line">        <span class="comment">// 公共父类</span></span><br><span class="line">        <span class="comment">//strategy.setSuperControllerClass(&quot;你自己的父类控制器,没有就不用设置!&quot;);</span></span><br><span class="line">        <span class="comment">// 写于父类中的公共字段</span></span><br><span class="line">        strategy.setSuperEntityColumns(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">        strategy.setInclude(scanner(<span class="string">&quot;表名，多个英文逗号分割&quot;</span>).split(<span class="string">&quot;,&quot;</span>));</span><br><span class="line">        strategy.setControllerMappingHyphenStyle(<span class="keyword">true</span>);</span><br><span class="line">        strategy.setEntityLombokModel(<span class="keyword">true</span>);</span><br><span class="line">        strategy.setTablePrefix(pc.getModuleName() + <span class="string">&quot;_&quot;</span>);</span><br><span class="line">        mpg.setStrategy(strategy);</span><br><span class="line">        mpg.setTemplateEngine(<span class="keyword">new</span> FreemarkerTemplateEngine());</span><br><span class="line">        mpg.execute();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="运行结果参考"><a href="#运行结果参考" class="headerlink" title="运行结果参考"></a>运行结果参考</h1><p><img src="https://quinntian.com/upload/2020/12/image-53edf04baefe4057a11036349b049606.png" alt="image.png"></p>
-<h1 id="配置信息文档"><a href="#配置信息文档" class="headerlink" title="配置信息文档"></a>配置信息文档</h1><p><a href="https://mybatis.plus/guide/generator.html#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">https://mybatis.plus/guide/generator.html#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B</a></p>
 ]]></content>
       <categories>
         <category>Mybatis</category>
@@ -3087,6 +3087,17 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
       </categories>
   </entry>
   <entry>
+    <title>IDEA_断点调试不进入class文件的方法.md</title>
+    <url>/20180720105953.html</url>
+    <content><![CDATA[<p>title: IDEA 断点调试不进入class文件的方法<br>date: ‘2018-07-20 10:59:53’<br>updated: ‘2018-07-20 10:59:53’<br>tags: [IDEA]<br>permalink: /articles/2018/07/20/1532055593214.html</p>
+<hr>
+<p>settings-&gt;build,execution,deployment-&gt;debugger-&gt;stepping，Do not step into the classes勾掉，不要用f7，调试用f8下一步</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>BBR加速配置</title>
     <url>/20200217000044.html</url>
     <content><![CDATA[<p>bbr这个东西真乃神器，所以如果你的代理服务器在国外，强烈建议开启bbr的功能。我的小鸡使用的是debian 9，默认内核是支持bbr加速的，但是没有开启。如果你的系统过于陈旧，需要更新linux内核至4.9以上并编译安装bbr。<br>开启方法</p>
@@ -3121,22 +3132,29 @@ lsmod | grep bbr
       </categories>
   </entry>
   <entry>
-    <title>IDEA_断点调试不进入class文件的方法.md</title>
-    <url>/20180720105953.html</url>
-    <content><![CDATA[<p>title: IDEA 断点调试不进入class文件的方法<br>date: ‘2018-07-20 10:59:53’<br>updated: ‘2018-07-20 10:59:53’<br>tags: [IDEA]<br>permalink: /articles/2018/07/20/1532055593214.html</p>
+    <title>IDEA安装lombok插件.md</title>
+    <url>/20180619233417.html</url>
+    <content><![CDATA[<p>title: IDEA安装lombok插件<br>date: ‘2018-06-19 23:34:17’<br>updated: ‘2018-06-19 23:34:17’<br>tags: [IDEA]<br>permalink: /articles/2018/06/19/1529422457178.html</p>
 <hr>
-<p>settings-&gt;build,execution,deployment-&gt;debugger-&gt;stepping，Do not step into the classes勾掉，不要用f7，调试用f8下一步</p>
+<p>项目中经常使用bean，entity等类，绝大部分数据类类中都需要get、set、toString、equals和hashCode方法，虽然eclipse和idea开发环境下都有自动生成的快捷方式，但自动生成这些代码后，如果bean中的属性一旦有修改、删除或增加时，需要重新生成或删除get/set等方法，给代码维护增加负担。而使用了lombok则不一样，使用了lombok的注解(@Setter,@Getter,@ToString,@@RequiredArgsConstructor,@EqualsAndHashCode或@Data)之后，就不需要编写或生成get/set等方法，很大程度上减少了代码量，而且减少了代码维护的负担。故强烈建议项目中使用lombok，去掉bean中get、set、toString、equals和hashCode等方法的代码。<br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/09881d2c1cba406fb35e2c29d8f1984f_Snipaste_20180619_233151.png" alt="Snipaste_20180619_233151png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/f7ce0e950fc7457bab0fb9056d376d92_Snipaste_20180619_233210.png" alt="Snipaste_20180619_233210png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/c45b05eefebd4dbd85a91185d637df76_Snipaste_20180619_233235.png" alt="Snipaste_20180619_233235png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
       </categories>
   </entry>
   <entry>
-    <title>IDEA安装lombok插件.md</title>
-    <url>/20180619233417.html</url>
-    <content><![CDATA[<p>title: IDEA安装lombok插件<br>date: ‘2018-06-19 23:34:17’<br>updated: ‘2018-06-19 23:34:17’<br>tags: [IDEA]<br>permalink: /articles/2018/06/19/1529422457178.html</p>
-<hr>
-<p>项目中经常使用bean，entity等类，绝大部分数据类类中都需要get、set、toString、equals和hashCode方法，虽然eclipse和idea开发环境下都有自动生成的快捷方式，但自动生成这些代码后，如果bean中的属性一旦有修改、删除或增加时，需要重新生成或删除get/set等方法，给代码维护增加负担。而使用了lombok则不一样，使用了lombok的注解(@Setter,@Getter,@ToString,@@RequiredArgsConstructor,@EqualsAndHashCode或@Data)之后，就不需要编写或生成get/set等方法，很大程度上减少了代码量，而且减少了代码维护的负担。故强烈建议项目中使用lombok，去掉bean中get、set、toString、equals和hashCode等方法的代码。<br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/09881d2c1cba406fb35e2c29d8f1984f_Snipaste_20180619_233151.png" alt="Snipaste_20180619_233151png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/f7ce0e950fc7457bab0fb9056d376d92_Snipaste_20180619_233210.png" alt="Snipaste_20180619_233210png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/c45b05eefebd4dbd85a91185d637df76_Snipaste_20180619_233235.png" alt="Snipaste_20180619_233235png"> </p>
+    <title>IDEA配置注释模板</title>
+    <url>/20190713125512.html</url>
+    <content><![CDATA[<h4 id="1-打开如下配置界面"><a href="#1-打开如下配置界面" class="headerlink" title="1. 打开如下配置界面"></a>1. 打开如下配置界面</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991072983.png" alt="enter description here"></p>
+<p>setting-&gt;live templates</p>
+<h4 id="2-自己创建一个组"><a href="#2-自己创建一个组" class="headerlink" title="2. 自己创建一个组"></a>2. 自己创建一个组</h4><p>添加如下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="xml"><span class="tag">&lt;<span class="name">pre</span>&gt;</span>$method$ method<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span></span><br><span class="line">$params$</span><br><span class="line"> * @<span class="keyword">return</span> $return$</span><br><span class="line"> * @author &lt;a href=<span class="string">&quot;mailto:sdtkin1996@gmail.com&quot;</span>&gt;QuinnTian&lt;/a&gt; </span><br><span class="line"> * @since $DATE$ $time$ </span><br><span class="line"> */!</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-编辑参数列表"><a href="#3-编辑参数列表" class="headerlink" title="3. 编辑参数列表"></a>3. 编辑参数列表</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991209203.png" alt="enter description here"></p>
+<p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991254605.png" alt="enter description here"></p>
+<p>第二个参数脚本代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">groovyScript(<span class="string">&quot;def result=&#x27;&#x27;; def params=\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#x27;[\\\\[|\\\\]|\\\\s]&#x27;, &#x27;&#x27;).split(&#x27;,&#x27;).toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=&#x27; * @param &#x27; + params[i] + ((i &lt; params.size() - 1) ? &#x27;\\n&#x27; : &#x27;&#x27;)&#125;; return result&quot;</span>, methodParameters())</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3165,24 +3183,6 @@ lsmod | grep bbr
 <li> 使用 javassist 动态修改代码</li>
 <li> 使用 vertx web 创建本地认证服务器<br>原文地址：<a href="https://shawnho.me/2017/12/20/ideaagent/">https://shawnho.me/2017/12/20/ideaagent/</a></li>
 </ol>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>IDEA配置注释模板</title>
-    <url>/20190713125512.html</url>
-    <content><![CDATA[<h4 id="1-打开如下配置界面"><a href="#1-打开如下配置界面" class="headerlink" title="1. 打开如下配置界面"></a>1. 打开如下配置界面</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991072983.png" alt="enter description here"></p>
-<p>setting-&gt;live templates</p>
-<h4 id="2-自己创建一个组"><a href="#2-自己创建一个组" class="headerlink" title="2. 自己创建一个组"></a>2. 自己创建一个组</h4><p>添加如下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="xml"><span class="tag">&lt;<span class="name">pre</span>&gt;</span>$method$ method<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span></span><br><span class="line">$params$</span><br><span class="line"> * @<span class="keyword">return</span> $return$</span><br><span class="line"> * @author &lt;a href=<span class="string">&quot;mailto:sdtkin1996@gmail.com&quot;</span>&gt;QuinnTian&lt;/a&gt; </span><br><span class="line"> * @since $DATE$ $time$ </span><br><span class="line"> */!</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-编辑参数列表"><a href="#3-编辑参数列表" class="headerlink" title="3. 编辑参数列表"></a>3. 编辑参数列表</h4><p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991209203.png" alt="enter description here"></p>
-<p><img src="https://www.github.com/QuinnTian/imgchr/raw/master/imgs/1562991254605.png" alt="enter description here"></p>
-<p>第二个参数脚本代码如下</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">groovyScript(<span class="string">&quot;def result=&#x27;&#x27;; def params=\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#x27;[\\\\[|\\\\]|\\\\s]&#x27;, &#x27;&#x27;).split(&#x27;,&#x27;).toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=&#x27; * @param &#x27; + params[i] + ((i &lt; params.size() - 1) ? &#x27;\\n&#x27; : &#x27;&#x27;)&#125;; return result&quot;</span>, methodParameters())</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3459,6 +3459,17 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
+    <title>用Navicat自动备份MySQL数据库</title>
+    <url>/20180525164327.html</url>
+    <content><![CDATA[<p>title: 用Navicat自动备份Mysql数据库<br>date: ‘2018-05-25 16:43:27’<br>updated: ‘2018-05-25 18:16:05’<br>tags: [Navicat, Mysql]<br>permalink: /articles/2018/05/25/1527237800309.html</p>
+<hr>
+<h4 id="1-选择计划任务"><a href="#1-选择计划任务" class="headerlink" title="1.选择计划任务"></a>1.选择计划任务</h4><h4 id="2-选择数据库双击后有方自动创建脚本"><a href="#2-选择数据库双击后有方自动创建脚本" class="headerlink" title="2.选择数据库双击后有方自动创建脚本"></a>2.选择数据库双击后有方自动创建脚本</h4><h4 id="3-双击创建好的脚本后，下方自动生成"><a href="#3-双击创建好的脚本后，下方自动生成" class="headerlink" title="3.双击创建好的脚本后，下方自动生成"></a>3.双击创建好的脚本后，下方自动生成</h4><h4 id="4-点击保存输入名称"><a href="#4-点击保存输入名称" class="headerlink" title="4.点击保存输入名称"></a>4.点击保存输入名称</h4><h4 id="5-点击设置计划任务"><a href="#5-点击设置计划任务" class="headerlink" title="5.点击设置计划任务"></a>5.点击设置计划任务</h4><h4 id="6-设置密码和备份周期后应用"><a href="#6-设置密码和备份周期后应用" class="headerlink" title="6.设置密码和备份周期后应用"></a>6.设置密码和备份周期后应用</h4><p><strong>相关截图</strong><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/046ec44707814862afe07b94084ef3b9_Snipaste_20180525_161954.png" alt="Snipaste_20180525_161954png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3a383774cbdb446c95b2d1cb61a3618c_Snipaste_20180525_162113.png" alt="Snipaste_20180525_162113png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3d8e2763d63c48bd80eb3358d663ad4e_Snipaste_20180525_162124.png" alt="Snipaste_20180525_162124png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/069a2e3c38f8419091ae7a6a97cea7d8_Snipaste_20180525_162403.png" alt="Snipaste_20180525_162403png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/4b103a67dc9b4916948eb25a14eb31dc_Snipaste_20180525_162610.png" alt="Snipaste_20180525_162610png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3457172472ca4bae86f4e41abece6fd7_Snipaste_20180525_162947.png" alt="Snipaste_20180525_162947png"> </p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>牛客网华为云9元一年学生机白嫖分享</title>
     <url>/20200128113629.html</url>
     <content><![CDATA[<p><strong>本博客于20200110迁移到华为云，就是下面的9元一年的学生机，原价99元，满足条件后返还90。另外在华为云和牛客网博客上发表博文前100名，可以得到体重秤，我的已经发货了。现在是2月10号以后的第二批，提前白嫖仍然可以得到体重秤，时间为2020年2月12日12：00 — 2020年2月29日晚上23：59。</strong><br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a><br>牛客网x华为云服务器活动<br>2020年新年第二弹来啦！<br>还是熟悉的返现（实惠良心）：<br>通过牛客专属链接新注册华为云账号，购买指定套餐即可获得返现！<br>并且，写博文，还送华为体重秤！</p>
@@ -3490,17 +3501,6 @@ chmod 777 /var/log/caddy/caddy.log
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <h1 id="四、注意"><a href="#四、注意" class="headerlink" title="四、注意"></a>四、注意</h1><p>同一人（同一身份认证）仅支持一次返现机会，学生套餐中1个月、6个月、12个月只可3选一。<br>此次华为云服务器活动，购买成功后不支持退款。<br>本次活动解释权归牛客所有。<br>奖品数量有限，购买填写表单后，记得在本帖下留言占位哦~<br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a></p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>用Navicat自动备份MySQL数据库</title>
-    <url>/20180525164327.html</url>
-    <content><![CDATA[<p>title: 用Navicat自动备份Mysql数据库<br>date: ‘2018-05-25 16:43:27’<br>updated: ‘2018-05-25 18:16:05’<br>tags: [Navicat, Mysql]<br>permalink: /articles/2018/05/25/1527237800309.html</p>
-<hr>
-<h4 id="1-选择计划任务"><a href="#1-选择计划任务" class="headerlink" title="1.选择计划任务"></a>1.选择计划任务</h4><h4 id="2-选择数据库双击后有方自动创建脚本"><a href="#2-选择数据库双击后有方自动创建脚本" class="headerlink" title="2.选择数据库双击后有方自动创建脚本"></a>2.选择数据库双击后有方自动创建脚本</h4><h4 id="3-双击创建好的脚本后，下方自动生成"><a href="#3-双击创建好的脚本后，下方自动生成" class="headerlink" title="3.双击创建好的脚本后，下方自动生成"></a>3.双击创建好的脚本后，下方自动生成</h4><h4 id="4-点击保存输入名称"><a href="#4-点击保存输入名称" class="headerlink" title="4.点击保存输入名称"></a>4.点击保存输入名称</h4><h4 id="5-点击设置计划任务"><a href="#5-点击设置计划任务" class="headerlink" title="5.点击设置计划任务"></a>5.点击设置计划任务</h4><h4 id="6-设置密码和备份周期后应用"><a href="#6-设置密码和备份周期后应用" class="headerlink" title="6.设置密码和备份周期后应用"></a>6.设置密码和备份周期后应用</h4><p><strong>相关截图</strong><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/046ec44707814862afe07b94084ef3b9_Snipaste_20180525_161954.png" alt="Snipaste_20180525_161954png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3a383774cbdb446c95b2d1cb61a3618c_Snipaste_20180525_162113.png" alt="Snipaste_20180525_162113png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3d8e2763d63c48bd80eb3358d663ad4e_Snipaste_20180525_162124.png" alt="Snipaste_20180525_162124png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/069a2e3c38f8419091ae7a6a97cea7d8_Snipaste_20180525_162403.png" alt="Snipaste_20180525_162403png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/4b103a67dc9b4916948eb25a14eb31dc_Snipaste_20180525_162610.png" alt="Snipaste_20180525_162610png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3457172472ca4bae86f4e41abece6fd7_Snipaste_20180525_162947.png" alt="Snipaste_20180525_162947png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>

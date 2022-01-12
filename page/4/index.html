@@ -306,10 +306,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="创建开机自启文件"><a href="#创建开机自启文件" class="headerlink" title="创建开机自启文件"></a>创建开机自启文件</h1><p>首先在以下目录创建文件</p>
-<p>   <code>vim /lib/systemd/system/nginx.service</code></p>
-<p>   配置文件如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line"># 设置执行启动、重新载入和停止的命令地址</span><br><span class="line">ExecStart=/usr/local/webserver/nginx/sbin/nginx</span><br><span class="line">ExecReload=/usr/local/webserver/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/usr/local/webserver/nginx/sbin/nginx -s quit</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -319,6 +315,11 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="创建开机自启文件"><a href="#创建开机自启文件" class="headerlink" title="创建开机自启文件"></a>创建开机自启文件</h1><p>首先在以下目录创建文件</p>
+<p>   <code>vim /lib/systemd/system/nginx.service</code></p>
+<p>   配置文件如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line"># 设置执行启动、重新载入和停止的命令地址</span><br><span class="line">ExecStart=/usr/local/webserver/nginx/sbin/nginx</span><br><span class="line">ExecReload=/usr/local/webserver/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/usr/local/webserver/nginx/sbin/nginx -s quit</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210224181345.html#more" rel="contents">
@@ -432,9 +433,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="1-安装编译工具"><a href="#1-安装编译工具" class="headerlink" title="1.安装编译工具"></a>1.安装编译工具</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel</span><br></pre></td></tr></table></figure>
-<h1 id="2-安装PRCE"><a href="#2-安装PRCE" class="headerlink" title="2.安装PRCE"></a>2.安装PRCE</h1><p><strong>用于支持rewrite</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/</span><br><span class="line">wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz</span><br><span class="line">根据版本选择</span><br></pre></td></tr></table></figure>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -444,6 +442,10 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="1-安装编译工具"><a href="#1-安装编译工具" class="headerlink" title="1.安装编译工具"></a>1.安装编译工具</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<h1 id="2-安装PRCE"><a href="#2-安装PRCE" class="headerlink" title="2.安装PRCE"></a>2.安装PRCE</h1><p><strong>用于支持rewrite</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/</span><br><span class="line">wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz</span><br><span class="line">根据版本选择</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210224181226.html#more" rel="contents">
@@ -556,6 +558,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
+          <ins class="adsbygoogle"
+                  style="display:block; text-align:center;"
+                  data-ad-layout="in-article"
+                  data-ad-format="fluid"
+                  data-ad-client="ca-pub-7128871200466945"
+                  data-ad-slot="6235019134"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+          
           <h1 id="1-列表特征"><a href="#1-列表特征" class="headerlink" title="1. 列表特征"></a>1. 列表特征</h1><ol>
 <li><p>用方括号声明</p>
 </li>
@@ -615,15 +627,6 @@
 </li>
 </ol>
 <p><strong>永久排序</strong></p>
-          <ins class="adsbygoogle"
-                  style="display:block; text-align:center;"
-                  data-ad-layout="in-article"
-                  data-ad-format="fluid"
-                  data-ad-client="ca-pub-7128871200466945"
-                  data-ad-slot="6235019134"></ins>
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210224173041.html#more" rel="contents">
@@ -736,10 +739,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="urlopen基本用法"><a href="#urlopen基本用法" class="headerlink" title="urlopen基本用法"></a>urlopen基本用法</h1><p>参考文档：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/urllib.request.html#module-urllib.request">https://docs.python.org/zh-cn/3/library/urllib.request.html#module-urllib.request</a><br><code>urlopen(url)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="comment"># request的urlopen方法基本使用</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;https://www.python.org&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response))</span><br><span class="line"><span class="comment"># 调用read对象可以读取网页的内容</span></span><br><span class="line"><span class="comment"># 调用status属性可以获取状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.status)</span><br><span class="line"><span class="comment"># 调用getheaders方法可以获取header头部信息</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders())</span><br><span class="line"><span class="built_in">print</span>(response.getheader(<span class="string">&#x27;server&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<p><code>urlopen(url,data,timeout)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data = <span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;world&#x27;</span>: <span class="string">&quot;hello&quot;</span>&#125;), encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 其中第二个参数是可选</span></span><br><span class="line"><span class="comment"># 若选了其格式必须是byte格式</span></span><br><span class="line"><span class="comment"># 有这个参数就不再是get-&gt;post</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read())</span><br><span class="line"><span class="comment"># timeout参数:设置超时时间</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, timeout=<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用try catch 捕获，若超时则输出错误信息</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, timeout=<span class="number">0.02</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason, socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Time out&#x27;</span>)</span><br></pre></td></tr></table></figure>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -749,6 +748,11 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="urlopen基本用法"><a href="#urlopen基本用法" class="headerlink" title="urlopen基本用法"></a>urlopen基本用法</h1><p>参考文档：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/urllib.request.html#module-urllib.request">https://docs.python.org/zh-cn/3/library/urllib.request.html#module-urllib.request</a><br><code>urlopen(url)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="comment"># request的urlopen方法基本使用</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;https://www.python.org&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response))</span><br><span class="line"><span class="comment"># 调用read对象可以读取网页的内容</span></span><br><span class="line"><span class="comment"># 调用status属性可以获取状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.status)</span><br><span class="line"><span class="comment"># 调用getheaders方法可以获取header头部信息</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders())</span><br><span class="line"><span class="built_in">print</span>(response.getheader(<span class="string">&#x27;server&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p><code>urlopen(url,data,timeout)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data = <span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;world&#x27;</span>: <span class="string">&quot;hello&quot;</span>&#125;), encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 其中第二个参数是可选</span></span><br><span class="line"><span class="comment"># 若选了其格式必须是byte格式</span></span><br><span class="line"><span class="comment"># 有这个参数就不再是get-&gt;post</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read())</span><br><span class="line"><span class="comment"># timeout参数:设置超时时间</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, timeout=<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用try catch 捕获，若超时则输出错误信息</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, timeout=<span class="number">0.02</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason, socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Time out&#x27;</span>)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210224172855.html#more" rel="contents">
@@ -976,12 +980,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
-<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -991,6 +989,13 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
+<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210222170701.html#more" rel="contents">
@@ -1104,9 +1109,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a target="_blank" rel="noopener" href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -1116,6 +1118,10 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a target="_blank" rel="noopener" href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210220140843.html#more" rel="contents">
@@ -1228,8 +1234,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h1><h1 id="什么是抽象工厂模式"><a href="#什么是抽象工厂模式" class="headerlink" title="什么是抽象工厂模式"></a>什么是抽象工厂模式</h1><p>比较官方的定义是：<strong>为创建一组相关的或相互依赖的对象提供一个接口，而且无需指定他们的实体类</strong>。官方这个定义十分的拗口也不易理解，可能也是因为英文翻译过来的。<br>我的理解是两个词，细化+组装，比如生产产品，那么在定义这个产品的时候会越来越细化，比如我们考虑女娲造人这个例子，首先，我们创建一个人类的接口，然后下面又实现了人类接口的两个抽象类叫做黑人、白人和黄人，那么我们继续细化，人肯定有男性和女性吧，于是我们在此基础上就扩展出也就是继承三个色种，单独定义继承他们的黑人男性和女性，白人男性和女性、黄人的男性和女性，这些一共6个类全部是通过继承相应的有色人种来实现的。<br>那我们再看工厂类，同样需要建立一个抽象工厂接口，定义第一层即在接口中分别生产各色人种的方法，但是呢每个人种还有男性和女性之分，因此我们可以继续继承这个接口，扩展出专门生产男性和女性的类，在他们类中分别定义生产各色人种男性或女性的方法。<br>综上我们看工厂模式就是把产品细化了，然后我们想要什么的样的产品，就在工厂下面分为不同的车间，每个车间又分为不同的生产线，怎么扩展呢，就是通过继承or实现等来实现横向或纵向扩展。<br>具体实现的UML的类图如下，第二个是具体调用图。</p>
-<h1 id="最简单的例子"><a href="#最简单的例子" class="headerlink" title="最简单的例子"></a>最简单的例子</h1><p><img src="https://quinntian.com/upload/2021/01/image-89bd5107a3e84b5d848ae2d3450862c7.png" alt="image.png"><br><img src="https://quinntian.com/upload/2021/01/image-3c773df03aff4cb09136ad42922e688b.png" alt="image.png"><br><strong>人类接口</strong></p>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -1239,6 +1243,9 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h1><h1 id="什么是抽象工厂模式"><a href="#什么是抽象工厂模式" class="headerlink" title="什么是抽象工厂模式"></a>什么是抽象工厂模式</h1><p>比较官方的定义是：<strong>为创建一组相关的或相互依赖的对象提供一个接口，而且无需指定他们的实体类</strong>。官方这个定义十分的拗口也不易理解，可能也是因为英文翻译过来的。<br>我的理解是两个词，细化+组装，比如生产产品，那么在定义这个产品的时候会越来越细化，比如我们考虑女娲造人这个例子，首先，我们创建一个人类的接口，然后下面又实现了人类接口的两个抽象类叫做黑人、白人和黄人，那么我们继续细化，人肯定有男性和女性吧，于是我们在此基础上就扩展出也就是继承三个色种，单独定义继承他们的黑人男性和女性，白人男性和女性、黄人的男性和女性，这些一共6个类全部是通过继承相应的有色人种来实现的。<br>那我们再看工厂类，同样需要建立一个抽象工厂接口，定义第一层即在接口中分别生产各色人种的方法，但是呢每个人种还有男性和女性之分，因此我们可以继续继承这个接口，扩展出专门生产男性和女性的类，在他们类中分别定义生产各色人种男性或女性的方法。<br>综上我们看工厂模式就是把产品细化了，然后我们想要什么的样的产品，就在工厂下面分为不同的车间，每个车间又分为不同的生产线，怎么扩展呢，就是通过继承or实现等来实现横向或纵向扩展。<br>具体实现的UML的类图如下，第二个是具体调用图。</p>
+<h1 id="最简单的例子"><a href="#最简单的例子" class="headerlink" title="最简单的例子"></a>最简单的例子</h1><p><img src="https://quinntian.com/upload/2021/01/image-89bd5107a3e84b5d848ae2d3450862c7.png" alt="image.png"><br><img src="https://quinntian.com/upload/2021/01/image-3c773df03aff4cb09136ad42922e688b.png" alt="image.png"><br><strong>人类接口</strong></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210102223146.html#more" rel="contents">
@@ -1351,9 +1358,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="工厂方法模式（下）4种扩展"><a href="#工厂方法模式（下）4种扩展" class="headerlink" title="工厂方法模式（下）4种扩展"></a>工厂方法模式（下）4种扩展</h1><h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>所谓简单工厂模式就是把工厂的抽象类去掉，直接只有一个工厂类即可。其UML图如下<br><img src="https://quinntian.com/upload/2021/01/image-e5e37bbc9fa8434e8ad095d01b326681.png" alt="image.png"><br>工厂类，去掉了接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> case3;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;简单工厂模式：去掉了抽象接口&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends Human&gt; <span class="function">T <span class="title">createHuman</span><span class="params">(Class&lt;T&gt; c)</span></span>&#123;</span><br><span class="line">        <span class="comment">/*定义一个生产出的人种*/</span></span><br><span class="line">        Human human = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            human = (Human) Class.forName(c.getName()).newInstance();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (T)human;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="多个工厂类"><a href="#多个工厂类" class="headerlink" title="多个工厂类"></a>多个工厂类</h1>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -1363,6 +1367,10 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="工厂方法模式（下）4种扩展"><a href="#工厂方法模式（下）4种扩展" class="headerlink" title="工厂方法模式（下）4种扩展"></a>工厂方法模式（下）4种扩展</h1><h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>所谓简单工厂模式就是把工厂的抽象类去掉，直接只有一个工厂类即可。其UML图如下<br><img src="https://quinntian.com/upload/2021/01/image-e5e37bbc9fa8434e8ad095d01b326681.png" alt="image.png"><br>工厂类，去掉了接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> case3;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;简单工厂模式：去掉了抽象接口&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T extends Human&gt; <span class="function">T <span class="title">createHuman</span><span class="params">(Class&lt;T&gt; c)</span></span>&#123;</span><br><span class="line">        <span class="comment">/*定义一个生产出的人种*/</span></span><br><span class="line">        Human human = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            human = (Human) Class.forName(c.getName()).newInstance();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (T)human;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="多个工厂类"><a href="#多个工厂类" class="headerlink" title="多个工厂类"></a>多个工厂类</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20210101193936.html#more" rel="contents">
@@ -1482,9 +1490,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="什么是工厂方法模式"><a href="#什么是工厂方法模式" class="headerlink" title="什么是工厂方法模式"></a>什么是工厂方法模式</h1><p>定义一个抽象接口，这个接口其实现类来选择实例化哪一个类。简单来说就是实例化不再通过new而是通过一个类，这个类是工厂类。</p>
-<h1 id="工厂方法模式最简单例子"><a href="#工厂方法模式最简单例子" class="headerlink" title="工厂方法模式最简单例子"></a>工厂方法模式最简单例子</h1><p>我们想象女娲造人，这里涉及三样，女娲、炼造炉、人类，其中人类是一个抽象类，其有很多实现类，有黄色、白色和黑色人种。锻造炉就是一个工厂，在这个工厂可以指定去造哪一种类型的人。这里我们吧锻造炉用一个接口声明，其实现类里有相应的方法来选择去锻造哪一种类型的人类。女娲就是一个场景类。具体UML图和代码如下<br><img src="https://quinntian.com/upload/2020/12/image-bd3f6bd8ba184fa9a49b4c5393e7626e.png" alt="image.png"><br>package case1;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;人类总称&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*获取人类的颜色*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/*人类说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <ins class="adsbygoogle"
                   style="display:block; text-align:center;"
                   data-ad-layout="in-article"
@@ -1494,6 +1499,10 @@
               <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
+          
+          <h1 id="什么是工厂方法模式"><a href="#什么是工厂方法模式" class="headerlink" title="什么是工厂方法模式"></a>什么是工厂方法模式</h1><p>定义一个抽象接口，这个接口其实现类来选择实例化哪一个类。简单来说就是实例化不再通过new而是通过一个类，这个类是工厂类。</p>
+<h1 id="工厂方法模式最简单例子"><a href="#工厂方法模式最简单例子" class="headerlink" title="工厂方法模式最简单例子"></a>工厂方法模式最简单例子</h1><p>我们想象女娲造人，这里涉及三样，女娲、炼造炉、人类，其中人类是一个抽象类，其有很多实现类，有黄色、白色和黑色人种。锻造炉就是一个工厂，在这个工厂可以指定去造哪一种类型的人。这里我们吧锻造炉用一个接口声明，其实现类里有相应的方法来选择去锻造哪一种类型的人类。女娲就是一个场景类。具体UML图和代码如下<br><img src="https://quinntian.com/upload/2020/12/image-bd3f6bd8ba184fa9a49b4c5393e7626e.png" alt="image.png"><br>package case1;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;人类总称&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*获取人类的颜色*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/*人类说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20201230230641.html#more" rel="contents">
