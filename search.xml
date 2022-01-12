@@ -64,17 +64,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/20180712120823.html</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git基本命令.md</title>
     <url>/20180723204037.html</url>
     <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
@@ -146,6 +135,17 @@
       </categories>
   </entry>
   <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/20180712120823.html</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git配置代理</title>
     <url>/20180730102053.html</url>
     <content><![CDATA[<p>Github国内访问过慢，可以配置代理</p>
@@ -167,6 +167,59 @@
       <tags>
         <tag>Git</tag>
         <tag>代理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
+    <url>/20180724105005.html</url>
+    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tomcat不同项目使用不同的端口号.md</title>
+    <url>/20180721120413.html</url>
+    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
+<hr>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
+<p>Tomcat设置不输入项目名直接访问</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>并存多个版本JDK方法</title>
+    <url>/20220113014135.html</url>
+    <content><![CDATA[<p>在一个电脑中安装多个JDK，并自由切换的方案</p>
+<span id="more"></span>
+
+<h1 id="1-安装好多个版本JDK"><a href="#1-安装好多个版本JDK" class="headerlink" title="1.  安装好多个版本JDK"></a>1.  安装好多个版本JDK</h1><h1 id="2-创建环境变量"><a href="#2-创建环境变量" class="headerlink" title="2.  创建环境变量"></a>2.  创建环境变量</h1><ul>
+<li><p>创建系统环境变量添加两个<code>JAVA_HOME1</code> 和<code>JAVA_HOME2</code></p>
+</li>
+<li><p>分别填入JDK安装的目录__</p>
+</li>
+</ul>
+<h1 id="3-添加系统变量-PATH"><a href="#3-添加系统变量-PATH" class="headerlink" title="3. 添加系统变量-PATH"></a>3. 添加系统变量-PATH</h1><ul>
+<li><p>引用上面创建的环境变量，用哪个引用哪个</p>
+</li>
+<li><p>引入1格式<code>%JAVA_HMOE1%\bin%</code>  _</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java - Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>JDK</tag>
+        <tag>安装记录</tag>
       </tags>
   </entry>
   <entry>
@@ -280,31 +333,6 @@
         <tag>Hexo</tag>
         <tag>一键部署</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
-    <url>/20180724105005.html</url>
-    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat不同项目使用不同的端口号.md</title>
-    <url>/20180721120413.html</url>
-    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
-<hr>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
-<p>Tomcat设置不输入项目名直接访问</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
   </entry>
   <entry>
     <title>ES6笔记</title>
@@ -2113,110 +2141,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Nginx转发请求到新域名同时不改变URL</title>
-    <url>/20210222171206.html</url>
-    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx启动、停止和重启方法.md</title>
-    <url>/20180721123139.html</url>
-    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
-<hr>
-<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
-<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
-</ul>
-<ol>
-<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
-<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
-<li>进入Nginx安装目录下sbin/下</li>
-<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
-<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
-    <url>/20210224182829.html</url>
-    <content><![CDATA[<p>以下配置文件如下功能</p>
-<ol>
-<li>配置反向代理</li>
-<li>配置http跳转从https</li>
-<li>配置ssl证书</li>
-<li>监听80和443端口</li>
-<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置域名以及映射内网不同端口.md</title>
-    <url>/20180721121432.html</url>
-    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
-<hr>
-<p><strong>Nginx.conf</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置过滤websockt类型请求同时转发请求保持URL不变</title>
-    <url>/20210220140843.html</url>
-    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>关于CentOS8下Nginx报错</title>
-    <url>/20210310031238.html</url>
-    <content><![CDATA[<p>系统是CentOS8</p>
-<p>Nginx是源码安装nginx/1.18.0<br>突然发现重启服务器后Systemd enable Nginx配置的自启无法启动，日志文件报错误</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">nginx: [emerg] host not found in upstream &quot;mydomain.com&quot; in /etc/nginx/sites-enabled/test.conf:33</span><br></pre></td></tr></table></figure>
-<p>但是之前，在CentOS7一直都好好的。奇怪的是手动在运行一遍Systemd启动命令竟然可以运行，<br>Nginx配置文件也没错。百度搜了一圈，给的解决方法全都是清一色的配置DNS或者配置Host文件<br>最后还是谷歌大法好，原文如下</p>
-<blockquote>
-<p>Hello,<br>after installing Nginx on a new system I have some issues when rebooting the system. Nginx is unable to start and throws this error:<br>nginx: [emerg] host not found in upstream “mydomain.com” in /etc/nginx/sites-enabled/test.conf:33<br>When I try to ping mydomain.com it works without any issues, I also can start the Nginx service manually. Is it possible that Nginx tries to start before the system can resolve host names?</p>
-</blockquote>
-<p>解决</p>
-<blockquote>
-<p>What distro are you using? I encountered this issue with the nginx package in Debian Stretch. It bundled a systemd service file for nginx that had an <code>After=network.target</code> dependency, so it tried to start the nginx service before the network was fully available/working. Nginx then wasn’t able to resolve the upstream domain into an IP address and failed to start.<br>After overriding the service file so it has <code>After=network-online.target</code> dependency instead, nginx was able to start upon reboot reliably.</p>
-</blockquote>
-<p>替换服务配置文件中After=<code>network-online.target</code><br>具体原理不清楚，不知是否与Nginx最新版本或OS版本有关，至少在OS7.8不需要替换。<br>原文地址：<a href="https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/">https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/</a></p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
-    <url>/20210222170701.html</url>
-    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
-<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
-<p>改成这样即可反代成功。<br>反代成功</p>
-<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
     <title>python中if用法</title>
     <url>/20210301010336.html</url>
     <content><![CDATA[<p>case1</p>
@@ -2236,6 +2160,42 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span>:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
 <p>4.<code>if elif elif</code></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python中输入函数和while循环</title>
+    <url>/20210301010434.html</url>
+    <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
+<li>输入函数<code>input(&#39;需要提示的东西&#39;)</code></li>
+</ol>
+<ul>
+<li>该函数读取后是以字符串读取<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用户输入</span></span><br><span class="line">message = <span class="built_in">input</span>(<span class="string">&#x27;please input more sth:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line">please <span class="built_in">input</span> more sth：你好</span><br><span class="line">你好</span><br></pre></td></tr></table></figure>
+case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提示输入</span></span><br><span class="line">tip1 = <span class="string">&#x27;如果你能看见&#x27;</span></span><br><span class="line">tip2 = <span class="string">&#x27;\n请告诉我名字：&#x27;</span></span><br><span class="line">message1 = <span class="built_in">input</span>(tip1 + <span class="string">&#x27;,&#x27;</span> + tip2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你的名字：&#x27;</span> + message1)</span><br><span class="line"></span><br><span class="line">如果你能看见,</span><br><span class="line">请告诉我名字：tom</span><br><span class="line">你的名字：tom</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>读取数值</li>
+</ol>
+<ul>
+<li>input函数读取后存储形式是字符串</li>
+<li>可以使用int函数转换成数值<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数值</span></span><br><span class="line">message3 = <span class="built_in">input</span>(<span class="string">&#x27;请输入一个数：&#x27;</span>)</span><br><span class="line">message3 = <span class="built_in">int</span>(message3)</span><br><span class="line"><span class="built_in">print</span>(message3)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>求模运算符<br><code>%表示求余数</code></li>
+<li>python2中的输入<br><code>使用raw_input而不是input</code><br>因为在2中input的表示输入的会解读成python代码<h1 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2.while循环"></a>2.while循环</h1>基本格式<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">	执行代码</span><br></pre></td></tr></table></figure>
+case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt;= <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 让用户选择什么时候推出</span></span><br><span class="line"></span><br><span class="line">tip = <span class="string">&#x27;请输入一个数：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">    message = <span class="built_in">input</span>(tip)</span><br><span class="line">    <span class="keyword">if</span> message != <span class="string">&#x27;exit&#x27;</span>:<span class="comment"># 隐藏exit输出</span></span><br><span class="line">        <span class="built_in">print</span>(message)</span><br><span class="line">	</span><br><span class="line">请输入一个数：<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">请输入一个数：<span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">请输入一个数：exit</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<h1 id="3-break"><a href="#3-break" class="headerlink" title="3.break"></a>3.break</h1>立刻退出循环，不再执行while后面的循环<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># break</span></span><br><span class="line">tip1 = <span class="string">&#x27;请输入你去过的城市：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        message = <span class="built_in">input</span>(tip1)</span><br><span class="line">		</span><br><span class="line">请输入一个数：exit</span><br><span class="line">请输入你去过的城市：厦门</span><br><span class="line">请输入你去过的城市：exit</span><br></pre></td></tr></table></figure>
+<h1 id="4-continue"><a href="#4-continue" class="headerlink" title="4.continue"></a>4.continue</h1>跳出这一次的循环进入下一个循环<br>case1 输出奇数<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt; <span class="number">10</span>:</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> current_number % <span class="number">2</span> ==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="5-while在列表中的用法"><a href="#5-while在列表中的用法" class="headerlink" title="5.while在列表中的用法"></a>5.while在列表中的用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 已有列表名:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+表示只有列表中有0个元素才会终止循环</li>
+</ol>
+<p>移除列表中所有含特定值的元素，因为remove只会删除第一个出现的元素<a href=":/b133d04ac4bc461fbd6111e587965296">006-列表</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移除列表中所有含特定值的元素</span></span><br><span class="line">list1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;one&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">&#x27;one&#x27;</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="string">&#x27;one&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
+<h1 id="5-while在字典中用法"><a href="#5-while在字典中用法" class="headerlink" title="5.while在字典中用法"></a>5.while在字典中用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># while填充字典</span></span><br><span class="line"></span><br><span class="line">dist = &#123;&#125;</span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&#x27;请输入名字：&#x27;</span>)</span><br><span class="line">    val = <span class="built_in">input</span>(<span class="string">&#x27;请输出籍贯：&#x27;</span>)</span><br><span class="line">    repeat = <span class="built_in">input</span>(<span class="string">&#x27;是否还有要调查的人呢？yse or no&#x27;</span>)</span><br><span class="line">    dist[key] = val</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">&#x27;no&#x27;</span>:</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dist)</span><br><span class="line"></span><br><span class="line">请输入名字：xiaoming</span><br><span class="line">请输出籍贯：sd</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> noyes</span><br><span class="line">请输入名字：xiaohong</span><br><span class="line">请输出籍贯：qingdao</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> nono</span><br><span class="line">&#123;<span class="string">&#x27;xiaoming&#x27;</span>: <span class="string">&#x27;sd&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>: <span class="string">&#x27;qingdao&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -2358,66 +2318,6 @@ case<figure class="highlight python"><table><tr><td class="code"><pre><span clas
 <li>代码行长度不要超过79字符</li>
 <li>若形参参数名过长可以在左括号按回车，并在下一行按两次tab后再输入形参</li>
 <li>多个函数之间间隔可以用两个空行分隔</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python中输入函数和while循环</title>
-    <url>/20210301010434.html</url>
-    <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
-<li>输入函数<code>input(&#39;需要提示的东西&#39;)</code></li>
-</ol>
-<ul>
-<li>该函数读取后是以字符串读取<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用户输入</span></span><br><span class="line">message = <span class="built_in">input</span>(<span class="string">&#x27;please input more sth:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line">please <span class="built_in">input</span> more sth：你好</span><br><span class="line">你好</span><br></pre></td></tr></table></figure>
-case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提示输入</span></span><br><span class="line">tip1 = <span class="string">&#x27;如果你能看见&#x27;</span></span><br><span class="line">tip2 = <span class="string">&#x27;\n请告诉我名字：&#x27;</span></span><br><span class="line">message1 = <span class="built_in">input</span>(tip1 + <span class="string">&#x27;,&#x27;</span> + tip2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你的名字：&#x27;</span> + message1)</span><br><span class="line"></span><br><span class="line">如果你能看见,</span><br><span class="line">请告诉我名字：tom</span><br><span class="line">你的名字：tom</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="2">
-<li>读取数值</li>
-</ol>
-<ul>
-<li>input函数读取后存储形式是字符串</li>
-<li>可以使用int函数转换成数值<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数值</span></span><br><span class="line">message3 = <span class="built_in">input</span>(<span class="string">&#x27;请输入一个数：&#x27;</span>)</span><br><span class="line">message3 = <span class="built_in">int</span>(message3)</span><br><span class="line"><span class="built_in">print</span>(message3)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="3">
-<li>求模运算符<br><code>%表示求余数</code></li>
-<li>python2中的输入<br><code>使用raw_input而不是input</code><br>因为在2中input的表示输入的会解读成python代码<h1 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2.while循环"></a>2.while循环</h1>基本格式<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">	执行代码</span><br></pre></td></tr></table></figure>
-case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt;= <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 让用户选择什么时候推出</span></span><br><span class="line"></span><br><span class="line">tip = <span class="string">&#x27;请输入一个数：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">    message = <span class="built_in">input</span>(tip)</span><br><span class="line">    <span class="keyword">if</span> message != <span class="string">&#x27;exit&#x27;</span>:<span class="comment"># 隐藏exit输出</span></span><br><span class="line">        <span class="built_in">print</span>(message)</span><br><span class="line">	</span><br><span class="line">请输入一个数：<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">请输入一个数：<span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">请输入一个数：exit</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-<h1 id="3-break"><a href="#3-break" class="headerlink" title="3.break"></a>3.break</h1>立刻退出循环，不再执行while后面的循环<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># break</span></span><br><span class="line">tip1 = <span class="string">&#x27;请输入你去过的城市：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        message = <span class="built_in">input</span>(tip1)</span><br><span class="line">		</span><br><span class="line">请输入一个数：exit</span><br><span class="line">请输入你去过的城市：厦门</span><br><span class="line">请输入你去过的城市：exit</span><br></pre></td></tr></table></figure>
-<h1 id="4-continue"><a href="#4-continue" class="headerlink" title="4.continue"></a>4.continue</h1>跳出这一次的循环进入下一个循环<br>case1 输出奇数<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt; <span class="number">10</span>:</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> current_number % <span class="number">2</span> ==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="5-while在列表中的用法"><a href="#5-while在列表中的用法" class="headerlink" title="5.while在列表中的用法"></a>5.while在列表中的用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 已有列表名:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-表示只有列表中有0个元素才会终止循环</li>
-</ol>
-<p>移除列表中所有含特定值的元素，因为remove只会删除第一个出现的元素<a href=":/b133d04ac4bc461fbd6111e587965296">006-列表</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移除列表中所有含特定值的元素</span></span><br><span class="line">list1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;one&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">&#x27;one&#x27;</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="string">&#x27;one&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
-<h1 id="5-while在字典中用法"><a href="#5-while在字典中用法" class="headerlink" title="5.while在字典中用法"></a>5.while在字典中用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># while填充字典</span></span><br><span class="line"></span><br><span class="line">dist = &#123;&#125;</span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&#x27;请输入名字：&#x27;</span>)</span><br><span class="line">    val = <span class="built_in">input</span>(<span class="string">&#x27;请输出籍贯：&#x27;</span>)</span><br><span class="line">    repeat = <span class="built_in">input</span>(<span class="string">&#x27;是否还有要调查的人呢？yse or no&#x27;</span>)</span><br><span class="line">    dist[key] = val</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">&#x27;no&#x27;</span>:</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dist)</span><br><span class="line"></span><br><span class="line">请输入名字：xiaoming</span><br><span class="line">请输出籍贯：sd</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> noyes</span><br><span class="line">请输入名字：xiaohong</span><br><span class="line">请输出籍贯：qingdao</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> nono</span><br><span class="line">&#123;<span class="string">&#x27;xiaoming&#x27;</span>: <span class="string">&#x27;sd&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>: <span class="string">&#x27;qingdao&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python字典用法</title>
-    <url>/20210228120516.html</url>
-    <content><![CDATA[<h1 id="1-字典格式"><a href="#1-字典格式" class="headerlink" title="1.字典格式"></a>1.字典格式</h1><p><code>字典名 = &#123;键名:值名&#125;</code></p>
-<ol>
-<li>花括号</li>
-<li>冒号</li>
-<li>逗号分隔不同键值对</li>
-</ol>
-<p>case1</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建字典</span></span><br><span class="line">alien0 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(alien0[<span class="string">&#x27;color&#x27;</span>])</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="2-访问字典值"><a href="#2-访问字典值" class="headerlink" title="2.访问字典值"></a>2.访问字典值</h1><p><code>字典名[&#39;键名&#39;]</code></p>
-<h1 id="3-添加键值对"><a href="#3-添加键值对" class="headerlink" title="3.添加键值对"></a>3.添加键值对</h1><ol>
-<li><code>字典名[&#39;键名&#39;] = 值</code><br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加键值对</span></span><br><span class="line">alien1 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien1[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien1[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien1)</span><br></pre></td></tr></table></figure>
-case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建空键值对</span></span><br><span class="line">alien2 = &#123;&#125;</span><br><span class="line">alien2[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien2[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="4-修改键值对"><a href="#4-修改键值对" class="headerlink" title="4.修改键值对"></a>4.修改键值对</h1><code>字典名[&#39;键名&#39;] = 值</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改键值对</span></span><br><span class="line">alien3 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien3[<span class="string">&#x27;color&#x27;</span>] = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(alien3)</span><br></pre></td></tr></table></figure>
-<h1 id="5-删除键值对"><a href="#5-删除键值对" class="headerlink" title="5.删除键值对"></a>5.删除键值对</h1><code>del 字典名[&#39;键名&#39;]</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除键值对</span></span><br><span class="line">alien4 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">del</span> alien4[<span class="string">&#x27;color&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(alien4)</span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <categories>
@@ -2575,6 +2475,30 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
       </categories>
   </entry>
   <entry>
+    <title>python字典用法</title>
+    <url>/20210228120516.html</url>
+    <content><![CDATA[<h1 id="1-字典格式"><a href="#1-字典格式" class="headerlink" title="1.字典格式"></a>1.字典格式</h1><p><code>字典名 = &#123;键名:值名&#125;</code></p>
+<ol>
+<li>花括号</li>
+<li>冒号</li>
+<li>逗号分隔不同键值对</li>
+</ol>
+<p>case1</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建字典</span></span><br><span class="line">alien0 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(alien0[<span class="string">&#x27;color&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="2-访问字典值"><a href="#2-访问字典值" class="headerlink" title="2.访问字典值"></a>2.访问字典值</h1><p><code>字典名[&#39;键名&#39;]</code></p>
+<h1 id="3-添加键值对"><a href="#3-添加键值对" class="headerlink" title="3.添加键值对"></a>3.添加键值对</h1><ol>
+<li><code>字典名[&#39;键名&#39;] = 值</code><br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加键值对</span></span><br><span class="line">alien1 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien1[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien1[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien1)</span><br></pre></td></tr></table></figure>
+case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建空键值对</span></span><br><span class="line">alien2 = &#123;&#125;</span><br><span class="line">alien2[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien2[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="4-修改键值对"><a href="#4-修改键值对" class="headerlink" title="4.修改键值对"></a>4.修改键值对</h1><code>字典名[&#39;键名&#39;] = 值</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改键值对</span></span><br><span class="line">alien3 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien3[<span class="string">&#x27;color&#x27;</span>] = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(alien3)</span><br></pre></td></tr></table></figure>
+<h1 id="5-删除键值对"><a href="#5-删除键值对" class="headerlink" title="5.删除键值对"></a>5.删除键值对</h1><code>del 字典名[&#39;键名&#39;]</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除键值对</span></span><br><span class="line">alien4 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">del</span> alien4[<span class="string">&#x27;color&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(alien4)</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python字符串用法</title>
     <url>/20210306225954.html</url>
     <content><![CDATA[<h1 id="1-表现形式"><a href="#1-表现形式" class="headerlink" title="1. 表现形式"></a>1. 表现形式</h1><p>英文的引号和单引号</p>
@@ -2598,46 +2522,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 <li>若要用可以在双引号之间出现单引号<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;chinese&#x27;s son&quot;</span>)</span><br><span class="line">chinese<span class="string">&#x27;s son</span></span><br></pre></td></tr></table></figure></li>
 <li>python2 中print没有括号<h1 id="6-练习"><a href="#6-练习" class="headerlink" title="6.练习"></a>6.练习</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出变量</span></span><br><span class="line">name = <span class="string">&quot;Eric&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello &quot;</span> + name + <span class="string">&quot;,would you like to learn some Python today?&quot;</span>)</span><br><span class="line"><span class="comment"># 分别以首字母大写、大写、小写显示姓名</span></span><br><span class="line">name = <span class="string">&#x27;xiao ming&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以首字母大写显示：&quot;</span> + name.title())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以大写显示：&quot;</span> + name.upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以小写显示：&quot;</span> + name.lower())</span><br><span class="line"><span class="comment"># 输出带引号的名言</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Albert Einstein once said,&#x27;A person......&#x27;&quot;</span>)</span><br><span class="line"><span class="comment"># 改写上面名言，名字和句子分别存到一个变量</span></span><br><span class="line">famous_person = <span class="string">&quot;Albert Einstein&quot;</span></span><br><span class="line">message = <span class="string">&quot; once said,&#x27;A person......&#x27;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(famous_person + message)</span><br><span class="line"><span class="comment"># 剔除人名中的空白，分别使用\n \t一次</span></span><br><span class="line">name = <span class="string">&quot; tom &quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.strip())</span><br><span class="line"><span class="built_in">print</span>(name.lstrip()+<span class="string">&quot;\t&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(name.rstrip()+<span class="string">&quot;\n&quot;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python爬虫requests库的使用</title>
-    <url>/20210305225821.html</url>
-    <content><![CDATA[<h1 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.基本用法"></a>1.基本用法</h1><p>使用<code>requests</code>库比使用<code>urllib</code>库方便</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># get方法与urlopen方法一样，都返回一个response对象</span></span><br><span class="line">r = requests.get(<span class="string">&quot;https://www.baidu.com&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r))</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.text))</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(r.cookies)</span><br></pre></td></tr></table></figure>
-<p><code>get</code>方法与<code>urlopen</code>方法执行相同的操作，得到了<code>response对象</code>，最大方便实现其他请求只需一句话，如<code>request.post()</code>等等。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">request.post()</span><br><span class="line">request.put()</span><br><span class="line">request.delete()</span><br><span class="line">request.head()</span><br><span class="line">request.option()</span><br></pre></td></tr></table></figure>
-<h2 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h2><ul>
-<li>基本用法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"></span><br><span class="line">运行结果</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-60423760-7d282bb073f21a9a39dfe543&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/get&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><ul>
-<li>构造参数，一般通过<code>requests.get(url,params)</code>第二个参数传递</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可以直接写</span></span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get?name=germey&amp;age=18&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="comment"># url中的参数会自动构造</span></span><br><span class="line">运行结果</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;age&quot;</span>: <span class="string">&quot;18&quot;</span>, </span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;germey&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-6042391b-1bab7f4d70f715a66ca76e31&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/get?name=germey&amp;age=18&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;age&quot;</span>: <span class="string">&quot;22&quot;</span>, </span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;germey&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-6042391c-76b823292c0c2d6a5ff07bc0&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/get?name=germey&amp;age=22&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="转换字典"><a href="#转换字典" class="headerlink" title="转换字典"></a>转换字典</h2><p>上面返回的结果是一个<code>json</code>字符串，可以调用<code>.json()</code>方法将其转化成字典</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="comment"># 转化成字典</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.json()))</span><br><span class="line">运行结果</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">dict</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="抓取网页"><a href="#抓取网页" class="headerlink" title="抓取网页"></a>抓取网页</h2><ul>
-<li>抓取网页</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">headers = &#123;</span><br><span class="line">    <span class="comment"># 加入头部信息，否则不会让你抓取</span></span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                  <span class="string">&quot;Chrome/88.0.4324.182 Safari/537.36 Edg/88.0.705.81 &quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r = requests.get(<span class="string">&#x27;https://www.zhihu.com/explore&#x27;</span>, headers=headers)</span><br><span class="line"><span class="comment"># 配置正则表达式</span></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">&#x27;explore-feed.*?question_link.*?&gt;(.*?)&lt;/a&gt;&#x27;</span>)</span><br><span class="line">titles = re.findall(pattern, r.text)</span><br><span class="line"><span class="built_in">print</span>(titles)</span><br></pre></td></tr></table></figure>
-<h2 id="抓取图片"><a href="#抓取图片" class="headerlink" title="抓取图片"></a>抓取图片</h2><ul>
-<li>抓取图片</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = requests.get(<span class="string">&#x27;https://github.com/favicon.ico&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.content)</span><br><span class="line"><span class="comment"># 将其保存到本地</span></span><br><span class="line"><span class="comment"># 第二个参数以二进制形式打开文件，并向其写入数据</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;favicon.ico&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">运行结果</span><br><span class="line">前者将其转化为字符串会有乱码</span><br><span class="line">后者以b开头是二进制数据也就是图片</span><br><span class="line">本地目录会出现这个图片</span><br></pre></td></tr></table></figure>
-<h2 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h2><p>post请求</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;</span><br><span class="line">r = requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">运行结果</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">&quot;data&quot;</span>: <span class="string">&quot;&quot;</span>, </span><br><span class="line">  <span class="string">&quot;files&quot;</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">&quot;form&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;age&quot;</span>: <span class="string">&quot;18&quot;</span>, </span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;germey&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Content-Length&quot;</span>: <span class="string">&quot;18&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/x-www-form-urlencoded&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-604241e6-103df5b62be432095bba787f&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;json&quot;</span>: null, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/post&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="获取响应信息"><a href="#获取响应信息" class="headerlink" title="获取响应信息"></a>获取响应信息</h2><ul>
-<li>获取响应信息</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;</span><br><span class="line">r = requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="comment"># 获取状态码</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.status_code), r.status_code)</span><br><span class="line"><span class="comment"># 获取头部信息</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.headers), r.headers)</span><br><span class="line"><span class="comment"># 获取cookies</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.cookies), r.cookies)</span><br><span class="line"><span class="comment"># 获取url</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.url), r.url)</span><br><span class="line"><span class="comment"># 获取请求历史</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.history), r.history)</span><br><span class="line">运行结果</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">int</span>&#x27;&gt; 200</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">requests</span>.<span class="title">structures</span>.<span class="title">CaseInsensitiveDict</span>&#x27;&gt; &#123;&#x27;<span class="title">Date</span>&#x27;:</span> <span class="string">&#x27;Fri, 05 Mar 2021 14:42:44 GMT&#x27;</span>, <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>, <span class="string">&#x27;Content-Length&#x27;</span>: <span class="string">&#x27;500&#x27;</span>, <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;keep-alive&#x27;</span>, <span class="string">&#x27;Server&#x27;</span>: <span class="string">&#x27;gunicorn/19.9.0&#x27;</span>, <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>: <span class="string">&#x27;*&#x27;</span>, <span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>: <span class="string">&#x27;true&#x27;</span>&#125;</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">requests</span>.<span class="title">cookies</span>.<span class="title">RequestsCookieJar</span>&#x27;&gt; &lt;<span class="title">RequestsCookieJar</span>[]&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">str</span>&#x27;&gt; <span class="title">http</span>:</span>//httpbin.org/post</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">list</span>&#x27;&gt; []</span></span><br></pre></td></tr></table></figure>
-<h2 id="状态码比较"><a href="#状态码比较" class="headerlink" title="状态码比较"></a>状态码比较</h2><ul>
-<li>比较状态码<br><code>requests.codes</code>是一个内置对象，用来根据返回信息查询状态码，详细直接在开发工具点开看这个对象。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(requests.codes.ok)</span><br><span class="line">exit() <span class="keyword">if</span> <span class="keyword">not</span> r.status_code == requests.codes.ok <span class="keyword">else</span> <span class="built_in">print</span>(<span class="string">&#x27;请求成功&#x27;</span>)</span><br><span class="line">运行结果</span><br><span class="line"><span class="number">200</span></span><br><span class="line">请求成功</span><br></pre></td></tr></table></figure></li>
-</ul>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -2687,6 +2571,46 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 </ul>
 <p><strong>关键<code>pass()函数</code></strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line"> </span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="keyword">pass</span>()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python爬虫requests库的使用</title>
+    <url>/20210305225821.html</url>
+    <content><![CDATA[<h1 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.基本用法"></a>1.基本用法</h1><p>使用<code>requests</code>库比使用<code>urllib</code>库方便</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># get方法与urlopen方法一样，都返回一个response对象</span></span><br><span class="line">r = requests.get(<span class="string">&quot;https://www.baidu.com&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r))</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.text))</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(r.cookies)</span><br></pre></td></tr></table></figure>
+<p><code>get</code>方法与<code>urlopen</code>方法执行相同的操作，得到了<code>response对象</code>，最大方便实现其他请求只需一句话，如<code>request.post()</code>等等。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">request.post()</span><br><span class="line">request.put()</span><br><span class="line">request.delete()</span><br><span class="line">request.head()</span><br><span class="line">request.option()</span><br></pre></td></tr></table></figure>
+<h2 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h2><ul>
+<li>基本用法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"></span><br><span class="line">运行结果</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-60423760-7d282bb073f21a9a39dfe543&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/get&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><ul>
+<li>构造参数，一般通过<code>requests.get(url,params)</code>第二个参数传递</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可以直接写</span></span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get?name=germey&amp;age=18&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="comment"># url中的参数会自动构造</span></span><br><span class="line">运行结果</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;age&quot;</span>: <span class="string">&quot;18&quot;</span>, </span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;germey&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-6042391b-1bab7f4d70f715a66ca76e31&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/get?name=germey&amp;age=18&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;age&quot;</span>: <span class="string">&quot;22&quot;</span>, </span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;germey&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-6042391c-76b823292c0c2d6a5ff07bc0&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/get?name=germey&amp;age=22&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="转换字典"><a href="#转换字典" class="headerlink" title="转换字典"></a>转换字典</h2><p>上面返回的结果是一个<code>json</code>字符串，可以调用<code>.json()</code>方法将其转化成字典</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>: <span class="number">22</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">r = requests.get(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, params=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="comment"># 转化成字典</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.json()))</span><br><span class="line">运行结果</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">dict</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="抓取网页"><a href="#抓取网页" class="headerlink" title="抓取网页"></a>抓取网页</h2><ul>
+<li>抓取网页</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">headers = &#123;</span><br><span class="line">    <span class="comment"># 加入头部信息，否则不会让你抓取</span></span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                  <span class="string">&quot;Chrome/88.0.4324.182 Safari/537.36 Edg/88.0.705.81 &quot;</span></span><br><span class="line">&#125;</span><br><span class="line">r = requests.get(<span class="string">&#x27;https://www.zhihu.com/explore&#x27;</span>, headers=headers)</span><br><span class="line"><span class="comment"># 配置正则表达式</span></span><br><span class="line">pattern = re.<span class="built_in">compile</span>(<span class="string">&#x27;explore-feed.*?question_link.*?&gt;(.*?)&lt;/a&gt;&#x27;</span>)</span><br><span class="line">titles = re.findall(pattern, r.text)</span><br><span class="line"><span class="built_in">print</span>(titles)</span><br></pre></td></tr></table></figure>
+<h2 id="抓取图片"><a href="#抓取图片" class="headerlink" title="抓取图片"></a>抓取图片</h2><ul>
+<li>抓取图片</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = requests.get(<span class="string">&#x27;https://github.com/favicon.ico&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(r.content)</span><br><span class="line"><span class="comment"># 将其保存到本地</span></span><br><span class="line"><span class="comment"># 第二个参数以二进制形式打开文件，并向其写入数据</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;favicon.ico&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">运行结果</span><br><span class="line">前者将其转化为字符串会有乱码</span><br><span class="line">后者以b开头是二进制数据也就是图片</span><br><span class="line">本地目录会出现这个图片</span><br></pre></td></tr></table></figure>
+<h2 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h2><p>post请求</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;</span><br><span class="line">r = requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line">运行结果</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;args&quot;</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">&quot;data&quot;</span>: <span class="string">&quot;&quot;</span>, </span><br><span class="line">  <span class="string">&quot;files&quot;</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">&quot;form&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;age&quot;</span>: <span class="string">&quot;18&quot;</span>, </span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;germey&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;headers&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;*/*&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Content-Length&quot;</span>: <span class="string">&quot;18&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/x-www-form-urlencoded&quot;</span>, </span><br><span class="line">    <span class="string">&quot;Host&quot;</span>: <span class="string">&quot;httpbin.org&quot;</span>, </span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;python-requests/2.25.1&quot;</span>, </span><br><span class="line">    <span class="string">&quot;X-Amzn-Trace-Id&quot;</span>: <span class="string">&quot;Root=1-604241e6-103df5b62be432095bba787f&quot;</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">&quot;json&quot;</span>: null, </span><br><span class="line">  <span class="string">&quot;origin&quot;</span>: <span class="string">&quot;27.200.129.225&quot;</span>, </span><br><span class="line">  <span class="string">&quot;url&quot;</span>: <span class="string">&quot;http://httpbin.org/post&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="获取响应信息"><a href="#获取响应信息" class="headerlink" title="获取响应信息"></a>获取响应信息</h2><ul>
+<li>获取响应信息</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;</span><br><span class="line">r = requests.post(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="comment"># 获取状态码</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.status_code), r.status_code)</span><br><span class="line"><span class="comment"># 获取头部信息</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.headers), r.headers)</span><br><span class="line"><span class="comment"># 获取cookies</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.cookies), r.cookies)</span><br><span class="line"><span class="comment"># 获取url</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.url), r.url)</span><br><span class="line"><span class="comment"># 获取请求历史</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.history), r.history)</span><br><span class="line">运行结果</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">int</span>&#x27;&gt; 200</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">requests</span>.<span class="title">structures</span>.<span class="title">CaseInsensitiveDict</span>&#x27;&gt; &#123;&#x27;<span class="title">Date</span>&#x27;:</span> <span class="string">&#x27;Fri, 05 Mar 2021 14:42:44 GMT&#x27;</span>, <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>, <span class="string">&#x27;Content-Length&#x27;</span>: <span class="string">&#x27;500&#x27;</span>, <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;keep-alive&#x27;</span>, <span class="string">&#x27;Server&#x27;</span>: <span class="string">&#x27;gunicorn/19.9.0&#x27;</span>, <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>: <span class="string">&#x27;*&#x27;</span>, <span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>: <span class="string">&#x27;true&#x27;</span>&#125;</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">requests</span>.<span class="title">cookies</span>.<span class="title">RequestsCookieJar</span>&#x27;&gt; &lt;<span class="title">RequestsCookieJar</span>[]&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">str</span>&#x27;&gt; <span class="title">http</span>:</span>//httpbin.org/post</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">list</span>&#x27;&gt; []</span></span><br></pre></td></tr></table></figure>
+<h2 id="状态码比较"><a href="#状态码比较" class="headerlink" title="状态码比较"></a>状态码比较</h2><ul>
+<li>比较状态码<br><code>requests.codes</code>是一个内置对象，用来根据返回信息查询状态码，详细直接在开发工具点开看这个对象。<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(requests.codes.ok)</span><br><span class="line">exit() <span class="keyword">if</span> <span class="keyword">not</span> r.status_code == requests.codes.ok <span class="keyword">else</span> <span class="built_in">print</span>(<span class="string">&#x27;请求成功&#x27;</span>)</span><br><span class="line">运行结果</span><br><span class="line"><span class="number">200</span></span><br><span class="line">请求成功</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -2857,24 +2781,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
       </categories>
   </entry>
   <entry>
-    <title>python类编码风格</title>
-    <url>/20210301133334.html</url>
-    <content><![CDATA[<ol>
-<li>类名驼峰命名法</li>
-<li>实例名和模块名小写，之间用下划线</li>
-<li>每个类定义后跟一个文档注释</li>
-<li>每个模块也应该跟一个文档字符串</li>
-<li>每个方法名下面也要跟一个文档注释</li>
-<li>两个空行分隔类</li>
-<li>类中用一个空行分隔方法</li>
-<li>先导入标准库，后空行，再导入你自己写模块</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>python类的用法</title>
     <url>/20210303121106.html</url>
     <content><![CDATA[<h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h1><h2 id="1-1基本格式"><a href="#1-1基本格式" class="headerlink" title="1.1基本格式"></a>1.1基本格式</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名()：</span></span><br><span class="line"><span class="class">	<span class="title">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">		</span><br><span class="line">		...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -2942,6 +2848,128 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python类编码风格</title>
+    <url>/20210301133334.html</url>
+    <content><![CDATA[<ol>
+<li>类名驼峰命名法</li>
+<li>实例名和模块名小写，之间用下划线</li>
+<li>每个类定义后跟一个文档注释</li>
+<li>每个模块也应该跟一个文档字符串</li>
+<li>每个方法名下面也要跟一个文档注释</li>
+<li>两个空行分隔类</li>
+<li>类中用一个空行分隔方法</li>
+<li>先导入标准库，后空行，再导入你自己写模块</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx启动、停止和重启方法.md</title>
+    <url>/20180721123139.html</url>
+    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+<hr>
+<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
+<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
+</ul>
+<ol>
+<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
+<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
+<li>进入Nginx安装目录下sbin/下</li>
+<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
+<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx转发请求到新域名同时不改变URL</title>
+    <url>/20210222171206.html</url>
+    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
+    <url>/20210224182829.html</url>
+    <content><![CDATA[<p>以下配置文件如下功能</p>
+<ol>
+<li>配置反向代理</li>
+<li>配置http跳转从https</li>
+<li>配置ssl证书</li>
+<li>监听80和443端口</li>
+<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置域名以及映射内网不同端口.md</title>
+    <url>/20180721121432.html</url>
+    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
+<hr>
+<p><strong>Nginx.conf</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置过滤websockt类型请求同时转发请求保持URL不变</title>
+    <url>/20210220140843.html</url>
+    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>关于CentOS8下Nginx报错</title>
+    <url>/20210310031238.html</url>
+    <content><![CDATA[<p>系统是CentOS8</p>
+<p>Nginx是源码安装nginx/1.18.0<br>突然发现重启服务器后Systemd enable Nginx配置的自启无法启动，日志文件报错误</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">nginx: [emerg] host not found in upstream &quot;mydomain.com&quot; in /etc/nginx/sites-enabled/test.conf:33</span><br></pre></td></tr></table></figure>
+<p>但是之前，在CentOS7一直都好好的。奇怪的是手动在运行一遍Systemd启动命令竟然可以运行，<br>Nginx配置文件也没错。百度搜了一圈，给的解决方法全都是清一色的配置DNS或者配置Host文件<br>最后还是谷歌大法好，原文如下</p>
+<blockquote>
+<p>Hello,<br>after installing Nginx on a new system I have some issues when rebooting the system. Nginx is unable to start and throws this error:<br>nginx: [emerg] host not found in upstream “mydomain.com” in /etc/nginx/sites-enabled/test.conf:33<br>When I try to ping mydomain.com it works without any issues, I also can start the Nginx service manually. Is it possible that Nginx tries to start before the system can resolve host names?</p>
+</blockquote>
+<p>解决</p>
+<blockquote>
+<p>What distro are you using? I encountered this issue with the nginx package in Debian Stretch. It bundled a systemd service file for nginx that had an <code>After=network.target</code> dependency, so it tried to start the nginx service before the network was fully available/working. Nginx then wasn’t able to resolve the upstream domain into an IP address and failed to start.<br>After overriding the service file so it has <code>After=network-online.target</code> dependency instead, nginx was able to start upon reboot reliably.</p>
+</blockquote>
+<p>替换服务配置文件中After=<code>network-online.target</code><br>具体原理不清楚，不知是否与Nginx最新版本或OS版本有关，至少在OS7.8不需要替换。<br>原文地址：<a href="https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/">https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/</a></p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
+    <url>/20210222170701.html</url>
+    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
+<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
+<p>改成这样即可反代成功。<br>反代成功</p>
+<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
       </categories>
   </entry>
   <entry>
@@ -3093,22 +3121,22 @@ lsmod | grep bbr
       </categories>
   </entry>
   <entry>
-    <title>IDEA安装lombok插件.md</title>
-    <url>/20180619233417.html</url>
-    <content><![CDATA[<p>title: IDEA安装lombok插件<br>date: ‘2018-06-19 23:34:17’<br>updated: ‘2018-06-19 23:34:17’<br>tags: [IDEA]<br>permalink: /articles/2018/06/19/1529422457178.html</p>
+    <title>IDEA_断点调试不进入class文件的方法.md</title>
+    <url>/20180720105953.html</url>
+    <content><![CDATA[<p>title: IDEA 断点调试不进入class文件的方法<br>date: ‘2018-07-20 10:59:53’<br>updated: ‘2018-07-20 10:59:53’<br>tags: [IDEA]<br>permalink: /articles/2018/07/20/1532055593214.html</p>
 <hr>
-<p>项目中经常使用bean，entity等类，绝大部分数据类类中都需要get、set、toString、equals和hashCode方法，虽然eclipse和idea开发环境下都有自动生成的快捷方式，但自动生成这些代码后，如果bean中的属性一旦有修改、删除或增加时，需要重新生成或删除get/set等方法，给代码维护增加负担。而使用了lombok则不一样，使用了lombok的注解(@Setter,@Getter,@ToString,@@RequiredArgsConstructor,@EqualsAndHashCode或@Data)之后，就不需要编写或生成get/set等方法，很大程度上减少了代码量，而且减少了代码维护的负担。故强烈建议项目中使用lombok，去掉bean中get、set、toString、equals和hashCode等方法的代码。<br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/09881d2c1cba406fb35e2c29d8f1984f_Snipaste_20180619_233151.png" alt="Snipaste_20180619_233151png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/f7ce0e950fc7457bab0fb9056d376d92_Snipaste_20180619_233210.png" alt="Snipaste_20180619_233210png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/c45b05eefebd4dbd85a91185d637df76_Snipaste_20180619_233235.png" alt="Snipaste_20180619_233235png"> </p>
+<p>settings-&gt;build,execution,deployment-&gt;debugger-&gt;stepping，Do not step into the classes勾掉，不要用f7，调试用f8下一步</p>
 ]]></content>
       <categories>
         <category>其他</category>
       </categories>
   </entry>
   <entry>
-    <title>IDEA_断点调试不进入class文件的方法.md</title>
-    <url>/20180720105953.html</url>
-    <content><![CDATA[<p>title: IDEA 断点调试不进入class文件的方法<br>date: ‘2018-07-20 10:59:53’<br>updated: ‘2018-07-20 10:59:53’<br>tags: [IDEA]<br>permalink: /articles/2018/07/20/1532055593214.html</p>
+    <title>IDEA安装lombok插件.md</title>
+    <url>/20180619233417.html</url>
+    <content><![CDATA[<p>title: IDEA安装lombok插件<br>date: ‘2018-06-19 23:34:17’<br>updated: ‘2018-06-19 23:34:17’<br>tags: [IDEA]<br>permalink: /articles/2018/06/19/1529422457178.html</p>
 <hr>
-<p>settings-&gt;build,execution,deployment-&gt;debugger-&gt;stepping，Do not step into the classes勾掉，不要用f7，调试用f8下一步</p>
+<p>项目中经常使用bean，entity等类，绝大部分数据类类中都需要get、set、toString、equals和hashCode方法，虽然eclipse和idea开发环境下都有自动生成的快捷方式，但自动生成这些代码后，如果bean中的属性一旦有修改、删除或增加时，需要重新生成或删除get/set等方法，给代码维护增加负担。而使用了lombok则不一样，使用了lombok的注解(@Setter,@Getter,@ToString,@@RequiredArgsConstructor,@EqualsAndHashCode或@Data)之后，就不需要编写或生成get/set等方法，很大程度上减少了代码量，而且减少了代码维护的负担。故强烈建议项目中使用lombok，去掉bean中get、set、toString、equals和hashCode等方法的代码。<br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/09881d2c1cba406fb35e2c29d8f1984f_Snipaste_20180619_233151.png" alt="Snipaste_20180619_233151png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/f7ce0e950fc7457bab0fb9056d376d92_Snipaste_20180619_233210.png" alt="Snipaste_20180619_233210png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/06/c45b05eefebd4dbd85a91185d637df76_Snipaste_20180619_233235.png" alt="Snipaste_20180619_233235png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3127,18 +3155,6 @@ lsmod | grep bbr
 <p>第二个参数脚本代码如下</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">groovyScript(<span class="string">&quot;def result=&#x27;&#x27;; def params=\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#x27;[\\\\[|\\\\]|\\\\s]&#x27;, &#x27;&#x27;).split(&#x27;,&#x27;).toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=&#x27; * @param &#x27; + params[i] + ((i &lt; params.size() - 1) ? &#x27;\\n&#x27; : &#x27;&#x27;)&#125;; return result&quot;</span>, methodParameters())</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Idea插件.ignore用于忽略不需要提交Git的文件.md</title>
-    <url>/20180723112040.html</url>
-    <content><![CDATA[<p>title: Idea插件.ignore用于忽略不需要提交Git的文件<br>date: ‘2018-07-23 11:20:40’<br>updated: ‘2018-08-16 08:27:00’<br>tags: [IDEA]<br>permalink: /articles/2018/07/23/1532316040291.html</p>
-<hr>
-<h2 id="标准的Maven结构"><a href="#标准的Maven结构" class="headerlink" title="标准的Maven结构"></a>标准的Maven结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.  + project  </span><br><span class="line">2.    |  </span><br><span class="line">3.    + pom.xml  </span><br><span class="line">4.    |  </span><br><span class="line">5.    + src /  </span><br><span class="line">6.       + main /  </span><br><span class="line">7.       | + java    java源代码文件,最终会打包编译到WEB/INF下的classes目录  </span><br><span class="line">8.       | + resources 资源库，会自动复制到classes目录里  </span><br><span class="line">9.       | + filters  资源过滤文件  </span><br><span class="line">10.       | + webapp web应用程序资源文件  </span><br><span class="line">11.       + test /  </span><br><span class="line">12.       | + java  测试java源文件内容  </span><br><span class="line">13.       | + resources 测试的资源文件  </span><br><span class="line">14.       | + filters  测试的资源过滤文件  </span><br><span class="line">15.       + it /  </span><br><span class="line">16.       + assembly /  </span><br><span class="line">17.       + site / |  </span><br><span class="line">18.    + .idea /  </span><br><span class="line">19.    +  project.iml  </span><br><span class="line">20.  + LICENSE.txt   工程许可说明  </span><br><span class="line">21.  + NOTICE.txt   项目所需要的依赖的说明文件  </span><br><span class="line">22.  + README.txt 项目工程说明文档</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://res.quinntian.xyz//file/2018/07/52892db58d80427f90a7b8e9e7864adf_Snipaste_20180723_110629.png" alt="Snipaste_20180723_110629png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3167,6 +3183,18 @@ lsmod | grep bbr
 <li> 使用 javassist 动态修改代码</li>
 <li> 使用 vertx web 创建本地认证服务器<br>原文地址：<a href="https://shawnho.me/2017/12/20/ideaagent/">https://shawnho.me/2017/12/20/ideaagent/</a></li>
 </ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Idea插件.ignore用于忽略不需要提交Git的文件.md</title>
+    <url>/20180723112040.html</url>
+    <content><![CDATA[<p>title: Idea插件.ignore用于忽略不需要提交Git的文件<br>date: ‘2018-07-23 11:20:40’<br>updated: ‘2018-08-16 08:27:00’<br>tags: [IDEA]<br>permalink: /articles/2018/07/23/1532316040291.html</p>
+<hr>
+<h2 id="标准的Maven结构"><a href="#标准的Maven结构" class="headerlink" title="标准的Maven结构"></a>标准的Maven结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.  + project  </span><br><span class="line">2.    |  </span><br><span class="line">3.    + pom.xml  </span><br><span class="line">4.    |  </span><br><span class="line">5.    + src /  </span><br><span class="line">6.       + main /  </span><br><span class="line">7.       | + java    java源代码文件,最终会打包编译到WEB/INF下的classes目录  </span><br><span class="line">8.       | + resources 资源库，会自动复制到classes目录里  </span><br><span class="line">9.       | + filters  资源过滤文件  </span><br><span class="line">10.       | + webapp web应用程序资源文件  </span><br><span class="line">11.       + test /  </span><br><span class="line">12.       | + java  测试java源文件内容  </span><br><span class="line">13.       | + resources 测试的资源文件  </span><br><span class="line">14.       | + filters  测试的资源过滤文件  </span><br><span class="line">15.       + it /  </span><br><span class="line">16.       + assembly /  </span><br><span class="line">17.       + site / |  </span><br><span class="line">18.    + .idea /  </span><br><span class="line">19.    +  project.iml  </span><br><span class="line">20.  + LICENSE.txt   工程许可说明  </span><br><span class="line">21.  + NOTICE.txt   项目所需要的依赖的说明文件  </span><br><span class="line">22.  + README.txt 项目工程说明文档</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://res.quinntian.xyz//file/2018/07/52892db58d80427f90a7b8e9e7864adf_Snipaste_20180723_110629.png" alt="Snipaste_20180723_110629png"> </p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3328,26 +3356,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>jdbc连接报The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized o</title>
-    <url>/20201208200301.html</url>
-    <content><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><blockquote>
-<p>在安装mysql的时候时区设置的不正确， mysql默认的是美国的时区，而我们中国大陆要比他们迟8小时，采用+8:00格式<br>使用的数据库是MySQL，没有指定MySQL驱动版本的情况下它自动依赖的驱动是8.0.12很高的版本，这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone=GMT即可解决问题，如果需要使用gmt+8时区，需要写成GMT%2B8，否则会被解析为空。再一个解决办法就是使用低版本的MySQL jdbc驱动，5.1.28不会存在时区的问题。</p>
-</blockquote>
-<h1 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h1><p>在url配置加上  ?serverTimezone=GMT%2B8</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">localhost:3306/tk-admin?serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=utf-8</span><br></pre></td></tr></table></figure>
-
-<h1 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h1><p>修改mysql的my.ini配置文件</p>
-<p>找到这个文件之后，在[mysqld]节点在节点下面加上下面这句话</p>
-<p>default-time-zone=’+08:00’</p>
-<p>然后记得重启MySQL的服务，打开cmd窗口登录MySQL执行show variables like ‘%time_zone%’;这句命令，</p>
-<p>然后在mysql执行语句:</p>
-<p>set global time_zone=’+8:00’</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>V2ray报错</title>
     <url>/20220106005336.html</url>
     <content><![CDATA[<p>自 2022 年 1 月 1 日起，服务器端将默认禁用对于 MD5 认证信息 的兼容。任何使用 MD5 认证信息的客户端将无法连接到禁用 VMess MD5 认证信息的服务器端，从而导致服务端和客户端报错。</p>
@@ -3381,6 +3389,26 @@ chmod 777 /var/log/caddy/caddy.log
 <blockquote>
 <p>关注微信公众号    回复关键字xmind</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>jdbc连接报The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized o</title>
+    <url>/20201208200301.html</url>
+    <content><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><blockquote>
+<p>在安装mysql的时候时区设置的不正确， mysql默认的是美国的时区，而我们中国大陆要比他们迟8小时，采用+8:00格式<br>使用的数据库是MySQL，没有指定MySQL驱动版本的情况下它自动依赖的驱动是8.0.12很高的版本，这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone=GMT即可解决问题，如果需要使用gmt+8时区，需要写成GMT%2B8，否则会被解析为空。再一个解决办法就是使用低版本的MySQL jdbc驱动，5.1.28不会存在时区的问题。</p>
+</blockquote>
+<h1 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h1><p>在url配置加上  ?serverTimezone=GMT%2B8</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">localhost:3306/tk-admin?serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=utf-8</span><br></pre></td></tr></table></figure>
+
+<h1 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h1><p>修改mysql的my.ini配置文件</p>
+<p>找到这个文件之后，在[mysqld]节点在节点下面加上下面这句话</p>
+<p>default-time-zone=’+08:00’</p>
+<p>然后记得重启MySQL的服务，打开cmd窗口登录MySQL执行show variables like ‘%time_zone%’;这句命令，</p>
+<p>然后在mysql执行语句:</p>
+<p>set global time_zone=’+8:00’</p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3519,42 +3547,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>单例模式</title>
-    <url>/20201229213748.html</url>
-    <content><![CDATA[<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h1 id="单例模式的什么"><a href="#单例模式的什么" class="headerlink" title="单例模式的什么"></a>单例模式的什么</h1><p>singleton pattern是指确保某一个类只有一个实例，并且自动实例化向整个系统提供。</p>
-<h1 id="单例模式最简单例子"><a href="#单例模式最简单例子" class="headerlink" title="单例模式最简单例子"></a>单例模式最简单例子</h1><p>大臣参见皇帝，每天面见的皇帝都是同一个，用UML图可以表示成如图。<br><img src="https://quinntian.com/upload/2020/12/image-f6c7b2f5e96043ed9250de64b2a87c4a.png" alt="image.png"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> case1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;皇帝类&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Emperor</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*初始化一个皇帝，静态和最终关键字是关键*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Emperor emperor = <span class="keyword">new</span> Emperor();</span><br><span class="line">    <span class="comment">/*皇帝类的构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*静态方法用于获取皇帝的对象*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Emperor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  emperor;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*皇帝说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我就是皇帝某某.....&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> case1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minister</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> day = <span class="number">0</span>;day&lt;<span class="number">3</span>;day++)&#123;</span><br><span class="line">            Emperor emperor = Emperor.getInstance();</span><br><span class="line">            emperor.say();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*运行输出三天见得皇帝是同一个人*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">运行结果</span><br><span class="line">我就是皇帝某某.....</span><br><span class="line">我就是皇帝某某.....</span><br><span class="line">我就是皇帝某某.....</span><br></pre></td></tr></table></figure>
-<h1 id="单例模式的通用模板"><a href="#单例模式的通用模板" class="headerlink" title="单例模式的通用模板"></a>单例模式的通用模板</h1><p>上面例子可以抽象成一个通用模板，类图如下。<br><img src="https://quinntian.com/upload/2020/12/image-2341a94c960c435584af398f98ed2a35.png" alt="image.png"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> case2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;单例模式通用代码&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*限制产生多个对象*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton singleton = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*获取对象实例*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getSingleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*该类的其他方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doSomeing</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">写法<span class="number">2</span>：不推荐</span><br><span class="line"><span class="keyword">package</span> case2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;通用单例类-线程不安全&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonUnSafe</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span>  SingletonUnSafe singletonUnSafe = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SingletonUnSafe</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonUnSafe <span class="title">singletonUnSafe</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( singletonUnSafe == <span class="keyword">null</span>)&#123;</span><br><span class="line">            singletonUnSafe  = <span class="keyword">new</span> SingletonUnSafe();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> singletonUnSafe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>上面写法关键点</p>
-<ul>
-<li><p>确保类的实例只能有一个，因此要添加<strong>static和final</strong></p>
-</li>
-<li><p>构造方法必须使用<strong>private</strong>以此来保证，类不会在外部类中意外实例化</p>
-</li>
-<li><p>定义静态方法，专门提供实例化的方法，在外部类中调用</p>
-</li>
-<li><p>第二种写法，在高并发的情况会发生线程不安全，因为初始化实例需要时间，意思是假设线程A初始化实例，这时候线程B也来到了IF条件，但此时线程A并没有完成实例初始化，则判断条件为真，导致进程中出现了第二个实例，因此说明该线程不安全。</p>
-<h1 id="单例模式扩展-指定单例个数"><a href="#单例模式扩展-指定单例个数" class="headerlink" title="单例模式扩展-指定单例个数"></a>单例模式扩展-指定单例个数</h1><p>第一个简单的例子只是在内存中存在一个单例，如果我们要求在内存中指定指定数量的实例，如何做？这就是单例模式扩展情况，下面是类图。<br><img src="https://quinntian.com/upload/2020/12/image-20a7da25631347ac86218f70f4920477.png" alt="image.png"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> case3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;单例模式扩展：生成多个单例&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Emperor</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*定义能够产生最多的单例的数目*/</span></span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">static</span> <span class="keyword">int</span> maxNumOfEmperor = <span class="number">2</span>;</span><br><span class="line">    <span class="comment">/*定义每个皇帝的名字*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;String&gt; nameList = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//高并发下使用vector</span></span><br><span class="line">    <span class="comment">/*定义一个列表容纳所有皇帝的实例*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;Emperor&gt; emperorArrayList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="comment">/*当前皇帝的序列号*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> countNumOfEmperor = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/*默认构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        nameList.add(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*产生所有对象*/</span></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i&lt; maxNumOfEmperor;i++)&#123;</span><br><span class="line">            emperorArrayList.add(<span class="keyword">new</span> Emperor(<span class="string">&quot;皇帝，序号：&quot;</span>+i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*随机获得一个皇帝*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Emperor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        countNumOfEmperor = random.nextInt(maxNumOfEmperor);</span><br><span class="line">        <span class="keyword">return</span>  emperorArrayList.get(countNumOfEmperor);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*皇帝说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">say</span> <span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(nameList.get(countNumOfEmperor));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> case3;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minister</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span></span>&#123;</span><br><span class="line">        <span class="comment">/*定义五个大臣*/</span></span><br><span class="line">        <span class="keyword">int</span> ministerNum = <span class="number">5</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>  i =<span class="number">0</span>;i&lt;ministerNum;i++)&#123;</span><br><span class="line">            Emperor emperor = Emperor.getInstance();</span><br><span class="line">            System.out.println(<span class="string">&quot;第&quot;</span>+i+<span class="number">1</span>+<span class="string">&quot;个大臣参拜的是：&quot;</span>);</span><br><span class="line">            emperor.say();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="单例模式的应用"><a href="#单例模式的应用" class="headerlink" title="单例模式的应用"></a>单例模式的应用</h1></li>
-<li><p>要求唯一生成序列号</p>
-</li>
-<li><p>Web页面的计数器，不要每次刷新都写入数据库，可以开一个单例</p>
-</li>
-<li><p>工具类</p>
-</li>
-<li><p>Spring中的容器Bean的默认模式就是单例模式</p>
-</li>
-</ul>
-<p>代码参考：<a href="https://github.com/QuinnTian/design-pattern">https://github.com/QuinnTian/design-pattern</a></p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java的代理机制实现日志输出.md</title>
     <url>/20180528030410.html</url>
     <content><![CDATA[<p>title: Java的代理机制实现日志输出<br>date: ‘2018-05-28 03:04:10’<br>updated: ‘2018-05-29 15:50:44’<br>tags: [Java]<br>permalink: /articles/2018/05/28/1527447850230.html</p>
@@ -3587,6 +3579,42 @@ chmod 777 /var/log/caddy/caddy.log
 
 
 
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>单例模式</title>
+    <url>/20201229213748.html</url>
+    <content><![CDATA[<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h1 id="单例模式的什么"><a href="#单例模式的什么" class="headerlink" title="单例模式的什么"></a>单例模式的什么</h1><p>singleton pattern是指确保某一个类只有一个实例，并且自动实例化向整个系统提供。</p>
+<h1 id="单例模式最简单例子"><a href="#单例模式最简单例子" class="headerlink" title="单例模式最简单例子"></a>单例模式最简单例子</h1><p>大臣参见皇帝，每天面见的皇帝都是同一个，用UML图可以表示成如图。<br><img src="https://quinntian.com/upload/2020/12/image-f6c7b2f5e96043ed9250de64b2a87c4a.png" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> case1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;皇帝类&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Emperor</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*初始化一个皇帝，静态和最终关键字是关键*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Emperor emperor = <span class="keyword">new</span> Emperor();</span><br><span class="line">    <span class="comment">/*皇帝类的构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*静态方法用于获取皇帝的对象*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Emperor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  emperor;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*皇帝说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我就是皇帝某某.....&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> case1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minister</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> day = <span class="number">0</span>;day&lt;<span class="number">3</span>;day++)&#123;</span><br><span class="line">            Emperor emperor = Emperor.getInstance();</span><br><span class="line">            emperor.say();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*运行输出三天见得皇帝是同一个人*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">运行结果</span><br><span class="line">我就是皇帝某某.....</span><br><span class="line">我就是皇帝某某.....</span><br><span class="line">我就是皇帝某某.....</span><br></pre></td></tr></table></figure>
+<h1 id="单例模式的通用模板"><a href="#单例模式的通用模板" class="headerlink" title="单例模式的通用模板"></a>单例模式的通用模板</h1><p>上面例子可以抽象成一个通用模板，类图如下。<br><img src="https://quinntian.com/upload/2020/12/image-2341a94c960c435584af398f98ed2a35.png" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> case2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;单例模式通用代码&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*限制产生多个对象*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton singleton = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*获取对象实例*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getSingleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*该类的其他方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doSomeing</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">写法<span class="number">2</span>：不推荐</span><br><span class="line"><span class="keyword">package</span> case2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;通用单例类-线程不安全&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonUnSafe</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span>  SingletonUnSafe singletonUnSafe = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SingletonUnSafe</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonUnSafe <span class="title">singletonUnSafe</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( singletonUnSafe == <span class="keyword">null</span>)&#123;</span><br><span class="line">            singletonUnSafe  = <span class="keyword">new</span> SingletonUnSafe();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> singletonUnSafe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>上面写法关键点</p>
+<ul>
+<li><p>确保类的实例只能有一个，因此要添加<strong>static和final</strong></p>
+</li>
+<li><p>构造方法必须使用<strong>private</strong>以此来保证，类不会在外部类中意外实例化</p>
+</li>
+<li><p>定义静态方法，专门提供实例化的方法，在外部类中调用</p>
+</li>
+<li><p>第二种写法，在高并发的情况会发生线程不安全，因为初始化实例需要时间，意思是假设线程A初始化实例，这时候线程B也来到了IF条件，但此时线程A并没有完成实例初始化，则判断条件为真，导致进程中出现了第二个实例，因此说明该线程不安全。</p>
+<h1 id="单例模式扩展-指定单例个数"><a href="#单例模式扩展-指定单例个数" class="headerlink" title="单例模式扩展-指定单例个数"></a>单例模式扩展-指定单例个数</h1><p>第一个简单的例子只是在内存中存在一个单例，如果我们要求在内存中指定指定数量的实例，如何做？这就是单例模式扩展情况，下面是类图。<br><img src="https://quinntian.com/upload/2020/12/image-20a7da25631347ac86218f70f4920477.png" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> case3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;单例模式扩展：生成多个单例&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Emperor</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*定义能够产生最多的单例的数目*/</span></span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">static</span> <span class="keyword">int</span> maxNumOfEmperor = <span class="number">2</span>;</span><br><span class="line">    <span class="comment">/*定义每个皇帝的名字*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;String&gt; nameList = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//高并发下使用vector</span></span><br><span class="line">    <span class="comment">/*定义一个列表容纳所有皇帝的实例*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;Emperor&gt; emperorArrayList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="comment">/*当前皇帝的序列号*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> countNumOfEmperor = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/*默认构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">/*构造方法*/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Emperor</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        nameList.add(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*产生所有对象*/</span></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i&lt; maxNumOfEmperor;i++)&#123;</span><br><span class="line">            emperorArrayList.add(<span class="keyword">new</span> Emperor(<span class="string">&quot;皇帝，序号：&quot;</span>+i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*随机获得一个皇帝*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Emperor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        countNumOfEmperor = random.nextInt(maxNumOfEmperor);</span><br><span class="line">        <span class="keyword">return</span>  emperorArrayList.get(countNumOfEmperor);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*皇帝说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">say</span> <span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(nameList.get(countNumOfEmperor));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> case3;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minister</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span></span>&#123;</span><br><span class="line">        <span class="comment">/*定义五个大臣*/</span></span><br><span class="line">        <span class="keyword">int</span> ministerNum = <span class="number">5</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>  i =<span class="number">0</span>;i&lt;ministerNum;i++)&#123;</span><br><span class="line">            Emperor emperor = Emperor.getInstance();</span><br><span class="line">            System.out.println(<span class="string">&quot;第&quot;</span>+i+<span class="number">1</span>+<span class="string">&quot;个大臣参拜的是：&quot;</span>);</span><br><span class="line">            emperor.say();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="单例模式的应用"><a href="#单例模式的应用" class="headerlink" title="单例模式的应用"></a>单例模式的应用</h1></li>
+<li><p>要求唯一生成序列号</p>
+</li>
+<li><p>Web页面的计数器，不要每次刷新都写入数据库，可以开一个单例</p>
+</li>
+<li><p>工具类</p>
+</li>
+<li><p>Spring中的容器Bean的默认模式就是单例模式</p>
+</li>
+</ul>
+<p>代码参考：<a href="https://github.com/QuinnTian/design-pattern">https://github.com/QuinnTian/design-pattern</a></p>
 ]]></content>
       <categories>
         <category>设计模式</category>
@@ -3726,6 +3754,32 @@ chmod 777 /var/log/caddy/caddy.log
         <tag>Next</tag>
         <tag>Gitalk</tag>
         <tag>主题配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next主题配置SEO站点验证</title>
+    <url>/20220110141338.html</url>
+    <content><![CDATA[<p>Next主题配置SEO站点验证</p>
+<span id="more"></span>
+
+
+<h1 id="1-获取站点验证"><a href="#1-获取站点验证" class="headerlink" title="1. 获取站点验证"></a>1. 获取站点验证</h1><h2 id="谷歌"><a href="#谷歌" class="headerlink" title="谷歌"></a>谷歌</h2><ol>
+<li>登录谷歌站点管理<a href="https://search.google.com/search-console">https://search.google.com/search-console</a></li>
+<li>选择采用网址前缀验证-其他验证方式-HTML验证-将content内容复制到配置文件中<h2 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h2></li>
+<li>登录谷歌站点管理<a href="https://search.google.com/search-console">https://search.google.com/search-console</a></li>
+<li>添加网站-输入网站信息-选择网站类型-验证网站-选择HTML验证-将content的内容复制到配置文件中<h2 id="必应"><a href="#必应" class="headerlink" title="必应"></a>必应</h2>同上，也可直接导入谷歌</li>
+</ol>
+<h1 id="2-Next相关配置"><a href="#2-Next相关配置" class="headerlink" title="2. Next相关配置"></a>2. Next相关配置</h1><p>Next主题自带通过HTML验证，只需填入相关验证代码即可，在Next主题中搜索如下内容</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Google Webmaster tools verification.</span></span><br><span class="line"><span class="comment"># See: https://developers.google.com/search</span></span><br><span class="line"><span class="attr">google_site_verification:</span> <span class="string">复制content内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bing Webmaster tools verification.</span></span><br><span class="line"><span class="comment"># See: https://www.bing.com/webmasters</span></span><br><span class="line"><span class="attr">bing_site_verification:</span> <span class="string">复制content内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Baidu Webmaster tools verification.</span></span><br><span class="line"><span class="comment"># See: https://ziyuan.baidu.com/site</span></span><br><span class="line"><span class="attr">baidu_site_verification:</span> <span class="string">复制content内容</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Next</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>SEO</tag>
+        <tag>Next</tag>
+        <tag>站点验证</tag>
       </tags>
   </entry>
 </search>
