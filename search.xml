@@ -187,32 +187,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo安装记录</title>
-    <url>/20220108215346.html</url>
-    <content><![CDATA[<p>Hexo博客是一款快速、简洁且高效的静态博客框架，既可以部署在服务器也可以部署在Github，结合Vscode可以很好的实现博客的快速发布</p>
-<span id="more"></span>
-<h1 id="1-安装Git和Node-js"><a href="#1-安装Git和Node-js" class="headerlink" title="1. 安装Git和Node.js"></a>1. 安装Git和Node.js</h1><p>这两个软件的安装直接一直点击下一步即可</p>
-<h1 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2. 安装Hexo"></a>2. 安装Hexo</h1><ol>
-<li><code>npm install -g hexo-cli</code>安装Hexo构建工具</li>
-<li>进入你的博客存放的文件夹-&gt;右键git bash-&gt;运行安装命令<code>hexo init blog</code></li>
-<li>进入blog运行<code>hexo s</code>博客启动成功，浏览器输入<code>localhost:4000</code>即可访问<h1 id="3-博客目录说明"><a href="#3-博客目录说明" class="headerlink" title="3. 博客目录说明"></a>3. 博客目录说明</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">.</span></span><br><span class="line"><span class="string">├──</span> <span class="string">_config.yml</span> <span class="string">网站的配置文件</span></span><br><span class="line"><span class="string">├──</span> <span class="string">package.json</span> </span><br><span class="line"><span class="string">├──</span> <span class="string">scaffolds</span> <span class="string">模板文件</span></span><br><span class="line"><span class="string">├──</span> <span class="string">source</span> <span class="string">资源文件，存放文章的地方</span></span><br><span class="line"><span class="string">|</span>   <span class="string">├──</span> <span class="string">_drafts</span></span><br><span class="line"><span class="string">|</span>   <span class="string">└──</span> <span class="string">_posts</span></span><br><span class="line"><span class="string">└──</span> <span class="string">themes</span> <span class="string">主题放置的地方</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="4-创建文章"><a href="#4-创建文章" class="headerlink" title="4. 创建文章"></a>4. 创建文章</h1><p><code>hexo new [layout] &lt;title&gt;</code></p>
-<ul>
-<li>layout一般不用写，默认创建就是post类型一篇文章</li>
-<li>title表示文章的标题</li>
-<li>默认创建存放在source/_post/文件夹下<h1 id="5-生成静态资源"><a href="#5-生成静态资源" class="headerlink" title="5. 生成静态资源"></a>5. 生成静态资源</h1><code>hexo g</code>会生成<code>public</code>目录，将来会部署在网站上<h1 id="6-启动服务器"><a href="#6-启动服务器" class="headerlink" title="6. 启动服务器"></a>6. 启动服务器</h1><code>hexo s</code>启动本地4000端口服务器<h1 id="7-清除缓存"><a href="#7-清除缓存" class="headerlink" title="7. 清除缓存"></a>7. 清除缓存</h1><code>hexo c</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo配置SEO</title>
     <url>/20220108195203.html</url>
     <content><![CDATA[<p>优化站点SEO相关信息，通过配置文件，配置谷歌和百度的站点验证，百度的自动推送功能</p>
@@ -264,6 +238,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo安装记录</title>
+    <url>/20220108215346.html</url>
+    <content><![CDATA[<p>Hexo博客是一款快速、简洁且高效的静态博客框架，既可以部署在服务器也可以部署在Github，结合Vscode可以很好的实现博客的快速发布</p>
+<span id="more"></span>
+<h1 id="1-安装Git和Node-js"><a href="#1-安装Git和Node-js" class="headerlink" title="1. 安装Git和Node.js"></a>1. 安装Git和Node.js</h1><p>这两个软件的安装直接一直点击下一步即可</p>
+<h1 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2. 安装Hexo"></a>2. 安装Hexo</h1><ol>
+<li><code>npm install -g hexo-cli</code>安装Hexo构建工具</li>
+<li>进入你的博客存放的文件夹-&gt;右键git bash-&gt;运行安装命令<code>hexo init blog</code></li>
+<li>进入blog运行<code>hexo s</code>博客启动成功，浏览器输入<code>localhost:4000</code>即可访问<h1 id="3-博客目录说明"><a href="#3-博客目录说明" class="headerlink" title="3. 博客目录说明"></a>3. 博客目录说明</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">.</span></span><br><span class="line"><span class="string">├──</span> <span class="string">_config.yml</span> <span class="string">网站的配置文件</span></span><br><span class="line"><span class="string">├──</span> <span class="string">package.json</span> </span><br><span class="line"><span class="string">├──</span> <span class="string">scaffolds</span> <span class="string">模板文件</span></span><br><span class="line"><span class="string">├──</span> <span class="string">source</span> <span class="string">资源文件，存放文章的地方</span></span><br><span class="line"><span class="string">|</span>   <span class="string">├──</span> <span class="string">_drafts</span></span><br><span class="line"><span class="string">|</span>   <span class="string">└──</span> <span class="string">_posts</span></span><br><span class="line"><span class="string">└──</span> <span class="string">themes</span> <span class="string">主题放置的地方</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="4-创建文章"><a href="#4-创建文章" class="headerlink" title="4. 创建文章"></a>4. 创建文章</h1><p><code>hexo new [layout] &lt;title&gt;</code></p>
+<ul>
+<li>layout一般不用写，默认创建就是post类型一篇文章</li>
+<li>title表示文章的标题</li>
+<li>默认创建存放在source/_post/文件夹下<h1 id="5-生成静态资源"><a href="#5-生成静态资源" class="headerlink" title="5. 生成静态资源"></a>5. 生成静态资源</h1><code>hexo g</code>会生成<code>public</code>目录，将来会部署在网站上<h1 id="6-启动服务器"><a href="#6-启动服务器" class="headerlink" title="6. 启动服务器"></a>6. 启动服务器</h1><code>hexo s</code>启动本地4000端口服务器<h1 id="7-清除缓存"><a href="#7-清除缓存" class="headerlink" title="7. 清除缓存"></a>7. 清除缓存</h1><code>hexo c</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo配置一键部署到GitHub Page</title>
     <url>/20220108224027.html</url>
     <content><![CDATA[<p>Hexo使用hexo-deployer-git插件可以一键部署Github页面，方便快捷</p>
@@ -288,20 +288,6 @@
 <hr>
 <p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat不同项目使用不同的端口号.md</title>
-    <url>/20180721120413.html</url>
-    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
-<hr>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
-<p>Tomcat设置不输入项目名直接访问</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -333,6 +319,20 @@
         <tag>JDK</tag>
         <tag>安装记录</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Tomcat不同项目使用不同的端口号.md</title>
+    <url>/20180721120413.html</url>
+    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
+<hr>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
+<p>Tomcat设置不输入项目名直接访问</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>ES6笔记</title>
@@ -1724,6 +1724,16 @@
       </categories>
   </entry>
   <entry>
+    <title>每天复习一点Linux命令011之vim</title>
+    <url>/20200220225443.html</url>
+    <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">格式：vim 选项 文件名 </span><br><span class="line">默认：默认不加任何是创建一个空文件</span><br><span class="line">选项</span><br><span class="line">	-c command 在对文件进行编辑前，要先执行command命令</span><br><span class="line">	-r filename 恢复文件</span><br><span class="line">	-R 以只读方式编辑文件</span><br><span class="line">	+n file 编辑file文件，并把光标放到第n行</span><br><span class="line">	+ file 编辑file文件并将光标放到最后一行</span><br><span class="line">	+ /string file 编辑file文件，并将光标置于第一个 string所表示字符串行</span><br><span class="line">vim工作模式</span><br><span class="line">	一般模式：vim命令进入就是默认一般模式，在该模式下用户输入的就是命令，这个模式允许光标移动，允许搜索文本。</span><br><span class="line">	   文件的保存、修改是在一般模式下进行的。</span><br><span class="line">		:W 存储 :Q 退出 q! 强制退出不保存</span><br><span class="line">		:Wq 存储并退出</span><br><span class="line">	插入模式：在一般模式下输入i、o、a进入，进入此模式下，用户的输入都保存在缓冲区，退出插入模式用Esc.</span><br><span class="line">	  移动光标常用命令</span><br><span class="line">		移动光标：h\j + Enter\k-\l 左右上下</span><br><span class="line">		移动当前段前或段尾：&#123; &#125;</span><br><span class="line">		移动当前句子前或尾：( )</span><br><span class="line">		移动当前行的第一个非空字符：^</span><br><span class="line">		移动到当前行末尾：$</span><br><span class="line">		移动到行n: :n</span><br><span class="line">	  编辑文件常用命令</span><br><span class="line">		删除光标当前位置字符 x</span><br><span class="line">		删除光标所在整行文件 dd</span><br><span class="line">		删除当前光标位置到该行结束所有文本 d$</span><br><span class="line">		从当前光标位置向前删除单词 dw</span><br><span class="line">		将下一行文本合并到本行行尾 J</span><br><span class="line">		在当前光标位置后附加内容 a</span><br><span class="line">		在当前光标所在行后附加内容 A</span><br><span class="line"> 底行工作模式</span><br><span class="line">	用户输入的任何文字当做命令。</span><br><span class="line">	切换：一般模式到底行模式/</span><br><span class="line">	搜索字符命令：/字符 自动搜索光标往下的内容</span><br><span class="line">			    ?字符 自动搜索光标往上的内容</span><br><span class="line">				:n1,n2s/word1/word2/g 搜索n1到n2行名字为字符1的字符串，并把他们全部换成word2</span><br><span class="line">				:1,$ss/word1/word2/g,搜索第一行到最后一行名字为word1的字符串并全部替换</span><br><span class="line">	替换命令： :s/old/new 把old替换成new 默认替换第一次，若全部替换需要加g :s/old/new/g</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://quinntian.com/upload/2020/2/image-e179e295e6eb467a818a44e347b82f2a.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每天复习一点Linux命令010之find</title>
     <url>/20200220214855.html</url>
     <content><![CDATA[<ul>
@@ -1781,16 +1791,6 @@
 </ul>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>每天复习一点Linux命令011之vim</title>
-    <url>/20200220225443.html</url>
-    <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">格式：vim 选项 文件名 </span><br><span class="line">默认：默认不加任何是创建一个空文件</span><br><span class="line">选项</span><br><span class="line">	-c command 在对文件进行编辑前，要先执行command命令</span><br><span class="line">	-r filename 恢复文件</span><br><span class="line">	-R 以只读方式编辑文件</span><br><span class="line">	+n file 编辑file文件，并把光标放到第n行</span><br><span class="line">	+ file 编辑file文件并将光标放到最后一行</span><br><span class="line">	+ /string file 编辑file文件，并将光标置于第一个 string所表示字符串行</span><br><span class="line">vim工作模式</span><br><span class="line">	一般模式：vim命令进入就是默认一般模式，在该模式下用户输入的就是命令，这个模式允许光标移动，允许搜索文本。</span><br><span class="line">	   文件的保存、修改是在一般模式下进行的。</span><br><span class="line">		:W 存储 :Q 退出 q! 强制退出不保存</span><br><span class="line">		:Wq 存储并退出</span><br><span class="line">	插入模式：在一般模式下输入i、o、a进入，进入此模式下，用户的输入都保存在缓冲区，退出插入模式用Esc.</span><br><span class="line">	  移动光标常用命令</span><br><span class="line">		移动光标：h\j + Enter\k-\l 左右上下</span><br><span class="line">		移动当前段前或段尾：&#123; &#125;</span><br><span class="line">		移动当前句子前或尾：( )</span><br><span class="line">		移动当前行的第一个非空字符：^</span><br><span class="line">		移动到当前行末尾：$</span><br><span class="line">		移动到行n: :n</span><br><span class="line">	  编辑文件常用命令</span><br><span class="line">		删除光标当前位置字符 x</span><br><span class="line">		删除光标所在整行文件 dd</span><br><span class="line">		删除当前光标位置到该行结束所有文本 d$</span><br><span class="line">		从当前光标位置向前删除单词 dw</span><br><span class="line">		将下一行文本合并到本行行尾 J</span><br><span class="line">		在当前光标位置后附加内容 a</span><br><span class="line">		在当前光标所在行后附加内容 A</span><br><span class="line"> 底行工作模式</span><br><span class="line">	用户输入的任何文字当做命令。</span><br><span class="line">	切换：一般模式到底行模式/</span><br><span class="line">	搜索字符命令：/字符 自动搜索光标往下的内容</span><br><span class="line">			    ?字符 自动搜索光标往上的内容</span><br><span class="line">				:n1,n2s/word1/word2/g 搜索n1到n2行名字为字符1的字符串，并把他们全部换成word2</span><br><span class="line">				:1,$ss/word1/word2/g,搜索第一行到最后一行名字为word1的字符串并全部替换</span><br><span class="line">	替换命令： :s/old/new 把old替换成new 默认替换第一次，若全部替换需要加g :s/old/new/g</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://quinntian.com/upload/2020/2/image-e179e295e6eb467a818a44e347b82f2a.png" alt="image.png"></p>
 ]]></content>
       <categories>
         <category>Linux</category>

@@ -1002,13 +1002,6 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/tags/%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/tags/SEO/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1038,6 +1031,13 @@
   
   <url>
     <loc>https://quinntian.com/tags/%E7%AB%99%E7%82%B9%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
