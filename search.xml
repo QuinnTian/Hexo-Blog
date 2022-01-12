@@ -64,6 +64,17 @@
       </categories>
   </entry>
   <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/20180712120823.html</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git基本命令.md</title>
     <url>/20180723204037.html</url>
     <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
@@ -135,17 +146,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/20180712120823.html</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git配置代理</title>
     <url>/20180730102053.html</url>
     <content><![CDATA[<p>Github国内访问过慢，可以配置代理</p>
@@ -167,59 +167,6 @@
       <tags>
         <tag>Git</tag>
         <tag>代理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
-    <url>/20180724105005.html</url>
-    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
-<hr>
-<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat不同项目使用不同的端口号.md</title>
-    <url>/20180721120413.html</url>
-    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
-<hr>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
-<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
-<p>Tomcat设置不输入项目名直接访问</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>并存多个版本JDK方法</title>
-    <url>/20220113014135.html</url>
-    <content><![CDATA[<p>在一个电脑中安装多个JDK，并自由切换的方案</p>
-<span id="more"></span>
-
-<h1 id="1-安装好多个版本JDK"><a href="#1-安装好多个版本JDK" class="headerlink" title="1.  安装好多个版本JDK"></a>1.  安装好多个版本JDK</h1><h1 id="2-创建环境变量"><a href="#2-创建环境变量" class="headerlink" title="2.  创建环境变量"></a>2.  创建环境变量</h1><ul>
-<li><p>创建系统环境变量添加两个<code>JAVA_HOME1</code> 和<code>JAVA_HOME2</code></p>
-</li>
-<li><p>分别填入JDK安装的目录__</p>
-</li>
-</ul>
-<h1 id="3-添加系统变量-PATH"><a href="#3-添加系统变量-PATH" class="headerlink" title="3. 添加系统变量-PATH"></a>3. 添加系统变量-PATH</h1><ul>
-<li><p>引用上面创建的环境变量，用哪个引用哪个</p>
-</li>
-<li><p>引入1格式<code>%JAVA_HMOE1%\bin%</code>  _</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java - Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>JDK</tag>
-        <tag>安装记录</tag>
       </tags>
   </entry>
   <entry>
@@ -332,6 +279,59 @@
       <tags>
         <tag>Hexo</tag>
         <tag>一键部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
+    <url>/20180724105005.html</url>
+    <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
+<hr>
+<p>原博客文章备份：<a href="https://blog.csdn.net/leofitz/article/details/79886706">https://blog.csdn.net/leofitz/article/details/79886706</a><br>按照网上各种教程，取消注释等等方法，<strong>总是输入三次用户和密码后显示401错误</strong>，只有按下面代码更改后能进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;tomcat-users&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  By default, no user is included in the &quot;manager-gui&quot; role required</span><br><span class="line">  to operate the &quot;/manager/html&quot; web application.  If you wish to use this app,</span><br><span class="line">  you must define such a user - the username and password are arbitrary.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  NOTE:  The sample user and role entries below are wrapped in a comment</span><br><span class="line">  and thus are ignored when reading this file. Do not forget to remove</span><br><span class="line">  &lt;!.. ..&gt; that surrounds them.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;role rolename=&quot;tomcat&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;role1&quot;/&gt;</span><br><span class="line">  &lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,manager-gui&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;</span><br><span class="line">  &lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tomcat-users&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tomcat不同项目使用不同的端口号.md</title>
+    <url>/20180721120413.html</url>
+    <content><![CDATA[<p>title: Tomcat不同项目使用不同的端口号<br>date: ‘2018-07-21 12:04:13’<br>updated: ‘2018-07-21 12:06:45’<br>tags: [Tomcat, 后端]<br>permalink: /articles/2018/07/21/1532145852473.html</p>
+<hr>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/28ca60812b5a4fcfb323a0f78c10a533_Snipaste_20180721_115505.png" alt="Snipaste_20180721_115505png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/f60e6deae8804708b38f5df7fc027208_Snipaste_20180721_115552.png" alt="Snipaste_20180721_115552png"> </p>
+<p><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/07/6036bbd269804eec90b4ddd8e6fa0cac_Snipaste_20180721_120147.png" alt="Snipaste_20180721_120147png"> </p>
+<p>Tomcat设置不输入项目名直接访问</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&lt;Context <span class="built_in">path</span>=<span class="string">&quot;&quot;</span> docBase=<span class="string">&quot;solo&quot;</span> <span class="built_in">debug</span>=<span class="string">&quot;0&quot;</span> reloadable=<span class="string">&quot;true&quot;</span>/&gt; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>并存多个版本JDK方法</title>
+    <url>/20220113014135.html</url>
+    <content><![CDATA[<p>在一个电脑中安装多个JDK，并自由切换的方案</p>
+<span id="more"></span>
+
+<h1 id="1-安装好多个版本JDK"><a href="#1-安装好多个版本JDK" class="headerlink" title="1.  安装好多个版本JDK"></a>1.  安装好多个版本JDK</h1><h1 id="2-创建环境变量"><a href="#2-创建环境变量" class="headerlink" title="2.  创建环境变量"></a>2.  创建环境变量</h1><ul>
+<li><p>创建系统环境变量添加两个<code>JAVA_HOME1</code> 和<code>JAVA_HOME2</code></p>
+</li>
+<li><p>分别填入JDK安装的目录__</p>
+</li>
+</ul>
+<h1 id="3-添加系统变量-PATH"><a href="#3-添加系统变量-PATH" class="headerlink" title="3. 添加系统变量-PATH"></a>3. 添加系统变量-PATH</h1><ul>
+<li><p>引用上面创建的环境变量，用哪个引用哪个</p>
+</li>
+<li><p>引入1格式<code>%JAVA_HMOE1%\bin%</code>  _</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java - Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>JDK</tag>
+        <tag>安装记录</tag>
       </tags>
   </entry>
   <entry>
@@ -2141,6 +2141,110 @@
       </categories>
   </entry>
   <entry>
+    <title>Nginx启动、停止和重启方法.md</title>
+    <url>/20180721123139.html</url>
+    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+<hr>
+<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
+<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
+</ul>
+<ol>
+<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
+<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
+<li>进入Nginx安装目录下sbin/下</li>
+<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
+<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx转发请求到新域名同时不改变URL</title>
+    <url>/20210222171206.html</url>
+    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
+    <url>/20210224182829.html</url>
+    <content><![CDATA[<p>以下配置文件如下功能</p>
+<ol>
+<li>配置反向代理</li>
+<li>配置http跳转从https</li>
+<li>配置ssl证书</li>
+<li>监听80和443端口</li>
+<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置域名以及映射内网不同端口.md</title>
+    <url>/20180721121432.html</url>
+    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
+<hr>
+<p><strong>Nginx.conf</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx配置过滤websockt类型请求同时转发请求保持URL不变</title>
+    <url>/20210220140843.html</url>
+    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>关于CentOS8下Nginx报错</title>
+    <url>/20210310031238.html</url>
+    <content><![CDATA[<p>系统是CentOS8</p>
+<p>Nginx是源码安装nginx/1.18.0<br>突然发现重启服务器后Systemd enable Nginx配置的自启无法启动，日志文件报错误</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">nginx: [emerg] host not found in upstream &quot;mydomain.com&quot; in /etc/nginx/sites-enabled/test.conf:33</span><br></pre></td></tr></table></figure>
+<p>但是之前，在CentOS7一直都好好的。奇怪的是手动在运行一遍Systemd启动命令竟然可以运行，<br>Nginx配置文件也没错。百度搜了一圈，给的解决方法全都是清一色的配置DNS或者配置Host文件<br>最后还是谷歌大法好，原文如下</p>
+<blockquote>
+<p>Hello,<br>after installing Nginx on a new system I have some issues when rebooting the system. Nginx is unable to start and throws this error:<br>nginx: [emerg] host not found in upstream “mydomain.com” in /etc/nginx/sites-enabled/test.conf:33<br>When I try to ping mydomain.com it works without any issues, I also can start the Nginx service manually. Is it possible that Nginx tries to start before the system can resolve host names?</p>
+</blockquote>
+<p>解决</p>
+<blockquote>
+<p>What distro are you using? I encountered this issue with the nginx package in Debian Stretch. It bundled a systemd service file for nginx that had an <code>After=network.target</code> dependency, so it tried to start the nginx service before the network was fully available/working. Nginx then wasn’t able to resolve the upstream domain into an IP address and failed to start.<br>After overriding the service file so it has <code>After=network-online.target</code> dependency instead, nginx was able to start upon reboot reliably.</p>
+</blockquote>
+<p>替换服务配置文件中After=<code>network-online.target</code><br>具体原理不清楚，不知是否与Nginx最新版本或OS版本有关，至少在OS7.8不需要替换。<br>原文地址：<a href="https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/">https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/</a></p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
+    <url>/20210222170701.html</url>
+    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
+<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
+<p>改成这样即可反代成功。<br>反代成功</p>
+<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python中if用法</title>
     <url>/20210301010336.html</url>
     <content><![CDATA[<p>case1</p>
@@ -2866,110 +2970,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx启动、停止和重启方法.md</title>
-    <url>/20180721123139.html</url>
-    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
-<hr>
-<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
-<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
-</ul>
-<ol>
-<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
-<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
-<li>进入Nginx安装目录下sbin/下</li>
-<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
-<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx转发请求到新域名同时不改变URL</title>
-    <url>/20210222171206.html</url>
-    <content><![CDATA[<p>将请求路径<a href="https://kevin.com/data/test%E8%B7%B3%E8%BD%AC%E5%88%B0https://rubao.com/data/test/test.html%E9%A1%B5%E9%9D%A2%E3%80%82">https://kevin.com/data/test跳转到https://rubao.com/data/test/test.html页面。</a></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">将访问172.16.60.16:8082/m2/order/secretRecording的请求跳转到172.16.60.28:8089/order/secretRecording</span><br><span class="line">```xml</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  kevin.com;</span><br><span class="line">    access_log  /data/nginx/logs/kevin.com-access.log main;</span><br><span class="line">    error_log  /data/nginx/logs/kevin.com-error.log;</span><br><span class="line">  </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /data/nginx/ssl/kevin.com.crt;</span><br><span class="line">    ssl_certificate_key /data/nginx/ssl/kevin.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">  </span><br><span class="line">    location = /data/test &#123;</span><br><span class="line">        rewrite /data/test /data/test/test.html break;</span><br><span class="line">        proxy_pass https://rubao.com;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;　</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</title>
-    <url>/20210224182829.html</url>
-    <content><![CDATA[<p>以下配置文件如下功能</p>
-<ol>
-<li>配置反向代理</li>
-<li>配置http跳转从https</li>
-<li>配置ssl证书</li>
-<li>监听80和443端口</li>
-<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置域名以及映射内网不同端口.md</title>
-    <url>/20180721121432.html</url>
-    <content><![CDATA[<p>title: Nginx配置域名以及映射内网不同端口<br>date: ‘2018-07-21 12:14:32’<br>updated: ‘2018-07-21 12:15:48’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532146471914.html</p>
-<hr>
-<p><strong>Nginx.conf</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">upstream</span> tomcat1&#123;</span><br><span class="line">	<span class="attribute">server</span> <span class="number">127.0.0.1:8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">upstream</span> tomcat2&#123;</span><br><span class="line">               <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>     <span class="number">80</span>;</span><br><span class="line">	<span class="attribute">server_name</span>  abc.com;</span><br><span class="line">	<span class="attribute">location</span> / &#123;</span><br><span class="line">	</span><br><span class="line">	 <span class="attribute">proxy_pass</span> http://tomcat2;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">       	 <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">       <span class="attribute">server_name</span> abcd.com abcdef.com;</span><br><span class="line">	<span class="comment">#	root /rest_html/;</span></span><br><span class="line">	<span class="comment">#	index index.html;</span></span><br><span class="line">       <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">       <span class="attribute">location</span> / &#123;</span><br><span class="line">          <span class="comment"># root   html;</span></span><br><span class="line">          <span class="comment"># index  index.html index.htm;</span></span><br><span class="line">	   <span class="comment">#域名www.test1.com的请求全部转发到tomcat_server1即tomcat1服务上  </span></span><br><span class="line">        <span class="attribute">proxy_pass</span> http://tomcat1; </span><br><span class="line">   	 <span class="attribute">proxy_set_header</span> Host $host;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> REMOTE-HOST $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx配置过滤websockt类型请求同时转发请求保持URL不变</title>
-    <url>/20210220140843.html</url>
-    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>变量cnt用于指定upgrade，下面是实际走websockt的值<br>proxy_set_header Upgrade websocket;<br>proxy_set_header Connection upgrade;<br>为什么websocket在header中使用这两个字段参考<br><a href=":/6c78328e815845fa9f648b8feb1baf09">为什么HTTP Upgrade的时候，需要Connection: upgrade - Robert的博客</a></p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>关于CentOS8下Nginx报错</title>
-    <url>/20210310031238.html</url>
-    <content><![CDATA[<p>系统是CentOS8</p>
-<p>Nginx是源码安装nginx/1.18.0<br>突然发现重启服务器后Systemd enable Nginx配置的自启无法启动，日志文件报错误</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">nginx: [emerg] host not found in upstream &quot;mydomain.com&quot; in /etc/nginx/sites-enabled/test.conf:33</span><br></pre></td></tr></table></figure>
-<p>但是之前，在CentOS7一直都好好的。奇怪的是手动在运行一遍Systemd启动命令竟然可以运行，<br>Nginx配置文件也没错。百度搜了一圈，给的解决方法全都是清一色的配置DNS或者配置Host文件<br>最后还是谷歌大法好，原文如下</p>
-<blockquote>
-<p>Hello,<br>after installing Nginx on a new system I have some issues when rebooting the system. Nginx is unable to start and throws this error:<br>nginx: [emerg] host not found in upstream “mydomain.com” in /etc/nginx/sites-enabled/test.conf:33<br>When I try to ping mydomain.com it works without any issues, I also can start the Nginx service manually. Is it possible that Nginx tries to start before the system can resolve host names?</p>
-</blockquote>
-<p>解决</p>
-<blockquote>
-<p>What distro are you using? I encountered this issue with the nginx package in Debian Stretch. It bundled a systemd service file for nginx that had an <code>After=network.target</code> dependency, so it tried to start the nginx service before the network was fully available/working. Nginx then wasn’t able to resolve the upstream domain into an IP address and failed to start.<br>After overriding the service file so it has <code>After=network-online.target</code> dependency instead, nginx was able to start upon reboot reliably.</p>
-</blockquote>
-<p>替换服务配置文件中After=<code>network-online.target</code><br>具体原理不清楚，不知是否与Nginx最新版本或OS版本有关，至少在OS7.8不需要替换。<br>原文地址：<a href="https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/">https://www.reddit.com/r/nginx/comments/gh6wk5/nginx_emerg_host_not_found_in_upstream/</a></p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
-    <url>/20210222170701.html</url>
-    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
-<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
-<p>改成这样即可反代成功。<br>反代成功</p>
-<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
       </categories>
   </entry>
   <entry>
