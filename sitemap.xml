@@ -988,6 +988,27 @@
   </url>
   
   <url>
+    <loc>https://quinntian.com/tags/Java/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/JDK/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://quinntian.com/tags/Hexo/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1051,27 +1072,6 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/tags/Java/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/tags/JDK/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/tags/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/tags/V2ray/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1121,13 +1121,6 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/tags/%E7%AB%99%E7%82%B9%E9%AA%8C%E8%AF%81/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/tags/Gitalk/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1141,14 +1134,14 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://quinntian.com/categories/CSS/</loc>
+    <loc>https://quinntian.com/tags/%E7%AB%99%E7%82%B9%E9%AA%8C%E8%AF%81/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+
   
   <url>
     <loc>https://quinntian.com/categories/Git/</loc>
@@ -1158,7 +1151,7 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Hexo/</loc>
+    <loc>https://quinntian.com/categories/CSS/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1166,6 +1159,13 @@
   
   <url>
     <loc>https://quinntian.com/categories/Java/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/categories/Hexo/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1193,6 +1193,13 @@
   </url>
   
   <url>
+    <loc>https://quinntian.com/categories/MySQL/</loc>
+    <lastmod>2022-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://quinntian.com/categories/Mybatis/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1201,13 +1208,6 @@
   
   <url>
     <loc>https://quinntian.com/categories/Nginx/</loc>
-    <lastmod>2022-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/categories/MySQL/</loc>
     <lastmod>2022-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

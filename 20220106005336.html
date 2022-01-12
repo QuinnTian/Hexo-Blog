@@ -324,19 +324,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-      
         
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7128871200466945"
-     data-ad-slot="2137171033"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+        <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-7128871200466945"
+        data-ad-slot="6480940453"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
         <p>自 2022 年 1 月 1 日起，服务器端将默认禁用对于 MD5 认证信息 的兼容。任何使用 MD5 认证信息的客户端将无法连接到禁用 VMess MD5 认证信息的服务器端，从而导致服务端和客户端报错。</p>
 <span id="more"></span>
 <h1 id="1-错误现象"><a href="#1-错误现象" class="headerlink" title="1.错误现象"></a>1.错误现象</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">客户端报错</span><br><span class="line">app/proxyman/inbound: connection ends &gt; proxy/socks: connection ends &gt; context canceled</span><br><span class="line">V2Ray 4.41.1 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.16.6 windows/amd64)</span><br><span class="line">2022/01/06 00:43:37 [Info] [2751399112] app/proxyman/outbound: failed to process outbound traffic &gt; proxy/vmess/outbound: connection ends &gt; context canceled</span><br><span class="line">服务端报错</span><br><span class="line">rejected  common/drain: common/drain: unable to drain connection &gt; websocket: close 1000 (normal) &gt; proxy/vmess/encoding: invalid user: VMessAEAD is enforced and a non VMessAEAD connection is received. You can still disable this security feature with environment variable v2ray.vmess.aead.forced = false . You will not be able to enable legacy header workaround in the future.</span><br></pre></td></tr></table></figure>

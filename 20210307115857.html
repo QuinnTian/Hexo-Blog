@@ -318,19 +318,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-      
         
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7128871200466945"
-     data-ad-slot="2137171033"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+        <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-7128871200466945"
+        data-ad-slot="6480940453"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
         <p>[toc]</p>
 <h1 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.基本用法"></a>1.基本用法</h1><p>使用<code>requests</code>库比使用<code>urllib</code>库方便</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># get方法与urlopen方法一样，都返回一个response对象</span></span><br><span class="line">r = requests.get(<span class="string">&quot;https://www.baidu.com&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r))</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.text))</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(r.cookies)</span><br></pre></td></tr></table></figure>

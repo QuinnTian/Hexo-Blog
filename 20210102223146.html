@@ -320,19 +320,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-      
         
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7128871200466945"
-     data-ad-slot="2137171033"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+        <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-7128871200466945"
+        data-ad-slot="6480940453"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
         <h1 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h1><h1 id="什么是抽象工厂模式"><a href="#什么是抽象工厂模式" class="headerlink" title="什么是抽象工厂模式"></a>什么是抽象工厂模式</h1><p>比较官方的定义是：<strong>为创建一组相关的或相互依赖的对象提供一个接口，而且无需指定他们的实体类</strong>。官方这个定义十分的拗口也不易理解，可能也是因为英文翻译过来的。<br>我的理解是两个词，细化+组装，比如生产产品，那么在定义这个产品的时候会越来越细化，比如我们考虑女娲造人这个例子，首先，我们创建一个人类的接口，然后下面又实现了人类接口的两个抽象类叫做黑人、白人和黄人，那么我们继续细化，人肯定有男性和女性吧，于是我们在此基础上就扩展出也就是继承三个色种，单独定义继承他们的黑人男性和女性，白人男性和女性、黄人的男性和女性，这些一共6个类全部是通过继承相应的有色人种来实现的。<br>那我们再看工厂类，同样需要建立一个抽象工厂接口，定义第一层即在接口中分别生产各色人种的方法，但是呢每个人种还有男性和女性之分，因此我们可以继续继承这个接口，扩展出专门生产男性和女性的类，在他们类中分别定义生产各色人种男性或女性的方法。<br>综上我们看工厂模式就是把产品细化了，然后我们想要什么的样的产品，就在工厂下面分为不同的车间，每个车间又分为不同的生产线，怎么扩展呢，就是通过继承or实现等来实现横向或纵向扩展。<br>具体实现的UML的类图如下，第二个是具体调用图。</p>
 <h1 id="最简单的例子"><a href="#最简单的例子" class="headerlink" title="最简单的例子"></a>最简单的例子</h1><p><img src="https://quinntian.com/upload/2021/01/image-89bd5107a3e84b5d848ae2d3450862c7.png" alt="image.png"><br><img src="https://quinntian.com/upload/2021/01/image-3c773df03aff4cb09136ad42922e688b.png" alt="image.png"><br><strong>人类接口</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;pre&gt;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> QuinnTian</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*人种的颜色*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/*人类会说话*/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/*人的性别*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>

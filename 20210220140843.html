@@ -318,19 +318,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-      
         
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7128871200466945"
-     data-ad-slot="2137171033"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+        <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-7128871200466945"
+        data-ad-slot="6480940453"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
         <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>指定url并过滤websocket请求，把不符合的请求转发到其他服务器处理，<br>同时保持域名不变，符合的交给本地10802处理。</p>
 <h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>访问<a target="_blank" rel="noopener" href="https://a.b.com/url%E8%87%AA%E5%8A%A8%E5%B0%86%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E7%BB%99https://c.com%EF%BC%8C">https://a.b.com/url自动将请求转发给https://c.com，</a><br>此时域名保持不变。<br>如果有websocket类型的流量自动走本地端口1080。</p>
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">...父节点及其他非必要内容省略</span><br><span class="line">	 location /url &#123; </span><br><span class="line">			set $cnt keep-live;#配置连接类型</span><br><span class="line">			if ($http_upgrade != &quot;websocket&quot;) &#123; # WebSocket协商失败时返回404</span><br><span class="line">				</span><br><span class="line">				rewrite /url / break;#重写url为/，因为最后地址是根域名</span><br><span class="line">				proxy_pass https://c.com;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			if ($http_upgrade = &quot;websocket&quot;) &#123; # 符合交给10802处理</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">				proxy_pass http://127.0.0.1:1802;</span><br><span class="line">				set $cnt upgrade;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			proxy_http_version 1.1;#设置http版本</span><br><span class="line">			proxy_set_header Upgrade $http_upgrade; #设置upgrad类型</span><br><span class="line">			proxy_set_header Connection cnt;#设置header类型</span><br><span class="line">			proxy_set_header Host quinntian.com;#此处不要用$host否则无法跳转，因为$host获取的是当前域名会导致无法跳转</span><br><span class="line">			# Show real IP </span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
