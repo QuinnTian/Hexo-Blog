@@ -99,8 +99,8 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">27</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">101</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">32</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a></li>
         <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益</a></li>
         <li class="menu-item menu-item-links"><a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
         <li class="menu-item menu-item-comments"><a href="/comments" rel="section"><i class="fa fa-comments fa-fw"></i>留言</a></li>
@@ -175,7 +175,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -186,7 +186,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -226,6 +226,392 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20210305225821.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20210305225821.html" class="post-title-link" itemprop="url">python爬虫requests库的使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-05 22:58:21" itemprop="dateCreated datePublished" datetime="2021-03-05T22:58:21+08:00">2021-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="python爬虫requests库的使用" href="/20210305225821.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::2716c6720030bd6a4e3e773b47845adb" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+        
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ins class="adsbygoogle"
+                  style="display:block; text-align:center;"
+                  data-ad-layout="in-article"
+                  data-ad-format="fluid"
+                  data-ad-client="ca-pub-7128871200466945"
+                  data-ad-slot="6235019134"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+          
+          <h1 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.基本用法"></a>1.基本用法</h1><p>使用<code>requests</code>库比使用<code>urllib</code>库方便</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># get方法与urlopen方法一样，都返回一个response对象</span></span><br><span class="line">r = requests.get(<span class="string">&quot;https://www.baidu.com&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r))</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(r.text))</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(r.cookies)</span><br></pre></td></tr></table></figure>
+<p><code>get</code>方法与<code>urlopen</code>方法执行相同的操作，得到了<code>response对象</code>，最大方便实现其他请求只需一句话，如<code>request.post()</code>等等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">request.post()</span><br><span class="line">request.put()</span><br><span class="line">request.delete()</span><br><span class="line">request.head()</span><br><span class="line">request.option()</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20210305225821.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+        
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20210304231234.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20210304231234.html" class="post-title-link" itemprop="url">python文件和异常</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-04 23:12:34" itemprop="dateCreated datePublished" datetime="2021-03-04T23:12:34+08:00">2021-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="python文件和异常" href="/20210304231234.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::40548a76904cb5d6466e6438e27e889c" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+        
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ins class="adsbygoogle"
+                  style="display:block; text-align:center;"
+                  data-ad-layout="in-article"
+                  data-ad-format="fluid"
+                  data-ad-client="ca-pub-7128871200466945"
+                  data-ad-slot="6235019134"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+          
+          <p>016-文件和异常</p>
+<h1 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.基本用法"></a>1.基本用法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;文件名&#x27;</span>) <span class="keyword">as</span> obj:</span><br><span class="line">    contents = obj.read()</span><br></pre></td></tr></table></figure>
+<p>case</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;file_test.txt&#x27;</span>) <span class="keyword">as</span> file_obj:</span><br><span class="line">    contents = file_obj.read()</span><br><span class="line">    <span class="built_in">print</span>(contents.rstrip())<span class="comment"># 本方法会最后一行会增加一个空行，因此要去除</span></span><br><span class="line"> </span><br><span class="line">输出</span><br><span class="line"><span class="number">3.1415978896897087</span></span><br><span class="line"><span class="number">4.86795766796</span></span><br><span class="line"><span class="number">8.09085605860</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20210304231234.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+        
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20210303153607.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
+      <meta itemprop="name" content="Quinn Tian">
+      <meta itemprop="description" content="个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="北纬36度">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20210303153607.html" class="post-title-link" itemprop="url">python爬虫利用urllib库发送请求</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-03-03 15:36:07 / 修改时间：15:38:05" itemprop="dateCreated datePublished" datetime="2021-03-03T15:36:07+08:00">2021-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="python爬虫利用urllib库发送请求" href="/20210303153607.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::2f801ac25d04e9079dfd762d355f3e6f" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+        
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ins class="adsbygoogle"
+                  style="display:block; text-align:center;"
+                  data-ad-layout="in-article"
+                  data-ad-format="fluid"
+                  data-ad-client="ca-pub-7128871200466945"
+                  data-ad-slot="6235019134"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+          
+          <h1 id="1-urllib库"><a href="#1-urllib库" class="headerlink" title="1.urllib库"></a>1.urllib库</h1><p><code>urllib库</code>是python3的内置库，主要用来<code>实现请求的发送</code><br>有4个模块</p>
+<ul>
+<li><code>request</code>基本http请求模块</li>
+<li><code>error</code>异常处理模块</li>
+<li><code>parse</code>工具模块</li>
+<li><code>rebotparser</code>识别robots.txt文件<h1 id="2-request模块"><a href="#2-request模块" class="headerlink" title="2.request模块"></a>2.request模块</h1><h2 id="2-1urlopen-用法"><a href="#2-1urlopen-用法" class="headerlink" title="2.1urlopen()用法"></a>2.1urlopen()用法</h2>参考文档：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/urllib.request.html#module-urllib.request">https://docs.python.org/zh-cn/3/library/urllib.request.html#module-urllib.request</a><br><code>urlopen(url)</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="comment"># request的urlopen方法基本使用</span></span><br><span class="line"><span class="comment"># 打开网页</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;https://www.python.org&#x27;</span>)</span><br><span class="line"><span class="comment">#打印读取</span></span><br><span class="line"><span class="built_in">print</span>(response.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"><span class="comment"># 打印类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(response))</span><br><span class="line"><span class="comment"># 调用read可以读取网页的内容</span></span><br><span class="line"><span class="comment"># 调用status属性可以获取状态码</span></span><br><span class="line"><span class="built_in">print</span>(response.status)</span><br><span class="line"><span class="comment"># 调用getheaders方法可以获取header头部信息</span></span><br><span class="line"><span class="built_in">print</span>(response.getheaders())</span><br><span class="line"><span class="built_in">print</span>(response.getheader(<span class="string">&#x27;server&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<code>urlopen(url,data,timeout)</code><br>传递<code>data</code>参数和<code>timeout</code>参数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data = <span class="built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="string">&#x27;world&#x27;</span>: <span class="string">&quot;hello&quot;</span>&#125;), encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 其中第二个参数是可选</span></span><br><span class="line"><span class="comment"># 若选了其格式必须是byte格式</span></span><br><span class="line"><span class="comment"># 有这个参数就不再是get-&gt;post</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/post&#x27;</span>, data=data)</span><br><span class="line"><span class="built_in">print</span>(response.read())</span><br><span class="line"><span class="comment"># timeout参数:设置超时时间</span></span><br><span class="line">response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, timeout=<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(response.read())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用try catch 捕获，若超时则输出错误信息</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = response = urllib.request.urlopen(<span class="string">&#x27;http://httpbin.org/get&#x27;</span>, timeout=<span class="number">0.02</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(e.reason, socket.timeout):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Time out&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="2-2Request类用法"><a href="#2-2Request类用法" class="headerlink" title="2.2Request类用法"></a>2.2Request类用法</h2></li>
+</ul>
+<p>主要用于构建复杂数据结构。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同过Request方法构造数据结构</span></span><br><span class="line">request = urllib.request.Request(<span class="string">&#x27;http://python.org&#x27;</span>)</span><br><span class="line">respose = urllib.request.urlopen(request)</span><br><span class="line"><span class="built_in">print</span>(respose.read().decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20210303153607.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+        
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1175,392 +1561,6 @@ case2<figure class="highlight python"><table><tr><td class="gutter"><pre><span c
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20210227165913.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
-      <meta itemprop="name" content="Quinn Tian">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北纬36度">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/20210227165913.html" class="post-title-link" itemprop="url">python元组用法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-02-27 16:59:13 / 修改时间：16:59:51" itemprop="dateCreated datePublished" datetime="2021-02-27T16:59:13+08:00">2021-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="python元组用法" href="/20210227165913.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::7667524117dc52c6eeab8e967124781f" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>598</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-        
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ins class="adsbygoogle"
-                  style="display:block; text-align:center;"
-                  data-ad-layout="in-article"
-                  data-ad-format="fluid"
-                  data-ad-client="ca-pub-7128871200466945"
-                  data-ad-slot="6235019134"></ins>
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-          
-          <h1 id="1-元组与列表"><a href="#1-元组与列表" class="headerlink" title="1.元组与列表"></a>1.元组与列表</h1><ol>
-<li>列表可以修改，<strong>元组不可以修改</strong></li>
-<li>列表用[],元组用()</li>
-<li>都是有序的</li>
-<li>元组的关键字couple</li>
-<li>访问元组与访问列表的方式一样<h1 id="2-定义元组"><a href="#2-定义元组" class="headerlink" title="2.定义元组"></a>2.定义元组</h1>定义<code>元组名=（....,....）</code>访问<code>元组名[index]</code><br>case1:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一组元组表示长方形的长和宽，其值应该是不变的</span></span><br><span class="line">demensions = (<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br><span class="line"><span class="comment"># 索引访问</span></span><br><span class="line"><span class="built_in">print</span>(demensions[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-试图修改元组值<br>case2<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">demensions[<span class="number">0</span>] = <span class="number">40</span></span><br><span class="line"><span class="built_in">print</span>(demensions)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Traceback (most recent call last):<br>File “C:\Users\Quinn\PycharmProjects\pythonProject\couple1.py”, line 8, in <module><br> demensions[0] = 40<br>TypeError: ‘tuple’ object does not support item assignment</module></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="3-遍历元组中的值"><a href="#3-遍历元组中的值" class="headerlink" title="3.遍历元组中的值"></a>3.遍历元组中的值</h1><p>case1</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">couple2 = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> couple2:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210227165913.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-        
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20210226144736.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
-      <meta itemprop="name" content="Quinn Tian">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北纬36度">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/20210226144736.html" class="post-title-link" itemprop="url">吐槽工信部域名备案的各种坑</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-26 14:47:36" itemprop="dateCreated datePublished" datetime="2021-02-26T14:47:36+08:00">2021-02-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-03-13 20:19:53" itemprop="dateModified" datetime="2021-03-13T20:19:53+08:00">2021-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-    </span>
-
-  
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>978</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-        
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-              <ins class="adsbygoogle"
-                  style="display:block; text-align:center;"
-                  data-ad-layout="in-article"
-                  data-ad-format="fluid"
-                  data-ad-client="ca-pub-7128871200466945"
-                  data-ad-slot="6235019134"></ins>
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-          <ol>
-<li><p>空壳主体和空壳网站清理不及时，各个省清理时间也不固定，感觉想起来就清。我朋友的域名空壳网站两三年至今未清理。</p>
-</li>
-<li><p>备案查询系统简陋无比，早年备案系统还能用身份证查询，现在倒好只能用备案号或姓名查询，试问我如何知道我的信息被盗用？好歹增加一个根据身份证查把。不知道姓名会有重名吗？</p>
-</li>
-<li><p>域名备案各省规范不一，甚至不知道存不存在一个人有多个备案主体可能。</p>
-</li>
-<li><p>注销备案各个省份不一，甚至某些省份连个申请注销备案方式都找不到，有些省份可以线上，有些省份必须邮寄，真不敢相信……，同样注册备案也是，不同省要求不一样，有的允许跨省，有的不允许，有的限制年龄，有的不限制，有的要求要本省手机号，还有有的甚至需要备案关闭网站，……无语了</p>
-</li>
-<li><p><strong>域名备案信息是个人都能查到，查姓名查出一堆主体，试问这样有什么意义，假设查出三个主体，一个主体关联网站发布违法信息但网站信息上并没有公布联系方式，去找另外两个网站的站长怎么办？前几天就遇到了，人家查到了通过域名查到了姓名，但是那个网站上没有站长联系方式，于是通过姓名查到相同姓名的网站主体，找上门来了。我也很无奈，只能解释是重名，备案要看主体号，而不是姓名。这不是坑人吗</strong>。某些第三方网站，查到后会把该企业名称（姓名）的所有备案主体列出来，这是为什么呢？因为对于个人备案<strong>企业名称</strong>会显示网站负责人名字也就是<strong>你名字</strong>，搞笑吧，所以网站负责人虽然不显示又有何用呢。</p>
-<blockquote>
-<p>备案主体：就是比如粤B2-20090059这就是备案主体，一般来说一个人只能有一个，也就是身份证一一对应，如果想有接入多个网站在后面加-1，比如粤B2-20090059-1，粤B2-20090059-2等等</p>
-</blockquote>
-</li>
-<li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
-</li>
-</ol>
-
-        
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://quinntian.com/20210224182829.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon/android-chrome-192x192.png">
-      <meta itemprop="name" content="Quinn Tian">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="北纬36度">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/20210224182829.html" class="post-title-link" itemprop="url">Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-02-24 18:28:29 / 修改时间：19:00:59" itemprop="dateCreated datePublished" datetime="2021-02-24T18:28:29+08:00">2021-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Nginx/" itemprop="url" rel="index"><span itemprop="name">Nginx</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="Nginx配置反向代理、配置SSL证书、配置http跳转到https、www跳转到主域名参考配置" href="/20210224182829.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::c8aeb25f94a33d664363479bc9e2ee48" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-        
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-              <ins class="adsbygoogle"
-                  style="display:block; text-align:center;"
-                  data-ad-layout="in-article"
-                  data-ad-format="fluid"
-                  data-ad-client="ca-pub-7128871200466945"
-                  data-ad-slot="6235019134"></ins>
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-          <p>以下配置文件如下功能</p>
-<ol>
-<li>配置反向代理</li>
-<li>配置http跳转从https</li>
-<li>配置ssl证书</li>
-<li>监听80和443端口</li>
-<li>配置www跳转至主域名<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">	server_tokens  off;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">    #                  &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">    #                  &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">	</span><br><span class="line">	#反向代理1</span><br><span class="line">	upstream server1&#123;</span><br><span class="line">						</span><br><span class="line">                server 127.0.0.1:1001;# 本地服务端口1，可以设置多个</span><br><span class="line">	&#125;</span><br><span class="line">	#监听域名和 80端口并强制跳转ssl</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;# 端口号</span><br><span class="line">        server_name  a.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       80; </span><br><span class="line">        server_name  b.com;# 你的域名</span><br><span class="line">		rewrite ^(.*)$ https://$host$1  permanent; # 重写成https</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    # 监听443端口</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  a.com;a.com</span><br><span class="line"></span><br><span class="line">        ssl_certificate      a.crt;# crt文件存放的地址</span><br><span class="line">        ssl_certificate_key  a.key;# key文件存放的地址</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">             proxy_pass http://server1;#配置反向代理，与前面的upstream server1对应</span><br><span class="line">        	 proxy_set_header Host $host; # 转发host值</span><br><span class="line">        	 proxy_set_header X-Real-IP $remote_addr; # 转发真实IP</span><br><span class="line">             proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">        	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  www.a.com;</span><br><span class="line">		   # 配置crt和key文件路径</span><br><span class="line">        ssl_certificate      .crt;</span><br><span class="line">        ssl_certificate_key  .key;</span><br><span class="line"></span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line">		</span><br><span class="line">		# 配置www跳转到主域名，如果你配置了www</span><br><span class="line">		location / &#123;</span><br><span class="line">			rewrite  ^/(.*)$  https://quinntian.com/$1 permanent;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-
-        
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1586,14 +1586,14 @@ case2<figure class="highlight python"><table><tr><td class="gutter"><pre><span c
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">218k</span>
+    <span title="站点总字数">219k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:18</span>
+    <span title="站点阅读时长">3:19</span>
   </span>
 </div>
 <div class="busuanzi-count">

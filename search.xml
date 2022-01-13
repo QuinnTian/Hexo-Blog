@@ -282,6 +282,18 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/20220113230406.html</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/20220113230956.html</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+  </entry>
+  <entry>
     <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
     <url>/20180724105005.html</url>
     <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
@@ -2072,6 +2084,26 @@
       </categories>
   </entry>
   <entry>
+    <title>Nginx启动、停止和重启方法.md</title>
+    <url>/20180721123139.html</url>
+    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+<hr>
+<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
+<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
+</ul>
+<ol>
+<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
+<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
+<li>进入Nginx安装目录下sbin/下</li>
+<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
+<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Mybatis高级查询之一对一查询</title>
     <url>/20190723223755.html</url>
     <content><![CDATA[<h2 id="1-一对一查询"><a href="#1-一对一查询" class="headerlink" title="1. 一对一查询"></a>1. 一对一查询</h2><blockquote>
@@ -2144,26 +2176,6 @@
 ]]></content>
       <categories>
         <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx启动、停止和重启方法.md</title>
-    <url>/20180721123139.html</url>
-    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
-<hr>
-<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
-<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
-</ul>
-<ol>
-<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
-<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
-<li>进入Nginx安装目录下sbin/下</li>
-<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
-<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
       </categories>
   </entry>
   <entry>
@@ -2435,30 +2447,6 @@ case<figure class="highlight python"><table><tr><td class="code"><pre><span clas
       </categories>
   </entry>
   <entry>
-    <title>python字典用法</title>
-    <url>/20210228120516.html</url>
-    <content><![CDATA[<h1 id="1-字典格式"><a href="#1-字典格式" class="headerlink" title="1.字典格式"></a>1.字典格式</h1><p><code>字典名 = &#123;键名:值名&#125;</code></p>
-<ol>
-<li>花括号</li>
-<li>冒号</li>
-<li>逗号分隔不同键值对</li>
-</ol>
-<p>case1</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建字典</span></span><br><span class="line">alien0 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(alien0[<span class="string">&#x27;color&#x27;</span>])</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="2-访问字典值"><a href="#2-访问字典值" class="headerlink" title="2.访问字典值"></a>2.访问字典值</h1><p><code>字典名[&#39;键名&#39;]</code></p>
-<h1 id="3-添加键值对"><a href="#3-添加键值对" class="headerlink" title="3.添加键值对"></a>3.添加键值对</h1><ol>
-<li><code>字典名[&#39;键名&#39;] = 值</code><br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加键值对</span></span><br><span class="line">alien1 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien1[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien1[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien1)</span><br></pre></td></tr></table></figure>
-case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建空键值对</span></span><br><span class="line">alien2 = &#123;&#125;</span><br><span class="line">alien2[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien2[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="4-修改键值对"><a href="#4-修改键值对" class="headerlink" title="4.修改键值对"></a>4.修改键值对</h1><code>字典名[&#39;键名&#39;] = 值</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改键值对</span></span><br><span class="line">alien3 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien3[<span class="string">&#x27;color&#x27;</span>] = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(alien3)</span><br></pre></td></tr></table></figure>
-<h1 id="5-删除键值对"><a href="#5-删除键值对" class="headerlink" title="5.删除键值对"></a>5.删除键值对</h1><code>del 字典名[&#39;键名&#39;]</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除键值对</span></span><br><span class="line">alien4 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">del</span> alien4[<span class="string">&#x27;color&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(alien4)</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>python列表的用法</title>
     <url>/20210224173041.html</url>
     <content><![CDATA[<h1 id="1-列表特征"><a href="#1-列表特征" class="headerlink" title="1. 列表特征"></a>1. 列表特征</h1><ol>
@@ -2603,6 +2591,30 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 
 
 
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python字典用法</title>
+    <url>/20210228120516.html</url>
+    <content><![CDATA[<h1 id="1-字典格式"><a href="#1-字典格式" class="headerlink" title="1.字典格式"></a>1.字典格式</h1><p><code>字典名 = &#123;键名:值名&#125;</code></p>
+<ol>
+<li>花括号</li>
+<li>冒号</li>
+<li>逗号分隔不同键值对</li>
+</ol>
+<p>case1</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建字典</span></span><br><span class="line">alien0 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(alien0[<span class="string">&#x27;color&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="2-访问字典值"><a href="#2-访问字典值" class="headerlink" title="2.访问字典值"></a>2.访问字典值</h1><p><code>字典名[&#39;键名&#39;]</code></p>
+<h1 id="3-添加键值对"><a href="#3-添加键值对" class="headerlink" title="3.添加键值对"></a>3.添加键值对</h1><ol>
+<li><code>字典名[&#39;键名&#39;] = 值</code><br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加键值对</span></span><br><span class="line">alien1 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien1[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien1[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien1)</span><br></pre></td></tr></table></figure>
+case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建空键值对</span></span><br><span class="line">alien2 = &#123;&#125;</span><br><span class="line">alien2[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien2[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="4-修改键值对"><a href="#4-修改键值对" class="headerlink" title="4.修改键值对"></a>4.修改键值对</h1><code>字典名[&#39;键名&#39;] = 值</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改键值对</span></span><br><span class="line">alien3 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien3[<span class="string">&#x27;color&#x27;</span>] = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(alien3)</span><br></pre></td></tr></table></figure>
+<h1 id="5-删除键值对"><a href="#5-删除键值对" class="headerlink" title="5.删除键值对"></a>5.删除键值对</h1><code>del 字典名[&#39;键名&#39;]</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除键值对</span></span><br><span class="line">alien4 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">del</span> alien4[<span class="string">&#x27;color&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(alien4)</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -3383,6 +3395,32 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
       <tags>
         <tag>V2ray</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10输入法小技巧快速输入当前日期和时间</title>
+    <url>/20220113230002.html</url>
+    <content><![CDATA[<p>书写Markdown文件经常需要输入日期，可以设置输入法快速输入</p>
+<span id="more"></span>
+<ol>
+<li><p>设置-&gt;时间和语言-&gt;语言-&gt;首选语言:中文-&gt;选项-&gt;键盘:微软拼音-&gt;选项-&gt;词库和自学习-&gt;用户定义的短语-&gt;添加或编辑自定义短语-&gt;添加</p>
+</li>
+<li><p>在拼音里设置你要输入的字母，选择候选窗口位置，在短语中设置以下内容</p>
+</li>
+</ol>
+<p>%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%</p>
+<p>出来的就是当前时间，这个格式不能二次编辑，否则就会固定成你当时自定义的时间</p>
+<p>更多格式参考<br><a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings">https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings</a></p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>输入法</tag>
+        <tag>Windows10</tag>
+        <tag>小技巧</tag>
+        <tag>日期</tag>
+        <tag>时间</tag>
       </tags>
   </entry>
   <entry>
