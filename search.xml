@@ -64,6 +64,112 @@
       </categories>
   </entry>
   <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/20180712120823.html</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git基本命令.md</title>
+    <url>/20180723204037.html</url>
+    <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
+<hr>
+<p><img src="https://res.quinntian.xyz//file/2018/07/41a7bd07145c4182940a798877a487df_git_big_jb51.jpg" alt="git_big_jb51jpg"> </p>
+<h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
+<li>项目/仓库级别</li>
+</ul>
+<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
+<ul>
+<li>全局级别</li>
+</ul>
+<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
+<ul>
+<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
+<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
+<li><p>命令<br><code>git init</code></p>
+<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
+<li><p>命令<br><code>git status </code></p>
+</li>
+<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
+</li>
+<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
+<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
+<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
+</li>
+<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
+<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
+<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
+</li>
+</ul>
+<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
+<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
+<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
+<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
+<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
+<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
+<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
+<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
+<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
+<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
+<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
+<ul>
+<li>删除操作提交到本地库，指针位置指向历史记录</li>
+<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
+</ul>
+<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
+<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
+<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
+<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
+</ul>
+<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
+<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
+<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
+<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
+<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
+<p>示例</p>
+<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
+<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
+<p>冲突的解决</p>
+<ul>
+<li>1.编辑文件，把文件修改到满意程度</li>
+<li>2.git add[文件名]</li>
+<li>3.git commit -m[]此时不需要加文件名</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git配置代理</title>
+    <url>/20180730102053.html</url>
+    <content><![CDATA[<p>Github国内访问过慢，可以配置代理</p>
+<span id="more"></span>
+
+<h1 id="设置http和https代理"><a href="#设置http和https代理" class="headerlink" title="设置http和https代理"></a>设置http和https代理</h1><p><code>git config --global http.proxy http://127.0.0.1:20211</code><br><code>git config --global https.proxy https://127.0.0.1:20211</code></p>
+<h1 id="设置socks5代理"><a href="#设置socks5代理" class="headerlink" title="设置socks5代理"></a>设置socks5代理</h1><p><code>git config --global http.proxy socks5://127.0.0.1:20210</code><br><code>git config --global https.proxy socks5://127.0.0.1:20210</code></p>
+<h1 id="全局查看设置代理"><a href="#全局查看设置代理" class="headerlink" title="全局查看设置代理"></a>全局查看设置代理</h1><p><code>git config -l --global</code></p>
+<h1 id="取消当前代理"><a href="#取消当前代理" class="headerlink" title="取消当前代理"></a>取消当前代理</h1><p><code>git config --global --unset http.proxy</code><br><code>git config --global --unset https.proxy</code></p>
+<ul>
+<li>上面将<code>--global</code>去掉是设置当前项目代理</li>
+<li>修改配置文件是C:\Users\用户名.gitconfig</li>
+</ul>
+<p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>代理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo个性化配置</title>
     <url>/20220109002232.html</url>
     <content><![CDATA[<p>有关Hexo的一些个性化配置的收集</p>
@@ -176,112 +282,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/20180712120823.html</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git基本命令.md</title>
-    <url>/20180723204037.html</url>
-    <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
-<hr>
-<p><img src="https://res.quinntian.xyz//file/2018/07/41a7bd07145c4182940a798877a487df_git_big_jb51.jpg" alt="git_big_jb51jpg"> </p>
-<h2 id="1-Git设置签名"><a href="#1-Git设置签名" class="headerlink" title="1.Git设置签名"></a>1.Git设置签名</h2><ul>
-<li>项目/仓库级别</li>
-</ul>
-<p>1.范围<br><strong>只对当前的仓库有效</strong><br>2.命令<br><code> git config user.name xx</code><br><code>    git config user.email xx@xx.co</code></p>
-<ul>
-<li>全局级别</li>
-</ul>
-<p>1.范围<br><strong>对当前登陆用户有效</strong><br>2.命令<br><code>git config --global</code></p>
-<ul>
-<li><p>级别优先级<br>就近原则：2者都有时采用项目级别</p>
-<h2 id="2-Git初始化仓库"><a href="#2-Git初始化仓库" class="headerlink" title="2.Git初始化仓库"></a>2.Git初始化仓库</h2></li>
-<li><p>命令<br><code>git init</code></p>
-<h2 id="3-Git查看状态"><a href="#3-Git查看状态" class="headerlink" title="3.Git查看状态"></a>3.Git查看状态</h2></li>
-<li><p>命令<br><code>git status </code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都无文件时状态<br><img src="https://res.quinntian.xyz//file/2018/07/b8449a4c6a10497e9a1028cdfdf83169_Snipaste_20180723_162933.png" alt="Snipaste_20180723_162933png"></p>
-</li>
-<li><p>工作区、暂存区有文件、仓库区无文件时<br><img src="https://res.quinntian.xyz//file/2018/07/444a4f4d2ce1462bbb0297f13a7ae18f_Snipaste_20180723_163151.png" alt="Snipaste_20180723_163151png"><br><img src="https://res.quinntian.xyz//file/2018/07/51e89c27a5414c75826aa9993ed8f350_Snipaste_20180723_164402.png" alt="Snipaste_20180723_164402png"> </p>
-<h2 id="4-Git删除暂存区文件命令"><a href="#4-Git删除暂存区文件命令" class="headerlink" title="4.Git删除暂存区文件命令"></a>4.Git删除暂存区文件命令</h2><p><code> git rm --cached[file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/b6b8d70261384568a5235d88ca252d29_Snipaste_20180723_165121.png" alt="Snipaste_20180723_165121png"> </p>
-<h2 id="5-Git提交到仓库命令"><a href="#5-Git提交到仓库命令" class="headerlink" title="5.Git提交到仓库命令"></a>5.Git提交到仓库命令</h2><p><code>git commit –m[信息][filename]</code></p>
-</li>
-<li><p>工作区、暂存区、仓库区都有文件<br><img src="https://res.quinntian.xyz//file/2018/07/09811684c4054441b10d9476b1493884_Snipaste_20180723_165635.png" alt="Snipaste_20180723_165635png"><br><img src="https://res.quinntian.xyz//file/2018/07/84ff456ba07045db89e803c2ece7e070_Snipaste_20180723_165743.png" alt="Snipaste_20180723_165743png"><br>继续向文件中添加内容<br><img src="https://res.quinntian.xyz//file/2018/07/132e65b13d5f43c4bd35108924ddefed_Snipaste_20180723_170530.png" alt="Snipaste_20180723_170530png"><br>此时Git status<br><img src="https://res.quinntian.xyz//file/2018/07/8899ce3111ae482f8b6935745dc1dbf6_Snipaste_20180723_170107.png" alt="Snipaste_20180723_170107png"> </p>
-<h2 id="6-Git添加到暂存区"><a href="#6-Git添加到暂存区" class="headerlink" title="6.Git添加到暂存区"></a>6.Git添加到暂存区</h2><p><code>git add [file]</code><br><img src="https://res.quinntian.xyz//file/2018/07/daff6a09fae7480197505868c6ef723e_Snipaste_20180723_170504.png" alt="Snipaste_20180723_170504png"> </p>
-<h2 id="7-Git查看历史记录"><a href="#7-Git查看历史记录" class="headerlink" title="7.Git查看历史记录"></a>7.Git查看历史记录</h2><h3 id="7-1-最完整的形式"><a href="#7-1-最完整的形式" class="headerlink" title="7.1 最完整的形式"></a>7.1 最完整的形式</h3><p><code>git log</code><br><img src="https://res.quinntian.xyz//file/2018/07/7d0052114a0c4957b38b88100e360f4c_Snipaste_20180723_172635.png" alt="Snipaste_20180723_172635png"> </p>
-</li>
-</ul>
-<p>多屏显示相关操作<br>1.空格向下翻页<br>2.b上翻页<br>3.q下翻页</p>
-<h3 id="7-2-简洁的形式"><a href="#7-2-简洁的形式" class="headerlink" title="7.2 简洁的形式"></a>7.2 简洁的形式</h3><p><code>git log --pretty=oneline </code><br><img src="https://res.quinntian.xyz//file/2018/07/f71416c5cec14515bf700ef6700c89e5_Snipaste_20180723_172752.png" alt="Snipaste_20180723_172752png"> </p>
-<h3 id="7-3-更简洁的形式"><a href="#7-3-更简洁的形式" class="headerlink" title="7.3 更简洁的形式"></a>7.3 更简洁的形式</h3><p><code>git log --oneline</code><br><img src="https://res.quinntian.xyz//file/2018/07/1e624849669341e5864d1505d4732b86_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"> </p>
-<h3 id="7-4-显示步数的方式"><a href="#7-4-显示步数的方式" class="headerlink" title="7.4 显示步数的方式"></a>7.4 显示步数的方式</h3><p><code>git relog</code><br><img src="https://res.quinntian.xyz//file/2018/07/1ec4aebb753a4aa0816688fba1c3b68b_Snipaste_20180723_172848.png" alt="Snipaste_20180723_172848png"><br><img src="https://res.quinntian.xyz//file/2018/07/9e9bbbb134c948c594b485c03e902551_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"> </p>
-<h2 id="8-Git回退"><a href="#8-Git回退" class="headerlink" title="8.Git回退"></a>8.Git回退</h2><h3 id="8-1-回退本质"><a href="#8-1-回退本质" class="headerlink" title="8.1 回退本质"></a>8.1 回退本质</h3><p><img src="https://res.quinntian.xyz//file/2018/07/26d100c9e83444c9b6cdcd2faffe6fce_Snipaste_20180723_173044.png" alt="Snipaste_20180723_173044png"></p>
-<h3 id="8-2-基于索引值回退"><a href="#8-2-基于索引值回退" class="headerlink" title="8.2 基于索引值回退"></a>8.2 基于索引值回退</h3><p>先查看历史记录<br><code> git reset [索引值]</code><br><img src="https://res.quinntian.xyz//file/2018/07/c8ee605037ff4a348aee9caf377c80c7_Snipaste_20180723_172823.png" alt="Snipaste_20180723_172823png"><br><img src="https://res.quinntian.xyz//file/2018/07/9d6e90c6f3bd4253afb0403456946b73_Snipaste_20180723_174108.png" alt="Snipaste_20180723_174108png"></p>
-<h3 id="8-3-使用"><a href="#8-3-使用" class="headerlink" title="8.3 使用^"></a>8.3 使用^</h3><p><code> git relog</code> 只能查看以当前<strong>为起点</strong>的历史记录<br><code> git reset --hard head[^] ^</code> 回退几步就是几个^<br> <img src="https://res.quinntian.xyz//file/2018/07/782d82c6d5d74508be4d264c653e5586_Snipaste_20180723_174852.png" alt="Snipaste_20180723_174852png"> </p>
-<h3 id="8-4-使用-n"><a href="#8-4-使用-n" class="headerlink" title="8.4 使用~[n]"></a>8.4 使用~[n]</h3><p><code> git reset --hard head[~n]</code></p>
-<h3 id="8-5-相关参数"><a href="#8-5-相关参数" class="headerlink" title="8.5 相关参数"></a>8.5 相关参数</h3><p><img src="https://res.quinntian.xyz//file/2018/07/6c31992ea8a74e7da0abef54f99a7c30_Snipaste_20180723_175326.png" alt="Snipaste_20180723_175326png"> </p>
-<p><strong>[soft]参数</strong> 本地库移动指针<br><strong>[mixed]参数</strong> 本地库移动head指针和重置暂存区<br>**[hard]**参数 本地库、暂存区、工作区重置</p>
-<h3 id="8-6-删除文件的找回"><a href="#8-6-删除文件的找回" class="headerlink" title="8.6 删除文件的找回"></a>8.6 删除文件的找回</h3><p>前提：删除之前，文件存在时的状态提交到本地库<br>操作：<code>git reset --hard HEAD[指针位置]</code></p>
-<ul>
-<li>删除操作提交到本地库，指针位置指向历史记录</li>
-<li>删除操作尚未提交到本地库，指针位置直接使用HEAD</li>
-</ul>
-<h2 id="9-Git比较文件差异命令"><a href="#9-Git比较文件差异命令" class="headerlink" title="9.Git比较文件差异命令"></a>9.Git比较文件差异命令</h2><ul>
-<li>命令<code>git dff [filename]</code><br>git工作区和暂存区比较<br>示例<br><img src="https://res.quinntian.xyz//file/2018/07/87947e464ab747cf937ff6966aec74b8_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/c9acaa7be1fb46fc9e9b226ec578086b_image.png" alt="imagepng"></li>
-<li>命令<code>git dff [本地库中的历史版本][filename]</code><br>将工作区中的文件和本地库历史记录作比较<br>示例<br><code> git diff HEAD [file] 或git diff head^ [file]</code></li>
-<li>不指定文件名的时候比较当前工作区中所有的文件<br>示例<br><code>git diff head或git diff</code></li>
-</ul>
-<p>10.版本控制命令<br>版本控制中使用多条线同时推进多个任务<br><img src="https://res.quinntian.xyz//file/2018/07/f838925f4bb542449ba61fffaaafe424_image.png" alt="imagepng"><br>同时并行推进多个功能开发<br>各个分支开发过程中，某分支开发分支不会对其他分支有任何映像</p>
-<h3 id="10-1-查看分支"><a href="#10-1-查看分支" class="headerlink" title="10.1 查看分支"></a>10.1 查看分支</h3><p><code>git branch -v</code><br><img src="https://res.quinntian.xyz//file/2018/07/0e8c787edc7246a6b79e3e68c134b96d_image.png" alt="imagepng"> </p>
-<h3 id="10-2-创建分支"><a href="#10-2-创建分支" class="headerlink" title="10.2 创建分支"></a>10.2 创建分支</h3><p><code>git branch [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/058db832b317423e9900ab807651242d_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/9de37d7dfb68491e99375d923658f0a6_image.png" alt="imagepng"> </p>
-<h3 id="10-3-切换分支"><a href="#10-3-切换分支" class="headerlink" title="10.3 切换分支"></a>10.3 切换分支</h3><p><code>git checkout [分支名]</code><br><img src="https://res.quinntian.xyz//file/2018/07/e408ac349838486e8a2152912299b733_image.png" alt="imagepng"> </p>
-<h3 id="10-4-合并分支"><a href="#10-4-合并分支" class="headerlink" title="10.4 合并分支"></a>10.4 合并分支</h3><p><code> git merger [要合并的分支]</code> <strong>要合并分支首先切换到主分支</strong></p>
-<p>示例</p>
-<p><img src="https://res.quinntian.xyz//file/2018/07/1eb354c66f09479d9103e020a2510961_image.png" alt="imagepng"><br><img src="https://res.quinntian.xyz//file/2018/07/893edc14012d4e449bce739f78cdf8df_image.png" alt="imagepng"> </p>
-<h3 id="10-4-解决冲突"><a href="#10-4-解决冲突" class="headerlink" title="10.4 解决冲突"></a>10.4 解决冲突</h3><p>冲突的表现<br>会自动合并并标记冲突<br><img src="https://res.quinntian.xyz//file/2018/07/c343eb632eef47aba77bbc1187f59db0_image.png" alt="imagepng"> </p>
-<p>冲突的解决</p>
-<ul>
-<li>1.编辑文件，把文件修改到满意程度</li>
-<li>2.git add[文件名]</li>
-<li>3.git commit -m[]此时不需要加文件名</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git配置代理</title>
-    <url>/20180730102053.html</url>
-    <content><![CDATA[<p>Github国内访问过慢，可以配置代理</p>
-<span id="more"></span>
-
-<h1 id="设置http和https代理"><a href="#设置http和https代理" class="headerlink" title="设置http和https代理"></a>设置http和https代理</h1><p><code>git config --global http.proxy http://127.0.0.1:20211</code><br><code>git config --global https.proxy https://127.0.0.1:20211</code></p>
-<h1 id="设置socks5代理"><a href="#设置socks5代理" class="headerlink" title="设置socks5代理"></a>设置socks5代理</h1><p><code>git config --global http.proxy socks5://127.0.0.1:20210</code><br><code>git config --global https.proxy socks5://127.0.0.1:20210</code></p>
-<h1 id="全局查看设置代理"><a href="#全局查看设置代理" class="headerlink" title="全局查看设置代理"></a>全局查看设置代理</h1><p><code>git config -l --global</code></p>
-<h1 id="取消当前代理"><a href="#取消当前代理" class="headerlink" title="取消当前代理"></a>取消当前代理</h1><p><code>git config --global --unset http.proxy</code><br><code>git config --global --unset https.proxy</code></p>
-<ul>
-<li>上面将<code>--global</code>去掉是设置当前项目代理</li>
-<li>修改配置文件是C:\Users\用户名.gitconfig</li>
-</ul>
-<p>参考文章地址<br><a href="https://bitbucket.org/gotoh/connect/wiki/Home">https://bitbucket.org/gotoh/connect/wiki/Home</a><br><a href="https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1">https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1</a><br><a href="https://www.hi-linux.com/posts/11850.html">https://www.hi-linux.com/posts/11850.html</a></p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>代理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
     <url>/20180724105005.html</url>
     <content><![CDATA[<p>title: Tomcat7进入管理界面的方法，401错误解决方法<br>date: ‘2018-07-24 10:50:05’<br>updated: ‘2018-07-24 10:57:43’<br>tags: [Tomcat]<br>permalink: /articles/2018/07/24/1532400605140.html</p>
@@ -333,6 +333,45 @@
         <tag>JDK</tag>
         <tag>安装记录</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>JavaScript匿名函数和回调函数的理解.md</title>
+    <url>/20180903164623.html</url>
+    <content><![CDATA[<p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
+<hr>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
+<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
+<p>匿名函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
+<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
+<p>或使用小括号</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
+<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
+<p>匿名函数链式调用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
+<p>不常见的匿名函数调用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
+<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
+<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
+<p>传递函数作为回调</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
   </entry>
   <entry>
     <title>ES6笔记</title>
@@ -390,45 +429,6 @@
 
 
 
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript匿名函数和回调函数的理解.md</title>
-    <url>/20180903164623.html</url>
-    <content><![CDATA[<p>title: JavaScript匿名函数和回调函数的理解<br>date: ‘2018-09-03 16:46:23’<br>updated: ‘2018-09-03 17:06:42’<br>tags: [JavaScript]<br>permalink: /articles/2018/09/03/1535964349016.html</p>
-<hr>
-<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>匿名函数又称闭包函数，顾名思义就是没有函数名的函数</p>
-<h4 id="1-创建函数的方式"><a href="#1-创建函数的方式" class="headerlink" title="1.创建函数的方式"></a>1.创建函数的方式</h4><p>普通函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;函数体&#125;</span><br></pre></td></tr></table></figure>
-<p>匿名函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;函数体&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot; </span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;);<span class="comment">// &quot;function&quot;</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))<span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-匿名函数用途"><a href="#2-匿名函数用途" class="headerlink" title="2.匿名函数用途"></a>2.匿名函数用途</h4><p>回调函数和直接使用函数</p>
-<h4 id="3-匿名函数调用"><a href="#3-匿名函数调用" class="headerlink" title="3.匿名函数调用"></a>3.匿名函数调用</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> abc=<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123; </span><br><span class="line"><span class="keyword">return</span> x+y; </span><br><span class="line">  &#125; </span><br><span class="line"> alert(abc(<span class="number">2</span>,<span class="number">3</span>)); <span class="comment">// &quot;5&quot;</span></span><br></pre></td></tr></table></figure>
-<p>或使用小括号</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert((<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y;&#125;)(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;5&quot; </span></span><br><span class="line">alert((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>,<span class="string">&quot;return x*y;&quot;</span>))(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">// &quot;6&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小括号能把我们的表达式组合分块，并且每一块，也就是每一对小括号，都有一个返回值。这个返回值实际上也就是小括号中表达式的返回值。所以，当我们用一对小括号把匿名函数括起来的时候，实际上小括号对返回的，就是一个匿名函数的Function 对象。因此，小括号对加上匿名函数就如同有名字的函数般被我们取得它的引用位置了。所以如果在这个引用变量后面再加上参数列表，就会实现普通函数的调用形式。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(x,y)&#123;return x+y;&#125;;// 把匿名函数对象赋给abc </span><br><span class="line">// abc 的constructor 就和匿名函数的constructor 一样了。也就是说，两个函数的实现是一样的。 </span><br><span class="line">alert((abc).constructor==(function(x,y)&#123;return x+y;&#125;).constructor);</span><br></pre></td></tr></table></figure>
-<p>PS ：constructor 是指创建对象的函数。也就是函数对象所代表的函数体。<br>总之，将其（被小括号包含的匿名函数）理解为括号表达式返回的函数对象，然后就可以对这个函数对象作正常的参数列表调用了。（前面这里犯了个错误，只有函数表达式还是不能直接调用函数的，去掉匿名函数括号必须要伴随将表达式赋值。也就是(function(){alert(1)})() 应该是与 a=function(){alert(1)}() 等价，不能连a= 都去掉。）</p>
-<p>匿名函数链式调用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(function(o) &#123; </span><br><span class="line">alert(o); </span><br><span class="line">return arguments.callee; </span><br><span class="line">&#125;)(&#x27;water&#x27;)(&#x27;down&#x27;);</span><br></pre></td></tr></table></figure>
-<p>不常见的匿名函数调用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;)();//写法有点酷~</span><br><span class="line"></span><br><span class="line">void function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">+function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">-function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">~function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">!function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line">(function()&#123; </span><br><span class="line">alert(&#x27;water&#x27;); </span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-<h4 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h4><blockquote>
-<p>闭包是什么？闭包是指某种程序语言中的代码块允许一级函数存在并且在一级函数中所定义的自由变量能不被释放，直到一级函数被释放前，一级函数外也能应用这些未释放的自由变量。<br>怎样？看得一头冒汗吧…… 没事，我也是（虽然是我是了解的，只是表达能力的问题）。让我们换个更加简单的方法说明：闭包，其实是一种语言特性，它是指的是程序设计语言中，允许将函数看作对象，然后能像在对象中的操作般在函数中定义实例（局部）变量，而这些变量能在函数中保存到函数的实例对象销毁为止，其它代码块能通过某种方式获取这些实例（局部）变量的值并进行应用扩展。<br>不知道这么再解释后会否更加清晰，如果还是不明白，那么我们再简化一下：<strong>闭包，其实就是指程序语言中能让代码调用已运行的函数中所定义的局部变量。</strong></p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var abc=function(y)&#123; </span><br><span class="line">var x=y;// 这个是局部变量 </span><br><span class="line">return function()&#123; </span><br><span class="line">alert(x++);// 就是这里调用了闭包特性中的一级函数局部变量的x ，并对它进行操作 </span><br><span class="line">alert(y--);// 引用的参数变量也是自由变量 </span><br><span class="line">&#125;&#125;(5);// 初始化 </span><br><span class="line">abc();// &quot;5&quot; &quot;5&quot; </span><br><span class="line">abc();// &quot;6&quot; &quot;4&quot; </span><br><span class="line">abc();// &quot;7&quot; &quot;3&quot; </span><br><span class="line">alert(x);// 报错！“x” 未定义！</span><br></pre></td></tr></table></figure>
-<p>是否应用了闭包特性，必须确定该段代码有没有最重要的要素：未销毁的局部变量。那么很显然，没有任何实现的匿名函数不可能应用了闭包特性。但如果匿名函数里面有实现呢？那也还得确定它的实现中有没有 用到那些未销毁的局部变量。所以如果问你那个开篇中的jQuery 代码片段是应用了JS 里的什么特性？那么它只是匿名函数与匿名函数的调用而已。但是，它 隐含了闭包的特性，并且随时可以实现闭包应用。</p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>函数的一种创建方式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//可以这样创建函数`</span><br><span class="line"></span><br><span class="line">var fn = new `Function(&quot;arg1&quot;,&quot;arg2&quot;,&quot;return arg1 * arg2;&quot;);`</span><br><span class="line"></span><br><span class="line">fn(2, 3); //6</span><br></pre></td></tr></table></figure>
-<p>传递函数作为回调</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function fn(arg1, arg2, callback)&#123;</span><br><span class="line"> var num = Math.ceil(Math.random() * (arg1 - arg2) + arg2);</span><br><span class="line"> callback(num);　　//传递结果</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(10, 20, function(num)&#123;</span><br><span class="line"> console.log(&quot;Callback called! Num: &quot; + num); </span><br><span class="line">&#125;);　　　　//结果为10和20之间的随机数</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.jb51.net/article/58722.htm">原文地址</a></p>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -956,32 +956,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Linux下配置定时备份MYSQL数据库</title>
-    <url>/20200131012620.html</url>
-    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0. 写在前面"></a>0. 写在前面</h1><p><strong>数据无价 定时备份</strong></p>
-<h1 id="1-创建备份数据库存放处"><a href="#1-创建备份数据库存放处" class="headerlink" title="1. 创建备份数据库存放处"></a>1. 创建备份数据库存放处</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">mkdir -p /backup/data</span><br></pre></td></tr></table></figure>
-<h1 id="2-编写脚本"><a href="#2-编写脚本" class="headerlink" title="2. 编写脚本"></a>2. 编写脚本</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">DATE=`date +%Y%m%d%H%M`                #备份日期时间</span><br><span class="line">DATABASE=                              #备份数据库名称</span><br><span class="line">DB_USERNAME=root                       #数据库账号</span><br><span class="line">DB_PASSWORD=&quot;&quot;       		       #数据库密码</span><br><span class="line">BACKUP_PATH=/backup/data               #备份数据，禁止放在网站目录下</span><br><span class="line"></span><br><span class="line">#备份命令</span><br><span class="line"></span><br><span class="line">/usr/bin/mysqldump-u $DB_USERNAME-p $DB_PASSWORD -h 127.0.0.1 -R --opt $DATABASE | gzip &gt; $&#123;BACKUP_PATH&#125;\/$&#123;DATABASE&#125;_$&#123;DATE&#125;.sql.gz</span><br><span class="line"></span><br><span class="line">#删除7天前备份文件</span><br><span class="line">find $&#123;BACKUP_PATH&#125; -mtime +7 -name &quot;$&#123;DATABASE&#125;_*.sql.gz&quot; -exec rm -f &#123;&#125; \;</span><br></pre></td></tr></table></figure>
-<h1 id="3-测试脚本"><a href="#3-测试脚本" class="headerlink" title="3. 测试脚本"></a>3. 测试脚本</h1><p>给脚本执行权限 #chmod +x mysql_backup.sh<br>sh 你的脚本</p>
-<h1 id="4-配置定时任务"><a href="#4-配置定时任务" class="headerlink" title="4. 配置定时任务"></a>4. 配置定时任务</h1><p><code>crontab -e</code>设置定时要求</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">5 * * * * /mysql_backup.sh #设置每天五点调用</span><br></pre></td></tr></table></figure>
-<p><code>crontab -l</code>列出当前任务<br><code>service crontab reload</code>重新载入配置文件</p>
-<h1 id="6-关于crontab命令"><a href="#6-关于crontab命令" class="headerlink" title="6. 关于crontab命令"></a>6. 关于crontab命令</h1><h2 id="6-1-格式"><a href="#6-1-格式" class="headerlink" title="6.1 格式"></a>6.1 格式</h2><p><code>crontab [ -u user ] &#123; -l | -r | -e &#125;</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">-e : 执行文字编辑器来设定时程表，内定的文字编辑器是 VI，如果你想用别的文							 	 </span><br><span class="line">字编辑器，则请先设定 VISUAL 环境变数来指定使用那个文字编辑器(比如说 setenv </span><br><span class="line">VISUAL joe)</span><br><span class="line">-r : 删除目前的时程表</span><br><span class="line">-l : 列出目前的时程表</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li>
-<li>当 f1 为 * 时表示每分钟都要执行 program，f2 为 * 时表示每小时都要执行程序，其馀类推</li>
-<li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li>
-<li>当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推</li>
-<li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12) </span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
-<h2 id="6-2-例子"><a href="#6-2-例子" class="headerlink" title="6.2 例子"></a>6.2 例子</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">每月每天每小时的第 0 分钟执行一次 /bin/ls</span><br><span class="line"></span><br><span class="line">0 * * * * /bin/ls</span><br><span class="line">在 12 月内, 每天的早上 6 点到 12 点，每隔 3 个小时 0 分钟执行一次 /usr/bin/backup</span><br><span class="line"></span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line">周一到周五每天下午 5:00 寄一封信给 alex@domain.name</span><br><span class="line"></span><br><span class="line">0 17 * * 1-5 mail -s &quot;hi&quot; alex@domain.name &lt; /tmp/maildata</span><br><span class="line">每月每天的午夜 0 点 20 分, 2 点 20 分, 4 点 20 分....执行 echo &quot;haha&quot;</span><br><span class="line"></span><br><span class="line">20 0-23/2 * * * echo &quot;haha&quot;</span><br><span class="line">下面再看看几个具体的例子：</span><br><span class="line"></span><br><span class="line">0 */2 * * * /sbin/service httpd restart  意思是每两个小时重启一次apache </span><br><span class="line"></span><br><span class="line">50 7 * * * /sbin/service sshd start  意思是每天7：50开启ssh服务 </span><br><span class="line"></span><br><span class="line">50 22 * * * /sbin/service sshd stop  意思是每天22：50关闭ssh服务 </span><br><span class="line"></span><br><span class="line">0 0 1,15 * * fsck /home  每月1号和15号检查/home 磁盘 </span><br><span class="line"></span><br><span class="line">1 * * * * /home/bruce/backup  每小时的第一分执行 /home/bruce/backup这个文件 </span><br><span class="line"></span><br><span class="line">00 03 * * 1-5 find /home &quot;*.xxx&quot; -mtime +4 -exec rm &#123;&#125; \;  每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。</span><br><span class="line"></span><br><span class="line">30 6 */10 * * ls  意思是每月的1、11、21、31日是的6：30执行一次ls命令</span><br></pre></td></tr></table></figure>
-<h2 id="6-3-其他"><a href="#6-3-其他" class="headerlink" title="6.3 其他"></a>6.3 其他</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">/sbin/service crond start //启动服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond stop //关闭服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond restart //重启服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond reload //重新载入配置</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>linux复制、移动、删除命令.md</title>
     <url>/20180721115142.html</url>
     <content><![CDATA[<p>title: linux复制、移动、删除命令<br>date: ‘2018-07-21 11:51:42’<br>updated: ‘2018-07-21 12:05:43’<br>tags: [Linux]<br>permalink: /articles/2018/07/21/1532145081228.html</p>
@@ -1155,6 +1129,32 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/data(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/config(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/apps(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/assets(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/.htaccess&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/.user.ini&#x27;</span><br><span class="line"> </span><br><span class="line">restorecon -Rv &#x27;/var/www/nextcloud/&#x27;</span><br></pre></td></tr></table></figure>
 <h1 id="8-进入Nextcloud网页端安装"><a href="#8-进入Nextcloud网页端安装" class="headerlink" title="8.进入Nextcloud网页端安装"></a>8.进入Nextcloud网页端安装</h1><p>此处按界面提示操作即可</p>
 <h1 id="9-故障排除"><a href="#9-故障排除" class="headerlink" title="9.故障排除"></a>9.故障排除</h1><p>一般出现最多的是由于权限问题导致禁止访问，首先保证上面步骤中的授予某些目录权限是否执行。其次查看 nginx的<code>error.log</code>确定原因。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Linux下配置定时备份MYSQL数据库</title>
+    <url>/20200131012620.html</url>
+    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0. 写在前面"></a>0. 写在前面</h1><p><strong>数据无价 定时备份</strong></p>
+<h1 id="1-创建备份数据库存放处"><a href="#1-创建备份数据库存放处" class="headerlink" title="1. 创建备份数据库存放处"></a>1. 创建备份数据库存放处</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">mkdir -p /backup/data</span><br></pre></td></tr></table></figure>
+<h1 id="2-编写脚本"><a href="#2-编写脚本" class="headerlink" title="2. 编写脚本"></a>2. 编写脚本</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">DATE=`date +%Y%m%d%H%M`                #备份日期时间</span><br><span class="line">DATABASE=                              #备份数据库名称</span><br><span class="line">DB_USERNAME=root                       #数据库账号</span><br><span class="line">DB_PASSWORD=&quot;&quot;       		       #数据库密码</span><br><span class="line">BACKUP_PATH=/backup/data               #备份数据，禁止放在网站目录下</span><br><span class="line"></span><br><span class="line">#备份命令</span><br><span class="line"></span><br><span class="line">/usr/bin/mysqldump-u $DB_USERNAME-p $DB_PASSWORD -h 127.0.0.1 -R --opt $DATABASE | gzip &gt; $&#123;BACKUP_PATH&#125;\/$&#123;DATABASE&#125;_$&#123;DATE&#125;.sql.gz</span><br><span class="line"></span><br><span class="line">#删除7天前备份文件</span><br><span class="line">find $&#123;BACKUP_PATH&#125; -mtime +7 -name &quot;$&#123;DATABASE&#125;_*.sql.gz&quot; -exec rm -f &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<h1 id="3-测试脚本"><a href="#3-测试脚本" class="headerlink" title="3. 测试脚本"></a>3. 测试脚本</h1><p>给脚本执行权限 #chmod +x mysql_backup.sh<br>sh 你的脚本</p>
+<h1 id="4-配置定时任务"><a href="#4-配置定时任务" class="headerlink" title="4. 配置定时任务"></a>4. 配置定时任务</h1><p><code>crontab -e</code>设置定时要求</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">5 * * * * /mysql_backup.sh #设置每天五点调用</span><br></pre></td></tr></table></figure>
+<p><code>crontab -l</code>列出当前任务<br><code>service crontab reload</code>重新载入配置文件</p>
+<h1 id="6-关于crontab命令"><a href="#6-关于crontab命令" class="headerlink" title="6. 关于crontab命令"></a>6. 关于crontab命令</h1><h2 id="6-1-格式"><a href="#6-1-格式" class="headerlink" title="6.1 格式"></a>6.1 格式</h2><p><code>crontab [ -u user ] &#123; -l | -r | -e &#125;</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">-e : 执行文字编辑器来设定时程表，内定的文字编辑器是 VI，如果你想用别的文							 	 </span><br><span class="line">字编辑器，则请先设定 VISUAL 环境变数来指定使用那个文字编辑器(比如说 setenv </span><br><span class="line">VISUAL joe)</span><br><span class="line">-r : 删除目前的时程表</span><br><span class="line">-l : 列出目前的时程表</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li>
+<li>当 f1 为 * 时表示每分钟都要执行 program，f2 为 * 时表示每小时都要执行程序，其馀类推</li>
+<li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li>
+<li>当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推</li>
+<li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12) </span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure>
+<h2 id="6-2-例子"><a href="#6-2-例子" class="headerlink" title="6.2 例子"></a>6.2 例子</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">每月每天每小时的第 0 分钟执行一次 /bin/ls</span><br><span class="line"></span><br><span class="line">0 * * * * /bin/ls</span><br><span class="line">在 12 月内, 每天的早上 6 点到 12 点，每隔 3 个小时 0 分钟执行一次 /usr/bin/backup</span><br><span class="line"></span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line">周一到周五每天下午 5:00 寄一封信给 alex@domain.name</span><br><span class="line"></span><br><span class="line">0 17 * * 1-5 mail -s &quot;hi&quot; alex@domain.name &lt; /tmp/maildata</span><br><span class="line">每月每天的午夜 0 点 20 分, 2 点 20 分, 4 点 20 分....执行 echo &quot;haha&quot;</span><br><span class="line"></span><br><span class="line">20 0-23/2 * * * echo &quot;haha&quot;</span><br><span class="line">下面再看看几个具体的例子：</span><br><span class="line"></span><br><span class="line">0 */2 * * * /sbin/service httpd restart  意思是每两个小时重启一次apache </span><br><span class="line"></span><br><span class="line">50 7 * * * /sbin/service sshd start  意思是每天7：50开启ssh服务 </span><br><span class="line"></span><br><span class="line">50 22 * * * /sbin/service sshd stop  意思是每天22：50关闭ssh服务 </span><br><span class="line"></span><br><span class="line">0 0 1,15 * * fsck /home  每月1号和15号检查/home 磁盘 </span><br><span class="line"></span><br><span class="line">1 * * * * /home/bruce/backup  每小时的第一分执行 /home/bruce/backup这个文件 </span><br><span class="line"></span><br><span class="line">00 03 * * 1-5 find /home &quot;*.xxx&quot; -mtime +4 -exec rm &#123;&#125; \;  每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。</span><br><span class="line"></span><br><span class="line">30 6 */10 * * ls  意思是每月的1、11、21、31日是的6：30执行一次ls命令</span><br></pre></td></tr></table></figure>
+<h2 id="6-3-其他"><a href="#6-3-其他" class="headerlink" title="6.3 其他"></a>6.3 其他</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">/sbin/service crond start //启动服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond stop //关闭服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond restart //重启服务</span><br><span class="line"></span><br><span class="line">/sbin/service crond reload //重新载入配置</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -2245,32 +2245,6 @@
       </categories>
   </entry>
   <entry>
-    <title>python中if用法</title>
-    <url>/20210301010336.html</url>
-    <content><![CDATA[<p>case1</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># if判断</span></span><br><span class="line">cars = [<span class="string">&#x27;car1&#x27;</span>, <span class="string">&#x27;car2&#x27;</span>, <span class="string">&#x27;car3&#x27;</span>, <span class="string">&#x27;car4&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cars:</span><br><span class="line">    <span class="keyword">if</span> c == <span class="string">&#x27;car1&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(c.upper())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(c.title())</span><br></pre></td></tr></table></figure>
-
-<h1 id="1-基本格式"><a href="#1-基本格式" class="headerlink" title="1.基本格式"></a>1.基本格式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 判断条件:</span><br><span class="line">	执行代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	执行代码</span><br></pre></td></tr></table></figure>
-<h1 id="2-条件测试"><a href="#2-条件测试" class="headerlink" title="2.条件测试"></a>2.条件测试</h1><h2 id="2-1-检查两个值是否相等输出"><a href="#2-1-检查两个值是否相等输出" class="headerlink" title="2.1.检查两个值是否相等输出"></a>2.1.检查两个值是否相等输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查值</span></span><br><span class="line">car1 = <span class="string">&#x27;audi&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(car1 == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(car1 == <span class="string">&#x27;audi&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-区分大小写，如何忽略大小写"><a href="#2-2-区分大小写，如何忽略大小写" class="headerlink" title="2.2.==区分大小写，如何忽略大小写"></a>2.2.==区分大小写，如何忽略大小写</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 不区分大小写的方法，用转换函数</span></span><br><span class="line">car2 = <span class="string">&#x27;audi&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(car2 == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(car2.lower() == <span class="string">&#x27;auDI&#x27;</span>.lower())</span><br><span class="line"><span class="built_in">print</span>(car2)</span><br><span class="line"><span class="comment"># 转换函数不会改变原来变量的大小写</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-3-and、or"><a href="#2-3-and、or" class="headerlink" title="2.3.and、or"></a>2.3.and、or</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>age1 = <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age2 = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age1 &lt; <span class="number">0</span> <span class="keyword">and</span> age2 ==<span class="number">1</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age1 == <span class="number">0</span> <span class="keyword">or</span> age2 == <span class="number">0</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-4-检查特定值在列表中in和not-in"><a href="#2-4-检查特定值在列表中in和not-in" class="headerlink" title="2.4.检查特定值在列表中in和not in"></a>2.4.检查特定值在列表中in和not in</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;b&#x27;</span> <span class="keyword">in</span> list1</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;b&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> list1</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<h1 id="3-if的多种格式"><a href="#3-if的多种格式" class="headerlink" title="3.if的多种格式"></a>3.if的多种格式</h1><p>1.单个</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> condition:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
-<p>2.<code>if else</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
-<p>3.<code>if elif else</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span>:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
-<p>4.<code>if elif elif</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>python中输入函数和while循环</title>
     <url>/20210301010434.html</url>
     <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
@@ -2579,6 +2553,32 @@ case<figure class="highlight python"><table><tr><td class="code"><pre><span clas
       </categories>
   </entry>
   <entry>
+    <title>python中if用法</title>
+    <url>/20210301010336.html</url>
+    <content><![CDATA[<p>case1</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># if判断</span></span><br><span class="line">cars = [<span class="string">&#x27;car1&#x27;</span>, <span class="string">&#x27;car2&#x27;</span>, <span class="string">&#x27;car3&#x27;</span>, <span class="string">&#x27;car4&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cars:</span><br><span class="line">    <span class="keyword">if</span> c == <span class="string">&#x27;car1&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(c.upper())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(c.title())</span><br></pre></td></tr></table></figure>
+
+<h1 id="1-基本格式"><a href="#1-基本格式" class="headerlink" title="1.基本格式"></a>1.基本格式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 判断条件:</span><br><span class="line">	执行代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	执行代码</span><br></pre></td></tr></table></figure>
+<h1 id="2-条件测试"><a href="#2-条件测试" class="headerlink" title="2.条件测试"></a>2.条件测试</h1><h2 id="2-1-检查两个值是否相等输出"><a href="#2-1-检查两个值是否相等输出" class="headerlink" title="2.1.检查两个值是否相等输出"></a>2.1.检查两个值是否相等输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查值</span></span><br><span class="line">car1 = <span class="string">&#x27;audi&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(car1 == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(car1 == <span class="string">&#x27;audi&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-区分大小写，如何忽略大小写"><a href="#2-2-区分大小写，如何忽略大小写" class="headerlink" title="2.2.==区分大小写，如何忽略大小写"></a>2.2.==区分大小写，如何忽略大小写</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 不区分大小写的方法，用转换函数</span></span><br><span class="line">car2 = <span class="string">&#x27;audi&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(car2 == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(car2.lower() == <span class="string">&#x27;auDI&#x27;</span>.lower())</span><br><span class="line"><span class="built_in">print</span>(car2)</span><br><span class="line"><span class="comment"># 转换函数不会改变原来变量的大小写</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-and、or"><a href="#2-3-and、or" class="headerlink" title="2.3.and、or"></a>2.3.and、or</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>age1 = <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age2 = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age1 &lt; <span class="number">0</span> <span class="keyword">and</span> age2 ==<span class="number">1</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age1 == <span class="number">0</span> <span class="keyword">or</span> age2 == <span class="number">0</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-4-检查特定值在列表中in和not-in"><a href="#2-4-检查特定值在列表中in和not-in" class="headerlink" title="2.4.检查特定值在列表中in和not in"></a>2.4.检查特定值在列表中in和not in</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;b&#x27;</span> <span class="keyword">in</span> list1</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;b&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> list1</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-if的多种格式"><a href="#3-if的多种格式" class="headerlink" title="3.if的多种格式"></a>3.if的多种格式</h1><p>1.单个</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> condition:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
+<p>2.<code>if else</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
+<p>3.<code>if elif else</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span>:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
+<p>4.<code>if elif elif</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python字典用法</title>
     <url>/20210228120516.html</url>
     <content><![CDATA[<h1 id="1-字典格式"><a href="#1-字典格式" class="headerlink" title="1.字典格式"></a>1.字典格式</h1><p><code>字典名 = &#123;键名:值名&#125;</code></p>
@@ -2596,35 +2596,6 @@ case<figure class="highlight python"><table><tr><td class="code"><pre><span clas
 case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建空键值对</span></span><br><span class="line">alien2 = &#123;&#125;</span><br><span class="line">alien2[<span class="string">&#x27;x_pos&#x27;</span>] = <span class="number">12</span></span><br><span class="line">alien2[<span class="string">&#x27;y_pos&#x27;</span>] = <span class="number">22</span></span><br><span class="line"><span class="built_in">print</span>(alien2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="4-修改键值对"><a href="#4-修改键值对" class="headerlink" title="4.修改键值对"></a>4.修改键值对</h1><code>字典名[&#39;键名&#39;] = 值</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改键值对</span></span><br><span class="line">alien3 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line">alien3[<span class="string">&#x27;color&#x27;</span>] = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(alien3)</span><br></pre></td></tr></table></figure>
 <h1 id="5-删除键值对"><a href="#5-删除键值对" class="headerlink" title="5.删除键值对"></a>5.删除键值对</h1><code>del 字典名[&#39;键名&#39;]</code><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除键值对</span></span><br><span class="line">alien4 = &#123;<span class="string">&#x27;color&#x27;</span>: <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;5&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">del</span> alien4[<span class="string">&#x27;color&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(alien4)</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>python字符串用法</title>
-    <url>/20210306225954.html</url>
-    <content><![CDATA[<h1 id="1-表现形式"><a href="#1-表现形式" class="headerlink" title="1. 表现形式"></a>1. 表现形式</h1><p>英文的引号和单引号</p>
-<h1 id="2-合并拼接字符串"><a href="#2-合并拼接字符串" class="headerlink" title="2. 合并拼接字符串"></a>2. 合并拼接字符串</h1><h2 id="2-1-常见的三个函数"><a href="#2-1-常见的三个函数" class="headerlink" title="2.1 常见的三个函数"></a>2.1 常见的三个函数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;aba lovelace&quot;</span></span><br><span class="line"><span class="comment"># 首字母转成大写</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br><span class="line"><span class="comment"># 全部转成大写</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="comment"># 全部转成小写</span></span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<blockquote>
-<p>Aba Lovelace<br>ABA LOVELACE<br>aba lovelace</p>
-</blockquote>
-<h2 id="2-2-拼接字符串"><a href="#2-2-拼接字符串" class="headerlink" title="2.2 拼接字符串"></a>2.2 拼接字符串</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 合并字符串1</span></span><br><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并字符串2</span></span><br><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello, &quot;</span> + full_name.title() + <span class="string">&quot;!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并字符串3</span></span><br><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line">message = <span class="string">&quot;Hello, &quot;</span> + full_name.title() + <span class="string">&quot;!&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<blockquote>
-<p>ada lovelace<br>hello, Ada Lovelace!<br>Hello, Ada Lovelace!</p>
-</blockquote>
-<h1 id="3-换行符和制表符"><a href="#3-换行符和制表符" class="headerlink" title="3. 换行符和制表符"></a>3. 换行符和制表符</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">hello world</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;\tpython&quot;</span>)</span><br><span class="line">        python</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;\npython&quot;</span>)</span><br><span class="line"></span><br><span class="line">python</span><br></pre></td></tr></table></figure>
-<h1 id="4-删除字符串中的空白"><a href="#4-删除字符串中的空白" class="headerlink" title="4. 删除字符串中的空白"></a>4. 删除字符串中的空白</h1><h2 id="4-1-剔除字符串末尾的空白"><a href="#4-1-剔除字符串末尾的空白" class="headerlink" title="4.1 剔除字符串末尾的空白"></a>4.1 剔除字符串末尾的空白</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language =<span class="string">&quot;python &quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language</span><br><span class="line"><span class="string">&#x27;python &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.rstrip()</span><br><span class="line"><span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>上面只是暂时删除，永久删除需要存回变量</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language = favorite_language.rstrip()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language</span><br><span class="line"><span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-2-剔除字符串两边和开头的空白"><a href="#4-2-剔除字符串两边和开头的空白" class="headerlink" title="4.2 剔除字符串两边和开头的空白"></a>4.2 剔除字符串两边和开头的空白</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">favorite_language = <span class="string">&quot; python &quot;</span></span><br><span class="line"><span class="comment"># 去除两端的空白</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.strip()</span><br><span class="line"><span class="string">&#x27;python&#x27;</span></span><br><span class="line"><span class="comment"># 去除开头的空白</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.lstrip()</span><br><span class="line"><span class="string">&#x27;python &#x27;</span></span><br></pre></td></tr></table></figure>
-<h1 id="5-常见的语法错误"><a href="#5-常见的语法错误" class="headerlink" title="5.! 常见的语法错误"></a>5.! 常见的语法错误</h1><ol>
-<li>字符串中单引号之间不要有双引号<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.rstrip()</span><br><span class="line"><span class="string">&#x27; python&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&#x27;chinese&quot; english’）</span></span><br><span class="line"><span class="string">  File &quot;&lt;stdin&gt;&quot;, line 1</span></span><br><span class="line"><span class="string">    print(&#x27;</span>chinese<span class="string">&quot; english’）</span></span><br><span class="line"><span class="string">                             ^</span></span><br><span class="line"><span class="string">SyntaxError: EOL while scanning string literal</span></span><br></pre></td></tr></table></figure></li>
-<li>若要用可以在双引号之间出现单引号<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;chinese&#x27;s son&quot;</span>)</span><br><span class="line">chinese<span class="string">&#x27;s son</span></span><br></pre></td></tr></table></figure></li>
-<li>python2 中print没有括号<h1 id="6-练习"><a href="#6-练习" class="headerlink" title="6.练习"></a>6.练习</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出变量</span></span><br><span class="line">name = <span class="string">&quot;Eric&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello &quot;</span> + name + <span class="string">&quot;,would you like to learn some Python today?&quot;</span>)</span><br><span class="line"><span class="comment"># 分别以首字母大写、大写、小写显示姓名</span></span><br><span class="line">name = <span class="string">&#x27;xiao ming&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以首字母大写显示：&quot;</span> + name.title())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以大写显示：&quot;</span> + name.upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以小写显示：&quot;</span> + name.lower())</span><br><span class="line"><span class="comment"># 输出带引号的名言</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Albert Einstein once said,&#x27;A person......&#x27;&quot;</span>)</span><br><span class="line"><span class="comment"># 改写上面名言，名字和句子分别存到一个变量</span></span><br><span class="line">famous_person = <span class="string">&quot;Albert Einstein&quot;</span></span><br><span class="line">message = <span class="string">&quot; once said,&#x27;A person......&#x27;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(famous_person + message)</span><br><span class="line"><span class="comment"># 剔除人名中的空白，分别使用\n \t一次</span></span><br><span class="line">name = <span class="string">&quot; tom &quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.strip())</span><br><span class="line"><span class="built_in">print</span>(name.lstrip()+<span class="string">&quot;\t&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(name.rstrip()+<span class="string">&quot;\n&quot;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <categories>
@@ -2675,6 +2646,35 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 </ul>
 <p><strong>关键<code>pass()函数</code></strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line"> </span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="keyword">pass</span>()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python字符串用法</title>
+    <url>/20210306225954.html</url>
+    <content><![CDATA[<h1 id="1-表现形式"><a href="#1-表现形式" class="headerlink" title="1. 表现形式"></a>1. 表现形式</h1><p>英文的引号和单引号</p>
+<h1 id="2-合并拼接字符串"><a href="#2-合并拼接字符串" class="headerlink" title="2. 合并拼接字符串"></a>2. 合并拼接字符串</h1><h2 id="2-1-常见的三个函数"><a href="#2-1-常见的三个函数" class="headerlink" title="2.1 常见的三个函数"></a>2.1 常见的三个函数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;aba lovelace&quot;</span></span><br><span class="line"><span class="comment"># 首字母转成大写</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br><span class="line"><span class="comment"># 全部转成大写</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="comment"># 全部转成小写</span></span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<blockquote>
+<p>Aba Lovelace<br>ABA LOVELACE<br>aba lovelace</p>
+</blockquote>
+<h2 id="2-2-拼接字符串"><a href="#2-2-拼接字符串" class="headerlink" title="2.2 拼接字符串"></a>2.2 拼接字符串</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 合并字符串1</span></span><br><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并字符串2</span></span><br><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello, &quot;</span> + full_name.title() + <span class="string">&quot;!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并字符串3</span></span><br><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line">message = <span class="string">&quot;Hello, &quot;</span> + full_name.title() + <span class="string">&quot;!&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<blockquote>
+<p>ada lovelace<br>hello, Ada Lovelace!<br>Hello, Ada Lovelace!</p>
+</blockquote>
+<h1 id="3-换行符和制表符"><a href="#3-换行符和制表符" class="headerlink" title="3. 换行符和制表符"></a>3. 换行符和制表符</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">hello world</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;\tpython&quot;</span>)</span><br><span class="line">        python</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;\npython&quot;</span>)</span><br><span class="line"></span><br><span class="line">python</span><br></pre></td></tr></table></figure>
+<h1 id="4-删除字符串中的空白"><a href="#4-删除字符串中的空白" class="headerlink" title="4. 删除字符串中的空白"></a>4. 删除字符串中的空白</h1><h2 id="4-1-剔除字符串末尾的空白"><a href="#4-1-剔除字符串末尾的空白" class="headerlink" title="4.1 剔除字符串末尾的空白"></a>4.1 剔除字符串末尾的空白</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language =<span class="string">&quot;python &quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language</span><br><span class="line"><span class="string">&#x27;python &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.rstrip()</span><br><span class="line"><span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>上面只是暂时删除，永久删除需要存回变量</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language = favorite_language.rstrip()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language</span><br><span class="line"><span class="string">&#x27;python&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-2-剔除字符串两边和开头的空白"><a href="#4-2-剔除字符串两边和开头的空白" class="headerlink" title="4.2 剔除字符串两边和开头的空白"></a>4.2 剔除字符串两边和开头的空白</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">favorite_language = <span class="string">&quot; python &quot;</span></span><br><span class="line"><span class="comment"># 去除两端的空白</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.strip()</span><br><span class="line"><span class="string">&#x27;python&#x27;</span></span><br><span class="line"><span class="comment"># 去除开头的空白</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.lstrip()</span><br><span class="line"><span class="string">&#x27;python &#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="5-常见的语法错误"><a href="#5-常见的语法错误" class="headerlink" title="5.! 常见的语法错误"></a>5.! 常见的语法错误</h1><ol>
+<li>字符串中单引号之间不要有双引号<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>favorite_language.rstrip()</span><br><span class="line"><span class="string">&#x27; python&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&#x27;chinese&quot; english’）</span></span><br><span class="line"><span class="string">  File &quot;&lt;stdin&gt;&quot;, line 1</span></span><br><span class="line"><span class="string">    print(&#x27;</span>chinese<span class="string">&quot; english’）</span></span><br><span class="line"><span class="string">                             ^</span></span><br><span class="line"><span class="string">SyntaxError: EOL while scanning string literal</span></span><br></pre></td></tr></table></figure></li>
+<li>若要用可以在双引号之间出现单引号<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;chinese&#x27;s son&quot;</span>)</span><br><span class="line">chinese<span class="string">&#x27;s son</span></span><br></pre></td></tr></table></figure></li>
+<li>python2 中print没有括号<h1 id="6-练习"><a href="#6-练习" class="headerlink" title="6.练习"></a>6.练习</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出变量</span></span><br><span class="line">name = <span class="string">&quot;Eric&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello &quot;</span> + name + <span class="string">&quot;,would you like to learn some Python today?&quot;</span>)</span><br><span class="line"><span class="comment"># 分别以首字母大写、大写、小写显示姓名</span></span><br><span class="line">name = <span class="string">&#x27;xiao ming&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以首字母大写显示：&quot;</span> + name.title())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以大写显示：&quot;</span> + name.upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;以小写显示：&quot;</span> + name.lower())</span><br><span class="line"><span class="comment"># 输出带引号的名言</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Albert Einstein once said,&#x27;A person......&#x27;&quot;</span>)</span><br><span class="line"><span class="comment"># 改写上面名言，名字和句子分别存到一个变量</span></span><br><span class="line">famous_person = <span class="string">&quot;Albert Einstein&quot;</span></span><br><span class="line">message = <span class="string">&quot; once said,&#x27;A person......&#x27;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(famous_person + message)</span><br><span class="line"><span class="comment"># 剔除人名中的空白，分别使用\n \t一次</span></span><br><span class="line">name = <span class="string">&quot; tom &quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.strip())</span><br><span class="line"><span class="built_in">print</span>(name.lstrip()+<span class="string">&quot;\t&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(name.rstrip()+<span class="string">&quot;\n&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -3087,17 +3087,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
       </categories>
   </entry>
   <entry>
-    <title>IDEA_断点调试不进入class文件的方法.md</title>
-    <url>/20180720105953.html</url>
-    <content><![CDATA[<p>title: IDEA 断点调试不进入class文件的方法<br>date: ‘2018-07-20 10:59:53’<br>updated: ‘2018-07-20 10:59:53’<br>tags: [IDEA]<br>permalink: /articles/2018/07/20/1532055593214.html</p>
-<hr>
-<p>settings-&gt;build,execution,deployment-&gt;debugger-&gt;stepping，Do not step into the classes勾掉，不要用f7，调试用f8下一步</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>BBR加速配置</title>
     <url>/20200217000044.html</url>
     <content><![CDATA[<p>bbr这个东西真乃神器，所以如果你的代理服务器在国外，强烈建议开启bbr的功能。我的小鸡使用的是debian 9，默认内核是支持bbr加速的，但是没有开启。如果你的系统过于陈旧，需要更新linux内核至4.9以上并编译安装bbr。<br>开启方法</p>
@@ -3126,6 +3115,17 @@ lsmod | grep bbr
 
 # lsmod | grep bbr tcp_bbr 20480 14
 </code></pre>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>IDEA_断点调试不进入class文件的方法.md</title>
+    <url>/20180720105953.html</url>
+    <content><![CDATA[<p>title: IDEA 断点调试不进入class文件的方法<br>date: ‘2018-07-20 10:59:53’<br>updated: ‘2018-07-20 10:59:53’<br>tags: [IDEA]<br>permalink: /articles/2018/07/20/1532055593214.html</p>
+<hr>
+<p>settings-&gt;build,execution,deployment-&gt;debugger-&gt;stepping，Do not step into the classes勾掉，不要用f7，调试用f8下一步</p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3434,42 +3434,6 @@ chmod 777 /var/log/caddy/caddy.log
       </tags>
   </entry>
   <entry>
-    <title>吐槽工信部域名备案的各种坑</title>
-    <url>/20210226144736.html</url>
-    <content><![CDATA[<ol>
-<li><p>空壳主体和空壳网站清理不及时，各个省清理时间也不固定，感觉想起来就清。我朋友的域名空壳网站两三年至今未清理。</p>
-</li>
-<li><p>备案查询系统简陋无比，早年备案系统还能用身份证查询，现在倒好只能用备案号或姓名查询，试问我如何知道我的信息被盗用？好歹增加一个根据身份证查把。不知道姓名会有重名吗？</p>
-</li>
-<li><p>域名备案各省规范不一，甚至不知道存不存在一个人有多个备案主体可能。</p>
-</li>
-<li><p>注销备案各个省份不一，甚至某些省份连个申请注销备案方式都找不到，有些省份可以线上，有些省份必须邮寄，真不敢相信……，同样注册备案也是，不同省要求不一样，有的允许跨省，有的不允许，有的限制年龄，有的不限制，有的要求要本省手机号，还有有的甚至需要备案关闭网站，……无语了</p>
-</li>
-<li><p><strong>域名备案信息是个人都能查到，查姓名查出一堆主体，试问这样有什么意义，假设查出三个主体，一个主体关联网站发布违法信息但网站信息上并没有公布联系方式，去找另外两个网站的站长怎么办？前几天就遇到了，人家查到了通过域名查到了姓名，但是那个网站上没有站长联系方式，于是通过姓名查到相同姓名的网站主体，找上门来了。我也很无奈，只能解释是重名，备案要看主体号，而不是姓名。这不是坑人吗</strong>。某些第三方网站，查到后会把该企业名称（姓名）的所有备案主体列出来，这是为什么呢？因为对于个人备案<strong>企业名称</strong>会显示网站负责人名字也就是<strong>你名字</strong>，搞笑吧，所以网站负责人虽然不显示又有何用呢。</p>
-<blockquote>
-<p>备案主体：就是比如粤B2-20090059这就是备案主体，一般来说一个人只能有一个，也就是身份证一一对应，如果想有接入多个网站在后面加-1，比如粤B2-20090059-1，粤B2-20090059-2等等</p>
-</blockquote>
-</li>
-<li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>用Navicat自动备份MySQL数据库</title>
-    <url>/20180525164327.html</url>
-    <content><![CDATA[<p>title: 用Navicat自动备份Mysql数据库<br>date: ‘2018-05-25 16:43:27’<br>updated: ‘2018-05-25 18:16:05’<br>tags: [Navicat, Mysql]<br>permalink: /articles/2018/05/25/1527237800309.html</p>
-<hr>
-<h4 id="1-选择计划任务"><a href="#1-选择计划任务" class="headerlink" title="1.选择计划任务"></a>1.选择计划任务</h4><h4 id="2-选择数据库双击后有方自动创建脚本"><a href="#2-选择数据库双击后有方自动创建脚本" class="headerlink" title="2.选择数据库双击后有方自动创建脚本"></a>2.选择数据库双击后有方自动创建脚本</h4><h4 id="3-双击创建好的脚本后，下方自动生成"><a href="#3-双击创建好的脚本后，下方自动生成" class="headerlink" title="3.双击创建好的脚本后，下方自动生成"></a>3.双击创建好的脚本后，下方自动生成</h4><h4 id="4-点击保存输入名称"><a href="#4-点击保存输入名称" class="headerlink" title="4.点击保存输入名称"></a>4.点击保存输入名称</h4><h4 id="5-点击设置计划任务"><a href="#5-点击设置计划任务" class="headerlink" title="5.点击设置计划任务"></a>5.点击设置计划任务</h4><h4 id="6-设置密码和备份周期后应用"><a href="#6-设置密码和备份周期后应用" class="headerlink" title="6.设置密码和备份周期后应用"></a>6.设置密码和备份周期后应用</h4><p><strong>相关截图</strong><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/046ec44707814862afe07b94084ef3b9_Snipaste_20180525_161954.png" alt="Snipaste_20180525_161954png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3a383774cbdb446c95b2d1cb61a3618c_Snipaste_20180525_162113.png" alt="Snipaste_20180525_162113png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3d8e2763d63c48bd80eb3358d663ad4e_Snipaste_20180525_162124.png" alt="Snipaste_20180525_162124png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/069a2e3c38f8419091ae7a6a97cea7d8_Snipaste_20180525_162403.png" alt="Snipaste_20180525_162403png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/4b103a67dc9b4916948eb25a14eb31dc_Snipaste_20180525_162610.png" alt="Snipaste_20180525_162610png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3457172472ca4bae86f4e41abece6fd7_Snipaste_20180525_162947.png" alt="Snipaste_20180525_162947png"> </p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>牛客网华为云9元一年学生机白嫖分享</title>
     <url>/20200128113629.html</url>
     <content><![CDATA[<p><strong>本博客于20200110迁移到华为云，就是下面的9元一年的学生机，原价99元，满足条件后返还90。另外在华为云和牛客网博客上发表博文前100名，可以得到体重秤，我的已经发货了。现在是2月10号以后的第二批，提前白嫖仍然可以得到体重秤，时间为2020年2月12日12：00 — 2020年2月29日晚上23：59。</strong><br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a><br>牛客网x华为云服务器活动<br>2020年新年第二弹来啦！<br>还是熟悉的返现（实惠良心）：<br>通过牛客专属链接新注册华为云账号，购买指定套餐即可获得返现！<br>并且，写博文，还送华为体重秤！</p>
@@ -3501,6 +3465,42 @@ chmod 777 /var/log/caddy/caddy.log
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <h1 id="四、注意"><a href="#四、注意" class="headerlink" title="四、注意"></a>四、注意</h1><p>同一人（同一身份认证）仅支持一次返现机会，学生套餐中1个月、6个月、12个月只可3选一。<br>此次华为云服务器活动，购买成功后不支持退款。<br>本次活动解释权归牛客所有。<br>奖品数量有限，购买填写表单后，记得在本帖下留言占位哦~<br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a></p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>用Navicat自动备份MySQL数据库</title>
+    <url>/20180525164327.html</url>
+    <content><![CDATA[<p>title: 用Navicat自动备份Mysql数据库<br>date: ‘2018-05-25 16:43:27’<br>updated: ‘2018-05-25 18:16:05’<br>tags: [Navicat, Mysql]<br>permalink: /articles/2018/05/25/1527237800309.html</p>
+<hr>
+<h4 id="1-选择计划任务"><a href="#1-选择计划任务" class="headerlink" title="1.选择计划任务"></a>1.选择计划任务</h4><h4 id="2-选择数据库双击后有方自动创建脚本"><a href="#2-选择数据库双击后有方自动创建脚本" class="headerlink" title="2.选择数据库双击后有方自动创建脚本"></a>2.选择数据库双击后有方自动创建脚本</h4><h4 id="3-双击创建好的脚本后，下方自动生成"><a href="#3-双击创建好的脚本后，下方自动生成" class="headerlink" title="3.双击创建好的脚本后，下方自动生成"></a>3.双击创建好的脚本后，下方自动生成</h4><h4 id="4-点击保存输入名称"><a href="#4-点击保存输入名称" class="headerlink" title="4.点击保存输入名称"></a>4.点击保存输入名称</h4><h4 id="5-点击设置计划任务"><a href="#5-点击设置计划任务" class="headerlink" title="5.点击设置计划任务"></a>5.点击设置计划任务</h4><h4 id="6-设置密码和备份周期后应用"><a href="#6-设置密码和备份周期后应用" class="headerlink" title="6.设置密码和备份周期后应用"></a>6.设置密码和备份周期后应用</h4><p><strong>相关截图</strong><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/046ec44707814862afe07b94084ef3b9_Snipaste_20180525_161954.png" alt="Snipaste_20180525_161954png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3a383774cbdb446c95b2d1cb61a3618c_Snipaste_20180525_162113.png" alt="Snipaste_20180525_162113png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3d8e2763d63c48bd80eb3358d663ad4e_Snipaste_20180525_162124.png" alt="Snipaste_20180525_162124png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/069a2e3c38f8419091ae7a6a97cea7d8_Snipaste_20180525_162403.png" alt="Snipaste_20180525_162403png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/4b103a67dc9b4916948eb25a14eb31dc_Snipaste_20180525_162610.png" alt="Snipaste_20180525_162610png"><br><img src="http://p95x8s7hh.bkt.clouddn.com//file/2018/05/3457172472ca4bae86f4e41abece6fd7_Snipaste_20180525_162947.png" alt="Snipaste_20180525_162947png"> </p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>吐槽工信部域名备案的各种坑</title>
+    <url>/20210226144736.html</url>
+    <content><![CDATA[<ol>
+<li><p>空壳主体和空壳网站清理不及时，各个省清理时间也不固定，感觉想起来就清。我朋友的域名空壳网站两三年至今未清理。</p>
+</li>
+<li><p>备案查询系统简陋无比，早年备案系统还能用身份证查询，现在倒好只能用备案号或姓名查询，试问我如何知道我的信息被盗用？好歹增加一个根据身份证查把。不知道姓名会有重名吗？</p>
+</li>
+<li><p>域名备案各省规范不一，甚至不知道存不存在一个人有多个备案主体可能。</p>
+</li>
+<li><p>注销备案各个省份不一，甚至某些省份连个申请注销备案方式都找不到，有些省份可以线上，有些省份必须邮寄，真不敢相信……，同样注册备案也是，不同省要求不一样，有的允许跨省，有的不允许，有的限制年龄，有的不限制，有的要求要本省手机号，还有有的甚至需要备案关闭网站，……无语了</p>
+</li>
+<li><p><strong>域名备案信息是个人都能查到，查姓名查出一堆主体，试问这样有什么意义，假设查出三个主体，一个主体关联网站发布违法信息但网站信息上并没有公布联系方式，去找另外两个网站的站长怎么办？前几天就遇到了，人家查到了通过域名查到了姓名，但是那个网站上没有站长联系方式，于是通过姓名查到相同姓名的网站主体，找上门来了。我也很无奈，只能解释是重名，备案要看主体号，而不是姓名。这不是坑人吗</strong>。某些第三方网站，查到后会把该企业名称（姓名）的所有备案主体列出来，这是为什么呢？因为对于个人备案<strong>企业名称</strong>会显示网站负责人名字也就是<strong>你名字</strong>，搞笑吧，所以网站负责人虽然不显示又有何用呢。</p>
+<blockquote>
+<p>备案主体：就是比如粤B2-20090059这就是备案主体，一般来说一个人只能有一个，也就是身份证一一对应，如果想有接入多个网站在后面加-1，比如粤B2-20090059-1，粤B2-20090059-2等等</p>
+</blockquote>
+</li>
+<li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>
