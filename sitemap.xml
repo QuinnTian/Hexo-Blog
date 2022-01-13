@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://quinntian.com/20220113230956.html</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/20220113230406.html</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/20220113230002.html</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/20220113230433.html</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/20220113231024.html</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -1079,6 +1079,55 @@
   
   <url>
     <loc>https://quinntian.com/tags/Java/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/IDEA/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/JavaDoc/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E6%B3%A8%E9%87%8A/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E7%B1%BB%E5%9B%BE/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E7%BB%A7%E6%89%BF%E5%9B%BE/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E7%BB%A7%E6%89%BF%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2022-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

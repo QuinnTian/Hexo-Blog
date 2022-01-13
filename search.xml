@@ -282,16 +282,46 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/20220113230406.html</url>
-    <content><![CDATA[<span id="more"></span>
+    <title>IDEA插件快速生成JavaDoc注释</title>
+    <url>/20220113230433.html</url>
+    <content><![CDATA[<p>编写Java代码，插入标准的JavaDoc注释</p>
+<span id="more"></span>
+<h1 id="Easy-Doc"><a href="#Easy-Doc" class="headerlink" title="Easy Doc"></a>Easy Doc</h1><ol>
+<li>文件-&gt;设置</li>
+<li>插件-&gt;搜索-&gt;Easy Doc</li>
+<li>安装完后在方法名或类名上使用<code>Ctrl+\</code>可生成对应注释</li>
+<li>设置该插件：设置-&gt;Java Doc</li>
+</ol>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>IDEA</tag>
+        <tag>插件</tag>
+        <tag>JavaDoc</tag>
+        <tag>注释</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/20220113230956.html</url>
+    <title>IDEA查看类图、继承图以及继承方法</title>
+    <url>/20220113231024.html</url>
     <content><![CDATA[<span id="more"></span>
+<h1 id="类层次结构图"><a href="#类层次结构图" class="headerlink" title="类层次结构图"></a>类层次结构图</h1><p>导航-&gt;类型层次结构<br><img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220113231331.png" alt="20220113231331"></p>
+<h1 id="UML图"><a href="#UML图" class="headerlink" title="UML图"></a>UML图</h1><p>所选类-&gt;右键-&gt;图<br><img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220113231527.png" alt="20220113231527"></p>
+<h1 id="查看继承方法"><a href="#查看继承方法" class="headerlink" title="查看继承方法"></a>查看继承方法</h1><p>结构<br>或<code>alt+7</code><br><img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220113231814.png" alt="20220113231814"></p>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>IDEA</tag>
+        <tag>类图</tag>
+        <tag>继承图</tag>
+        <tag>继承方法</tag>
+      </tags>
   </entry>
   <entry>
     <title>Tomcat7进入管理界面的方法，401错误解决方法</title>
@@ -2084,26 +2114,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Nginx启动、停止和重启方法.md</title>
-    <url>/20180721123139.html</url>
-    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
-<hr>
-<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
-<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
-</ul>
-<ol>
-<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
-<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
-<li>进入Nginx安装目录下sbin/下</li>
-<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
-<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Nginx</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Mybatis高级查询之一对一查询</title>
     <url>/20190723223755.html</url>
     <content><![CDATA[<h2 id="1-一对一查询"><a href="#1-一对一查询" class="headerlink" title="1. 一对一查询"></a>1. 一对一查询</h2><blockquote>
@@ -2176,6 +2186,26 @@
 ]]></content>
       <categories>
         <category>Mybatis</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx启动、停止和重启方法.md</title>
+    <url>/20180721123139.html</url>
+    <content><![CDATA[<p>title: Nginx启动、停止和重启方法<br>date: ‘2018-07-21 12:31:39’<br>updated: ‘2018-07-22 11:09:41’<br>tags: [Nginx]<br>permalink: /articles/2018/07/21/1532147499209.html</p>
+<hr>
+<h1 id="Nginx启动命令"><a href="#Nginx启动命令" class="headerlink" title="Nginx启动命令"></a>Nginx启动命令</h1><ul>
+<li><code>Nginx安装目录 -c nginx</code><h1 id="Nginx停止命令"><a href="#Nginx停止命令" class="headerlink" title="Nginx停止命令"></a>Nginx停止命令</h1></li>
+</ul>
+<ol>
+<li>查看进程号 <code>ps -ef|grep nginx</code>  含有master的为该进程</li>
+<li>杀死进程 <code>kill -quit</code> 进程号(或<code>kill -term</code>或<code>kill -int</code>或<code>pkill-9</code>)<h1 id="Nginx重启命令"><a href="#Nginx重启命令" class="headerlink" title="Nginx重启命令"></a>Nginx重启命令</h1></li>
+<li>进入Nginx安装目录下sbin/下</li>
+<li>验证配置文件是否正确 <code>./nginx -t</code> 或<code>nginx -t -c</code></li>
+<li><code>./nginx -s reload</code>或查看进程号 <code>kill -hup</code> 进程号</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Nginx</category>
       </categories>
   </entry>
   <entry>
@@ -3405,11 +3435,9 @@ chmod 777 /var/log/caddy/caddy.log
 <ol>
 <li><p>设置-&gt;时间和语言-&gt;语言-&gt;首选语言:中文-&gt;选项-&gt;键盘:微软拼音-&gt;选项-&gt;词库和自学习-&gt;用户定义的短语-&gt;添加或编辑自定义短语-&gt;添加</p>
 </li>
-<li><p>在拼音里设置你要输入的字母，选择候选窗口位置，在短语中设置以下内容</p>
+<li><p>在拼音里设置你要输入的字母，选择候选窗口位置，在短语中设置以下内容<br>%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%,出来的就是当前时间，这个格式不能二次编辑，否则就会固定成你当时自定义的时间</p>
 </li>
 </ol>
-<p>%yyyy%-%MM%-%dd% %HH%:%mm%:%ss%</p>
-<p>出来的就是当前时间，这个格式不能二次编辑，否则就会固定成你当时自定义的时间</p>
 <p>更多格式参考<br><a href="https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings">https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings</a></p>
 ]]></content>
       <categories>
