@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://quinntian.com/20220113231024.html</loc>
+    
+    <lastmod>2022-01-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://quinntian.com/20220113230002.html</loc>
     
     <lastmod>2022-01-13</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://quinntian.com/20220113230433.html</loc>
-    
-    <lastmod>2022-01-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://quinntian.com/20220113231024.html</loc>
     
     <lastmod>2022-01-13</lastmod>
     
@@ -1071,13 +1071,6 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/tags/%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2022-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://quinntian.com/tags/Java/</loc>
     <lastmod>2022-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -1107,6 +1100,13 @@
   
   <url>
     <loc>https://quinntian.com/tags/%E6%B3%A8%E9%87%8A/</loc>
+    <lastmod>2022-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://quinntian.com/tags/%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2022-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1311,14 +1311,14 @@
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Linux/</loc>
+    <loc>https://quinntian.com/categories/Maven/</loc>
     <lastmod>2022-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://quinntian.com/categories/Maven/</loc>
+    <loc>https://quinntian.com/categories/Linux/</loc>
     <lastmod>2022-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
