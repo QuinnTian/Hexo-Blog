@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>css定位总结</title>
-    <url>/20200223223801.html</url>
-    <content><![CDATA[<h1 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">块级元素 独占一行、可设宽高、默认父元素宽度、高度如果不设置只能靠内容撑起</span><br><span class="line">	常见元素 <span class="selector-tag">div</span> h <span class="selector-tag">p</span> <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> </span><br><span class="line">行内元素 在一行显示、不可设宽高、紧靠内容撑起宽高</span><br><span class="line">	常见元素 <span class="selector-tag">span</span> <span class="selector-tag">a</span> <span class="selector-tag">strong</span> <span class="selector-tag">b</span> <span class="selector-tag">em</span> l <span class="selector-tag">del</span> s</span><br><span class="line">行内块元素 在一行显示、可设宽高、不会默认父元素宽度</span><br><span class="line">	常见元素 <span class="selector-tag">img</span> <span class="selector-tag">input</span> <span class="selector-tag">td</span></span><br><span class="line">四种定位</span><br><span class="line">通过 <span class="attribute">position</span> 属性设置</span><br><span class="line">static</span><br><span class="line">relative</span><br><span class="line">absolute</span><br><span class="line">fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">postion:relative</span><br><span class="line">top:</span><br><span class="line">buttom:</span><br><span class="line">right:</span><br><span class="line">left</span><br><span class="line">偏移原来位置，且原位置所占空间保留。</span><br></pre></td></tr></table></figure>
-
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute</span><br><span class="line">根据祖先元素偏移，原来位置空间删除。</span><br></pre></td></tr></table></figure>
-
-<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">float</span>:</span><br><span class="line">偏移后只是原位置不占据空间，但是文字会浮动其周围，原因是早起就是为了开发环绕图片的所开发的。</span><br><span class="line">解决各种元素环绕的方法就是设置clear.</span><br><span class="line">clear:right left both inherit 就是说该元素的哪一边不允许出现浮动元素</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>css框模型总结</title>
     <url>/20200223214408.html</url>
     <content><![CDATA[<h1 id="css框模型"><a href="#css框模型" class="headerlink" title="css框模型"></a>css框模型</h1><p><img src="https://quinntian.com/upload/2020/2/image-b1d9940ce7124af6b0100718386301b0.png" alt="image.png"></p>
@@ -29,6 +13,22 @@
 <h2 id="border"><a href="#border" class="headerlink" title="border"></a>border</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-style</span></span><br><span class="line"><span class="attribute">none</span>	定义无边框。</span><br><span class="line">hidden	与 &quot;<span class="attribute">none</span>&quot; 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。</span><br><span class="line">dotted	定义点状边框。在大多数浏览器中呈现为实线。</span><br><span class="line">dashed	定义虚线。在大多数浏览器中呈现为实线。</span><br><span class="line">solid	定义实线。</span><br><span class="line">double	定义双线。双线的宽度等于 <span class="attribute">border-width</span> 的值。</span><br><span class="line">groove	定义 <span class="number">3</span>D 凹槽边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">ridge	定义 <span class="number">3</span>D 垄状边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">inset	定义 <span class="number">3</span>D inset 边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">outset	定义 <span class="number">3</span>D outset 边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line"><span class="attribute">inherit</span>	规定应该从父元素继承边框样式。</span><br><span class="line"><span class="attribute">border-width</span></span><br><span class="line">thin	定义细的边框。</span><br><span class="line">medium	默认。定义中等的边框。</span><br><span class="line">thick	定义粗的边框。</span><br><span class="line">length	允许您自定义边框的宽度。</span><br><span class="line"><span class="attribute">inherit</span>	规定应该从父元素继承边框宽度。</span><br><span class="line"><span class="attribute">border-color</span></span><br><span class="line">透明色：transparent</span><br><span class="line">统一设置</span><br><span class="line"><span class="attribute">border</span>:宽度 样式 颜色</span><br><span class="line">样式必须设置</span><br><span class="line">宽度、样式、颜色都可以四方向分别设置上右下左、单独设置，值传递和外边距一样。</span><br></pre></td></tr></table></figure>
 
 <h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span> 长度\百分比  不允许负值</span><br><span class="line"><span class="attribute">padding</span> 上左下右</span><br><span class="line"><span class="attribute">padding-top</span>/buttom/<span class="attribute">right</span>/<span class="attribute">left</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>css定位总结</title>
+    <url>/20200223223801.html</url>
+    <content><![CDATA[<h1 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">块级元素 独占一行、可设宽高、默认父元素宽度、高度如果不设置只能靠内容撑起</span><br><span class="line">	常见元素 <span class="selector-tag">div</span> h <span class="selector-tag">p</span> <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> </span><br><span class="line">行内元素 在一行显示、不可设宽高、紧靠内容撑起宽高</span><br><span class="line">	常见元素 <span class="selector-tag">span</span> <span class="selector-tag">a</span> <span class="selector-tag">strong</span> <span class="selector-tag">b</span> <span class="selector-tag">em</span> l <span class="selector-tag">del</span> s</span><br><span class="line">行内块元素 在一行显示、可设宽高、不会默认父元素宽度</span><br><span class="line">	常见元素 <span class="selector-tag">img</span> <span class="selector-tag">input</span> <span class="selector-tag">td</span></span><br><span class="line">四种定位</span><br><span class="line">通过 <span class="attribute">position</span> 属性设置</span><br><span class="line">static</span><br><span class="line">relative</span><br><span class="line">absolute</span><br><span class="line">fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">postion:relative</span><br><span class="line">top:</span><br><span class="line">buttom:</span><br><span class="line">right:</span><br><span class="line">left</span><br><span class="line">偏移原来位置，且原位置所占空间保留。</span><br></pre></td></tr></table></figure>
+
+<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute</span><br><span class="line">根据祖先元素偏移，原来位置空间删除。</span><br></pre></td></tr></table></figure>
+
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">float</span>:</span><br><span class="line">偏移后只是原位置不占据空间，但是文字会浮动其周围，原因是早起就是为了开发环绕图片的所开发的。</span><br><span class="line">解决各种元素环绕的方法就是设置clear.</span><br><span class="line">clear:right left both inherit 就是说该元素的哪一边不允许出现浮动元素</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -1095,72 +1095,6 @@
       </categories>
   </entry>
   <entry>
-    <title>每天复习一个Linux命令008之chmod、chown</title>
-    <url>/20200219235325.html</url>
-    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
-<ul>
-<li>可读：就是只让你读，其他的不能做。</li>
-<li>可执行：就是将该文件作为一种程序可读。</li>
-<li>可写：就是能往里面写东西。</li>
-</ul>
-<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
-<ul>
-<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
-</ul>
-<p>文件或目录所拥有的的权限有三组</p>
-<ul>
-<li>文件的读、写和执行权限。</li>
-<li>同组用户的三个权限。</li>
-<li>其他用户的三个权限。</li>
-</ul>
-<p>一个文件的权限查看，用<code>ls l</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>首位什么类型，比如-代表目录，d代表文件。</li>
-<li>后面就是三种用户的权限，没有就是-。</li>
-</ul>
-<p>chmod</p>
-<ul>
-<li><p>用途：就是更改目录或者文件的权限。</p>
-</li>
-<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
-<ul>
-<li><p>字母法</p>
-<ul>
-<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>数字阀</p>
-<ul>
-<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
-</li>
-<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
-<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
-<li>用法：<code>chown option owner filename</code></li>
-<li>选项<ul>
-<li>-c 更改后如果更改成功才显示。</li>
-<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
-<li>-f  更改后如果无法更改，不会显示错误信息。</li>
-<li>-v 显示所有者变更详情。</li>
-<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>在CentOS8上安装Nginx+Nextcloud21</title>
     <url>/20210312140206.html</url>
     <content><![CDATA[<h1 id="1-安装Nginx"><a href="#1-安装Nginx" class="headerlink" title="1.安装Nginx"></a>1.安装Nginx</h1><p>如果是CentOS8以下替换成<code>yum</code>安装，<code>dnf</code>是新一代包管理工具。<br><code>sudo dnf install nginx</code></p>
@@ -1221,6 +1155,72 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/data(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/config(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/apps(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/assets(/.*)?&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/.htaccess&#x27;</span><br><span class="line">semanage fcontext -a -t httpd_sys_rw_content_t &#x27;/var/www/nextcloud/.user.ini&#x27;</span><br><span class="line"> </span><br><span class="line">restorecon -Rv &#x27;/var/www/nextcloud/&#x27;</span><br></pre></td></tr></table></figure>
 <h1 id="8-进入Nextcloud网页端安装"><a href="#8-进入Nextcloud网页端安装" class="headerlink" title="8.进入Nextcloud网页端安装"></a>8.进入Nextcloud网页端安装</h1><p>此处按界面提示操作即可</p>
 <h1 id="9-故障排除"><a href="#9-故障排除" class="headerlink" title="9.故障排除"></a>9.故障排除</h1><p>一般出现最多的是由于权限问题导致禁止访问，首先保证上面步骤中的授予某些目录权限是否执行。其次查看 nginx的<code>error.log</code>确定原因。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>每天复习一个Linux命令008之chmod、chown</title>
+    <url>/20200219235325.html</url>
+    <content><![CDATA[<h2 id="2-9-chmod"><a href="#2-9-chmod" class="headerlink" title="2.9 chmod"></a>2.9 chmod</h2><p>访问权限：只读、只写和可执行。</p>
+<ul>
+<li>可读：就是只让你读，其他的不能做。</li>
+<li>可执行：就是将该文件作为一种程序可读。</li>
+<li>可写：就是能往里面写东西。</li>
+</ul>
+<p>三种类型的用户：文件所有者、同组用户和其他用户。</p>
+<ul>
+<li>文件所有者就是最初创建的时候的用户，可以赋予同组用户和或其他用户权限。</li>
+</ul>
+<p>文件或目录所拥有的的权限有三组</p>
+<ul>
+<li>文件的读、写和执行权限。</li>
+<li>同组用户的三个权限。</li>
+<li>其他用户的三个权限。</li>
+</ul>
+<p>一个文件的权限查看，用<code>ls l</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">是什么类型rwxrwxrwx  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首位什么类型，比如-代表目录，d代表文件。</li>
+<li>后面就是三种用户的权限，没有就是-。</li>
+</ul>
+<p>chmod</p>
+<ul>
+<li><p>用途：就是更改目录或者文件的权限。</p>
+</li>
+<li><p>用法：一种就是用数字法，一种是用字母法。前者比较快，用一堆数字指定，但是好记忆。后者稍微好点。</p>
+<ul>
+<li><p>字母法</p>
+<ul>
+<li><p><code>chmod  u/g/o/a+/-/=x/w/x</code> 表示给用户或同组或其他或全部用户增加或减少或赋予某个权限（增加或减减少的思考就是你本来有这个权限当然还可以增加，因为增加后还是保持不变），赋予权限j就是指给予某个权限，但是其它权限取消的意思，上面/是或的意思，不计入命令。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod u+x,g+y filename</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>数字阀</p>
+<ul>
+<li><p>首先0表示无权限，1表示可执行权限，2表示可写权限，4表示可读权限。</p>
+</li>
+<li><p>有三种类型用户，用户u、同组g、其他用户o，每一类都有三种权限，所以他们直接相加就构成了每一种用户的权限数字，也就是三种用户对应三个8进制数字。关于数字法其实等于子母法的赋予号=，因为他是同时指定每一种用户的三种权限，而有的书却直接写等同+,个人认为不对。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">chmod 777 file//就代表设置全部权限，每个7的意思就是1+2+4，其中每一位代表一种类型用户。</span><br><span class="line">chmod 764 file//就代表赋予创建者具有全部权限，同组的没有执行权，其他用户只有可读权限。</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-10-chown"><a href="#2-10-chown" class="headerlink" title="2.10 chown"></a>2.10 chown</h2><ul>
+<li>用途：改变目录或者文件的所有人。所以一般用户没有这种权限，一般都是root用户才有。但是同组用户互相变更是允许的。</li>
+<li>用法：<code>chown option owner filename</code></li>
+<li>选项<ul>
+<li>-c 更改后如果更改成功才显示。</li>
+<li>-h 用于更改符号链接文件，就是说你改符号链接文件的所有者，不会改变所指向目标文件所有者。</li>
+<li>-f  更改后如果无法更改，不会显示错误信息。</li>
+<li>-v 显示所有者变更详情。</li>
+<li>-R 递归变更目录下所有文件和子目录的所有者。</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -1931,6 +1931,27 @@
       </categories>
   </entry>
   <entry>
+    <title>绿色版MySQL安装记录</title>
+    <url>/20191026213909.html</url>
+    <content><![CDATA[<h1 id="1-下载MYSQL绿色版"><a href="#1-下载MYSQL绿色版" class="headerlink" title="1.下载MYSQL绿色版"></a>1.下载MYSQL绿色版</h1><p>官网下载地址：<a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+<h1 id="2-解压到本地"><a href="#2-解压到本地" class="headerlink" title="2.解压到本地"></a>2.解压到本地</h1><p>解压到本地并创建data文件，创建my.ini文件，配置信息如下</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span><br><span class="line"># *** DO NOT EDIT THIS FILE. It&#x27;s a template which will be copied to the</span><br><span class="line"># *** default location during install, and will be replaced if you</span><br><span class="line"># *** upgrade to a newer version of MySQL.</span><br><span class="line"> </span><br><span class="line">[mysqld]</span><br><span class="line">#skip-grant-tables </span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size = 128M</span><br><span class="line"> </span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line"> </span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"># basedir = .....</span><br><span class="line"># datadir = .....</span><br><span class="line"># port = .....</span><br><span class="line"># server_id = .....</span><br><span class="line">basedir =&quot;D:\Mysql\mysql-8.0.12-winx64&quot;   # 设置mysql的安装目录 </span><br><span class="line">datadir =&quot;D:\Mysql\mysql-8.0.12-winx64\data&quot;   # 设置mysql数据库的数据的存放目录，必须是data，或者是//xxx/data  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size = 128M</span><br><span class="line"># sort_buffer_size = 2M</span><br><span class="line"># read_rnd_buffer_size = 2M </span><br><span class="line"> </span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </span><br><span class="line"> </span><br><span class="line">#服务端的编码方式</span><br><span class="line">character-set-server=utf8mb4</span><br><span class="line">[client]</span><br><span class="line">#客户端编码方式，最好和服务端保存一致</span><br><span class="line">loose-default-character-set=utf8mb4</span><br><span class="line"> </span><br><span class="line">[WinMySQLadmin]  </span><br><span class="line">Server = &quot;D:\Mysql\mysql-8.0.12-winx64\bin\mysqld.exe&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h1><p>在系统环境变量配置界面，添加PATH变量为bin文件夹目录。</p>
+<h1 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h1><p>以管理员运行CMD命令，输入<code>mysqld --initialize-insecure</code></p>
+<h1 id="5-安装服务"><a href="#5-安装服务" class="headerlink" title="5.安装服务"></a>5.安装服务</h1><p><code>mysqld -install</code></p>
+<h1 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6.启动服务"></a>6.启动服务</h1><p><code>net start mysql</code></p>
+<h1 id="7-登录并更改密码"><a href="#7-登录并更改密码" class="headerlink" title="7.登录并更改密码"></a>7.登录并更改密码</h1><p><code>mysql -uroot -p</code><br><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;; </code><br><code>flush privileges;</code></p>
+<h1 id="8-卸载"><a href="#8-卸载" class="headerlink" title="8.卸载"></a>8.卸载</h1><ol>
+<li>net stop mysql</li>
+<li>regedit 删除下面目录中EventMessageFile 和 TypesSupported <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/ControlSet001/Services/Eventlog/Application/MySQL</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/ControlSet002/Services/Eventlog/Application/MySQL</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Services/Eventlog/Application/MySQL</span><br></pre></td></tr></table></figure></li>
+<li>移除服务<br>在bin目录下运行CMD,<code>mysqld -remove</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+  </entry>
+  <entry>
     <title>MyBatis一对多嵌套查询结果映射</title>
     <url>/20201210174131.html</url>
     <content><![CDATA[<p><strong>简单理解就是：此种方法指直接书写连表SQL，然后将结果一次性映射到几个实体上，而不是先查主表映射到实体后,再查从表再映射到实体</strong><br><strong>比较官方的说法叫做一对多collection集合嵌套结果映射</strong><br>步骤</p>
@@ -1989,27 +2010,6 @@
 ]]></content>
       <categories>
         <category>Mybatis</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>绿色版MySQL安装记录</title>
-    <url>/20191026213909.html</url>
-    <content><![CDATA[<h1 id="1-下载MYSQL绿色版"><a href="#1-下载MYSQL绿色版" class="headerlink" title="1.下载MYSQL绿色版"></a>1.下载MYSQL绿色版</h1><p>官网下载地址：<a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
-<h1 id="2-解压到本地"><a href="#2-解压到本地" class="headerlink" title="2.解压到本地"></a>2.解压到本地</h1><p>解压到本地并创建data文件，创建my.ini文件，配置信息如下</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># For advice on how to change settings please see</span><br><span class="line"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span><br><span class="line"># *** DO NOT EDIT THIS FILE. It&#x27;s a template which will be copied to the</span><br><span class="line"># *** default location during install, and will be replaced if you</span><br><span class="line"># *** upgrade to a newer version of MySQL.</span><br><span class="line"> </span><br><span class="line">[mysqld]</span><br><span class="line">#skip-grant-tables </span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"># innodb_buffer_pool_size = 128M</span><br><span class="line"> </span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"># log_bin</span><br><span class="line"> </span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"># basedir = .....</span><br><span class="line"># datadir = .....</span><br><span class="line"># port = .....</span><br><span class="line"># server_id = .....</span><br><span class="line">basedir =&quot;D:\Mysql\mysql-8.0.12-winx64&quot;   # 设置mysql的安装目录 </span><br><span class="line">datadir =&quot;D:\Mysql\mysql-8.0.12-winx64\data&quot;   # 设置mysql数据库的数据的存放目录，必须是data，或者是//xxx/data  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"># join_buffer_size = 128M</span><br><span class="line"># sort_buffer_size = 2M</span><br><span class="line"># read_rnd_buffer_size = 2M </span><br><span class="line"> </span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </span><br><span class="line"> </span><br><span class="line">#服务端的编码方式</span><br><span class="line">character-set-server=utf8mb4</span><br><span class="line">[client]</span><br><span class="line">#客户端编码方式，最好和服务端保存一致</span><br><span class="line">loose-default-character-set=utf8mb4</span><br><span class="line"> </span><br><span class="line">[WinMySQLadmin]  </span><br><span class="line">Server = &quot;D:\Mysql\mysql-8.0.12-winx64\bin\mysqld.exe&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h1><p>在系统环境变量配置界面，添加PATH变量为bin文件夹目录。</p>
-<h1 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h1><p>以管理员运行CMD命令，输入<code>mysqld --initialize-insecure</code></p>
-<h1 id="5-安装服务"><a href="#5-安装服务" class="headerlink" title="5.安装服务"></a>5.安装服务</h1><p><code>mysqld -install</code></p>
-<h1 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6.启动服务"></a>6.启动服务</h1><p><code>net start mysql</code></p>
-<h1 id="7-登录并更改密码"><a href="#7-登录并更改密码" class="headerlink" title="7.登录并更改密码"></a>7.登录并更改密码</h1><p><code>mysql -uroot -p</code><br><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;; </code><br><code>flush privileges;</code></p>
-<h1 id="8-卸载"><a href="#8-卸载" class="headerlink" title="8.卸载"></a>8.卸载</h1><ol>
-<li>net stop mysql</li>
-<li>regedit 删除下面目录中EventMessageFile 和 TypesSupported <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/ControlSet001/Services/Eventlog/Application/MySQL</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/ControlSet002/Services/Eventlog/Application/MySQL</span><br><span class="line">HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Services/Eventlog/Application/MySQL</span><br></pre></td></tr></table></figure></li>
-<li>移除服务<br>在bin目录下运行CMD,<code>mysqld -remove</code></li>
-</ol>
-]]></content>
-      <categories>
-        <category>MySQL</category>
       </categories>
   </entry>
   <entry>
