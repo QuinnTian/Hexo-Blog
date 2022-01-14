@@ -3861,4 +3861,131 @@ chmod 777 /var/log/caddy/caddy.log
         <tag>站点验证</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java泛型</title>
+    <url>/20220114211227.html</url>
+    <content><![CDATA[<h1 id="Java泛型"><a href="#Java泛型" class="headerlink" title="Java泛型"></a>Java泛型</h1><ul>
+<li>自己写一个ArrayList类，对比不使用泛型和使用泛型的区别，观察Java内部库中ArrayList类是如何使用泛型的；</li>
+<li>在使用泛型的时候同时可以进行向上转型，但要避免一些问题；</li>
+<li>定义一个泛型包括在类中定义泛型，静态方法中使用泛型，定义一个多类型的泛型，在接口中定义泛型；使用泛型和不使用泛型的区别</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="1-ArrayList-泛型"><a href="#1-ArrayList-泛型" class="headerlink" title="1.  ArrayList 泛型"></a>1.  ArrayList 泛型</h2><ul>
+<li>不使用泛型会可能会导致强制类型转换错误</li>
+<li>使用泛型可以避免强制类型转换方法</li>
+<li>其实Java内部库中ArrayList类已经使用了泛型</li>
+</ul>
+<hr>
+<ul>
+<li><p>定义一个ArrayList泛型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object[] array;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Object e)</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>表现在使用的时候</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果不使用泛型，下面是声明的方式</span></span><br><span class="line">ArrayList list = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="comment">// 存入的是字符串，但是没有指定就是Object类型</span></span><br><span class="line">list.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"><span class="comment">// 获取到Object，必须强制转型为String:</span></span><br><span class="line">String first = (String) list.get(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 传入的是Integer类型</span></span><br><span class="line">list.add(<span class="keyword">new</span> Integer(<span class="number">123</span>));</span><br><span class="line"><span class="comment">// ERROR: ClassCastException:</span></span><br><span class="line">String second = (String) list.get(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>如果不使用泛型，那么就需要建立 StringArrayList\IntegerArrayList 等等类</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>解决方法使用泛型<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这是定义泛型的基本格式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"><span class="keyword">private</span> T[] array;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(T e)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果使用泛型，下面是声明的方式</span></span><br><span class="line">ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="comment">// 存入的是字符串，</span></span><br><span class="line">list.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"><span class="comment">// 直接获取即可:</span></span><br><span class="line">String first = list.get(<span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>Java内部库中的ArrayList已经实现了泛型<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@java</span>.io.Serial</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">8683452581122892189L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Default initial capacity.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Shared empty array instance used for empty instances.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-向上转型"><a href="#2-向上转型" class="headerlink" title="2. 向上转型"></a>2. 向上转型</h2><ul>
+<li>向上转型</li>
+<li>ArrayList<Integer> 转型为 ArrayList<Number>存在问题</li>
+</ul>
+<hr>
+<ul>
+<li><p>在Java标准库中的<code>ArrayList&lt;T&gt;</code>实现了<code>List&lt;T&gt;</code>接口，它可以向上转型为<code>List&lt;T&gt;</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li><p>编译器不允许ArrayList<Integer> <code>转型为 </code>ArrayList<Number> 这种转型，因为要避免如下错误</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建ArrayList&lt;Integer&gt;类型：</span></span><br><span class="line">ArrayList&lt;Integer&gt; integerList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="comment">// 添加一个Integer：</span></span><br><span class="line">integerList.add(<span class="keyword">new</span> Integer(<span class="number">123</span>));</span><br><span class="line"><span class="comment">// “向上转型”为ArrayList&lt;Number&gt;：</span></span><br><span class="line"><span class="comment">// 此时已经报错，原因这里赋值的意思：第一，这两个是同一个对象，类似于指针；第二，强制转换</span></span><br><span class="line"><span class="comment">// 即 numberList 和 integerList 同时指向一个对象</span></span><br><span class="line">ArrayList&lt;Number&gt; numberList = integerList;</span><br><span class="line"><span class="comment">// 用 numberList 添加一个Float，因为Float也是Number；</span></span><br><span class="line">numberList.add(<span class="keyword">new</span> Float(<span class="number">12.34</span>));</span><br><span class="line"><span class="comment">// 用 integerList 获取索引为1的元素：此时很明显回到类型转换错误，integer 类型不可能接受float类型</span></span><br><span class="line">Integer n = integerList.get(<span class="number">1</span>); <span class="comment">// ClassCastException!</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据继承关系理解，Float 类型和 Integer 类型都是 Number类的子类，尽管 Integer 向上转换成 Number 类型后接受了一个 Float 类型，但在获取的时候 Integer 类型是不能接受 Float 类型的</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-定义和使用泛型"><a href="#3-定义和使用泛型" class="headerlink" title="3. 定义和使用泛型"></a>3. 定义和使用泛型</h2><ul>
+<li>类定义泛型的基本步骤</li>
+<li>静态方法中如何使用泛型</li>
+</ul>
+<hr>
+<h3 id="3-1-类与泛型"><a href="#3-1-类与泛型" class="headerlink" title="3.1  类与泛型"></a>3.1  类与泛型</h3><ul>
+<li>类定义泛型的基本步骤<ul>
+<li>先写一个普通的类</li>
+<li>将所有的强类型地方换成T</li>
+<li>类声明泛型</li>
+</ul>
+</li>
+</ul>
+<hr>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String first;</span><br><span class="line">    <span class="keyword">private</span> String last;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(String first, String last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.first = first;</span><br><span class="line">        <span class="keyword">this</span>.last = last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirst</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLast</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> last;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String first;</span><br><span class="line">    <span class="keyword">private</span> String last;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(String first, String last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.first = first;</span><br><span class="line">        <span class="keyword">this</span>.last = last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirst</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLast</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> last;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">T</span>&gt; </span>&#123;<span class="comment">//声明T</span></span><br><span class="line">    <span class="comment">//以下所有强类型都换成T</span></span><br><span class="line">    <span class="keyword">private</span> T first;</span><br><span class="line">    <span class="keyword">private</span> T last;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(T first, T last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.first = first;</span><br><span class="line">        <span class="keyword">this</span>.last = last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getFirst</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getLast</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> last;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-2-静态方法与泛型"><a href="#3-2-静态方法与泛型" class="headerlink" title="3.2  静态方法与泛型"></a>3.2  静态方法与泛型</h3><ul>
+<li>静态方法中的使用泛型注意点<ul>
+<li>不要和带有泛型的类混淆</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T first;</span><br><span class="line">    <span class="keyword">private</span> T last;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(T first, T last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.first = first;</span><br><span class="line">        <span class="keyword">this</span>.last = last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getFirst</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getLast</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 静态泛型方法应该使用其他类型区分:</span></span><br><span class="line">    <span class="comment">// 1. 泛型的声明要写在方法声明上 2. 为了区分换一个字母</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;K&gt; <span class="function">Pair&lt;K&gt; <span class="title">create</span><span class="params">(K first, K last)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Pair&lt;K&gt;(first, last);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 错误写法</span></span><br><span class="line">    <span class="comment">// 对静态方法使用&lt;T&gt;:</span></span><br><span class="line">    <span class="comment">// 错误原因：1. 这就不是一个使用了泛型的方法 2. 下面的T是指，方法的返回类型是“使用了泛型的类”作为返回类型</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Pair&lt;T&gt; <span class="title">create</span><span class="params">(T first, T last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Pair&lt;T&gt;(first, last);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 不规范写法</span></span><br><span class="line">    <span class="comment">// 可以编译通过:</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">Pair&lt;T&gt; <span class="title">create</span><span class="params">(T first, T last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Pair&lt;T&gt;(first, last);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-3-多类型泛型"><a href="#3-3-多类型泛型" class="headerlink" title="3.3 多类型泛型"></a>3.3 多类型泛型</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">T</span>, <span class="title">K</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T first;</span><br><span class="line">    <span class="keyword">private</span> K last;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(T first, K last)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.first = first;</span><br><span class="line">        <span class="keyword">this</span>.last = last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getFirst</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> K <span class="title">getLast</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">Pair&lt;String, Integer&gt; p = <span class="keyword">new</span> Pair&lt;&gt;(<span class="string">&quot;test&quot;</span>, <span class="number">123</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-2-泛型与接口"><a href="#3-2-泛型与接口" class="headerlink" title="3.2 泛型与接口"></a>3.2 泛型与接口</h3><ul>
+<li>对字符串String进行排序，能直接使用 sort方法因为 String类已经实现对应的泛型接口</li>
+<li>自定义类进行排序必须实现对应的泛型接口</li>
+<li>可以在接口中定义泛型</li>
+</ul>
+<hr>
+<p>字符串排序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] ss = <span class="keyword">new</span> String[] &#123; <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Pear&quot;</span> &#125;;</span><br><span class="line">        Arrays.sort(ss);</span><br><span class="line">        System.out.println(Arrays.toString(ss));</span><br><span class="line"><span class="comment">// 可以直接对字符串进行排序的原因，String 类中已经实现了相应的接口</span></span><br><span class="line"><span class="comment">// 查看源码</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span>,</span></span><br><span class="line"><span class="class">               <span class="title">Constable</span>, <span class="title">ConstantDesc</span> </span>&#123;</span><br><span class="line">.......</span><br><span class="line">               &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>自定义类进行排序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 对自定义的类进行排序</span></span><br><span class="line"> Person[] ps = <span class="keyword">new</span> Person[] &#123;</span><br><span class="line">            <span class="keyword">new</span> Person(<span class="string">&quot;Bob&quot;</span>, <span class="number">61</span>),</span><br><span class="line">            <span class="keyword">new</span> Person(<span class="string">&quot;Alice&quot;</span>, <span class="number">88</span>),</span><br><span class="line">            <span class="keyword">new</span> Person(<span class="string">&quot;Lily&quot;</span>, <span class="number">75</span>),</span><br><span class="line">        &#125;;</span><br><span class="line">        Arrays.sort(ps);</span><br><span class="line">        System.out.println(Arrays.toString(ps));</span><br><span class="line"><span class="comment">// 自定义的类必须实现 Comparable&lt;Person&gt; 接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt; </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> score;</span><br><span class="line">    Person(String name, <span class="keyword">int</span> score) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person other)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name.compareTo(other.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">&quot;,&quot;</span> + <span class="keyword">this</span>.score;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在接口中定义泛型，Comparable为例</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(T o)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-5-使用泛型的区别"><a href="#3-5-使用泛型的区别" class="headerlink" title="3.5 使用泛型的区别"></a>3.5 使用泛型的区别</h3><ul>
+<li>基本泛型的使用<ul>
+<li>不指定泛型，默认就是Object</li>
+<li>若指定泛型，那么就是自动识别为强类型</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>基本使用</p>
+<ul>
+<li><p>使用时，不指定泛型类型，那么就是 Object</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 编译器警告:</span></span><br><span class="line">List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">list.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;World&quot;</span>);</span><br><span class="line">String first = (String) list.get(<span class="number">0</span>);</span><br><span class="line">String second = (String) list.get(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>指定泛型，那么就会自动识别为强类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 无编译器警告:</span></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">list.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;World&quot;</span>);</span><br><span class="line"><span class="comment">// 无强制转型:</span></span><br><span class="line">String first = list.get(<span class="number">0</span>);</span><br><span class="line">String second = list.get(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p>未完待续</p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1265104600263968">参考文档</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>泛型</tag>
+      </tags>
+  </entry>
 </search>
