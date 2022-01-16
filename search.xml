@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>css定位总结</title>
-    <url>/20200223223801.html</url>
-    <content><![CDATA[<h1 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">块级元素 独占一行、可设宽高、默认父元素宽度、高度如果不设置只能靠内容撑起</span><br><span class="line">	常见元素 <span class="selector-tag">div</span> h <span class="selector-tag">p</span> <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> </span><br><span class="line">行内元素 在一行显示、不可设宽高、紧靠内容撑起宽高</span><br><span class="line">	常见元素 <span class="selector-tag">span</span> <span class="selector-tag">a</span> <span class="selector-tag">strong</span> <span class="selector-tag">b</span> <span class="selector-tag">em</span> l <span class="selector-tag">del</span> s</span><br><span class="line">行内块元素 在一行显示、可设宽高、不会默认父元素宽度</span><br><span class="line">	常见元素 <span class="selector-tag">img</span> <span class="selector-tag">input</span> <span class="selector-tag">td</span></span><br><span class="line">四种定位</span><br><span class="line">通过 <span class="attribute">position</span> 属性设置</span><br><span class="line">static</span><br><span class="line">relative</span><br><span class="line">absolute</span><br><span class="line">fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">postion:relative</span><br><span class="line">top:</span><br><span class="line">buttom:</span><br><span class="line">right:</span><br><span class="line">left</span><br><span class="line">偏移原来位置，且原位置所占空间保留。</span><br></pre></td></tr></table></figure>
-
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute</span><br><span class="line">根据祖先元素偏移，原来位置空间删除。</span><br></pre></td></tr></table></figure>
-
-<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">float</span>:</span><br><span class="line">偏移后只是原位置不占据空间，但是文字会浮动其周围，原因是早起就是为了开发环绕图片的所开发的。</span><br><span class="line">解决各种元素环绕的方法就是设置clear.</span><br><span class="line">clear:right left both inherit 就是说该元素的哪一边不允许出现浮动元素</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>css框模型总结</title>
     <url>/20200223214408.html</url>
     <content><![CDATA[<h1 id="css框模型"><a href="#css框模型" class="headerlink" title="css框模型"></a>css框模型</h1><p><img src="https://quinntian.com/upload/2020/2/image-b1d9940ce7124af6b0100718386301b0.png" alt="image.png"></p>
@@ -29,6 +13,22 @@
 <h2 id="border"><a href="#border" class="headerlink" title="border"></a>border</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-style</span></span><br><span class="line"><span class="attribute">none</span>	定义无边框。</span><br><span class="line">hidden	与 &quot;<span class="attribute">none</span>&quot; 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。</span><br><span class="line">dotted	定义点状边框。在大多数浏览器中呈现为实线。</span><br><span class="line">dashed	定义虚线。在大多数浏览器中呈现为实线。</span><br><span class="line">solid	定义实线。</span><br><span class="line">double	定义双线。双线的宽度等于 <span class="attribute">border-width</span> 的值。</span><br><span class="line">groove	定义 <span class="number">3</span>D 凹槽边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">ridge	定义 <span class="number">3</span>D 垄状边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">inset	定义 <span class="number">3</span>D inset 边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line">outset	定义 <span class="number">3</span>D outset 边框。其效果取决于 <span class="attribute">border-color</span> 的值。</span><br><span class="line"><span class="attribute">inherit</span>	规定应该从父元素继承边框样式。</span><br><span class="line"><span class="attribute">border-width</span></span><br><span class="line">thin	定义细的边框。</span><br><span class="line">medium	默认。定义中等的边框。</span><br><span class="line">thick	定义粗的边框。</span><br><span class="line">length	允许您自定义边框的宽度。</span><br><span class="line"><span class="attribute">inherit</span>	规定应该从父元素继承边框宽度。</span><br><span class="line"><span class="attribute">border-color</span></span><br><span class="line">透明色：transparent</span><br><span class="line">统一设置</span><br><span class="line"><span class="attribute">border</span>:宽度 样式 颜色</span><br><span class="line">样式必须设置</span><br><span class="line">宽度、样式、颜色都可以四方向分别设置上右下左、单独设置，值传递和外边距一样。</span><br></pre></td></tr></table></figure>
 
 <h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span> 长度\百分比  不允许负值</span><br><span class="line"><span class="attribute">padding</span> 上左下右</span><br><span class="line"><span class="attribute">padding-top</span>/buttom/<span class="attribute">right</span>/<span class="attribute">left</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>css定位总结</title>
+    <url>/20200223223801.html</url>
+    <content><![CDATA[<h1 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h1><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">块级元素 独占一行、可设宽高、默认父元素宽度、高度如果不设置只能靠内容撑起</span><br><span class="line">	常见元素 <span class="selector-tag">div</span> h <span class="selector-tag">p</span> <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> </span><br><span class="line">行内元素 在一行显示、不可设宽高、紧靠内容撑起宽高</span><br><span class="line">	常见元素 <span class="selector-tag">span</span> <span class="selector-tag">a</span> <span class="selector-tag">strong</span> <span class="selector-tag">b</span> <span class="selector-tag">em</span> l <span class="selector-tag">del</span> s</span><br><span class="line">行内块元素 在一行显示、可设宽高、不会默认父元素宽度</span><br><span class="line">	常见元素 <span class="selector-tag">img</span> <span class="selector-tag">input</span> <span class="selector-tag">td</span></span><br><span class="line">四种定位</span><br><span class="line">通过 <span class="attribute">position</span> 属性设置</span><br><span class="line">static</span><br><span class="line">relative</span><br><span class="line">absolute</span><br><span class="line">fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">postion:relative</span><br><span class="line">top:</span><br><span class="line">buttom:</span><br><span class="line">right:</span><br><span class="line">left</span><br><span class="line">偏移原来位置，且原位置所占空间保留。</span><br></pre></td></tr></table></figure>
+
+<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute</span><br><span class="line">根据祖先元素偏移，原来位置空间删除。</span><br></pre></td></tr></table></figure>
+
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">float</span>:</span><br><span class="line">偏移后只是原位置不占据空间，但是文字会浮动其周围，原因是早起就是为了开发环绕图片的所开发的。</span><br><span class="line">解决各种元素环绕的方法就是设置clear.</span><br><span class="line">clear:right left both inherit 就是说该元素的哪一边不允许出现浮动元素</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -61,6 +61,17 @@
 ]]></content>
       <categories>
         <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/20180712120823.html</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -157,17 +168,6 @@
         <tag>Git</tag>
         <tag>代理</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/20180712120823.html</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
   </entry>
   <entry>
     <title>Hexo个性化配置</title>
@@ -810,6 +810,60 @@
 <li>HTML 事件属性可以调用 JavaScript 函数</li>
 <li>你可以为 HTML 元素指定自己的事件处理程序<br>你可以阻止事件的发生。<br>等等 ..</li>
 </ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>js 变量总结</title>
+    <url>/20220117001541.html</url>
+    <content><![CDATA[<p>JavaScript 变量的总结和相关例子</p>
+<span id="more"></span>
+<h1 id="js-变量"><a href="#js-变量" class="headerlink" title="js 变量"></a>js 变量</h1><ul>
+<li><p>变量命名规范</p>
+</li>
+<li><p>用 var 字声明变量</p>
+<ul>
+<li>可以声明和赋值同时进</li>
+<li>可以先声明在赋值</li>
+<li>同时声明多个变量</li>
+<li>声明和初始化可以混用</li>
+<li>若只声明不赋值会造成错误</li>
+<li>使用 var 声明允许重复声明</li>
+<li>不建议省略 var 关键字，因为在函数内省略关键字会成为全局变量</li>
+<li>使用 var 关键字定义的变量存在变量提升问题，也就是可以先用后使用</li>
+</ul>
+</li>
+<li><p>用 let 关键字进行声明变量</p>
+<ul>
+<li>let 声明的变量作用域是块级，比如在函数内其作用域是函数</li>
+<li>let 声明变量不存在提升，所以不允许出现重复声明的状况</li>
+<li>在不同作用域出现相同的使用 let 声明的变量名不会报错，因为他们属于不同作用域</li>
+<li>使用 var 声明再使用 let 声明会报错</li>
+<li>let 变量不存在提升，不允许先使用后声明，这一现象叫做锁区</li>
+<li>let 变量不会成为全局 windows 的属性，但用 var 声明的会</li>
+<li>let 变量不能用条件式声明，因为他的作用域是块级</li>
+</ul>
+</li>
+<li><p>用 const 声明变量</p>
+<ul>
+<li>const 声明的变量必须初始化</li>
+<li>不允许修改值</li>
+<li>不允许重复声明</li>
+<li>const 声明的对象可以修改其对象属性，因为限制的是对象的引用不变</li>
+<li>使用 const 可以遍历对象</li>
+</ul>
+</li>
+<li><p>代码风格问题</p>
+<ul>
+<li>不使用 var 关键字</li>
+<li>const 优先，let 其次</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 变量名基本要求</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">1. 变量必须以字母开头</span></span><br><span class="line"><span class="comment">2. 变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）</span></span><br><span class="line"><span class="comment">3. 变量名称对大小写敏感（y 和 Y 是不同的变量）</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子1 使用 var 声明变量</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="number">1</span>; <span class="comment">// 声明同时赋值叫初始化</span></span><br><span class="line"><span class="comment">// 例子2 先声明后赋值</span></span><br><span class="line"><span class="keyword">var</span> name;</span><br><span class="line">name = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 例子3 同时初始化多个变量</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="number">1</span> , age = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 例子4 声明和初始化混用</span></span><br><span class="line"><span class="keyword">var</span> name , age = <span class="number">1</span>; <span class="comment">// 正确不建议</span></span><br><span class="line"><span class="comment">// 例子5 只声明不赋值会导致 undefined 错误</span></span><br><span class="line"><span class="keyword">var</span> x,y,z=<span class="number">1</span>;<span class="comment">// 错误写法</span></span><br><span class="line"><span class="comment">// 例子6 使用 var 声明，允许多次声明同一个变量不会报错</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">2</span>;<span class="comment">// 不会报错</span></span><br><span class="line"><span class="comment">// 例子7 使用 var 声明，先初始化后再次声明不会报错</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> x;<span class="comment">// 不会报错</span></span><br><span class="line"><span class="comment">// 例子8 函数内部用 var 声明的变量是全局变量</span></span><br><span class="line"><span class="function"><span class="title">funciton</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p1 = <span class="number">1</span>;<span class="comment">// 使用 var 声明是局部变量</span></span><br><span class="line">    p2 = <span class="number">2</span>;<span class="comment">// 不使用 var 声明是全局变量，不建议这么做</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(p1);<span class="comment">// 外部访问不到的</span></span><br><span class="line"><span class="built_in">console</span>.log(p2);<span class="comment">// 外部可以访问到</span></span><br><span class="line"><span class="comment">// 例子9 var 关键字定义变量存在变量提升</span></span><br><span class="line"><span class="comment">// 变量提升表现：可以先用后声明变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);<span class="comment">// 可以先用</span></span><br><span class="line">    <span class="keyword">var</span> name = <span class="number">1</span>;<span class="comment">// 后声明，js会自动提升到该作用域顶部</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 同样在全局作用域也是</span></span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br><span class="line"><span class="keyword">var</span> name = <span class="number">1</span>;<span class="comment">//会自动提升到全局作用域顶部</span></span><br><span class="line"><span class="comment">// 由于总是存在变量提升那么多次初始化同一个变量不会报错</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> name = <span class="number">1</span>;<span class="comment">// name 总是提升并且覆盖之前的变量</span></span><br><span class="line"><span class="built_in">console</span>.log(name);<span class="comment">// 输出1</span></span><br><span class="line"><span class="comment">// 例子10 let 是块级作用域</span></span><br><span class="line"><span class="comment">// 在函数内部声明，作用域是函数作用域</span></span><br><span class="line"><span class="function"><span class="title">funciton</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> age = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(age);<span class="comment">// 外部作用域无法访问</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> age = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(age);<span class="comment">// 无法访问</span></span><br><span class="line"><span class="comment">// 例子11 let 不允许重复声明</span></span><br><span class="line"><span class="keyword">let</span> name;</span><br><span class="line"><span class="keyword">let</span> name;<span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">var</span> age;</span><br><span class="line"><span class="keyword">var</span> age;<span class="comment">// 不报错</span></span><br><span class="line"><span class="comment">// 例子12 在不同的作用域内有重复的变量名不会报错，因为他们属于不同作用域</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> age = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(age);<span class="comment">//输出2，该变量作用域&#123;块&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(age);<span class="comment">// 输出1，该变量作用域全局</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> age = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(age);<span class="comment">//输出2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(age);<span class="comment">// 输出1</span></span><br><span class="line"><span class="comment">// 例子13 重复声明混用会报错</span></span><br><span class="line"><span class="keyword">var</span> name;</span><br><span class="line"><span class="keyword">let</span> name;<span class="comment">//报错</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子14 let 变量不会提升</span></span><br><span class="line"><span class="built_in">console</span>.log(age);<span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">1</span>;<span class="comment">// 该声明 js 会注意到，但在未声明之前任何引用都会暂时性锁区，不允许使用</span></span><br><span class="line"><span class="comment">// 例子15 let 声明的变量不会成为全局 windows 对象的属性</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(windows.age);<span class="comment">//报错未定义</span></span><br><span class="line"><span class="comment">// var 声明的变量是全局对象属性</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(age);<span class="comment">// 输出1</span></span><br><span class="line"><span class="comment">// 例子15 使用 let 声明变量不会提升，所以不能重复声明</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> name = <span class="string">&#x27;a&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> age = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> name = <span class="string">&#x27;2&#x27;</span>;<span class="comment">// 不会报错，会自动提升覆盖已有变量名</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">let</span> age = <span class="number">36</span>;<span class="comment">// 报错变量已经声明</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="comment">// let 声明变量不会提升覆盖，导致报错已经声明</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 例子16 不可以用条件判断声明 let （条件式声明 let ）</span></span><br><span class="line"><span class="comment">// 因为 let 作用域是块级</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> name = <span class="string">&#x27;a&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="keyword">var</span> age = <span class="number">1</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> name === <span class="string">&#x27;undefined&#x27;</span>)&#123;</span><br><span class="line">	<span class="keyword">let</span> age = <span class="number">36</span>;<span class="comment">// 该变量作用域是&#123;块&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">name = <span class="string">&#x27;b&#x27;</span>;<span class="comment">// 该变量仍然是全局变量</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(age);</span><br><span class="line">&#125;<span class="keyword">catch</span>(error)&#123;</span><br><span class="line">	<span class="keyword">let</span> age;<span class="comment">// 该变量作用域是&#123;块&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">age = <span class="number">26</span>;<span class="comment">// 该变量仍然是全局变量</span></span><br><span class="line"><span class="comment">// 例子17 使用 for 循环时用var的困扰</span></span><br><span class="line"><span class="comment">// 例子18 const 变量必须初始化，不允许修改值</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">23</span>;</span><br><span class="line">age = <span class="number">30</span>;<span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子19 const 不允许重复声明</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子20 const 的作用域是块</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> age = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 外部无法访问</span></span><br><span class="line"><span class="comment">// 例子21 使用 const 声明一个对象</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line">person.name = <span class="string">&#x27;a&#x27;</span>;<span class="comment">// 不会报错，const 限制的是对象的引用，引用没有变</span></span><br><span class="line"><span class="comment">// 例子20 使用 const 遍历对象</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 a,b ; 这里每次迭代都会创建一个新 key</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出1 2 3 4 5 6</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">of</span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出1 2 3 4 5 6，这里的 value 是最初创建的，迭代一次不会新创建</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -1811,33 +1865,6 @@
       </categories>
   </entry>
   <entry>
-    <title>每天复习一点Linux命令009之SUID、SGID</title>
-    <url>/20200220200617.html</url>
-    <content><![CDATA[<ul>
-<li>SUID<ul>
-<li>原理：在用户位的rwx的x位设置成s（rw<u>x</u> rwx rwx），目的就是让文件以其原有所属者进行运行。</li>
-<li>格式：<code>chmod u+s</code>,比较典型的就是<code>passwd</code>命令。</li>
-<li>场景：首先passwd文件是只有root用户才能读写，但是其他用户如果想要修改密码呢？切换到root在修改这就显得很麻烦了。但是如果设置s位，那么普通用户修改自己密码也就可以了。</li>
-</ul>
-</li>
-<li>SGID<ul>
-<li>原理：就是把所属组位的rwx的x设置为s(rwx rw<u>x</u> rwx)。</li>
-<li>作用<ul>
-<li>1.针对文件设置SGID：首先只有二进制可执行文件才能够设置SGID，作用就是该文件具有所属组的特权（见场景）。</li>
-<li>2.针对目录设置SGID，则复制到该目录下的所有文件，文件的都会设置成所属组的权限，除非你在复制文件命令时用cp -p选项。</li>
-</ul>
-</li>
-<li>格式：<code>chmod g+s</code></li>
-<li>场景：<code>/dev/kmenm权限为cr-- r-- ---root system</code>使用ps命令读取该文件，ps的权限（ps命令也是一个文件，可执行文件）为<code>-r-xr-sr-x 1 bin system</code>，所以一般用户要是读取kmenm文件的话会自动获取system组的权限。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>每天复习一点Linux命令007之rm、mkdir、rmdir、cd</title>
     <url>/20200217232809.html</url>
     <content><![CDATA[<h2 id="2-5-rm"><a href="#2-5-rm" class="headerlink" title="2.5 rm"></a>2.5 rm</h2><ul>
@@ -1885,6 +1912,33 @@
 <li>.. 在当前目录基础上的上一级目录。</li>
 <li>. 当前目录</li>
 <li>~ 配合返回用户目录，就是/home/你的用户名的那个目录。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>每天复习一点Linux命令009之SUID、SGID</title>
+    <url>/20200220200617.html</url>
+    <content><![CDATA[<ul>
+<li>SUID<ul>
+<li>原理：在用户位的rwx的x位设置成s（rw<u>x</u> rwx rwx），目的就是让文件以其原有所属者进行运行。</li>
+<li>格式：<code>chmod u+s</code>,比较典型的就是<code>passwd</code>命令。</li>
+<li>场景：首先passwd文件是只有root用户才能读写，但是其他用户如果想要修改密码呢？切换到root在修改这就显得很麻烦了。但是如果设置s位，那么普通用户修改自己密码也就可以了。</li>
+</ul>
+</li>
+<li>SGID<ul>
+<li>原理：就是把所属组位的rwx的x设置为s(rwx rw<u>x</u> rwx)。</li>
+<li>作用<ul>
+<li>1.针对文件设置SGID：首先只有二进制可执行文件才能够设置SGID，作用就是该文件具有所属组的特权（见场景）。</li>
+<li>2.针对目录设置SGID，则复制到该目录下的所有文件，文件的都会设置成所属组的权限，除非你在复制文件命令时用cp -p选项。</li>
+</ul>
+</li>
+<li>格式：<code>chmod g+s</code></li>
+<li>场景：<code>/dev/kmenm权限为cr-- r-- ---root system</code>使用ps命令读取该文件，ps的权限（ps命令也是一个文件，可执行文件）为<code>-r-xr-sr-x 1 bin system</code>，所以一般用户要是读取kmenm文件的话会自动获取system组的权限。</li>
 </ul>
 </li>
 </ul>
@@ -3615,25 +3669,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>VSCode配置Picgo插件实现GitHub当图床</title>
-    <url>/20220105003457.html</url>
-    <content><![CDATA[<p>利用VSCode的PicGo插件可以直接实现截图粘贴自动上传并返回MD格式插入到文档中</p>
-<span id="more"></span>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="1-安装VSCode"><a href="#1-安装VSCode" class="headerlink" title="1.安装VSCode"></a>1.安装VSCode</h1><h1 id="2-VSCode配置"><a href="#2-VSCode配置" class="headerlink" title="2.VSCode配置"></a>2.VSCode配置</h1><p>侧面插件市场搜索PicGo安装，安装后重启，再次打开插件市场，选择PicGo右下方的设置小按钮，选择扩展设置，配置Github有关信息，具体配置如图和下面配置信息</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">配置信息说明</span></span><br><span class="line"><span class="string">current:选择github</span></span><br><span class="line"><span class="string">branch:选择你所在分支，一般是master或main</span></span><br><span class="line"><span class="string">custom</span> <span class="string">url:选择CDN用于加速图片输出，用如果不配置，会导致图片无法预览</span></span><br><span class="line">    <span class="string">配置格式https://cdn.jsdelivr.net/gh/你的GitHub用户名/存放图床的仓库名</span></span><br><span class="line"><span class="string">path:仓库下的文件夹</span></span><br><span class="line">    <span class="string">如果需要存放在某个仓库下文件夹</span></span><br><span class="line">    <span class="string">比如picgo仓库里的img文件夹</span></span><br><span class="line">        <span class="string">img/</span></span><br><span class="line">        <span class="string">不可以省略/，否则不会识别为文件夹</span></span><br><span class="line">        <span class="string">不可以写成/img，否则会识别服务端错误</span></span><br><span class="line"><span class="string">repo:你的GitHub用户名/仓库名</span></span><br><span class="line"><span class="string">token:GitHub申请的token</span></span><br><span class="line">    <span class="string">申请步骤</span></span><br><span class="line">    <span class="string">登录GitHub后点击头像下拉选择setting，选择developer</span> <span class="string">setting，选择personal</span> <span class="string">access</span> <span class="string">token，新建一个token，输入名称和设置有效期，勾选repo权限，生成后的授权码赋值到此</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220104220611.png" alt="20220104220611"></p>
-<h1 id="3-快捷键说明"><a href="#3-快捷键说明" class="headerlink" title="3.快捷键说明"></a>3.快捷键说明</h1>   <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">win/unix系统</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">u</span> <span class="string">从剪贴板复制上传</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">e</span> <span class="string">弹出文件管理器选择上传</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">o</span> <span class="string">弹出截屏上传</span></span><br><span class="line"><span class="string">苹果系统</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">u</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">e</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">o</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>VSCode</tag>
-        <tag>图床</tag>
-        <tag>PicGo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>吐槽工信部域名备案的各种坑</title>
     <url>/20210226144736.html</url>
     <content><![CDATA[<ol>
@@ -3653,43 +3688,6 @@ chmod 777 /var/log/caddy/caddy.log
 <li><p><span style="color:red!important;">提示，如果你备案主题下只有一个网站，千万不要取消接入否则你的备案直接在域名托管商那消失，但是工信部可以查到，也就是所谓的<strong>空壳网站</strong>.<br>这时候你要办注销备案很麻烦，得填表邮寄到通信局。如果你不想要了，直接注销备案或注销网站也不要点取消接入。<strong>空壳主体</strong>就是你的备案号在，但是没有关联网站，一般办理注销网站会导致空壳主体。<strong>空壳网站</strong>就是办理取消接入或者域名过期，且没有办理接入另一家托管商，工信部那仍然会显示你关联的域名。<br>这两种，正常来说工信部会清理，但是正如上面所说清理看心情，看省份，有时候清理是随机的。<strong>这时候如果你域名过期了，有人注册了你不用的域名，备案还是显示你的信息，如果他拿来干违法事情很麻烦</strong>。</span></p>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>牛客网华为云9元一年学生机白嫖分享</title>
-    <url>/20200128113629.html</url>
-    <content><![CDATA[<p><strong>本博客于20200110迁移到华为云，就是下面的9元一年的学生机，原价99元，满足条件后返还90。另外在华为云和牛客网博客上发表博文前100名，可以得到体重秤，我的已经发货了。现在是2月10号以后的第二批，提前白嫖仍然可以得到体重秤，时间为2020年2月12日12：00 — 2020年2月29日晚上23：59。</strong><br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a><br>牛客网x华为云服务器活动<br>2020年新年第二弹来啦！<br>还是熟悉的返现（实惠良心）：<br>通过牛客专属链接新注册华为云账号，购买指定套餐即可获得返现！<br>并且，写博文，还送华为体重秤！</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<p><ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-7128871200466945"
-     data-ad-slot="1235480225"></ins></p>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<h1 id="一、活动时间"><a href="#一、活动时间" class="headerlink" title="一、活动时间"></a>一、活动时间</h1><p>2020年2月12日12：00 — 2020年2月29日晚上23：59。<br><img src="https://res-qiniu.quinntian.com/image_1580182376716.png" alt="image.png"></p>
-<h1 id="二、参与要求"><a href="#二、参与要求" class="headerlink" title="二、参与要求"></a>二、参与要求</h1><p>仅限华为云个人新用户，且通过牛客专属链接/二维码首次注册华为云账号，不可与渠道绑定。（未成年人无法参与本次活动，请悉知）</p>
-<p>首次购买华为云服务器套餐，此前未购买过华为云任何产品。<br>返现仅限于第一次购买华为云指定产品。<br>24岁及其以下可直接购买学生套餐（未成年无法参与本次活动），24岁以上须学生认证完成后购买。</p>
-<h1 id="三、奖品说明"><a href="#三、奖品说明" class="headerlink" title="三、奖品说明"></a>三、奖品说明</h1><h2 id="1-学生套餐："><a href="#1-学生套餐：" class="headerlink" title="1. 学生套餐："></a>1. 学生套餐：</h2><p>云服务器12个月，学生价 99元，返现90元；<br>云服务器6个月，学生价54元，返现50元；<br>云服务器1个月，学生价9元，返现9元。<br><img src="https://quinntian.com/upload/2020/2/image-e13116c59ac04c2e96cf4235ddf2b411.png" alt="image.png"><img src="https://res-qiniu.quinntian.com/image_1580182349766.png" alt="image.png"></p>
-<p>华为云学生套餐，每日0点开始，限量60份发售，售完即止。<br>（如果点击购买时显示今日已售完，可以等第二天早点下手~）</p>
-<p>【关于返现】验证返现将在活动时间内的每周一、三、五晚~<br>周一、三、五18:00之前提交返现表单，当晚预计21点将收到提醒。<br>详细购买及返现流程，请仔细按照下方链接的步骤操作：<br><a href="https://www.nowcoder.com/discuss/365849">https://www.nowcoder.com/discuss/365849</a></p>
-<h2 id="2-写博文，得体重秤"><a href="#2-写博文，得体重秤" class="headerlink" title="2. 写博文，得体重秤"></a>2. 写博文，得体重秤</h2><p>购买云服务器后，在牛客博客、华为云博客2个平台发布关于华为云的博文，可获赠华为智能mini体重秤一个（限量前500）。<br>须满足以下条件：<br>2020年1月6日（含）后通过牛客专属链接新注册华为账号并购买参加活动<br>在华为云博客、牛客博客平台发布1篇个人原创的使用心得/技巧/测评等博客内容。开通牛客博客请戳<a href="https://www.nowcoder.com/discuss/202952">https://www.nowcoder.com/discuss/202952</a><br>2020月2月5日24点之前提交本表单 <a href="https://jinshuju.net/f/b8Sq3w">https://jinshuju.net/f/b8Sq3w</a><br>注意：之前已领取过音箱或手环的同学不可再参加，文章非原创不寄送<br>【礼品寄送】华为商城统一寄送（顺丰），华为智能mini体重秤白色款，尺寸为26<em>26</em>2.25cm。<br><img src="https://quinntian.com/upload/2020/2/image-32d134c7e34d4205a8d7386ddba7af5a.png" alt="image.png"><img src="https://res-qiniu.quinntian.com/image_1580182268602.png" alt="image.png"></p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<p><ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-7128871200466945"
-     data-ad-slot="8780047880"></ins></p>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<h1 id="四、注意"><a href="#四、注意" class="headerlink" title="四、注意"></a>四、注意</h1><p>同一人（同一身份认证）仅支持一次返现机会，学生套餐中1个月、6个月、12个月只可3选一。<br>此次华为云服务器活动，购买成功后不支持退款。<br>本次活动解释权归牛客所有。<br>奖品数量有限，购买填写表单后，记得在本帖下留言占位哦~<br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a></p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3904,6 +3902,62 @@ chmod 777 /var/log/caddy/caddy.log
 ]]></content>
       <categories>
         <category>设计模式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>VSCode配置Picgo插件实现GitHub当图床</title>
+    <url>/20220105003457.html</url>
+    <content><![CDATA[<p>利用VSCode的PicGo插件可以直接实现截图粘贴自动上传并返回MD格式插入到文档中</p>
+<span id="more"></span>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="1-安装VSCode"><a href="#1-安装VSCode" class="headerlink" title="1.安装VSCode"></a>1.安装VSCode</h1><h1 id="2-VSCode配置"><a href="#2-VSCode配置" class="headerlink" title="2.VSCode配置"></a>2.VSCode配置</h1><p>侧面插件市场搜索PicGo安装，安装后重启，再次打开插件市场，选择PicGo右下方的设置小按钮，选择扩展设置，配置Github有关信息，具体配置如图和下面配置信息</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">配置信息说明</span></span><br><span class="line"><span class="string">current:选择github</span></span><br><span class="line"><span class="string">branch:选择你所在分支，一般是master或main</span></span><br><span class="line"><span class="string">custom</span> <span class="string">url:选择CDN用于加速图片输出，用如果不配置，会导致图片无法预览</span></span><br><span class="line">    <span class="string">配置格式https://cdn.jsdelivr.net/gh/你的GitHub用户名/存放图床的仓库名</span></span><br><span class="line"><span class="string">path:仓库下的文件夹</span></span><br><span class="line">    <span class="string">如果需要存放在某个仓库下文件夹</span></span><br><span class="line">    <span class="string">比如picgo仓库里的img文件夹</span></span><br><span class="line">        <span class="string">img/</span></span><br><span class="line">        <span class="string">不可以省略/，否则不会识别为文件夹</span></span><br><span class="line">        <span class="string">不可以写成/img，否则会识别服务端错误</span></span><br><span class="line"><span class="string">repo:你的GitHub用户名/仓库名</span></span><br><span class="line"><span class="string">token:GitHub申请的token</span></span><br><span class="line">    <span class="string">申请步骤</span></span><br><span class="line">    <span class="string">登录GitHub后点击头像下拉选择setting，选择developer</span> <span class="string">setting，选择personal</span> <span class="string">access</span> <span class="string">token，新建一个token，输入名称和设置有效期，勾选repo权限，生成后的授权码赋值到此</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/QuinnTian/imgchr/imgs/20220104220611.png" alt="20220104220611"></p>
+<h1 id="3-快捷键说明"><a href="#3-快捷键说明" class="headerlink" title="3.快捷键说明"></a>3.快捷键说明</h1>   <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">win/unix系统</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">u</span> <span class="string">从剪贴板复制上传</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">e</span> <span class="string">弹出文件管理器选择上传</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">alt</span> <span class="string">o</span> <span class="string">弹出截屏上传</span></span><br><span class="line"><span class="string">苹果系统</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">u</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">e</span></span><br><span class="line">    <span class="string">ctrl</span> <span class="string">opt</span> <span class="string">o</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+        <tag>图床</tag>
+        <tag>PicGo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客网华为云9元一年学生机白嫖分享</title>
+    <url>/20200128113629.html</url>
+    <content><![CDATA[<p><strong>本博客于20200110迁移到华为云，就是下面的9元一年的学生机，原价99元，满足条件后返还90。另外在华为云和牛客网博客上发表博文前100名，可以得到体重秤，我的已经发货了。现在是2月10号以后的第二批，提前白嫖仍然可以得到体重秤，时间为2020年2月12日12：00 — 2020年2月29日晚上23：59。</strong><br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a><br>牛客网x华为云服务器活动<br>2020年新年第二弹来啦！<br>还是熟悉的返现（实惠良心）：<br>通过牛客专属链接新注册华为云账号，购买指定套餐即可获得返现！<br>并且，写博文，还送华为体重秤！</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7128871200466945"
+     data-ad-slot="1235480225"></ins></p>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h1 id="一、活动时间"><a href="#一、活动时间" class="headerlink" title="一、活动时间"></a>一、活动时间</h1><p>2020年2月12日12：00 — 2020年2月29日晚上23：59。<br><img src="https://res-qiniu.quinntian.com/image_1580182376716.png" alt="image.png"></p>
+<h1 id="二、参与要求"><a href="#二、参与要求" class="headerlink" title="二、参与要求"></a>二、参与要求</h1><p>仅限华为云个人新用户，且通过牛客专属链接/二维码首次注册华为云账号，不可与渠道绑定。（未成年人无法参与本次活动，请悉知）</p>
+<p>首次购买华为云服务器套餐，此前未购买过华为云任何产品。<br>返现仅限于第一次购买华为云指定产品。<br>24岁及其以下可直接购买学生套餐（未成年无法参与本次活动），24岁以上须学生认证完成后购买。</p>
+<h1 id="三、奖品说明"><a href="#三、奖品说明" class="headerlink" title="三、奖品说明"></a>三、奖品说明</h1><h2 id="1-学生套餐："><a href="#1-学生套餐：" class="headerlink" title="1. 学生套餐："></a>1. 学生套餐：</h2><p>云服务器12个月，学生价 99元，返现90元；<br>云服务器6个月，学生价54元，返现50元；<br>云服务器1个月，学生价9元，返现9元。<br><img src="https://quinntian.com/upload/2020/2/image-e13116c59ac04c2e96cf4235ddf2b411.png" alt="image.png"><img src="https://res-qiniu.quinntian.com/image_1580182349766.png" alt="image.png"></p>
+<p>华为云学生套餐，每日0点开始，限量60份发售，售完即止。<br>（如果点击购买时显示今日已售完，可以等第二天早点下手~）</p>
+<p>【关于返现】验证返现将在活动时间内的每周一、三、五晚~<br>周一、三、五18:00之前提交返现表单，当晚预计21点将收到提醒。<br>详细购买及返现流程，请仔细按照下方链接的步骤操作：<br><a href="https://www.nowcoder.com/discuss/365849">https://www.nowcoder.com/discuss/365849</a></p>
+<h2 id="2-写博文，得体重秤"><a href="#2-写博文，得体重秤" class="headerlink" title="2. 写博文，得体重秤"></a>2. 写博文，得体重秤</h2><p>购买云服务器后，在牛客博客、华为云博客2个平台发布关于华为云的博文，可获赠华为智能mini体重秤一个（限量前500）。<br>须满足以下条件：<br>2020年1月6日（含）后通过牛客专属链接新注册华为账号并购买参加活动<br>在华为云博客、牛客博客平台发布1篇个人原创的使用心得/技巧/测评等博客内容。开通牛客博客请戳<a href="https://www.nowcoder.com/discuss/202952">https://www.nowcoder.com/discuss/202952</a><br>2020月2月5日24点之前提交本表单 <a href="https://jinshuju.net/f/b8Sq3w">https://jinshuju.net/f/b8Sq3w</a><br>注意：之前已领取过音箱或手环的同学不可再参加，文章非原创不寄送<br>【礼品寄送】华为商城统一寄送（顺丰），华为智能mini体重秤白色款，尺寸为26<em>26</em>2.25cm。<br><img src="https://quinntian.com/upload/2020/2/image-32d134c7e34d4205a8d7386ddba7af5a.png" alt="image.png"><img src="https://res-qiniu.quinntian.com/image_1580182268602.png" alt="image.png"></p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7128871200466945"
+     data-ad-slot="8780047880"></ins></p>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h1 id="四、注意"><a href="#四、注意" class="headerlink" title="四、注意"></a>四、注意</h1><p>同一人（同一身份认证）仅支持一次返现机会，学生套餐中1个月、6个月、12个月只可3选一。<br>此次华为云服务器活动，购买成功后不支持退款。<br>本次活动解释权归牛客所有。<br>奖品数量有限，购买填写表单后，记得在本帖下留言占位哦~<br><a href="https://www.nowcoder.com/discuss/365849">原文活动地址</a></p>
+]]></content>
+      <categories>
+        <category>其他</category>
       </categories>
   </entry>
   <entry>
