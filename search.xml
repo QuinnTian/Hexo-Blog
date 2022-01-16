@@ -64,17 +64,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Github速度被限制解决方法.md</title>
-    <url>/20180712120823.html</url>
-    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
-<hr>
-<p><strong>1.修改host文件会有速度提升</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git基本命令.md</title>
     <url>/20180723204037.html</url>
     <content><![CDATA[<p>title: Git基本命令详解及示例<br>date: ‘2018-07-23 20:40:37’<br>updated: ‘2018-08-16 00:26:49’<br>tags: [Git, 后端]<br>permalink: /articles/2018/07/23/1532347122477.html</p>
@@ -168,6 +157,17 @@
         <tag>Git</tag>
         <tag>代理</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Github速度被限制解决方法.md</title>
+    <url>/20180712120823.html</url>
+    <content><![CDATA[<p>title: Github速度被限制解决方法<br>date: ‘2018-07-12 12:08:23’<br>updated: ‘2018-07-12 12:08:23’<br>tags: [GitHub]<br>permalink: /articles/2018/07/12/1531368502688.html</p>
+<hr>
+<p><strong>1.修改host文件会有速度提升</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">151.101.72.249 global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 github.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
   </entry>
   <entry>
     <title>Hexo个性化配置</title>
@@ -1811,6 +1811,33 @@
       </categories>
   </entry>
   <entry>
+    <title>每天复习一点Linux命令009之SUID、SGID</title>
+    <url>/20200220200617.html</url>
+    <content><![CDATA[<ul>
+<li>SUID<ul>
+<li>原理：在用户位的rwx的x位设置成s（rw<u>x</u> rwx rwx），目的就是让文件以其原有所属者进行运行。</li>
+<li>格式：<code>chmod u+s</code>,比较典型的就是<code>passwd</code>命令。</li>
+<li>场景：首先passwd文件是只有root用户才能读写，但是其他用户如果想要修改密码呢？切换到root在修改这就显得很麻烦了。但是如果设置s位，那么普通用户修改自己密码也就可以了。</li>
+</ul>
+</li>
+<li>SGID<ul>
+<li>原理：就是把所属组位的rwx的x设置为s(rwx rw<u>x</u> rwx)。</li>
+<li>作用<ul>
+<li>1.针对文件设置SGID：首先只有二进制可执行文件才能够设置SGID，作用就是该文件具有所属组的特权（见场景）。</li>
+<li>2.针对目录设置SGID，则复制到该目录下的所有文件，文件的都会设置成所属组的权限，除非你在复制文件命令时用cp -p选项。</li>
+</ul>
+</li>
+<li>格式：<code>chmod g+s</code></li>
+<li>场景：<code>/dev/kmenm权限为cr-- r-- ---root system</code>使用ps命令读取该文件，ps的权限（ps命令也是一个文件，可执行文件）为<code>-r-xr-sr-x 1 bin system</code>，所以一般用户要是读取kmenm文件的话会自动获取system组的权限。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每天复习一点Linux命令007之rm、mkdir、rmdir、cd</title>
     <url>/20200217232809.html</url>
     <content><![CDATA[<h2 id="2-5-rm"><a href="#2-5-rm" class="headerlink" title="2.5 rm"></a>2.5 rm</h2><ul>
@@ -1858,33 +1885,6 @@
 <li>.. 在当前目录基础上的上一级目录。</li>
 <li>. 当前目录</li>
 <li>~ 配合返回用户目录，就是/home/你的用户名的那个目录。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>每天复习一点Linux命令009之SUID、SGID</title>
-    <url>/20200220200617.html</url>
-    <content><![CDATA[<ul>
-<li>SUID<ul>
-<li>原理：在用户位的rwx的x位设置成s（rw<u>x</u> rwx rwx），目的就是让文件以其原有所属者进行运行。</li>
-<li>格式：<code>chmod u+s</code>,比较典型的就是<code>passwd</code>命令。</li>
-<li>场景：首先passwd文件是只有root用户才能读写，但是其他用户如果想要修改密码呢？切换到root在修改这就显得很麻烦了。但是如果设置s位，那么普通用户修改自己密码也就可以了。</li>
-</ul>
-</li>
-<li>SGID<ul>
-<li>原理：就是把所属组位的rwx的x设置为s(rwx rw<u>x</u> rwx)。</li>
-<li>作用<ul>
-<li>1.针对文件设置SGID：首先只有二进制可执行文件才能够设置SGID，作用就是该文件具有所属组的特权（见场景）。</li>
-<li>2.针对目录设置SGID，则复制到该目录下的所有文件，文件的都会设置成所属组的权限，除非你在复制文件命令时用cp -p选项。</li>
-</ul>
-</li>
-<li>格式：<code>chmod g+s</code></li>
-<li>场景：<code>/dev/kmenm权限为cr-- r-- ---root system</code>使用ps命令读取该文件，ps的权限（ps命令也是一个文件，可执行文件）为<code>-r-xr-sr-x 1 bin system</code>，所以一般用户要是读取kmenm文件的话会自动获取system组的权限。</li>
 </ul>
 </li>
 </ul>
@@ -2405,6 +2405,22 @@
       </categories>
   </entry>
   <entry>
+    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
+    <url>/20210222170701.html</url>
+    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
+<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
+<p>改成这样即可反代成功。<br>反代成功</p>
+<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
+]]></content>
+      <categories>
+        <category>Nginx</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python中if用法</title>
     <url>/20210301010336.html</url>
     <content><![CDATA[<p>case1</p>
@@ -2424,6 +2440,42 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span>:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
 <p>4.<code>if elif elif</code></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> conditon:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br><span class="line"><span class="keyword">elif</span> condition:</span><br><span class="line">	代码</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python中输入函数和while循环</title>
+    <url>/20210301010434.html</url>
+    <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
+<li>输入函数<code>input(&#39;需要提示的东西&#39;)</code></li>
+</ol>
+<ul>
+<li>该函数读取后是以字符串读取<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用户输入</span></span><br><span class="line">message = <span class="built_in">input</span>(<span class="string">&#x27;please input more sth:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line">please <span class="built_in">input</span> more sth：你好</span><br><span class="line">你好</span><br></pre></td></tr></table></figure>
+case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提示输入</span></span><br><span class="line">tip1 = <span class="string">&#x27;如果你能看见&#x27;</span></span><br><span class="line">tip2 = <span class="string">&#x27;\n请告诉我名字：&#x27;</span></span><br><span class="line">message1 = <span class="built_in">input</span>(tip1 + <span class="string">&#x27;,&#x27;</span> + tip2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你的名字：&#x27;</span> + message1)</span><br><span class="line"></span><br><span class="line">如果你能看见,</span><br><span class="line">请告诉我名字：tom</span><br><span class="line">你的名字：tom</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>读取数值</li>
+</ol>
+<ul>
+<li>input函数读取后存储形式是字符串</li>
+<li>可以使用int函数转换成数值<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数值</span></span><br><span class="line">message3 = <span class="built_in">input</span>(<span class="string">&#x27;请输入一个数：&#x27;</span>)</span><br><span class="line">message3 = <span class="built_in">int</span>(message3)</span><br><span class="line"><span class="built_in">print</span>(message3)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>求模运算符<br><code>%表示求余数</code></li>
+<li>python2中的输入<br><code>使用raw_input而不是input</code><br>因为在2中input的表示输入的会解读成python代码<h1 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2.while循环"></a>2.while循环</h1>基本格式<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">	执行代码</span><br></pre></td></tr></table></figure>
+case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt;= <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 让用户选择什么时候推出</span></span><br><span class="line"></span><br><span class="line">tip = <span class="string">&#x27;请输入一个数：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">    message = <span class="built_in">input</span>(tip)</span><br><span class="line">    <span class="keyword">if</span> message != <span class="string">&#x27;exit&#x27;</span>:<span class="comment"># 隐藏exit输出</span></span><br><span class="line">        <span class="built_in">print</span>(message)</span><br><span class="line">	</span><br><span class="line">请输入一个数：<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">请输入一个数：<span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">请输入一个数：exit</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<h1 id="3-break"><a href="#3-break" class="headerlink" title="3.break"></a>3.break</h1>立刻退出循环，不再执行while后面的循环<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># break</span></span><br><span class="line">tip1 = <span class="string">&#x27;请输入你去过的城市：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        message = <span class="built_in">input</span>(tip1)</span><br><span class="line">		</span><br><span class="line">请输入一个数：exit</span><br><span class="line">请输入你去过的城市：厦门</span><br><span class="line">请输入你去过的城市：exit</span><br></pre></td></tr></table></figure>
+<h1 id="4-continue"><a href="#4-continue" class="headerlink" title="4.continue"></a>4.continue</h1>跳出这一次的循环进入下一个循环<br>case1 输出奇数<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt; <span class="number">10</span>:</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> current_number % <span class="number">2</span> ==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="5-while在列表中的用法"><a href="#5-while在列表中的用法" class="headerlink" title="5.while在列表中的用法"></a>5.while在列表中的用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 已有列表名:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+表示只有列表中有0个元素才会终止循环</li>
+</ol>
+<p>移除列表中所有含特定值的元素，因为remove只会删除第一个出现的元素<a href=":/b133d04ac4bc461fbd6111e587965296">006-列表</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移除列表中所有含特定值的元素</span></span><br><span class="line">list1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;one&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">&#x27;one&#x27;</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="string">&#x27;one&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
+<h1 id="5-while在字典中用法"><a href="#5-while在字典中用法" class="headerlink" title="5.while在字典中用法"></a>5.while在字典中用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># while填充字典</span></span><br><span class="line"></span><br><span class="line">dist = &#123;&#125;</span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&#x27;请输入名字：&#x27;</span>)</span><br><span class="line">    val = <span class="built_in">input</span>(<span class="string">&#x27;请输出籍贯：&#x27;</span>)</span><br><span class="line">    repeat = <span class="built_in">input</span>(<span class="string">&#x27;是否还有要调查的人呢？yse or no&#x27;</span>)</span><br><span class="line">    dist[key] = val</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">&#x27;no&#x27;</span>:</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dist)</span><br><span class="line"></span><br><span class="line">请输入名字：xiaoming</span><br><span class="line">请输出籍贯：sd</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> noyes</span><br><span class="line">请输入名字：xiaohong</span><br><span class="line">请输出籍贯：qingdao</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> nono</span><br><span class="line">&#123;<span class="string">&#x27;xiaoming&#x27;</span>: <span class="string">&#x27;sd&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>: <span class="string">&#x27;qingdao&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -3094,22 +3146,6 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 ]]></content>
       <categories>
         <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>如何解决Nginx反向代理Cloudflare报502和503错误</title>
-    <url>/20210222170701.html</url>
-    <content><![CDATA[<p>HTTPS<br>刚开始反向代理Cloudflare的HTTPS站点时不是502就是403把我头的搞大了，网络上各种复制粘贴的文章都看吐了 Nginx反向代理Cloudflare出现502,403解决办法插图<br>首先源站配置好SSL证书，然后去Cloudflare开启SSL（默认开启）<br>Cloudflare<br>Cloudflare<br>如果源站没有开启强制跳转HTTPS可以在Cloudlfare开启跳转<br>CloudflareCloudflare<br>接下来就是反向代理配置了（有坑）<br>删库塔配置删库塔配置<br>如果你直接将HTTP改成HTTPS，恭喜你，喜提502<br>502502<br>然后网上的给的解决办法五花八门，真真假假假假真真，实践才能辩真假。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name $host;</span><br><span class="line">proxy_ssl_server_name on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>网上说是将以上配置放进反向代理配置内即可。<br>删库塔配置</p>
-<p>删库塔配置<br>结果还是502<br>将这段代码放进location所有区块内。<br>删库塔配置删库塔配置<br>结果还是502<br>其实代码本身没问题，只是有小瑕疵</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_ssl_name 你反向代理的域名;</span><br><span class="line">proxy_ssl_server_name on;</span><br></pre></td></tr></table></figure>
-<p>改成这样即可反代成功。<br>反代成功</p>
-<p>反代成功<br>切记：如果反代机没有IPv6而你又解析了Cloudflare的CNAME，会导致无法连接上游的问题。建议自选IPv4接入，或者关闭反代机的IPv6。还有一个办法就是使用hosts强指IPv4。</p>
-]]></content>
-      <categories>
-        <category>Nginx</category>
       </categories>
   </entry>
   <entry>
@@ -3871,42 +3907,6 @@ chmod 777 /var/log/caddy/caddy.log
       </categories>
   </entry>
   <entry>
-    <title>python中输入函数和while循环</title>
-    <url>/20210301010434.html</url>
-    <content><![CDATA[<h1 id="1-输入"><a href="#1-输入" class="headerlink" title="1.输入"></a>1.输入</h1><ol>
-<li>输入函数<code>input(&#39;需要提示的东西&#39;)</code></li>
-</ol>
-<ul>
-<li>该函数读取后是以字符串读取<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用户输入</span></span><br><span class="line">message = <span class="built_in">input</span>(<span class="string">&#x27;please input more sth:&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line">please <span class="built_in">input</span> more sth：你好</span><br><span class="line">你好</span><br></pre></td></tr></table></figure>
-case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提示输入</span></span><br><span class="line">tip1 = <span class="string">&#x27;如果你能看见&#x27;</span></span><br><span class="line">tip2 = <span class="string">&#x27;\n请告诉我名字：&#x27;</span></span><br><span class="line">message1 = <span class="built_in">input</span>(tip1 + <span class="string">&#x27;,&#x27;</span> + tip2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你的名字：&#x27;</span> + message1)</span><br><span class="line"></span><br><span class="line">如果你能看见,</span><br><span class="line">请告诉我名字：tom</span><br><span class="line">你的名字：tom</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="2">
-<li>读取数值</li>
-</ol>
-<ul>
-<li>input函数读取后存储形式是字符串</li>
-<li>可以使用int函数转换成数值<br>case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取数值</span></span><br><span class="line">message3 = <span class="built_in">input</span>(<span class="string">&#x27;请输入一个数：&#x27;</span>)</span><br><span class="line">message3 = <span class="built_in">int</span>(message3)</span><br><span class="line"><span class="built_in">print</span>(message3)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="3">
-<li>求模运算符<br><code>%表示求余数</code></li>
-<li>python2中的输入<br><code>使用raw_input而不是input</code><br>因为在2中input的表示输入的会解读成python代码<h1 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2.while循环"></a>2.while循环</h1>基本格式<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">	执行代码</span><br></pre></td></tr></table></figure>
-case1<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt;= <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-case2<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 让用户选择什么时候推出</span></span><br><span class="line"></span><br><span class="line">tip = <span class="string">&#x27;请输入一个数：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">    message = <span class="built_in">input</span>(tip)</span><br><span class="line">    <span class="keyword">if</span> message != <span class="string">&#x27;exit&#x27;</span>:<span class="comment"># 隐藏exit输出</span></span><br><span class="line">        <span class="built_in">print</span>(message)</span><br><span class="line">	</span><br><span class="line">请输入一个数：<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">请输入一个数：<span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">请输入一个数：exit</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-<h1 id="3-break"><a href="#3-break" class="headerlink" title="3.break"></a>3.break</h1>立刻退出循环，不再执行while后面的循环<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># break</span></span><br><span class="line">tip1 = <span class="string">&#x27;请输入你去过的城市：&#x27;</span></span><br><span class="line">message = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">while</span> message != <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">&#x27;exit&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        message = <span class="built_in">input</span>(tip1)</span><br><span class="line">		</span><br><span class="line">请输入一个数：exit</span><br><span class="line">请输入你去过的城市：厦门</span><br><span class="line">请输入你去过的城市：exit</span><br></pre></td></tr></table></figure>
-<h1 id="4-continue"><a href="#4-continue" class="headerlink" title="4.continue"></a>4.continue</h1>跳出这一次的循环进入下一个循环<br>case1 输出奇数<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">current_number = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> current_number &lt; <span class="number">10</span>:</span><br><span class="line">    current_number += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> current_number % <span class="number">2</span> ==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(current_number)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="5-while在列表中的用法"><a href="#5-while在列表中的用法" class="headerlink" title="5.while在列表中的用法"></a>5.while在列表中的用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 已有列表名:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-表示只有列表中有0个元素才会终止循环</li>
-</ol>
-<p>移除列表中所有含特定值的元素，因为remove只会删除第一个出现的元素<a href=":/b133d04ac4bc461fbd6111e587965296">006-列表</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移除列表中所有含特定值的元素</span></span><br><span class="line">list1 = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;one&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">&#x27;one&#x27;</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="string">&#x27;one&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
-<h1 id="5-while在字典中用法"><a href="#5-while在字典中用法" class="headerlink" title="5.while在字典中用法"></a>5.while在字典中用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># while填充字典</span></span><br><span class="line"></span><br><span class="line">dist = &#123;&#125;</span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"><span class="keyword">while</span> flag:</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&#x27;请输入名字：&#x27;</span>)</span><br><span class="line">    val = <span class="built_in">input</span>(<span class="string">&#x27;请输出籍贯：&#x27;</span>)</span><br><span class="line">    repeat = <span class="built_in">input</span>(<span class="string">&#x27;是否还有要调查的人呢？yse or no&#x27;</span>)</span><br><span class="line">    dist[key] = val</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">&#x27;no&#x27;</span>:</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(dist)</span><br><span class="line"></span><br><span class="line">请输入名字：xiaoming</span><br><span class="line">请输出籍贯：sd</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> noyes</span><br><span class="line">请输入名字：xiaohong</span><br><span class="line">请输出籍贯：qingdao</span><br><span class="line">是否还有要调查的人呢？yse <span class="keyword">or</span> nono</span><br><span class="line">&#123;<span class="string">&#x27;xiaoming&#x27;</span>: <span class="string">&#x27;sd&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>: <span class="string">&#x27;qingdao&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hexo Next主题增加单独友链网页</title>
     <url>/20220115234620.html</url>
     <content><![CDATA[<p>Next主题是带有友链，只不过在侧边栏，友链过多不美观，可以自定义一个页面专门存放友链</p>
@@ -3926,6 +3926,8 @@ case2<figure class="highlight python"><table><tr><td class="code"><pre><span cla
 
 <h2 id="3-增加中文对照项"><a href="#3-增加中文对照项" class="headerlink" title="3. 增加中文对照项"></a>3. 增加中文对照项</h2><p>主题根目录-&gt;languages-&gt;zh-CN文件添加如下内容</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment"># 自动将菜单中 links 映射成友链</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-主题配置文件添加友链信息"><a href="#4-主题配置文件添加友链信息" class="headerlink" title="4. 主题配置文件添加友链信息"></a>4. 主题配置文件添加友链信息</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">mylinks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">nickname:</span> <span class="comment">#友链名称</span></span><br><span class="line">    <span class="attr">avatar:</span> <span class="comment">#友链头像</span></span><br><span class="line">    <span class="attr">site:</span>  <span class="comment">#友链地址</span></span><br><span class="line">    <span class="attr">info:</span>  <span class="comment">#友链说明</span></span><br></pre></td></tr></table></figure>
 
 
 
