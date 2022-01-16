@@ -1615,7 +1615,7 @@ pre code {
   white-space: nowrap;
 }
 .post-toc .nav .nav-child {
-  display: none;
+  display: block;
 }
 .post-toc .nav .active > .nav-child {
   display: block;
@@ -2930,7 +2930,7 @@ body {
   backgound-position: 50% 50%;
 }
 .main-inner {
-  background: rgba(255,255,255,0.7) none repeat scroll !important;
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
 }
 .header-inner {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
